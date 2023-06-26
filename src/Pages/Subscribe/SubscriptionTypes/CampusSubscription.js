@@ -103,7 +103,7 @@ const CampusSubscription = (props) => {
 {/* //Css */}
       {props?.item?.campusDriveStatus === "Accepted" ? (
         <div className="col-lg-3 col-sm-12  choice-btns ">
-          <span style={{ paddingRight: '15px' }} >Status {""}</span>
+          <span style={{ paddingRight: '15px' ,fontWeight: "bold" }} >Status {""}:</span>
           <div
             className="btn accepted"
           >
@@ -112,7 +112,7 @@ const CampusSubscription = (props) => {
         </div>
       ) : props?.item?.campusDriveStatus === "Pending" ? (
         <div className="col-lg-3 col-sm-12 choice-btns">
-          <span style={{ paddingRight: '15px' }} >Status {""}</span>
+          <span style={{ paddingRight: '15px' ,fontWeight: "bold"}} >Status {""}:</span>
           <div
             className="btn pending"
           >
@@ -121,7 +121,7 @@ const CampusSubscription = (props) => {
         </div>
       ) : (
         <div className="col-lg-3 col-sm-12 choice-btns">
-          <span style={{ paddingRight: '15px' }} >Status {""}</span>
+          <span style={{ paddingRight: '5px' ,fontWeight: "bold" }} >Status{""}:</span>
           <div
             className="btn pending"
           >

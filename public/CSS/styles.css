@@ -777,10 +777,12 @@ p {
 
 .choice-btns .pending {
   float: left;
-  border: 2px solid rgb(224, 235, 9);
-  color: rgb(0, 0, 0);
-  background: #FFFF00;
+   font-weight: bold;
+  border: none;
+  color: #dc7d1e;
   margin-right: 5px;
+  box-shadow: none;
+  cursor: default;
 }
 
 .choice-btns .rejected {
