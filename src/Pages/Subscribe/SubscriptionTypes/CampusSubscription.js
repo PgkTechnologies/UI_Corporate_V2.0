@@ -100,12 +100,12 @@ const CampusSubscription = (props) => {
         </div>
       </div>
 
-
+{/* //Css */}
       {props?.item?.campusDriveStatus === "Accepted" ? (
         <div className="col-lg-3 col-sm-12  choice-btns ">
           <span style={{ paddingRight: '15px' }} >Status {""}</span>
           <div
-            className="btn accept"
+            className="btn accepted"
           >
             Accepted
           </div>
