@@ -1,0 +1,125 @@
+.cards-main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+}
+
+.info-card {
+  background: #33a7ffb1;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.profile-pic {
+  height: 75px !important;
+  width: 75px !important;
+  border-radius: 50%;
+  background: darkblue;
+}
+
+.info-card .student-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.sent-date {
+  color: yellow;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.info-card .verification-button {
+  font-size: 18px;
+  color: #33a7ff;
+  background: white;
+  text-transform: uppercase;
+  padding: 8px 25px 8px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.info-card .verification-button:hover {
+  color: #0291ff;
+  cursor: pointer;
+}
+
+.student-info-main {
+  width: 100%;
+  display: "flex";
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-y: auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.student-info-main .student-info-card {
+  width: 100%;
+  border-radius: 5px;
+  padding: 25px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  -webkit-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.192);
+  -moz-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.192);
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.192);
+}
+
+.student-info-main .student-info-card .student-details {
+  display: flex;
+  align-items: initial;
+  text-transform: capitalize;
+  padding: 5px;
+}
+
+.profile-picture {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  background: url(../../../../public/images/avatar.svg) no-repeat;
+  background-size: contain;
+  margin-right: 10px;
+}
+
+.profile-picture img {
+  object-fit: contain;
+  width: 100%;
+}
+
+.profile-submit-button {
+  color: #0291ff;
+  background: white;
+  border: 4px solid #0291ff;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 12px 25px 12px;
+}
+
+.profile-submit-button:hover {
+  color: white;
+  background: #0291ff;
+  cursor: pointer;
+}

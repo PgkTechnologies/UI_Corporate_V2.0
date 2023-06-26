@@ -1,0 +1,225 @@
+.registration-card {
+    background: rgba(250, 250, 252, 0.85);
+    border: 1px solid rgb(249, 249, 249);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 10px;
+    flex-direction: column;
+    width: 100%;
+  }
+  .main-container {
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+  }
+  .title-text-register-as {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+  
+  .title-text {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #246de8;
+    font-size: 20px;
+    padding-left: 10px;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .row-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+  }
+  .buttonSection {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  
+  .button {
+    text-transform: uppercase;
+    color: white;
+    padding: 5px 10px 5px;
+    border-radius: 5px;
+    background-color: #246de8;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .button:hover {
+    background-color: #eeeeef;
+    color: #246de8;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .attachment {
+    text-transform: uppercase;
+    color: #246de8;
+    border-radius: 5px;
+    background-color: rgba(250, 250, 252, 0.562);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 0px 100px 0px;
+  }
+  .attachment-logo {
+    background-color: #246de8;
+    padding: 10px;
+  }
+  
+  .terms-conditions {
+    text-decoration: underline;
+    color: #246de8;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .registration-subheaders {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: #f1f2f4;
+    font-weight: 300;
+    padding: 10px;
+    text-transform: uppercase;
+    background-color: #246de8;
+    /* border: 1px solid white; */
+    box-shadow: 3px 3px 10px rgb(127 127 129);
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+  
+  .otp-headers {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .otp-instruction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .success-subheaders {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: #f1f2f4;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #246de8;
+    border: 1px solid white;
+    box-shadow: 5px 10px 18px rgb(127, 127, 129);
+    border-radius: 5px;
+    justify-content: center;
+  }
+  
+  .white-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .reg-header {
+    width: 100%;
+    height: 45px;
+    border-radius: 6px;
+    padding: 5px 20px;
+    background-color: #246de8;
+    color: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 18px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .reg-header i {
+    margin-right: 10px;
+  }
+  
+  .login-form {
+    padding: 2% 0%;
+    margin-top: 3%;
+    width: 50%;
+  }
+  
+  .login-form .reg-form {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .login-form .reg-label {
+    color: #000000cf;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .login-form .login-grp {
+    position: relative;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+  .reg-inp-info {
+    font-size: 11px;
+    color: #585858;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .reg-para {
+    color: #585858;
+    margin: 1% auto;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  .login-form .login-grp .login-inp.reg-inp2 {
+    width: 270px !important;
+    border-color: #004fd080 !important;
+    border-radius: 1px !important;
+    color: #004fd0;
+    text-align: center;
+    font-size: 18px;
+  }
+  

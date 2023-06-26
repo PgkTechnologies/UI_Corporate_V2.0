@@ -1,0 +1,212 @@
+.section1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    background: rgba(227, 229, 230, 0.411);
+    border-radius: 5px;
+}
+
+.profile-card-main{
+    padding: 40px;
+}
+
+.profile-card-main .propfile-card{
+    padding: 20px 10px 10px;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 1px 1px 10px 0px #0228449b;
+    -moz-box-shadow: 1px 1px 10px 0px #0228449b;
+    box-shadow: 1px 1px 10px 0px #0228449b;
+}
+
+.profile-card-main .propfile-card .profile-card-name{
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(7, 54, 102);
+}
+
+.profile-card-main .propfile-card .profile-card-designation{
+    font-size: 15px;
+    color: rgba(3, 58, 141, 0.5);
+}
+
+.profile-card-main .propfile-card .profile-card-publish-info-main{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.publish-icon-main{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+
+.post-io-data-main{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.post-io-data-main .post-io-data{
+    padding: 15px;
+    border-radius: 20px;
+    border: 0.5px solid rgba(73, 73, 73, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.whats-title{
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 15px 10px;
+    color: rgb(3, 43, 86);
+}
+
+.message-input{
+    border: 1px solid rgb(199, 197, 197);
+    background: white;
+    border-radius: 40px;
+    padding: 15px;
+    width: 100%;
+}
+
+.section2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 30px;
+    margin-top: 10px;
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+}
+
+.list-table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(18, 38, 71, 0.153);
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.list-table .back-btn {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 10px;
+    background: white;
+}
+
+.list-cards{
+    width: 100%;
+    height: 370px;
+    max-height: 370px;
+    overflow-y: auto;
+}
+
+.all-list-cards{
+    width: 100%;
+    overflow-y: auto; 
+}
+
+.list-card-main{
+    padding: 12px;
+    background: rgba(229, 244, 247, 0.731);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.list-card-main .list-card-pic{
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+    background: white;
+}
+
+.list-card-main .list-card-name{
+    padding-left: 20px;
+    font-size: 20px;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #08518c;
+    text-transform: capitalize;
+}
+
+.list-card-main .list-card-date{
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* width: 100px; */
+}
+
+.table-heading{
+    margin: 0 0 20px;
+    font-weight: bold; 
+    font-size: 25px;
+    color: #076989;
+}
+
+
+.section3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    padding: 20px;
+}
+
+.section3 .dash-analytics-main{
+    background: url(./Section3/Components/analyticsDash2.jpg);
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #314a5f;
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding: 20px;
+    border-radius: 100px;
+    border: 4px solid rgba(0, 0, 0, 0.667);
+    cursor: pointer;
+}
+
+.section3 .dash-analytics-main:hover{
+    color: #002747;
+    border: 4px solid rgb(0, 0, 0);
+    -webkit-box-shadow: 1px 1px 10px 0px #0228449b;
+    -moz-box-shadow: 1px 1px 10px 0px #0228449b;
+    box-shadow: 1px 1px 10px 0px #0228449b;
+}
