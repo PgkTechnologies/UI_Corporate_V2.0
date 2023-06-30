@@ -33,8 +33,6 @@
   height: 100vh;
 }
 
-
-
 .profile-pic-img {
   object-fit: contain;
   width: 100%;
@@ -96,7 +94,6 @@ p {
   -moz-box-shadow: 1px 1px 10px 0px #0228449b;
   box-shadow: 1px 1px 10px 0px #0228449b;
 }
-
 
 .sm-btn {
   font-size: 10px;
@@ -648,7 +645,8 @@ p {
   width: 50px;
   border: 2px solid #246de8;
   border-radius: 12px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .menu:hover .icon-box-body .icon-box {
@@ -777,7 +775,7 @@ p {
 
 .choice-btns .pending {
   float: left;
-   font-weight: bold;
+  font-weight: bold;
   border: none;
   color: #dc7d1e;
   margin-right: 5px;
@@ -813,8 +811,6 @@ p {
   border-radius: 50px;
   background: #c3d7e368;
 }
-
-
 
 .tab-select {
   background: #1ba4f968;
@@ -1326,7 +1322,6 @@ p {
   top: 6px;
   cursor: pointer;
   border-radius: 10px;
-
 }
 
 .ticket-chat-main .chat-display {
@@ -1423,7 +1418,6 @@ p {
   border-radius: 5px;
   padding: 0 10px 0;
   color: #2f4452;
-
 }
 
 .chat-sent-type input {
@@ -1465,7 +1459,6 @@ p {
   background: #02304c;
   color: white;
 }
-
 
 .broadcast-history-container .broadcast-message-card {
   padding: 20px;
@@ -1549,4 +1542,7 @@ p {
   bottom: 110px;
   left: 30px;
   width: 20%;
+}
+.feature-widget-report-twenty {
+  height: 400px;
 }
