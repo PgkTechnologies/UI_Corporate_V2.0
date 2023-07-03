@@ -9,7 +9,6 @@ import AllReducers from "./Store/Reducers";
 import { webportalAppRootSaga } from "./Store/Sagas";
 import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
