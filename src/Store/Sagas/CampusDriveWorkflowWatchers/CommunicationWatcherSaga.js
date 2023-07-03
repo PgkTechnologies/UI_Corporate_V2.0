@@ -1,5 +1,5 @@
 import { call, takeLatest, put } from "redux-saga/effects";
-import Axios from "../../../utils/Axios";
+import Axios from "../../../Utils/Axios";
 import { toast } from "react-toastify";
 import {
   ACTION_GET_CAMPUS_DRIVE_EMAIL_TEMPLATES_LIST_REQUEST,

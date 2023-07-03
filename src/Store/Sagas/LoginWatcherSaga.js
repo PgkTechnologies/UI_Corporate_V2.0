@@ -1,6 +1,6 @@
 // import packages
 import { take, put, call, takeLatest } from "redux-saga/effects";
-import Axios from "../../utils/Axios";
+import Axios from "../../Utils/Axios";
 import { toast } from "react-toastify";
 import history from "../../@history";
 import { actionUpdateGlobalLoaderSagaAction } from "../Actions/SagaActions/CommonSagaActions";
@@ -30,7 +30,6 @@ function* validateReferralCodeRequestSaga(action) {
 }
 
 const loginRequest = (model) => {
- 
   const URL = "/o/login";
   let formData = new FormData();
   formData.append("stakeholder", model.stakeholder);
@@ -81,7 +80,7 @@ const logoutRequest = () => {
     },
   };
 
-  return Axios.post(URL, '', header).then((res) => {
+  return Axios.post(URL, "", header).then((res) => {
     return res.data;
   });
 };

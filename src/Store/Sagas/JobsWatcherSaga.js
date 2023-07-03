@@ -1,5 +1,5 @@
 import { call, takeLatest, put } from "redux-saga/effects";
-import Axios from "../../utils/Axios";
+import Axios from "../../Utils/Axios";
 import { toast } from "react-toastify";
 import {
   ACTION_GET_CORPORATE_JOBS_BYID_REQUEST,
@@ -25,7 +25,6 @@ function* getJobsSaga(action) {
   try {
     const resp = yield call(getJobs);
     action.payload.callback(resp);
-    
   } catch (err) {
     if (err?.response) {
       toast.error(err?.response?.data?.errors[0]?.message);
@@ -130,7 +129,6 @@ const editJobs = (jobID, hcID, payload) => {
     },
   };
   return Axios.patch(URL, payload, header).then((res) => {
-   
     return res.data;
   });
 };
@@ -154,7 +152,6 @@ function* editJobsSaga(action) {
 
 //CampusDrive Patch
 const editCampusDriveJobs = (jobID, hcID, payload) => {
-  
   //const URL = `p/crp/createJobHc/${jobID}/${hcID}`;
   const URL = `cdj/job/jobHc`;
   const header = {
@@ -172,7 +169,7 @@ function* editCampusDriveJobsSaga(action) {
   try {
     const { req, jobID, hcID } = action.payload.apiPayloadRequest;
     const resp = yield call(editCampusDriveJobs, jobID, hcID, req);
-    
+
     if (resp.status === 200) {
       toast.success("Successfully Updated");
     } else {
@@ -202,7 +199,7 @@ const postJobs = (payload) => {
 function* postJobsSaga(action) {
   try {
     const req = action.payload.apiPayloadRequest;
-   
+
     // let formData = new FormData();
     // for (const key in model) {
     //     formData.append(key, model[key]);
@@ -210,7 +207,6 @@ function* postJobsSaga(action) {
     const resp = yield call(postJobs, req[0]);
     toast.success(resp.message);
     action.payload.callback(resp);
-    
   } catch (err) {
     if (err?.response) {
       toast.error(err?.response?.data?.errors[0]?.message);
@@ -227,7 +223,7 @@ const postPublishCorporateJobs = (formData) => {
   let URL = "";
   if (offCampus === "CF") {
     data = { publishJobs: [{ jobID: formData.jobIds[0] }] };
-   
+
     URL = "/p/crp/publishJob/jobHc";
   } else {
     URL = "/cdj/job/publish";

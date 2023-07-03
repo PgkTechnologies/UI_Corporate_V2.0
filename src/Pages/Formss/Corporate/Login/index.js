@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { TextField } from "@material-ui/core";
-import { useDispatch } from 'react-redux';
-import { toast } from 'react-toastify';
-import { actionLoginRequestSaga } from '../../../../Store/Actions/SagaActions/DashboardSaga/LoginSagaActions';
-import { checkObjectProperties } from '../../../../utils/utils';
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { actionLoginRequestSaga } from "../../../../Store/Actions/SagaActions/DashboardSaga/LoginSagaActions";
+import { checkObjectProperties } from "../../../../Utils/utils";
 import CryptoJS from "crypto-js";
 
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../../../utils/Auth';
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../../Utils/Auth";
 
-
-
-const Login = () => {   //same as login Form and cmp
+const Login = () => {
+  //same as login Form and cmp
 
   const [loginType, setLoginType] = useState("");
   const [type] = useState("Corporate");
-   const history = useNavigate();
-   const location = useLocation();
-   const auth = useAuth();
+  const history = useNavigate();
+  const location = useLocation();
+  const auth = useAuth();
 
   const initialState = {
     email: "",
@@ -36,7 +35,6 @@ const Login = () => {   //same as login Form and cmp
   const [password, setPassword] = useState("");
 
   // const type = "Corporate" ;
-  
 
   useEffect(() => {
     //storeAuthToken();
@@ -54,10 +52,9 @@ const Login = () => {   //same as login Form and cmp
     setIsBtnDisabled(isErrorsObjEmpty);
   }, [errors]);
 
-
   const handleChange = (event) => {
     const { name, value } = event.target;
-   
+
     switch (name) {
       case "email":
         if (value) {
@@ -116,7 +113,6 @@ const Login = () => {   //same as login Form and cmp
           callback: onSuccess,
         })
       );
-      
     } else {
       toast.error("Please enter all input fields");
     }
@@ -124,22 +120,16 @@ const Login = () => {   //same as login Form and cmp
 
   const redirectPath = location.state?.path || "/";
 
-  
-
   useEffect(() => {
     const authCheck = localStorage.getItem("AUTH");
-    
+
     if (authCheck) {
-      auth.logIn(authCheck); 
+      auth.logIn(authCheck);
       history(redirectPath, { replace: true });
     }
   }, []);
 
-
   const onSuccess = (navigateUrl) => {
-
-  
-
     const authCheck = localStorage.getItem("AUTH");
     if (navigateUrl) {
       auth.logIn(navigateUrl.token);
@@ -148,36 +138,46 @@ const Login = () => {   //same as login Form and cmp
     }
 
     if (navigateUrl === "/dashboard") {
-   
       history("/dashboard");
     } else if (navigateUrl === "/verify") {
       history("/register/authentication");
     } else {
       localStorage.setItem("navigateCancelUrl", "/");
-      history("/register/payment"); 
+      history("/register/payment");
     }
   };
-// console.log(loginObj,'emalll')
-  
+  // console.log(loginObj,'emalll')
+
   return (
-
     <section className="login">
-
-      <div className="log-in-main-container" style={{ background: "rgba(0, 0, 0, 0.5)" }}>
+      <div
+        className="log-in-main-container"
+        style={{ background: "rgba(0, 0, 0, 0.5)" }}
+      >
         <video autoPlay muted loop className="back-vid">
-          <source src='./Videos/v1.mp4' type="video/mp4" />
+          <source src="./Videos/v1.mp4" type="video/mp4" />
         </video>
         <div className="logo-container">
           <div className="logo-main">C2Hire.</div>
         </div>
         <div className="row">
           <div className="main-container">
-            <div className='page'>
-
-
-              <form className="row log-in-container" onSubmit={handleSubmit }>
-                <div className="col-lg-6 col-md-6 col-sm-12 log-in-content" style={{}}>
-                  <p style={{ paddingLeft: '10px', textAlign: 'center', lineHeight: '5rem' }}>Perfect Recruitment Solution<span style={{ color: '#0291ff' }}>.</span></p>
+            <div className="page">
+              <form className="row log-in-container" onSubmit={handleSubmit}>
+                <div
+                  className="col-lg-6 col-md-6 col-sm-12 log-in-content"
+                  style={{}}
+                >
+                  <p
+                    style={{
+                      paddingLeft: "10px",
+                      textAlign: "center",
+                      lineHeight: "5rem",
+                    }}
+                  >
+                    Perfect Recruitment Solution
+                    <span style={{ color: "#0291ff" }}>.</span>
+                  </p>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 log-in-card-main">
                   <div className="log-in-card blurbg_parent">
@@ -190,7 +190,11 @@ const Login = () => {   //same as login Form and cmp
                     </div>
                     <hr
                       className="mt-4"
-                      style={{ width: "90%", marginBottom: "30px", color: "gray" }}
+                      style={{
+                        width: "90%",
+                        marginBottom: "30px",
+                        color: "gray",
+                      }}
                     ></hr>
 
                     <div className="login-text">
@@ -200,10 +204,10 @@ const Login = () => {   //same as login Form and cmp
                         name="email"
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}
-                         value={email}
+                        value={email}
                         required={true}
                         onChange={handleChange}
-                      // helperText={emailErr ? emailErr : ''}
+                        // helperText={emailErr ? emailErr : ''}
                       />
                     </div>
                     <div className="login-text">
@@ -216,14 +220,13 @@ const Login = () => {   //same as login Form and cmp
                         value={password}
                         onChange={handleChange}
                         required={true}
-
                       />
                     </div>
                     <div
                       className="d-flex justify-content-end"
                       style={{ marginBottom: "20px" }}
                     >
-                      <Link to={'/forgotPassword'} >Forgot Password?</Link>
+                      <Link to={"/forgotPassword"}>Forgot Password?</Link>
                     </div>
                     <button
                       type="submit"
@@ -242,38 +245,20 @@ const Login = () => {   //same as login Form and cmp
                     <div className="d-flex justify-content-center mt-4">
                       <div>
                         Don't have an Account?{" "}
-                        <Link to= {'/register'}>
-                        <span
-                          
-                         className="sign-up">
-                          {" "}
-                          Sign Up
-                        </span>
+                        <Link to={"/register"}>
+                          <span className="sign-up"> Sign Up</span>
                         </Link>
                       </div>
                     </div>
-
                   </div>
                 </div>
-
-
               </form>
-
-
-
-
-
-
-
-
             </div>
-
           </div>
         </div>
       </div>
     </section>
   );
-
-}
+};
 
 export default Login;

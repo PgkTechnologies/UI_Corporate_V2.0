@@ -7,21 +7,31 @@ import {
   MenuItem,
 } from "@material-ui/core";
 import { useSelector } from "react-redux";
-import PreLoader from "../../utils/PreLoader";
-
+import PreLoader from "../../Utils/PreLoader";
 
 const AddressCmp = (props) => {
-  const { profileData, countries, cityListHQ, onChange, cityListLocal,toggleCorporateHeadQuarters } = props;
+  const {
+    profileData,
+    countries,
+    cityListHQ,
+    onChange,
+    cityListLocal,
+    toggleCorporateHeadQuarters,
+  } = props;
   const [age, setAge] = React.useState("");
   const apiStatus = useSelector((state) => state.loginReducer?.apiStatus);
   const handleChange = (event) => {
     setAge(event.target.value);
   };
 
-  console.log(props?.profileData?.corporateHQAddressCity?.value,cityListLocal, "CHECK");
-  console.log(countries,'oiiii')
-    // console.log(
-  // const model = 
+  console.log(
+    props?.profileData?.corporateHQAddressCity?.value,
+    cityListLocal,
+    "CHECK"
+  );
+  console.log(countries, "oiiii");
+  // console.log(
+  // const model =
   //   props?.hqStates?.map((item, i) => console.log(item,'temii'))
 
   // console.log(model,'check88')
@@ -50,7 +60,8 @@ const AddressCmp = (props) => {
                 value={
                   props?.profileData?.corporateHQAddressLine1?.value
                     ? props?.profileData?.corporateHQAddressLine1?.value
-                    : ""}
+                    : ""
+                }
               />
             </div>
             <div className="col-12">
@@ -65,7 +76,8 @@ const AddressCmp = (props) => {
                 value={
                   props?.profileData?.corporateHQAddressLine2?.value
                     ? props?.profileData?.corporateHQAddressLine2?.value
-                    : "" }
+                    : ""
+                }
               />
             </div>
             <div className="col-6">
@@ -81,7 +93,11 @@ const AddressCmp = (props) => {
                   id="demo-simple-select-filled17"
                   name="corporateHQAddressCountry"
                   required
-                  value={props?.profileData?.corporateHQAddressCountry ? props?.profileData?.corporateHQAddressCountry?.value :'' }
+                  value={
+                    props?.profileData?.corporateHQAddressCountry
+                      ? props?.profileData?.corporateHQAddressCountry?.value
+                      : ""
+                  }
                   onChange={props?.onChange}
                   disabled
                 >
@@ -111,17 +127,18 @@ const AddressCmp = (props) => {
                   name="corporateHQAddressState"
                   required
                   value={
-                    props?.profileData?.corporateHQAddressState ? props?.profileData?.corporateHQAddressState?.value : ''  }
+                    props?.profileData?.corporateHQAddressState
+                      ? props?.profileData?.corporateHQAddressState?.value
+                      : ""
+                  }
                   onChange={props?.onChange}
                 >
                   {props?.hqStates?.length > 0 ? (
-                    props?.hqStates
-                      ?.map((item, i) => (
-                        <MenuItem key={i} value={item?.value}>
-                          {item?.value}
-                          
-                        </MenuItem>
-                      ))
+                    props?.hqStates?.map((item, i) => (
+                      <MenuItem key={i} value={item?.value}>
+                        {item?.value}
+                      </MenuItem>
+                    ))
                   ) : (
                     <MenuItem></MenuItem>
                   )}
@@ -142,7 +159,10 @@ const AddressCmp = (props) => {
                   name="corporateHQAddressCity"
                   required
                   value={
-                    props?.profileData?.corporateHQAddressCity ?  props?.profileData?.corporateHQAddressCity?.value : ''}
+                    props?.profileData?.corporateHQAddressCity
+                      ? props?.profileData?.corporateHQAddressCity?.value
+                      : ""
+                  }
                   onChange={props?.onChange}
                 >
                   {props?.hqCities?.length > 0 ? (
@@ -167,7 +187,10 @@ const AddressCmp = (props) => {
                 required={true}
                 onChange={props?.onChange}
                 value={
-                  props?.profileData?.corporateHQAddressDistrict ? props?.profileData?.corporateHQAddressDistrict?.value : '' }
+                  props?.profileData?.corporateHQAddressDistrict
+                    ? props?.profileData?.corporateHQAddressDistrict?.value
+                    : ""
+                }
               />
             </div>
             <div className="col-4">
@@ -180,7 +203,10 @@ const AddressCmp = (props) => {
                 required={true}
                 onChange={props?.onChange}
                 value={
-                  props?.profileData?.corporateHQAddressZipCode ? props?.profileData?.corporateHQAddressZipCode?.value : ''}
+                  props?.profileData?.corporateHQAddressZipCode
+                    ? props?.profileData?.corporateHQAddressZipCode?.value
+                    : ""
+                }
               />
             </div>
             <div className="col-12">
@@ -218,11 +244,16 @@ const AddressCmp = (props) => {
           </div>
           <div className="row col-lg-6 col-md-12 col-sm-12">
             <div className="col-6">
-              <div className="sub-title" style={{ paddingTop: '0' }} >Local Branch</div>
+              <div className="sub-title" style={{ paddingTop: "0" }}>
+                Local Branch
+              </div>
             </div>
-            <div className="col-6" >
+            <div className="col-6">
               <div className="d-flex">
-                <div className="sub-title d-flex justify-content-center align-items-center" style={{ paddingTop: '0' }}>
+                <div
+                  className="sub-title d-flex justify-content-center align-items-center"
+                  style={{ paddingTop: "0" }}
+                >
                   <input
                     type="checkbox"
                     onChange={props?.toggleCorporateHeadQuarters}
@@ -396,7 +427,8 @@ const AddressCmp = (props) => {
                 onChange={props?.onChange}
                 value={
                   profileData?.corporateLocalBranchAddressZipCode
-                    ? profileData?.corporateLocalBranchAddressZipCode?.value                    : ""
+                    ? profileData?.corporateLocalBranchAddressZipCode?.value
+                    : ""
                 }
               />
             </div>

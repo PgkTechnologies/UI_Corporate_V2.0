@@ -12,8 +12,8 @@ import { useDispatch, useSelector } from "react-redux";
 // // import { getUserTokenData } from "../../../Store/Actions/ProfileActions";
 // // import { actionGetSearchCorporates } from "../../../Store/Actions/SubscriptionActions";
 // // import { SaveUniversityCriteriaData } from "../../../Store/Actions/UniversityActions";
-import { useAuth } from "../../../utils/Auth";
-import { useNavigate } from 'react-router-dom';
+import { useAuth } from "../../../Utils/Auth";
+import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar/SearchBar";
 import TokenPurchase from "./TokenPurchase";
 import { actionGetCorporateProfileSagaAction } from "../../../Store/Actions/SagaActions/CorporateProfileSagaActions";
@@ -29,7 +29,7 @@ const Header = (props) => {
   );
 
   const balance = useSelector((state) => state.DashboardReducer.balance);
-  console.log(balance , 'Selectorx');
+  console.log(balance, "Selectorx");
   const auth = useAuth();
 
   const [searchList, setSearchList] = useState([]);
@@ -59,15 +59,17 @@ const Header = (props) => {
     }
   }, [auth.tokenPurchase]);
 
-  useEffect (()=>{
-    dispatch(actionGetCorporateProfileSagaAction({
-      callback : getResponse
-    }));
-  },[])
+  useEffect(() => {
+    dispatch(
+      actionGetCorporateProfileSagaAction({
+        callback: getResponse,
+      })
+    );
+  }, []);
 
-  const getResponse= (data) => {
-    localStorage.setItem('stakeholderID',data?.stakeholderID)
-  }
+  const getResponse = (data) => {
+    localStorage.setItem("stakeholderID", data?.stakeholderID);
+  };
 
   const onChange = (name, value, errorMessage = undefined) => {
     switch (name) {
@@ -82,17 +84,17 @@ const Header = (props) => {
 
   let tokesDataView = true;
 
-  useEffect(()=>{
-    dispatch(actionGetBulkTokenNumberRequest({callback: tokensCount}))
-  },[])
- 
-  const tokensCount = (data) =>{
- console.log(data, 'dataTOKENnUm')
-  }
+  useEffect(() => {
+    dispatch(actionGetBulkTokenNumberRequest({ callback: tokensCount }));
+  }, []);
+
+  const tokensCount = (data) => {
+    console.log(data, "dataTOKENnUm");
+  };
 
   useEffect(() => {
     if (tokesDataView) {
-      dispatch( getTokensSagaAction({ callback: tokenBalance }));
+      dispatch(getTokensSagaAction({ callback: tokenBalance }));
       //dispatch(actionGetSearchCorporates({ apiPayloadRequest: searchInputs, callback: getSeachDataResult }))
     }
     return () => {
@@ -101,7 +103,7 @@ const Header = (props) => {
   }, []);
 
   const tokenBalance = (data) => {
-    console.log(data , 'CorpBalance')
+    console.log(data, "CorpBalance");
     data ? settokensData(data) : settokensData([]);
   };
 
@@ -110,9 +112,9 @@ const Header = (props) => {
   };
 
   const onHistory = () => {
-    history('/history');
-    onMore(); 
-  }
+    history("/history");
+    onMore();
+  };
 
   return (
     <>
@@ -189,7 +191,7 @@ const Header = (props) => {
                     src={
                       profileDataGet?.profilePicture
                         ? "data:image/jpg;base64," +
-                        profileDataGet?.profilePicture
+                          profileDataGet?.profilePicture
                         : null
                     }
                     className="profile-pic-img"
@@ -243,7 +245,6 @@ const Header = (props) => {
                 style={{ background: "#0367b9" }}
                 onClick={props.logout}
               >
-                
                 <div className="more-content" style={{ color: "white" }}>
                   {/* <LogoutIcon
                     style={{
@@ -258,16 +259,16 @@ const Header = (props) => {
             </div>
           ) : null}
         </div>
-      </div >
+      </div>
 
       {/* Modal */}
 
-      < Modal
+      <Modal
         show={show}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
-      //ref={show}
+        //ref={show}
       >
         <Modal.Header closeButton>
           <Modal.Title>Add Tokens</Modal.Title>
@@ -284,7 +285,7 @@ const Header = (props) => {
 
           <TokenPurchase handleClose={handleClose} />
         </Modal.Body>
-      </Modal >
+      </Modal>
     </>
   );
 };

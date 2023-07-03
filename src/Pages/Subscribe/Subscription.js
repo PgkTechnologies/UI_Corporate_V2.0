@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import PreLoader from "../../utils/PreLoader";
+import PreLoader from "../../Utils/PreLoader";
 import { useDispatch, useSelector } from "react-redux";
 import { Badge, Tab, Tabs } from "@material-ui/core";
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
-import DnsRoundedIcon from '@mui/icons-material/DnsRounded';
+import DnsRoundedIcon from "@mui/icons-material/DnsRounded";
 import { AccountCircle } from "@mui/icons-material";
 import GroupsIcon from "@mui/icons-material/Groups";
-import AttachEmailRoundedIcon from '@mui/icons-material/AttachEmailRounded';
-import { actionSagaGetCorporateUniversitySubscriptionRequest } from '../../Store/Actions/SagaActions/SubscriptionSagaAction'
+import AttachEmailRoundedIcon from "@mui/icons-material/AttachEmailRounded";
+import { actionSagaGetCorporateUniversitySubscriptionRequest } from "../../Store/Actions/SagaActions/SubscriptionSagaAction";
 import CampusSubscription from "./SubscriptionTypes/CampusSubscription";
 import UniversityItem from "./SubscriptionTypes/UniversityItem";
 import OtherInformationItem from "./SubscriptionTypes/OtherInformationItem";
@@ -15,8 +15,7 @@ import StudentListItem from "./SubscriptionTypes/StudentListItem";
 import ProfileItem from "./SubscriptionTypes/ProfileItem";
 
 const SubscriptionHistory = () => {
-
-  const [subscriptionList, setSubscriptionList] = useState([])
+  const [subscriptionList, setSubscriptionList] = useState([]);
   const dispatch = useDispatch();
   const apiStatus = useSelector((state) => state.loginReducer?.apiStatus);
 
@@ -40,7 +39,6 @@ const SubscriptionHistory = () => {
     );
   }, []);
 
-
   return (
     <div className="container-body">
       <div className="row">
@@ -55,7 +53,7 @@ const SubscriptionHistory = () => {
         >
           <Tab
             icon={
-              <Badge color="error" >
+              <Badge color="error">
                 <SchoolRoundedIcon />
               </Badge>
             }
@@ -68,9 +66,8 @@ const SubscriptionHistory = () => {
           />
           <Tab
             icon={
-              <Badge color="error" >
+              <Badge color="error">
                 <AttachEmailRoundedIcon />
-
               </Badge>
             }
             label={tabValue === 1 ? "OtherInformation" : ""}
@@ -83,7 +80,7 @@ const SubscriptionHistory = () => {
 
           <Tab
             icon={
-              <Badge color="error" >
+              <Badge color="error">
                 <GroupsIcon />
               </Badge>
             }
@@ -96,7 +93,7 @@ const SubscriptionHistory = () => {
           />
           <Tab
             icon={
-              <Badge color="error" >
+              <Badge color="error">
                 <AccountCircle />
               </Badge>
             }
@@ -107,27 +104,24 @@ const SubscriptionHistory = () => {
               minWidth: "12%",
             }}
           />
-
         </Tabs>
       </div>
       <div className="student-content">
-        {
-          tabValue === 0 && (
-            <div className="univ-subscription-list-container d-flex flex-column align-items-center w-full">
-              {!subscriptionList?.some(
-                (item) => item?.generalNote === "Campus Hiring"
-              ) && "No subscriptions subscribed yet"}
-              {subscriptionList.length &&
-                subscriptionList.map((item, index) => {
-                  if (item?.generalNote === "Campus Hiring") {
-                    return <CampusSubscription item={item} index={index} />;
-                  }
-                })}
-            </div>
-          )}
-        {
-          tabValue === 1 && (
-            <div className="univ-subscription-list-container d-flex flex-column align-items-center w-full">
+        {tabValue === 0 && (
+          <div className="univ-subscription-list-container d-flex flex-column align-items-center w-full">
+            {!subscriptionList?.some(
+              (item) => item?.generalNote === "Campus Hiring"
+            ) && "No subscriptions subscribed yet"}
+            {subscriptionList.length &&
+              subscriptionList.map((item, index) => {
+                if (item?.generalNote === "Campus Hiring") {
+                  return <CampusSubscription item={item} index={index} />;
+                }
+              })}
+          </div>
+        )}
+        {tabValue === 1 && (
+          <div className="univ-subscription-list-container d-flex flex-column align-items-center w-full">
             {!subscriptionList?.some(
               (item) =>
                 !["Other Information", "University Information"].includes(
@@ -152,10 +146,9 @@ const SubscriptionHistory = () => {
                 }
               })}
           </div>
-          )}
-        {
-          tabValue === 2 && (
-            <div className="univ-subscription-list-container d-flex flex-column align-items-center w-full">
+        )}
+        {tabValue === 2 && (
+          <div className="univ-subscription-list-container d-flex flex-column align-items-center w-full">
             {!subscriptionList?.some(
               (item) => item?.generalNote === "Student Database"
             ) && "No subscriptions subscribed yet"}
@@ -169,10 +162,9 @@ const SubscriptionHistory = () => {
                 }
               })}
           </div>
-          )}
-        {
-          tabValue === 3 && (
-            <div className="univ-subscription-list-container d-flex flex-column align-items-center w-full">
+        )}
+        {tabValue === 3 && (
+          <div className="univ-subscription-list-container d-flex flex-column align-items-center w-full">
             {!subscriptionList?.some(
               (item) => item?.generalNote === "Profile"
             ) && "No subscriptions subscribed yet"}
@@ -187,10 +179,10 @@ const SubscriptionHistory = () => {
                 }
               })}
           </div>
-          )}
+        )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default SubscriptionHistory;

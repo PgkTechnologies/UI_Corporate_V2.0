@@ -5,44 +5,41 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Nav, Row, Tab } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { actionSagaGetCorporateSingleSubscriptionRequest } from "../../../../Store/Actions/SagaActions/SubscriptionSagaAction";
-import PreLoader from "../../../../utils/PreLoader";
-
+import PreLoader from "../../../../Utils/PreLoader";
 
 const OtherInformationItems = (props) => {
+  const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(false);
+  const [otherInfo, setOtherInfo] = useState();
 
-    const dispatch = useDispatch();
-    const [showModal, setShowModal] = useState(false);
-    const [otherInfo, setOtherInfo] = useState();
-
-    const apiStatus = useSelector(state => state.DashboardReducer.apiStatus);
-    const getPublishedData = (id) => {
-        dispatch(actionSagaGetCorporateSingleSubscriptionRequest({
-            apiPayloadRequest: {
-                type: 'OTHER_INFORMATION',
-                id: id
-            },
-            callback: (response) => {
-                setOtherInfo(response);
-                setShowModal(true);
-            }
-        }));
-    }
-
-    const getJOBS = props?.universityInfo?.publishedData?.filter(
-        (items) => items?.generalNote === "Other Information"
+  const apiStatus = useSelector((state) => state.DashboardReducer.apiStatus);
+  const getPublishedData = (id) => {
+    dispatch(
+      actionSagaGetCorporateSingleSubscriptionRequest({
+        apiPayloadRequest: {
+          type: "OTHER_INFORMATION",
+          id: id,
+        },
+        callback: (response) => {
+          setOtherInfo(response);
+          setShowModal(true);
+        },
+      })
     );
-    console.log('iiiii im ereee')
+  };
 
-    return (
-        <>
+  const getJOBS = props?.universityInfo?.publishedData?.filter(
+    (items) => items?.generalNote === "Other Information"
+  );
+  console.log("iiiii im ereee");
 
-            <div >
-                <p >Other information </p>
-               
-            </div>
-
-        </>
-    );
+  return (
+    <>
+      <div>
+        <p>Other information </p>
+      </div>
+    </>
+  );
 };
 
 export default OtherInformationItems;

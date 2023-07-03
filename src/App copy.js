@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Login from "./Pages/Formss/Corporate/Login";
 import { Suspense } from "react";
 import { Route, Routes, useParams } from "react-router-dom";
 import RequireAuth from "./Utils/RequireAuth";
@@ -38,7 +39,7 @@ function App() {
                 element={route.component}
               />
             ))}
-          
+          ;
         </Route>
         <Route
           element={
@@ -60,7 +61,7 @@ function App() {
                 location={route.path}
               />
             ))}
-          
+          ;
         </Route>
       </Routes>
       {/* </ErrorBoundary> */}

@@ -12,7 +12,7 @@ import App from "./App";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { AuthProvider } from "./utils/Auth";
+import { AuthProvider } from "./Utils/Auth";
 
 // Middleware: Redux Saga
 const sagaMiddleware = createSagaMiddleware();

@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const Login = React.lazy(() => import("./Pages/Formss/Corporate/Login"));
 
 const Register = React.lazy(() =>
@@ -10,8 +9,6 @@ const Register = React.lazy(() =>
 const CorporateSecondary = React.lazy(() =>
   import("./Pages/Formss/Corporate/Register/CorporateSecondary")
 );
-
-
 
 const CorporateContactPersonnel = React.lazy(() =>
   import("./Pages/Formss/Corporate/Register/CorporateContactPersonnel")
@@ -25,11 +22,9 @@ const RegistrationCompleted = React.lazy(() =>
   import("./Pages/Formss/Corporate/Register/RegistrationCompleted")
 );
 
-
 const CorporatePayment = React.lazy(() =>
   import("./Pages/Formss/Corporate/Register/CorporatePayment")
 );
-
 
 // const Payment = React.lazy(() => import("./Pages/Forms/Payment/"));
 // const StudentRegister = React.lazy(() =>
@@ -52,39 +47,60 @@ const Dashboard = React.lazy(() => import("./Pages/DashBoard/Dashboard"));
 const Profile = React.lazy(() => import("./Pages/Profile/ProfileMain"));
 const Jobs = React.lazy(() => import("./Pages/Jobs/Jobs"));
 
-const Subscription = React.lazy(() =>
-  import("./Pages/Subscribe/Subscription")
-);
+// const HiringCriteria = React.lazy(() =>
+//   import("./Pages/Dashboard/CreateJob/HiringCriteria/index")
+// );
+// const Jobs = React.lazy(() => import("./Pages/Dashboard/CreateJob/Jobs/Jobs"));
+// const NewJob = React.lazy(() => import('./Pages/Dashboard/CreateJob/Jobs/NewJob'));
+// const PublishProfile = React.lazy(() =>
+//   import("./Pages/Dashboard/Publish/PublishProfile")
+// );
+// const PublishOtherInformation = React.lazy(() =>
+//   import("./Pages/Dashboard/Publish/OtherInformation/PublishOtherInformation")
+// );
+// const PublishHiringCriteria = React.lazy(() =>
+//   import("./Pages/Dashboard/Publish/HiringCriteria/PublishHiringCriteria")
+// );
+// const PublishJobs = React.lazy(() =>
+//   import("./Pages/Dashboard/Publish/Jobs/PublishJobs")
+// );
+// const PublishHistory = React.lazy(() =>
+//   import("./Pages/Dashboard/Publish/PublishHistory/PublishHistory")
+// );
 
+const Subscription = React.lazy(() => import("./Pages/Subscribe/Subscription"));
+// const NewUniversity = React.lazy(() =>
+//   import("./Pages/Dashboard/Subscribe/NewUniversity/NewUniversity")
+// );
 const University = React.lazy(() =>
   import("./Pages/DashBoard/Subscribe/University/University")
 );
 
-const TransactionHistory =React.lazy(() =>
-import("./Pages/TransactionHistory/TransactionHistory"));
+const TransactionHistory = React.lazy(() =>
+  import("./Pages/TransactionHistory/TransactionHistory")
+);
 
 const Notifications = React.lazy(() =>
   import("./Pages/DashBoard/Notifications/Notifications")
 );
-const Analytics = React.lazy(() =>
-  import("./Pages/Analytics/Analytics"));
+const Analytics = React.lazy(() => import("./Pages/Analytics/Analytics"));
 
-const Requests = React.lazy(() =>
-  import("./Pages/Requests/Requests"));
+const Requests = React.lazy(() => import("./Pages/Requests/Requests"));
 
 const History = React.lazy(() => import("./Pages/TransactionHistory/History"));
-
- const Support = React.lazy(() => import("./Pages/DashBoard/Support/Support"));
-
- const TicketChatCmp = React.lazy(() => import('./Pages/DashBoard/Support/TicketChatCmp'));
-
-const ForgotPassword = React.lazy(() => import("./Pages/Formss/Corporate/ForgotPassword/ForgotPassword"));
-const Mike = React.lazy(() => import("./Pages/Formss/Corporate/Login/LoginForm"));
-
+const Support = React.lazy(() => import("./Pages/DashBoard/Support/Support"));
+const TicketChatCmp = React.lazy(() =>
+  import("./Pages/DashBoard/Support/TicketChatCmp")
+);
+// const UniversityStudents = React.lazy(() => import("./Pages/Dashboard/Subscribe/University/UniversityStudents/UniversityStudents"));
+const ForgotPassword = React.lazy(() =>
+  import("./Pages/Formss/Corporate/ForgotPassword/ForgotPassword")
+);
+const Mike = React.lazy(() =>
+  import("./Pages/Formss/Corporate/Login/LoginForm")
+);
 
 const routes = [
-
-
   {
     path: "/",
     strict: true,
@@ -174,20 +190,93 @@ const routes = [
     component: <Profile />,
   },
   {
-    path:"/jobs",
-    strict:true,
-    role:"dashboard",
-    name:"jobs",
-    component: <Jobs/>
+    path: "/jobs",
+    strict: true,
+    exact: true,
+    role: "dashboard",
+    name: "jobs",
+    component: <Jobs />,
   },
-    {
-      path: "/dashboard/subscribe/newuniversity/:id",
-      strict: true,
-      exact: true,
-      role: "dashboard",
-      name: "University",
-      component:<University/>,
-    },
+  //   {
+  //     path: "/dashboard/createjob/hiring",
+  //     strict: true,
+  //     exact: true,
+  //     role: "dashboard",
+  //     name: "HiringCriteria",
+  //     component: <HiringCriteria/>,
+  //   },
+  //   {
+  //     path: "/dashboard/createjob/jobs",
+  //     strict: true,
+  //     exact: true,
+  //     role: "dashboard",
+  //     name: "Jobs",
+  //     component: <NewJob/>,
+  //   },
+  //   {
+  //     path: "/dashboard/publish/profile",
+  //     strict: true,
+  //     exact: true,
+  //     role: "dashboard",
+  //     name: "Publish Profile",
+  //     component: <PublishProfile/>,
+  //   },
+  //   {
+  //     path: "/dashboard/publish/otherinformation",
+  //     strict: true,
+  //     exact: true,
+  //     role: "dashboard",
+  //     name: "Publish Other Information",
+  //     component: <PublishOtherInformation/>,
+  //   },
+  //   {
+  //     path: "/dashboard/publish/hiring-criteria",
+  //     strict: true,
+  //     exact: true,
+  //     role: "dashboard",
+  //     name: "Publish Hiring Criteria",
+  //     component: <PublishHiringCriteria/>,
+  //   },
+  //   {
+  //     path: "/dashboard/publish/jobs",
+  //     strict: true,
+  //     exact: true,
+  //     role: "dashboard",
+  //     name: "Publish Jobs",
+  //     component: <PublishJobs/>,
+  //   },
+  //   {
+  //     path: "/dashboard/publish-history",
+  //     strict: true,
+  //     exact: true,
+  //     role: "dashboard",
+  //     name: "Publish History",
+  //     component: <PublishHistory/>,
+  //   },
+  //   {
+  //     path: "/dashboard/subscribe/newuniversity",
+  //     strict: true,
+  //     exact: true,
+  //     role: "dashboard",
+  //     name: "NewUniversity",
+  //     component: <NewUniversity/>,
+  //   },
+  {
+    path: "/dashboard/subscribe/newuniversity/:id",
+    strict: true,
+    exact: true,
+    role: "dashboard",
+    name: "University",
+    component: <University />,
+  },
+  //   {
+  //     path: "/dashboard/subscribe/students/:id",
+  //     strict: true,
+  //     exact: true,
+  //     role: "dashboard",
+  //     name: "University",
+  //     component: <UniversityStudents/>,
+  //   },
   {
     path: "subscription",
     strict: true,
@@ -226,7 +315,7 @@ const routes = [
     exact: true,
     role: "dashboard",
     name: "History",
-    component: <History/>,
+    component: <History />,
   },
 
   {
@@ -250,11 +339,9 @@ const routes = [
     strict: true,
     exact: true,
     role: "dashboard",
-    name: 'Support',
-    component: <TicketChatCmp />
+    name: "Support",
+    component: <TicketChatCmp />,
   },
 ];
-
-
 
 export default routes;
