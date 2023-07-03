@@ -14,7 +14,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import history from './@history';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import { AuthProvider } from './utils/Auth';
 
@@ -37,27 +37,24 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store} >
-      <Router
-        history={history} basename="/"
-      >
+      <BrowserRouter>
         <AuthProvider>
-        <App />
-        <ToastContainer
-          position="top-right"
-          autoClose={3500}
-          hideProgressBar
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          pauseOnHover
-          theme="dark"
-        />
+          <App />
+          <ToastContainer
+            position="top-right"
+            autoClose={3500}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            pauseOnHover
+            theme="dark"
+          />
         </AuthProvider>
-      </Router>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
-  // document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
