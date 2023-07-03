@@ -4,15 +4,16 @@ import CloseIcon from "@mui/icons-material/Close";
 // import { actionGetSearchCorporates } from "../../../../Store/Actions/SubscriptionActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import PreLoader from "../../../../utils/PreLoader";
+import PreLoader from "../../../../Utils/PreLoader";
 import { SubscribeSearchSagaAction } from "../../../../Store/Actions/SagaActions/SubscriptionSagaAction";
-
 
 const SearchBar = (props) => {
   const [filterdValues, setFilteredValues] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
   const dispatch = useDispatch();
-  const searchStatus = useSelector((state) => state?.loginReducer?.searchStatus);
+  const searchStatus = useSelector(
+    (state) => state?.loginReducer?.searchStatus
+  );
   const navigate = useNavigate();
   const size = 20;
   const page = 1;
@@ -22,7 +23,9 @@ const SearchBar = (props) => {
       getData = setTimeout(() => {
         dispatch(
           SubscribeSearchSagaAction({
-            apiPayloadRequest: wordEntered, page: page, size: size,
+            apiPayloadRequest: wordEntered,
+            page: page,
+            size: size,
             callback: getSeachDataResult,
           })
         );
@@ -76,43 +79,35 @@ const SearchBar = (props) => {
         style={{ width: "100%", background: "none" }}
         onChange={handleFilter}
       />
-      {searchStatus ? (
-        <div>
-          {/* <PreLoaderSmall/> */}
-          
-        </div>
-      ) : null}
+      {searchStatus ? <div>{/* <PreLoaderSmall/> */}</div> : null}
       <div className="search-results">
         {filterdValues?.length > 0
           ? filterdValues.map((result, index) => {
-            return (
-              <div
-                className="result"
-                key={index}
-                onClick={() => gotoSubscriprtion(result?.universityID)}
-              >
-                <div> {result.corporateName}</div>
-                <div style={{ fontSize: '20px' }}>{result.universityName}</div>
-                <div className="corp-search-logo">
-                  {
-                    result?.profilePicture !== null ?
+              return (
+                <div
+                  className="result"
+                  key={index}
+                  onClick={() => gotoSubscriprtion(result?.universityID)}
+                >
+                  <div> {result.corporateName}</div>
+                  <div style={{ fontSize: "20px" }}>
+                    {result.universityName}
+                  </div>
+                  <div className="corp-search-logo">
+                    {result?.profilePicture !== null ? (
                       <img
-                        src={
-                          "data:image/jpg;base64," +
-                          result?.profilePicture
-                        }
-                        height={'100%'}
-                        width={'100%'}
-                        style={{ borderRadius: '4px' }}
+                        src={"data:image/jpg;base64," + result?.profilePicture}
+                        height={"100%"}
+                        width={"100%"}
+                        style={{ borderRadius: "4px" }}
                       />
-                      :
-                      <AccountBalance style={{ fontSize: '45px' }} />
-                  }
-
+                    ) : (
+                      <AccountBalance style={{ fontSize: "45px" }} />
+                    )}
+                  </div>
                 </div>
-              </div>
-            );
-          })
+              );
+            })
           : null}
       </div>
       {wordEntered.length > 0 ? (

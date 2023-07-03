@@ -1,5 +1,5 @@
 import { call, takeLatest, put } from "redux-saga/effects";
-import Axios from "../../utils/Axios";
+import Axios from "../../Utils/Axios";
 import { toast } from "react-toastify";
 import {
   ACTION_GET_CORPORATE_NOTIFICATIONS_REQUEST,
@@ -67,7 +67,7 @@ function* getCorporateSingleNotificationRequest(action) {
   } catch (err) {
     if (err?.response) {
       // toast.error(err?.response?.data?.errors[0]?.message);
-      toast.warning('unprocessed Data')
+      toast.warning("unprocessed Data");
     } else {
       //toast.error("Something Wrong!", err?.message);
     }

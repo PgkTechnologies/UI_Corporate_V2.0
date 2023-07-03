@@ -1,20 +1,20 @@
 import AccountBalance from "@mui/icons-material/AccountBalance";
-import { getFormattedDate } from "../../../utils/utils";
+import { getFormattedDate } from "../../../Utils/utils";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { actionGetCorporateSingleNotificationRequest } from "../../../Store/Actions/SagaActions/NotificationsSagaAction";
 import { Modal, ModalBody } from "reactstrap";
-import CancelSharpIcon from '@mui/icons-material/CancelSharp';
+import CancelSharpIcon from "@mui/icons-material/CancelSharp";
 
 const CampusSubscription = (props) => {
-  console.log(props, 'PROPZ')
+  console.log(props, "PROPZ");
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const [hiringItem, setHiringItem] = useState();
 
   const getHiringItemById = (id) => {
-    console.log(id, 'nftIDDDDD');
+    console.log(id, "nftIDDDDD");
     if (id) {
       dispatch(
         actionGetCorporateSingleNotificationRequest({
@@ -23,17 +23,19 @@ const CampusSubscription = (props) => {
             notificationId: id,
           },
           callback: (response) => {
-            console.log(response.content, 'nftResponse')
-            console.log(response, 'completeNFT')
+            console.log(response.content, "nftResponse");
+            console.log(response, "completeNFT");
             console.log(JSON.parse(response.content), "content");
             const content = JSON.parse(response?.content);
             const contentMsg = response.content;
-            console.log(content?.requestContent ? content?.requestContent : contentMsg, 'conditionall state')
+            console.log(
+              content?.requestContent ? content?.requestContent : contentMsg,
+              "conditionall state"
+            );
 
             if (content?.requestContent === undefined) {
-              setHiringItem(contentMsg)
-            }
-            else {
+              setHiringItem(contentMsg);
+            } else {
               setHiringItem(
                 content?.requestContent ? content?.requestContent : content
               );
@@ -54,45 +56,56 @@ const CampusSubscription = (props) => {
           <AccountBalance />
         </div>
         <div>
-          <span style={{ paddingRight: '55px' }} >
-            Campus Drive Request {" "}
-          </span>
-          <span style={{ color: 'gray', paddingLeft: '155px', paddingRight: '35px' }}>|</span>
-          <span style={{ fontWeight: "bold" }}>
-            {props?.item?.publisherName}  {" "}
-          </span>
-          <span style={{ color: 'gray', paddingRight: '35px', paddingLeft: '35px' }}>|</span>
-          
-          <div style={{ marginTop: '5px', marginLeft: '900px' }} > 
-           <span
-            className="btn"
-            // style={{
-            //   paddingLeft: '35px',
-            //   padding: "7px",
-            //   background: "#044071",
-            //   borderRadius: '7px',
-            //   marginTop: '0px',
-            //   color: '#e6e6e6',
-            //   fontWeight: 'normal',
-            //   fontSize: ' 13px',
-            //   border: 'none',
-            //   cursor: 'pointer',
-
-            // }}
-            onClick={() => {
-              getHiringItemById(props?.item?.nftID);
+          <span style={{ paddingRight: "55px" }}>Campus Drive Request </span>
+          <span
+            style={{
+              color: "gray",
+              paddingLeft: "155px",
+              paddingRight: "35px",
             }}
           >
-            view More
+            |
           </span>
-          </div>
- 
-          <br />
-          <span style={{ paddingLeft: '450px', marginTop: '55px' }} > {props?.item?.location} </span>
+          <span style={{ fontWeight: "bold" }}>
+            {props?.item?.publisherName}{" "}
+          </span>
+          <span
+            style={{ color: "gray", paddingRight: "35px", paddingLeft: "35px" }}
+          >
+            |
+          </span>
 
+          <div style={{ marginTop: "5px", marginLeft: "900px" }}>
+            <span
+              className="btn"
+              // style={{
+              //   paddingLeft: '35px',
+              //   padding: "7px",
+              //   background: "#044071",
+              //   borderRadius: '7px',
+              //   marginTop: '0px',
+              //   color: '#e6e6e6',
+              //   fontWeight: 'normal',
+              //   fontSize: ' 13px',
+              //   border: 'none',
+              //   cursor: 'pointer',
+
+              // }}
+              onClick={() => {
+                getHiringItemById(props?.item?.nftID);
+              }}
+            >
+              view More
+            </span>
+          </div>
+
+          <br />
+          <span style={{ paddingLeft: "450px", marginTop: "55px" }}>
+            {" "}
+            {props?.item?.location}{" "}
+          </span>
 
           <div className="card-date-main">
-
             <div className="card-date">
               Received on {getFormattedDate(props?.item?.dateOfSubscription)}
             </div>
@@ -100,41 +113,34 @@ const CampusSubscription = (props) => {
         </div>
       </div>
 
-{/* //Css */}
+      {/* //Css */}
       {props?.item?.campusDriveStatus === "Accepted" ? (
         <div className="col-lg-3 col-sm-12  choice-btns ">
-          <span style={{ paddingRight: '15px' ,fontWeight: "bold" }} >Status {""}:</span>
-          <div
-            className="btn accepted"
-          >
-            Accepted
-          </div>
+          <span style={{ paddingRight: "15px", fontWeight: "bold" }}>
+            Status {""}:
+          </span>
+          <div className="btn accepted">Accepted</div>
         </div>
       ) : props?.item?.campusDriveStatus === "Pending" ? (
         <div className="col-lg-3 col-sm-12 choice-btns">
-          <span style={{ paddingRight: '15px' ,fontWeight: "bold"}} >Status {""}:</span>
-          <div
-            className="btn pending"
-          >
-            Pending
-          </div>
+          <span style={{ paddingRight: "15px", fontWeight: "bold" }}>
+            Status {""}:
+          </span>
+          <div className="btn pending">Pending</div>
         </div>
       ) : (
         <div className="col-lg-3 col-sm-12 choice-btns">
-          <span style={{ paddingRight: '5px' ,fontWeight: "bold" }} >Status{""}:</span>
-          <div
-            className="btn pending"
-          >
-            Sent
-          </div>
+          <span style={{ paddingRight: "5px", fontWeight: "bold" }}>
+            Status{""}:
+          </span>
+          <div className="btn pending">Sent</div>
         </div>
       )}
-      {console.log(hiringItem, 'hiring Item Vaule')}
-      {console.log(showModal, 'modalDispayCheck')}
+      {console.log(hiringItem, "hiring Item Vaule")}
+      {console.log(showModal, "modalDispayCheck")}
 
       {showModal && (
-
-        <Modal isOpen={showModal} >
+        <Modal isOpen={showModal}>
           <ModalBody>
             <CancelSharpIcon
               onClick={() => {
@@ -146,11 +152,15 @@ const CampusSubscription = (props) => {
               <div className="modal-header d-block" style={{ padding: "26px" }}>
                 <span
                   className="modal-title"
-                  style={{ fontSize: "1.1rem", padding: 0 }}>
-                  Mail sent to <span style={{ fontWeight: "bold" }} > {props?.item?.publisherName}</span> Requesting Campus
-                  Placement Drive
+                  style={{ fontSize: "1.1rem", padding: 0 }}
+                >
+                  Mail sent to{" "}
+                  <span style={{ fontWeight: "bold" }}>
+                    {" "}
+                    {props?.item?.publisherName}
+                  </span>{" "}
+                  Requesting Campus Placement Drive
                 </span>
-
               </div>
               <div className="modal-body">
                 <div className="card d-none">
@@ -191,7 +201,8 @@ const CampusSubscription = (props) => {
                 </div>
                 <div
                   className="card"
-                  style={{ minWidth: "100%", padding: "20px" }}>
+                  style={{ minWidth: "100%", padding: "20px" }}
+                >
                   {console.log(hiringItem?.emailBody, "jkhgj")}
                   <textarea
                     name="emailBody"
@@ -201,18 +212,16 @@ const CampusSubscription = (props) => {
                       minHeight: "400px",
                     }}
                     defaultValue={hiringItem?.emailBody}
-                  //   readOnly
+                    //   readOnly
                   />
                 </div>
               </div>
             </div>
-
           </ModalBody>
         </Modal>
       )}
-
     </div>
-  )
-}
+  );
+};
 
 export default CampusSubscription;

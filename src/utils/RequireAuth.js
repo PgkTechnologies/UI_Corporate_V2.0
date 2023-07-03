@@ -6,9 +6,9 @@ function RequireAuth({ children }) {
   const auth = useAuth();
   const location = useLocation();
   //console.log(location, "LOOOOO")
-  console.log(useAuth, "CHECK NAV")
+  console.log(useAuth, "CHECK NAV");
   if (!auth.token) {
-    return <Navigate to="/" state={{path: location.pathname}}/>;
+    return <Navigate to="/" state={{ path: location.pathname }} />;
   }
   return children;
 }

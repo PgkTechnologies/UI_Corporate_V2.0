@@ -1,5 +1,5 @@
 import { call, takeLatest, put } from "redux-saga/effects";
-import Axios from "../../../utils/Axios";
+import Axios from "../../../Utils/Axios";
 import { toast } from "react-toastify";
 import {
   ACTION_GET_CAMPUS_DRIVE_DEFINE_JOBS_LIST_REQUEST,
@@ -24,7 +24,7 @@ import { actionUpdateGlobalLoaderSagaAction } from "../../Actions/SagaActions/Co
 const getDefineJobsListRequest = (campusDriveId) => {
   //console.log(campusDriveId, 'Call ID')
   const offCamp = campusDriveId.slice(0, 2);
-  let URL = `/cdj/job/all/${campusDriveId}`
+  let URL = `/cdj/job/all/${campusDriveId}`;
   // if (offCamp === "CF") {
   //   URL = "/p/crp/createJob/all";
   // } else {
@@ -636,7 +636,6 @@ export default function* DefineJobsWatcherSaga() {
     publishCampusDriveJobsRequestSaga
   );
 
-  
   yield takeLatest(
     ACTION_GET_CAMPUS_DRIVE_STUDENTS_LIST_BY_JOB_ID_REQUEST,
     getCampusDriveStudentsListByJobIdRequest
