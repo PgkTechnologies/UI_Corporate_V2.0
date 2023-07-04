@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Suspense } from "react";
 import { Route, Routes, useParams } from "react-router-dom";
-import RequireAuth from "./Utils/RequireAuth";
+import RequireAuth from "./utils/RequireAuth";
 import DashboardLayout from "./Components/Layout/DashboardLayout";
 import RegisterLayout from "./Components/Layout/RegisterLayout";
 import { useAuth } from "./Utils/Auth";
