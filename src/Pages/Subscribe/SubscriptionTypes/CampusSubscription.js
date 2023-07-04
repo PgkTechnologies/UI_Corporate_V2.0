@@ -1,10 +1,10 @@
 import AccountBalance from "@mui/icons-material/AccountBalance";
-import { getFormattedDate } from "../../../Utils/utils";
+import { getFormattedDate } from "../../../Utils/Utils";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { actionGetCorporateSingleNotificationRequest } from "../../../Store/Actions/SagaActions/NotificationsSagaAction";
-import { Modal, ModalBody } from "reactstrap";
+//import { Modal, ModalBody } from "reactstrap";
 import CancelSharpIcon from "@mui/icons-material/CancelSharp";
 
 const CampusSubscription = (props) => {
@@ -139,7 +139,7 @@ const CampusSubscription = (props) => {
       {console.log(hiringItem, "hiring Item Vaule")}
       {console.log(showModal, "modalDispayCheck")}
 
-      {showModal && (
+      {/* {showModal && (
         <Modal isOpen={showModal}>
           <ModalBody>
             <CancelSharpIcon
@@ -219,7 +219,7 @@ const CampusSubscription = (props) => {
             </div>
           </ModalBody>
         </Modal>
-      )}
+      )} */}
     </div>
   );
 };

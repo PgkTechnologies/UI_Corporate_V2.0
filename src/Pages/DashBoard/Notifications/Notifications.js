@@ -5,7 +5,7 @@ import {
 } from "@mui/icons-material";
 import moment from "moment";
 import React, { useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
@@ -19,17 +19,17 @@ const Notifications = () => {
   const dispatch = useDispatch();
   const myRef = useRef();
   const size = 30;
-
   const [page, setPage] = useState(0);
   // const notifications = useSelector((state) => state.DashboardReducer.notifications);
   const [notifications, setNotifications] = useState([]);
   const [filterdNtf, setFilteredNtf] = useState([]);
-  const [totalCount, setTotalCount] = useState(0);
+  const [totalCount, setTotalCount] = useState(1);
   const [selectedNotification, setSelectedNotification] = useState(null);
   const [readNotifications, setReadNotifications] = useState([]);
 
   useEffect(() => {
-    if (page !== 0) {
+    console.log(page, "PPP");
+    if (page > 1) {
       dispatch(
         actionGetStudentNotificationRequest({
           size: size,
@@ -42,6 +42,16 @@ const Notifications = () => {
     // setSelectedOpt('ALL')
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
+
+  useEffect(() => {
+    dispatch(
+      actionGetStudentNotificationRequest({
+        size: size,
+        page: 1,
+        callback: getResponse,
+      })
+    );
+  }, []);
 
   const getResponse = (dataList) => {
     if (dataList?.getAllNotifications?.length) {
@@ -187,14 +197,20 @@ const Notifications = () => {
     toast.success("Marked As Read");
   };
 
+  var isIntersecting = true;
+
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      if (entry.isIntersecting) {
-        setPage((prev) => prev + 0.5);
-      }
-    });
-    observer.observe(myRef.current);
+    if (isIntersecting) {
+      const observer = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          setPage((prev) => prev + 1);
+        }
+      });
+      observer.observe(myRef.current);
+    }
+
+    return () => (isIntersecting = false);
   }, []);
 
   function getFormattedDate(date) {
@@ -279,7 +295,7 @@ const Notifications = () => {
           <div style={{ display: "flex" }}>
             <div>
               {filterdNtf?.map((item, index) => (
-                <div className="container justify-content-start">
+                <div className="container justify-content-start" key={index}>
                   {(item?.notificationRead === true && item?.receiverID) ||
                   (item?.readNotifications?.filter(
                     (data) => data?.notificationId === item?.notificationId

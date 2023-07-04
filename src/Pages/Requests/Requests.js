@@ -11,9 +11,9 @@ import {
 import { useDispatch } from "react-redux";
 import moment from "moment";
 import { AccountBalance } from "@mui/icons-material";
-import { getFormattedDate } from "../../Utils/utils";
+import { getFormattedDate } from "../../Utils/Utils";
 import { toast } from "react-toastify";
-import { ModalBody, Modal } from "reactstrap";
+//import { ModalBody, Modal } from "reactstrap";
 import CancelSharpIcon from "@mui/icons-material/CancelSharp";
 
 const Requests = (props) => {
@@ -284,7 +284,7 @@ const Requests = (props) => {
         </div>
       )}
 
-      {showModal && (
+      {/* {showModal && (
         <Modal isOpen={showModal}>
           <ModalBody>
             {notificationStatus === "PRE-REJECT" && (
@@ -410,7 +410,7 @@ const Requests = (props) => {
             )}
           </ModalBody>
         </Modal>
-      )}
+      )} */}
     </div>
   );
 };

@@ -1,80 +1,97 @@
-import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { actionSagaGetCorporateSingleSubscriptionRequest } from '../../../Store/Actions/SagaActions/SubscriptionSagaAction';
-import { Modal, ModalBody } from 'reactstrap';
+import AccountCircleSharpIcon from "@mui/icons-material/AccountCircleSharp";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { actionSagaGetCorporateSingleSubscriptionRequest } from "../../../Store/Actions/SagaActions/SubscriptionSagaAction";
+//import { Modal, ModalBody } from "reactstrap";
 import moment from "moment";
-import CancelSharpIcon from '@mui/icons-material/CancelSharp';
-import LocalLibraryRoundedIcon from '@mui/icons-material/LocalLibraryRounded';
+import CancelSharpIcon from "@mui/icons-material/CancelSharp";
+import LocalLibraryRoundedIcon from "@mui/icons-material/LocalLibraryRounded";
 
 const ProfileItem = (props) => {
+  const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(false);
+  const [profileInfo, setProfileInfo] = useState();
 
-    const dispatch = useDispatch();
-    const [showModal, setShowModal] = useState(false);
-    const [profileInfo, setProfileInfo] = useState();
+  const getPublishedData = (id) => {
+    dispatch(
+      actionSagaGetCorporateSingleSubscriptionRequest({
+        apiPayloadRequest: {
+          type: "PROFILE",
+          id: id,
+        },
+        callback: (response) => {
+          setProfileInfo(JSON.parse(response)?.programs);
+          setShowModal(true);
+        },
+      })
+    );
+  };
 
-    const getPublishedData = (id) => {
-        dispatch(actionSagaGetCorporateSingleSubscriptionRequest({
-            apiPayloadRequest: {
-                type: 'PROFILE',
-                id: id
-            },
-            callback: (response) => {
-                setProfileInfo(JSON.parse(response)?.programs);
-                setShowModal(true);
-            }
-        }));
-    }
-
-    return (
-        <div className="cards-border" key={props.index}>
-            <div className="col-lg-9 col-sm-12 card-content">
-                <div className="icon" style={{ marginRight: "20px" }}>
-                    <AccountCircleSharpIcon />
-                </div>
-                <div>
-                    <span style={{ paddingRight: '55px' }} >
-                        {props?.item?.generalNote}
-                    </span>
-                    <span style={{ color: 'gray', paddingLeft: '155px', paddingRight: '35px' }}>|</span>
-                    <span style={{ fontWeight: "bold" }}>
-                        {props?.item?.publisherName}  {" "}
-                    </span>
-                    <span style={{ color: 'gray', paddingRight: '35px', paddingLeft: '35px' }}>|</span>
-                    <div style={{ marginTop: '5px', marginLeft: '900px' }} >  <span
-                        style={{
-                            paddingLeft: '35px',
-                            padding: "7px",
-                            background: "#044071",
-                            borderRadius: '7px',
-                            marginTop: '0px',
-                            color: '#e6e6e6',
-                            fontWeight: 'normal',
-                            fontSize: ' 13px',
-                            border: 'none',
-                            cursor: 'pointer',
-
-                        }}
-                        onClick={() => {
-                            // getHiringItemById(props?.item?.nftID);
-                            if (props?.item?.isSubscribed) {
-                                getPublishedData(props?.item?.publishID);
-                            } else if (props?.getDetails) {
-                                getPublishedData(props?.item?.publishID ? props?.item?.publishID : props?.item?.publishId);
-                            } else {
-                                if (props?.subscribeHandler) {
-                                    props.subscribeHandler();
-                                }
-                            }
-                        }}
-                    >
-                        Details
-                    </span>
-                    </div>
-
-                </div>
-            </div>
-            {showModal &&
+  return (
+    <div className="cards-border" key={props.index}>
+      <div className="col-lg-9 col-sm-12 card-content">
+        <div className="icon" style={{ marginRight: "20px" }}>
+          <AccountCircleSharpIcon />
+        </div>
+        <div>
+          <span style={{ paddingRight: "55px" }}>
+            {props?.item?.generalNote}
+          </span>
+          <span
+            style={{
+              color: "gray",
+              paddingLeft: "155px",
+              paddingRight: "35px",
+            }}
+          >
+            |
+          </span>
+          <span style={{ fontWeight: "bold" }}>
+            {props?.item?.publisherName}{" "}
+          </span>
+          <span
+            style={{ color: "gray", paddingRight: "35px", paddingLeft: "35px" }}
+          >
+            |
+          </span>
+          <div style={{ marginTop: "5px", marginLeft: "900px" }}>
+            {" "}
+            <span
+              style={{
+                paddingLeft: "35px",
+                padding: "7px",
+                background: "#044071",
+                borderRadius: "7px",
+                marginTop: "0px",
+                color: "#e6e6e6",
+                fontWeight: "normal",
+                fontSize: " 13px",
+                border: "none",
+                cursor: "pointer",
+              }}
+              onClick={() => {
+                // getHiringItemById(props?.item?.nftID);
+                if (props?.item?.isSubscribed) {
+                  getPublishedData(props?.item?.publishID);
+                } else if (props?.getDetails) {
+                  getPublishedData(
+                    props?.item?.publishID
+                      ? props?.item?.publishID
+                      : props?.item?.publishId
+                  );
+                } else {
+                  if (props?.subscribeHandler) {
+                    props.subscribeHandler();
+                  }
+                }
+              }}
+            >
+              Details
+            </span>
+          </div>
+        </div>
+      </div>
+      {/* {showModal &&
                 <Modal isOpen={showModal} >
                     <ModalBody>
                         <div className={'mail-modal'}>
@@ -120,9 +137,9 @@ const ProfileItem = (props) => {
                         </div>
                     </ModalBody>
                 </Modal>
-            }
-        </div>
-    )
-}
+            } */}
+    </div>
+  );
+};
 
 export default ProfileItem;
