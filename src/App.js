@@ -41,7 +41,6 @@ function App() {
                 element={route.component}
               />
             ))}
-          ;
         </Route>
         <Route
           element={
@@ -63,7 +62,6 @@ function App() {
                 location={route.path}
               />
             ))}
-          ;
         </Route>
       </Routes>
       {/* </ErrorBoundary> */}
