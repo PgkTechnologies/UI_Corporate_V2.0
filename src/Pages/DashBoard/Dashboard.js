@@ -81,7 +81,7 @@ const Dashboard = () => {
 
     return (
  
-        <div className="container-body" >
+        <div style={{marginTop:'70px'}} className="container-body" >
 
             <Section1 allData={proposalData}  goToProfile={goToProfile} />
 
