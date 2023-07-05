@@ -9,7 +9,7 @@ import {
   actionGetCitiesByStateNameRequest,
   actionGetCountryCodesSagaAction,
 } from "../../../../Store/Actions/SagaActions/CommonSagaActions";
-import { checkObjectProperties } from "../../../../Utils/Utils";
+import { checkObjectProperties } from "../../../../utils/utils";
 import CorporateSecondaryCmp from "./CorporateSecondaryCmp";
 
 const CorporateSecondary = () => {

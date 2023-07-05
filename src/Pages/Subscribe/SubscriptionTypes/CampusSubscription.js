@@ -1,5 +1,5 @@
 import AccountBalance from "@mui/icons-material/AccountBalance";
-import { getFormattedDate } from "../../../Utils/Utils";
+import { getFormattedDate } from "../../../utils/utils";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { toast } from "react-toastify";

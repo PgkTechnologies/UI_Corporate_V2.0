@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 import { toast } from "react-toastify";
-import Axios from "../../Utils/Axios";
+import Axios from "../../utils/Axios";
 // import { HiringSagaAction } from '../Actions/SagaActions/HiringSagaAction';
 import {
   ACTION_GET_CAMPUS_DRIVE_INVITES_REQUEST,

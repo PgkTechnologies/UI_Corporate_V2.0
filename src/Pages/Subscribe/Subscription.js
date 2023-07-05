@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import PreLoader from "../../Utils/PreLoader";
+import PreLoader from "../../utils/PreLoader";
 import { useDispatch, useSelector } from "react-redux";
 import { Badge, Tab, Tabs } from "@material-ui/core";
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";

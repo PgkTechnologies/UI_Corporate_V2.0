@@ -7,7 +7,7 @@ import {
   MenuItem,
 } from "@material-ui/core";
 import { useSelector } from "react-redux";
-import PreLoader from "../../Utils/PreLoader";
+import PreLoader from "../../utils/PreLoader";
 
 const AddressCmp = (props) => {
   const {

@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import { SaveCoprorateData } from "../../../../Store/Actions/CorporateActions/CorporateAction";
 import { actionGetDependencyLookUpsSagaAction } from "../../../../Store/Actions/SagaActions/CommonSagaActions";
 import { actionValidateReferralRequestSaga } from "../../../../Store/Actions/SagaActions/DashboardSaga/LoginSagaActions";
-import { checkObjectProperties } from "../../../../Utils/Utils";
+import { checkObjectProperties } from "../../../../utils/utils";
 import CorporatePrimaryCmp from "./CorporatePrimaryCmp";
 
 const Register = () => {

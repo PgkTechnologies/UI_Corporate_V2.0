@@ -11,7 +11,7 @@ import {
 import { useDispatch } from "react-redux";
 import moment from "moment";
 import { AccountBalance } from "@mui/icons-material";
-import { getFormattedDate } from "../../Utils/Utils";
+import { getFormattedDate } from "../../utils/utils";
 import { toast } from "react-toastify";
 //import { ModalBody, Modal } from "reactstrap";
 import CancelSharpIcon from "@mui/icons-material/CancelSharp";

@@ -1,5 +1,5 @@
 import { call, takeLatest } from "redux-saga/effects";
-import Axios from "../../Utils/Axios";
+import Axios from "../../utils/Axios";
 import { toast } from "react-toastify";
 import {
   ACTION_POST_VALIDATE_EMAIL_MOBILE_REQUEST,

@@ -1,4 +1,4 @@
-import Axios from "../../../Utils/Axios";
+import Axios from "../../../utils/Axios";
 import { toast } from "react-toastify";
 import * as actionTypes from "./actionTypes";
 

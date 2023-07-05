@@ -4,7 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 // import { actionGetSearchCorporates } from "../../../../Store/Actions/SubscriptionActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import PreLoader from "../../../../Utils/PreLoader";
+import PreLoader from "../../../../utils/PreLoader";
 import { SubscribeSearchSagaAction } from "../../../../Store/Actions/SagaActions/SubscriptionSagaAction";
 
 const SearchBar = (props) => {

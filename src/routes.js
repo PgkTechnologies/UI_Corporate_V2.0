@@ -24,7 +24,23 @@ const Dashboard = React.lazy(() => import("./Pages/DashBoard/Dashboard"));
 const Profile = React.lazy(() => import("./Pages/Profile/ProfileMain"));
 const Jobs = React.lazy(() => import("./Pages/Jobs/Jobs"));
 
+const CampusDriveList = React.lazy(() => import("./Pages/Jobs/onCampusJobs"));
+
+const DefineJobsMain = React.lazy(() => import("./Pages/CampusDrives/DefineJobs/DefineJobsMain"));
 const Subscription = React.lazy(() => import("./Pages/Subscribe/Subscription"));
+
+const Communication = React.lazy(() => import("./Pages/CampusDrives/Communication/Communication"));
+
+const CampusInterviews = React.lazy(() => import("./Pages/CampusDrives/CampusInterviews/CampusInterviews"));
+
+const OffCampusDriveCmp = React.lazy(() => import("./Pages/DashBoard/OffCampusDrive/OffCampusDriveCmp"));
+
+const OffDefineJobs = React.lazy(() => import("./Pages/DashBoard/OffCampusDrive/OffDefineJobs/OffDefineJobs"));
+
+const OffCommunication = React.lazy(() => import("./Pages/DashBoard/OffCampusDrive/OffCampusCommunication/OffCommunication"));
+
+const OffCampusInterviews = React.lazy(() => import("./Pages/DashBoard/OffCampusDrive/OffCampusInterviews/Sections/OffCampusInterviews"));
+
 
 const University = React.lazy(() =>
   import("./Pages/DashBoard/Subscribe/University/University")
@@ -50,9 +66,7 @@ const TicketChatCmp = React.lazy(() =>
 const ForgotPassword = React.lazy(() =>
   import("./Pages/Forms/Corporate/ForgotPassword/ForgotPassword")
 );
-const Mike = React.lazy(() =>
-  import("./Pages/Forms/Corporate/Login/LoginForm")
-);
+
 
 const routes = [
   {
@@ -119,14 +133,7 @@ const routes = [
     name: "CorporatePayment",
     component: <CorporatePayment />,
   },
-  {
-    path: "/myl",
-    strict: true,
-    exact: true,
-    role: "corporate",
-    name: "Login",
-    component: <Mike />,
-  },
+ 
   // DASHBOARD
   {
     path: "/dashboard",
@@ -152,6 +159,75 @@ const routes = [
     name: "jobs",
     component: <Jobs />,
   },
+  //Campus Drives 
+  
+  {
+    path: "/jobs/campus-drive",
+    strict: true,
+    exact: true,
+    role: "dashboard",
+    name: "CampusDriveList",
+    component: <CampusDriveList/>,
+  },
+  {
+    path: "/jobs/:campusDriveId/define-jobs/:universityId",
+    strict: true,
+    exact: true,
+    role: "dashboard",
+    name: "DefineJobs",
+    component: <DefineJobsMain/>,
+  },
+
+  {
+    path: "/jobs/:campusDriveId/communication/:universityId",
+    strict: true,
+    exact: true,
+    role: "dashboard",
+    name: "communication",
+    component: <Communication/>,
+  },
+  {
+    path: "/jobs/:campusDriveId/interviews/:universityId",
+    strict: true,
+    exact: true,
+    role: "dashboard",
+    name: "CampusInterviews",
+    component: <CampusInterviews/>,
+  },
+  {
+    path: "/dashboard/off-campus-drive",
+    strict: true,
+    exact: true,
+    role: "dashboard",
+    name: "OffCampusDrive",
+    component: <OffCampusDriveCmp/>,
+  },
+ 
+  {
+    path: "/dashboard/off-campus-drive/:offCampusDriveId/off-define-jobs/:universityId",
+    strict: true,
+    exact: true,
+    role: "dashboard",
+    name: "OffDefineJobs",
+    component: <OffDefineJobs/>,
+  },
+  {
+    path: "/dashboard/off-campus-drive/:offCampusDriveId/off-communication/:universityId",
+    strict: true,
+    exact: true,
+    role: "dashboard",
+    name: "OffCommunication",
+    component: <OffCommunication/>,
+  },
+{
+  path: "/dashboard/off-campus-drive/:offCampusDriveId/off-campus-interviews/:universityId",
+  strict: true,
+  exact: true,
+  role: "dashboard",
+  name: "OffCampusInterviews",
+  component: <OffCampusInterviews />,
+},
+
   {
     path: "/dashboard/subscribe/newuniversity/:id",
     strict: true,

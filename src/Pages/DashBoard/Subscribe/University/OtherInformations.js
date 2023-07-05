@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Nav, Row, Tab } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { actionSagaGetCorporateSingleSubscriptionRequest } from "../../../../Store/Actions/SagaActions/SubscriptionSagaAction";
-import PreLoader from "../../../../Utils/PreLoader";
+import PreLoader from "../../../../utils/PreLoader";
 
 const OtherInformationItems = (props) => {
   const dispatch = useDispatch();

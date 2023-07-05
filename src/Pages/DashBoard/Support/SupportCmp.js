@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { getFormattedDate } from "../../../Utils/Utils";
+import { getFormattedDate } from "../../../utils/utils";
 
 const SupportCmp = (props) => {
   const history = useNavigate();

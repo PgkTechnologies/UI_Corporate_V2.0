@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { actionGetS3AttachRequest } from "../../Store/Actions/SagaActions/CommonSagaActions";
 import { getTransactionHistoryRequest } from "../../Store/Actions/SagaActions/TransactionHistoryActions";
-import { getFormattedDate } from "../../Utils/Utils";
+import { getFormattedDate } from "../../utils/utils";
 
 const TransactionHistory = () => {
   const size = 5;

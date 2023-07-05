@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 // // import { getUserTokenData } from "../../../Store/Actions/ProfileActions";
 // // import { actionGetSearchCorporates } from "../../../Store/Actions/SubscriptionActions";
 // // import { SaveUniversityCriteriaData } from "../../../Store/Actions/UniversityActions";
-import { useAuth } from "../../../Utils/Auth";
+import { useAuth } from "../../../utils/Auth";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar/SearchBar";
 import TokenPurchase from "./TokenPurchase";

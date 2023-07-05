@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
 import { actionLogoutRequestSaga } from "../../Store/Actions/SagaActions/DashboardSaga/LoginSagaActions";
 import { Outlet } from "react-router-dom";
-import { useAuth } from "../../Utils/Auth";
+import { useAuth } from "../../utils/Auth";
 import Header from "../Common/Header/Header";
 import BodySideBar from "../Common/BodySidebar/BodySideBar";
 

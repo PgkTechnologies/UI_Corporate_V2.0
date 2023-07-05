@@ -6,7 +6,7 @@ import {
   ResendOtpAction,
   VerifyOtpAction,
 } from "../../../../Store/Actions/CorporateActions/CorporateAction";
-import { checkObjectProperties } from "../../../../Utils/Utils";
+import { checkObjectProperties } from "../../../../utils/utils";
 import AuthenticationCmp from "./AuthenticationCmp";
 
 const Authentication = () => {

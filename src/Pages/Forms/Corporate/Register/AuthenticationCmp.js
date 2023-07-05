@@ -2,7 +2,7 @@ import { Email, Phone } from "@mui/icons-material";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import PreLoader from "../../../../Utils/PreLoader";
+import PreLoader from "../../../../utils/PreLoader";
 
 const AuthenticationCmp = (props) => {
   const navigate = useNavigate();

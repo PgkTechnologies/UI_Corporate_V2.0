@@ -3,7 +3,7 @@ import SecurityIcon from "@mui/icons-material/Security";
 import { useEffect, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "@material-ui/core";
-import PreLoader from "../../Utils/PreLoader";
+import PreLoader from "../../utils/PreLoader";
 import { useDispatch, useSelector } from "react-redux";
 import BasicCmp from "./BasicCmp";
 import AddressCmp from "./AddressCmp";

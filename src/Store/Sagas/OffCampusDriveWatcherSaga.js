@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 import { toast } from "react-toastify";
-import Axios from "../../Utils/Axios";
+import Axios from "../../utils/Axios";
 import {
   ACTION_GET_ALL_OFF_CAMPUS_DRIVES_REQUEST,
   ACTION_POST_ADD_NEW_OFF_CAMPUS_REQUEST,

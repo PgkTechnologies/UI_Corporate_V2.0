@@ -5,11 +5,11 @@ import {
   SaveCoprorateData,
   SignupAction,
 } from "../../../../Store/Actions/CorporateActions/CorporateAction";
-import { checkObjectProperties } from "../../../../Utils/Utils";
+import { checkObjectProperties } from "../../../../utils/utils";
 import ContactPersonnelCmp from "./CorporateContactPersonnelCmp";
 import CryptoJS from "crypto-js";
 import { Checkbox } from "@material-ui/core";
-import PreLoader from "../../../../Utils/PreLoader";
+import PreLoader from "../../../../utils/PreLoader";
 
 const CorporateContactPersonnel = () => {
   const initialState = {

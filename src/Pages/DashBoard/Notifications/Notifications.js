@@ -12,7 +12,7 @@ import {
   actionGetStudentNotificationRequest,
   markNotifications,
 } from "../../../Store/Actions/SagaActions/CommonSagaActions";
-import PreLoader from "../../../Utils/PreLoader";
+import PreLoader from "../../../utils/PreLoader";
 
 const Notifications = () => {
   const history = useNavigate();

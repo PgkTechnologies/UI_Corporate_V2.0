@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { actionGetS3AttachRequest } from "../../../../Store/Actions/SagaActions/CommonSagaActions";
 import { actionPostAddOtherInformationRequest } from "../../../../Store/Actions/SagaActions/OtherInformationSagaActions";
-import { onGetFileInfo } from "../../../../Utils/Utils";
+import { onGetFileInfo } from "../../../../utils/utils";
 
 const PublishOtherInformation = () => {
   const initialData = {

@@ -1,6 +1,6 @@
 // import packages
 import { take, put, call, takeLatest } from "redux-saga/effects";
-import Axios from "../../Utils/Axios";
+import Axios from "../../utils/Axios";
 import { toast } from "react-toastify";
 import history from "../../@history";
 import {

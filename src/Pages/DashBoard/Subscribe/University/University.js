@@ -11,7 +11,7 @@ import {
 } from "../../../../Store/Actions/SagaActions/SubscriptionSagaAction";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import PreLoader from "../../../../Utils/PreLoader";
+import PreLoader from "../../../../utils/PreLoader";
 import { Button, Modal } from "react-bootstrap";
 import { Tab, Tabs } from "@material-ui/core";
 import OtherInformationItems from "./OtherInformations";

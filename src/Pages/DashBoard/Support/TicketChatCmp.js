@@ -9,7 +9,7 @@ import {
   actionGetTicketConvoSupport,
   actionPostSupport,
 } from "../../../Store/Actions/SagaActions/SupportSagaAction";
-import { getChatFormattedDate } from "../../../Utils/Utils";
+import { getChatFormattedDate } from "../../../utils/utils";
 
 const TicketChatCmp = () => {
   const history = useNavigate();

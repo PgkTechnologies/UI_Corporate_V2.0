@@ -3,11 +3,11 @@ import { TextField } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { actionLoginRequestSaga } from "../../../../Store/Actions/SagaActions/DashboardSaga/LoginSagaActions";
-import { checkObjectProperties } from "../../../../Utils/Utils";
+import { checkObjectProperties } from "../../../../utils/utils";
 import CryptoJS from "crypto-js";
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useAuth } from "../../../../Utils/Auth";
+import { useAuth } from "../../../../utils/Auth";
 
 const Login = () => {
   //same as login Form and cmp

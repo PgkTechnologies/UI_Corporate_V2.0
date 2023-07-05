@@ -12,7 +12,7 @@ import createSagaMiddleware from "redux-saga";
 import { composeWithDevTools } from "redux-devtools-extension";
 import AllReducers from "./Store/Reducers";
 import { Provider } from "react-redux";
-import { AuthPorvider } from "./Utils/Auth";
+import { AuthPorvider } from "./utils/Auth";
 
 //Tostify Properties
 

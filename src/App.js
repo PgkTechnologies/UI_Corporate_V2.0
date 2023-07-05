@@ -5,8 +5,8 @@ import DashboardLayout from "./Components/Layout/DashboardLayout";
 import RegisterLayout from "./Components/Layout/RegisterLayout";
 import routes from "./routes";
 import { CircularProgress } from "@material-ui/core";
-import { useAuth } from "./Utils/Auth";
-import RequireAuth from "./Utils/RequireAuth";
+import { useAuth } from "./utils/Auth";
+import RequireAuth from "./utils/RequireAuth";
 
 function App() {
   const { location } = useParams();
