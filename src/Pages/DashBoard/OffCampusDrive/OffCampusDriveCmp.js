@@ -48,6 +48,7 @@ const OffCampusDriveCmp = () => {
     }
 
     const onSuccess = (response) => {
+        AllCampusRequests();
         togglePopup()
     }
 
@@ -67,7 +68,7 @@ const OffCampusDriveCmp = () => {
         setTotalCount(dataList.totalCount);
     };
 
-    useEffect(() => {
+    const AllCampusRequests = () => {
         dispatch(
             actionGetAllOffCampusDrivesRequest({
                 page: page,
@@ -75,8 +76,10 @@ const OffCampusDriveCmp = () => {
                 callback: getResponse,
             })
         );
-        console.log(page);
-        console.log(totalCount);
+    }
+
+    useEffect(() => {
+        AllCampusRequests();
     }, [page]);
 
     const navigateToOffCampusDrive = (offCampusDriveId, universityId, RoutePath,driveName) => {

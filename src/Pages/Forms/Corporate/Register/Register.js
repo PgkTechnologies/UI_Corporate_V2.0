@@ -138,36 +138,23 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (corporatePrimaryData.referral.length > 0) {
-      validateRefCode(corporatePrimaryData.referral);
-    } else {
-      const {
-        corporateName,
-        CIN,
-        corporateType,
-        corporateCategory,
-        corporateIndustry,
-        attachment,
-        yearOfEstablishment,
-      } = corporatePrimaryData;
-      if (
-        corporateName &&
-        CIN &&
-        corporateType &&
-        corporateCategory &&
-        corporateIndustry &&
-        attachment &&
-        yearOfEstablishment
-      ) {
-        // sessionStorage.setItem('image1', JSON.stringify(imageObj))
-        sessionStorage.setItem("primary", JSON.stringify(corporatePrimaryData));
-        setShowError(false);
-        dispatch(SaveCoprorateData(corporatePrimaryData, 1));
-        history("/register/CorporateSecondary");
-      } else {
-        setShowError(true);
-      }
+        validateRefCode(corporatePrimaryData.referral);
     }
-  };
+    else {
+        const { corporateName, CIN, corporateType, corporateCategory, corporateIndustry,
+            attachment, yearOfEstablishment } = corporatePrimaryData;
+        if (corporateName && CIN && corporateType && corporateCategory && corporateIndustry
+            && attachment && yearOfEstablishment) {
+            // sessionStorage.setItem('image1', JSON.stringify(imageObj))
+            sessionStorage.setItem('primary', JSON.stringify(corporatePrimaryData))
+            setShowError(false)
+            dispatch(SaveCoprorateData(corporatePrimaryData, 1));
+            history('/register/CorporateSecondary');
+        } else {
+            setShowError(true)
+        }
+    }
+}
 
   const validateRefCode = (model) => {
     dispatch(
@@ -202,9 +189,6 @@ const Register = () => {
         <div className="logo-container">
           <div className="logo-main">C2Hire.</div>
         </div>
-        {/* <div className="row">
-                    <div className="main-container">
-                        <div className='page'> */}
 
         <div className="page container">
           <div className="log-in-container">
@@ -246,9 +230,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-      {/* </div>
-                </div>
-            </div> */}
+      
     </section>
   );
 };

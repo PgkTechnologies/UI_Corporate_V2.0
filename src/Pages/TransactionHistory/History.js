@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const History = () => {
     const history = useNavigate();
     return (
-        <div className='container-body'>
+        <div className='container-body' style={{marginTop:'100px'}}>
             <div className='row history-container'>
                 <h1 style={{ marginLeft: '15px', fontWeight: 'bold' }}>History</h1>
                 <div className='col-lg-3 col-md-4 col-sm-6' 

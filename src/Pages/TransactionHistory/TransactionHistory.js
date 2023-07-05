@@ -93,7 +93,7 @@ const TransactionHistory = () => {
   };
 
   return (
-    <div className="container-body">
+    <div className="container-body" style={{marginTop:'100px'}}>
       <h2
         style={{ marginLeft: "15px", marginBottom: "0px", fontWeight: "bold" }}
       >
