@@ -2,7 +2,7 @@ import AccountCircleSharpIcon from "@mui/icons-material/AccountCircleSharp";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { actionSagaGetCorporateSingleSubscriptionRequest } from "../../../Store/Actions/SagaActions/SubscriptionSagaAction";
-//import { Modal, ModalBody } from "reactstrap";
+import { Modal, ModalBody } from "reactstrap";
 import moment from "moment";
 import CancelSharpIcon from "@mui/icons-material/CancelSharp";
 import LocalLibraryRoundedIcon from "@mui/icons-material/LocalLibraryRounded";
@@ -91,7 +91,7 @@ const ProfileItem = (props) => {
           </div>
         </div>
       </div>
-      {/* {showModal &&
+      {showModal &&
                 <Modal isOpen={showModal} >
                     <ModalBody>
                         <div className={'mail-modal'}>
@@ -137,7 +137,7 @@ const ProfileItem = (props) => {
                         </div>
                     </ModalBody>
                 </Modal>
-            } */}
+            }
     </div>
   );
 };

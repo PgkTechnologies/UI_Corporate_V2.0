@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 import { actionSagaGetCorporateSingleSubscriptionRequest } from "../../../Store/Actions/SagaActions/SubscriptionSagaAction";
-//import { Modal, ModalBody } from "reactstrap";
+import { Modal, ModalBody } from "reactstrap";
 import { AccountBalance } from "@mui/icons-material";
 import DatasetLinkedSharpIcon from "@mui/icons-material/DatasetLinkedSharp";
 
@@ -31,7 +31,9 @@ const OtherInformationItem = (props) => {
     <>
       <div className="cards-border" key={props.index}>
         <div className="col-lg-9 col-sm-12 card-content">
-          <div className="icon" style={{ marginRight: "20px" }}>
+          <div className="icon" 
+          style={{ marginRight: "20px" , width:'100%'}}
+          >
             <AccountBalance />
           </div>
           <div>
@@ -48,7 +50,7 @@ const OtherInformationItem = (props) => {
               |
             </span>
             <span style={{ fontWeight: "bold" }}>
-              {props?.item?.publisherName}{" "}
+              {props?.item?.publisherName}{" "} ({props?.item?.location}{" "})
             </span>
             <span
               style={{
@@ -104,14 +106,14 @@ const OtherInformationItem = (props) => {
               </span>
             </div>
             <br />
-            <span style={{ paddingLeft: "450px", marginTop: "55px" }}>
+            {/* <span style={{ paddingLeft: "450px", marginTop: "55px" }}>
               {" "}
               {props?.item?.location}{" "}
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
-      {/* {showModal && <Modal  isOpen={showModal}>
+      {showModal && <Modal  isOpen={showModal}>
         <ModalBody>
         <div className="hiring-modal">
           <div className="modal-header hiring-modal-header">
@@ -186,7 +188,7 @@ const OtherInformationItem = (props) => {
         </div>
         </ModalBody>
       </Modal>}
-     */}
+    
     </>
   );
 };

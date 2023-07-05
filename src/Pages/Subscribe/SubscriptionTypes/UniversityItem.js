@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { actionSagaGetCorporateSingleSubscriptionRequest } from "../../../Store/Actions/SagaActions/SubscriptionSagaAction";
-//import { Modal, ModalBody, ModalHeader } from "reactstrap";
+import { Modal, ModalBody, ModalHeader } from "reactstrap";
 import CancelSharpIcon from "@mui/icons-material/CancelSharp";
 import { AccountBalance } from "@mui/icons-material";
 
@@ -28,10 +28,10 @@ const UniversityItem = (props) => {
 
   return (
     <div className="cards-border" key={props.index}>
-      <div className="col-lg-9 col-sm-12 card-content">
-        <div className="icon" style={{ marginRight: "20px" }}>
-          <AccountBalance />
-        </div>
+    <div className="col-lg-9 col-sm-12 card-content">
+      <div className="icon" style={{ marginRight: "20px" }}>
+        <AccountBalance />
+      </div>
         <div>
           <span style={{ paddingRight: "55px" }}>
             {props?.item?.generalNote}
@@ -46,12 +46,12 @@ const UniversityItem = (props) => {
             |
           </span>
           <span style={{ fontWeight: "bold" }}>
-            {props?.item?.publisherName}{" "}
+            {props?.item?.publisherName}{" "} ({props?.item?.location}{" "})
           </span>
           <span
             style={{
               color: "gray",
-              paddingRight: "100px",
+              paddingRight: "20px",
               paddingLeft: "35px",
             }}
           >
@@ -67,19 +67,8 @@ const UniversityItem = (props) => {
           >
             {" "}
             <span
+            style={{marginLeft:'270px'}}
               className="btn"
-              //     style={{
-              //         padding: '15px',
-              //         background: "#044071",
-              //         borderRadius: '7px',
-              //         marginTop:'0px',
-              //         color: '#e6e6e6',
-              //         fontWeight: 'normal',
-              //         fontSize:' 13px',
-              //         border: 'none',
-              //         cursor:'pointer',
-
-              // }}
               onClick={() => {
                 getInsightsById(props?.item?.subscriptionID);
               }}
@@ -88,14 +77,14 @@ const UniversityItem = (props) => {
             </span>
           </div>
           <br />
-          <span style={{ paddingLeft: "450px", marginTop: "55px" }}>
+          {/* <span style={{ paddingLeft: "450px", marginTop: "55px" }}>
             {" "}
             {props?.item?.location}{" "}
-          </span>
+          </span> */}
         </div>
       </div>
 
-      {/* {showModal && (
+      {showModal && (
         <Modal isOpen={showModal}>
           <ModalHeader>
             <div>
@@ -206,7 +195,7 @@ const UniversityItem = (props) => {
             </div>
           </ModalBody>
         </Modal>
-      )} */}
+      )}
     </div>
   );
 };
