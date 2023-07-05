@@ -88,7 +88,7 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
   const handleShow = () => setShowTermsAndConditions(true);
   const handleClose = () => setShowTermsAndConditions(false);
 
-  const apiStatus = useSelector((state) => state.loginReducer?.apiStatus);
+  const apiStatus = useSelector((state) => state.CorporateReducer?.apiStatus);
   // const storedContries = useSelector((state) => state.loginReducer?.countryList);
   // const profileInfo = useSelector((state) => state.DashboardReducer.profileInfo);
 

@@ -17,7 +17,7 @@ import ProfileItem from "./SubscriptionTypes/ProfileItem";
 const SubscriptionHistory = () => {
   const [subscriptionList, setSubscriptionList] = useState([]);
   const dispatch = useDispatch();
-  const apiStatus = useSelector((state) => state.loginReducer?.apiStatus);
+  const apiStatus = useSelector((state) => state.CorporateReducer?.apiStatus);
 
   const [tabValue, setTabValue] = useState(0);
 
@@ -40,7 +40,7 @@ const SubscriptionHistory = () => {
   }, []);
 
   return (
-    <div className="container-body">
+    <div className="container-body" style={{marginTop:'100px'}}>
       <div className="row">
         <h2>Subscription History </h2>
         {apiStatus ? <PreLoader /> : null}

@@ -6,14 +6,14 @@ import PreLoader from "../../../../utils/PreLoader";
 
 const AuthenticationCmp = (props) => {
   const navigate = useNavigate();
-  // const apiStatus = useSelector((state) => state.loginReducer.apiStatus);
+  const apiStatus = useSelector((state) => state.CorporateReducer.apiStatus);
   //   const gotoHome = () => {
   //     back()
   //   };
 
   return (
     <>
-      {/* {apiStatus ? <PreLoader /> : null} */}
+      {apiStatus ? <PreLoader /> : null}
 
       <div className="page">
         <form className="login-form reg-form" onSubmit={props?.handleSubmit}>

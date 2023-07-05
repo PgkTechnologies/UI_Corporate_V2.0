@@ -251,7 +251,7 @@ const CorporatePrimaryCmp = (props) => {
                             <input
                                 type="file"
                                 onChange={props?.handleChangeImg}
-                                accept=".jpeg, .jpg"
+                                accept=".pdf"
                                 className="btn-secondary"
                                 name="attachment"
                                 id="attachment"

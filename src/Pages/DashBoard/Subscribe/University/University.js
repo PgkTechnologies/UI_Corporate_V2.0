@@ -474,7 +474,7 @@ const University = (props) => {
 
   return (
     <>
-      <div className="container-body">
+      <div className="container-body" style={{marginTop:'100px'}}>
         <div className="acc-main">
           <div
             style={{

@@ -46,7 +46,7 @@ const Profile = () => {
 
     return (
         <>
-            <div className="container-body">
+            <div className="container-body" style={{marginTop:'100px'}}>
                 <div className="student-info-main">
                     <div className="d-flex align-items-center justify-content-center">
                         <div className="row student-info-card">

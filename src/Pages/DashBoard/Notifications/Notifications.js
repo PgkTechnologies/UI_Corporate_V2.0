@@ -234,7 +234,7 @@ const Notifications = () => {
   }
 
   return (
-    <div className="container-body">
+    <div className="container-body" style={{marginTop:'100px'}}>
       <div
         className="main"
         style={{ display: "flex", flexDirection: "column" }}

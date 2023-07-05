@@ -190,7 +190,7 @@ const TicketChatCmp = () => {
   };
 
   return (
-    <div className="container-body" style={{ overflow: "clip" }}>
+    <div className="container-body" style={{ overflow: "clip",marginTop:'100px' }}>
       <div className="ticket-chat-main">
         <div className="support-title">
           <div
