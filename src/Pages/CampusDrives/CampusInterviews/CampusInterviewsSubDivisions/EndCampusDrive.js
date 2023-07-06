@@ -43,7 +43,7 @@ const EndCampusDrive = (props) => {
         {showAlert &&
             // <CustomToastModal
             //     onClose={() => {
-            //         setShowAlert(false);
+            //         setShowAlert(false);P
             //         // history.replace('/dashboard/campus-drive/', 'urlhistory');
             //     }}
             //     show={showAlert ? true : false}

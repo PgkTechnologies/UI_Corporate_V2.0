@@ -8,7 +8,7 @@ const CreateEmailTemplate = (props) => {
         {console.log(props)}
             <div className="container">
                 <form className="row add-new-jobs-section" onSubmit={props.handleSubmit} style={{ background: "white" }}  >
-                    <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full" style={{ background: "white" }} >
+                    <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full" style={{ background: "white",marginTop:'10px' }} >
                         <TextField
                             label="Email Template ID"
                             type="text"
@@ -26,7 +26,7 @@ const CreateEmailTemplate = (props) => {
                             variant="outlined"
                             margin="dense"
                             style={{ maxWidth: "40%" }}
-                            value={props.addEmailTemplate.emailTemplateID}
+                            value={props?.addEmailTemplate?.emailTemplateID}
                         />
                         <TextField
                             label="Email Template Name"
@@ -45,7 +45,7 @@ const CreateEmailTemplate = (props) => {
                             variant="outlined"
                             margin="dense"
                             style={{ maxWidth: "40%" }}
-                            value={props.addEmailTemplate.emailTemplateName}
+                            value={props?.addEmailTemplate?.emailTemplateName}
                         />
                     </div>
                     <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full" style={{ background: "white" }} >

@@ -97,7 +97,7 @@ const DefineInterviewRounds = (props) => {
                         <div className="col-sm-5">
                           <div className="row">
                             <div className="col-sm-3">
-                              <div className="job-icon job-blue-icon d-flex justify-content-center align-items-center">
+                              <div className="job-icon job-blue-icon d-flex justify-content-center align-items-center" style={{marginTop:'20px'}}>
                                 <Work/>
                               </div>
                             </div>
@@ -112,12 +112,13 @@ const DefineInterviewRounds = (props) => {
                               >
                                 Job Name
                               </p>
-                              <br />
+                              
                               <p
                                 className="job-label"
                                 style={{
                                   float: "left",
                                   fontFamily: "Poppins-Regular",
+                                  fontSize:'17px'
                                 }}
                               >
                                 {item.jobName}
@@ -138,12 +139,13 @@ const DefineInterviewRounds = (props) => {
                             {" "}
                             Job Status{" "}
                           </p>
-                          <br />
+                          
                           <p
                             className="job-label"
                             style={{
                               // float: "left",
                               fontFamily: "Poppins-Regular",
+                              fontSize:'17px'
                             }}
                           >
                             {item.status}{" "}

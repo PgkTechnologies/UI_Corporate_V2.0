@@ -93,7 +93,7 @@ const DefineJobApplicationWindowSection = (props) => {
                                         </div>
                                         <p
                                             className="col-9 job-label text-ellipsis"
-                                            style={{ maxWidth: "220px", textTransform: "capitalize" }}
+                                            style={{ maxWidth: "220px", textTransform: "capitalize",marginTop:'10px' }}
                                         >
                                             {item.jobName}
                                         </p>
@@ -111,7 +111,7 @@ const DefineJobApplicationWindowSection = (props) => {
                                     >
                                         <p
                                             style={{
-                                                marginLeft: "10px",
+                                                margin: "10px 0px 0px 20px",
                                                 textTransform: "capitalize",
                                                 fontSize: ".800rem",
                                             }}
@@ -126,8 +126,8 @@ const DefineJobApplicationWindowSection = (props) => {
                                         className="btn d-flex justify-content-around align-items-center"
                                         style={{
                                             // height: "30px",
-                                            width: "100px",
-                                            fontSize: ".700rem",
+                                            width: "180px",
+                                            fontSize: ".800rem",
                                             borderRadius: "4px",
                                             textTransform: "uppercase",
                                             fontWeight: "bolder",

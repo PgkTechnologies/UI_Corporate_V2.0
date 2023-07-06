@@ -9,6 +9,7 @@ import { actionGetCampusDriveStudentResumeRequest } from "../../../../Store/Acti
 import { CancelOutlined } from "@mui/icons-material";
 import PreLoader from "../../../../utils/PreLoader";
 import { Modal, ModalBody } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 const ShareRoundResults = (props) => {
     const dispatch = useDispatch();
@@ -160,11 +161,12 @@ const ShareRoundResults = (props) => {
                 apiPayloadRequest: inputModel,
                 callback: (response) => {
                     setShowToastModal(true);
+                    toast.success('Round results shared successfully!')
                 }
             }))
         }
     }
-    //console.log(studentsListForRound.studentsList, "LIST")
+    console.log(showToastModal, "LIST")
     return (
         <div className="bgWhite" style={{ height: '580px' }}>
             <CSVLink
@@ -449,7 +451,7 @@ const ShareRoundResults = (props) => {
                 <button type="button" className="btn" onClick={shareRoundResults} disabled={roundId ? interviewRoundsInfo[`round${roundId}ResultsSharedFlag`] : true} ><p>Share</p></button>
                 {/* <button type="button" className="btn" onClick={shareRoundResults} ><p>Share</p></button> */}
             </div>
-            {showToastModal &&
+            {showToastModal ?
                 // <CustomToastModal
                 //     onClose={() => {
                 //         setShowToastModal(false);
@@ -459,7 +461,7 @@ const ShareRoundResults = (props) => {
                 //     iconNameClass={"fa-check"}
                 //     message={'Round results shared successfully!'}
                 // />
-                <Modal isOpen={showToastModal} >
+                (<Modal isOpen={showToastModal} >
                     <ModalBody>
                         <CancelOutlined
                             onClick={() => {
@@ -469,7 +471,9 @@ const ShareRoundResults = (props) => {
                         />
                         <h3>{'Round results shared successfully!'}</h3>
                     </ModalBody>
-                </Modal>
+                </Modal>)
+                :
+                ''
             }
             <br />
             <br />

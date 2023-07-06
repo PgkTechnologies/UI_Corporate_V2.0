@@ -751,7 +751,7 @@ const SaveInterviewRounds = (props) => {
                             <td scope="row">
                                 1
                             </td>
-                            <td style={{ textAlign: "center" }}>Round 1</td>
+                            <td style={{  }}>Round 1</td>
                             <td>
                                 <TextField
                                     type="date"
@@ -1471,9 +1471,9 @@ const SaveInterviewRounds = (props) => {
                 <br />
                 <div style={{ borderTop: "1px solid black", width: "100%", marginLeft: 20, marginRight: 20 }}></div>
                 <br />
-                <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full" style={{ background: "white" }}>
-                    <button type="button" className="btn" style={{ paddingRight: "10px" }} onClick={() => { props.onCancel() }} ><p>Cancel</p></button>
-                    <button type="submit" className="btn"><p>Save</p></button>
+                <div style={{ background: "white",display:'flex',justifyContent:'center' }}>
+                  <div>  <button type="button" className="btn" style={{ marginRight: "50px",paddingTop:'20px' }} onClick={() => { props.onCancel() }} ><p>Cancel</p></button>
+                    <button style={{ paddingTop:'20px' }} type="submit" className="btn"><p>Save</p></button></div>
                 </div>
                 <br />
             </form>

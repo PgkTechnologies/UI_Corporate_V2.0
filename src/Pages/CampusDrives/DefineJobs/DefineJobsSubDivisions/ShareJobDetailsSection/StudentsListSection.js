@@ -284,13 +284,13 @@ const StudentsListSection = (props) => {
           </div>
           <div
             style={{
-              border: "1px solid #cacaca",
+              border: "2px solid #cacaca",
               borderRadius: "3px",
-              fontSize: "12px",
+              fontSize: "15px",
               padding: "6px",
               maxWidth: "250px",
-              marginBottom: "12px",
-              marginTop: "12px",
+              margin: "12px 0px 12px 2px",
+              textAlign:'center'
             }}
           >
             {props?.jobItem?.jobName}

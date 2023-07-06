@@ -17,6 +17,7 @@ import { onGetFileInfo } from "../../../../../utils/utils";
 import { actionPostPublishCorporateJobsRequest } from "../../../../../Store/Actions/SagaActions/JobsSagaAction";
 import { actionDeleteCampusDriveJobRequestSaga, actionGetCampusDriveDefineJobsListRequestSaga, actionGetCampusDriveHiringCriteriaListRequestSaga, actionGetStudentsListCampusDriveRequestSaga, actionPostOrPatchCampusDriveHiringCriteriaRequestSaga, actionPostOrPatchCampusDriveJobRequestSaga, actionPublishJobsCampusDriveRequestSaga } from "../../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/DefineJobsSagaActions";
 import StudentsListSection from "./StudentsListSection";
+import WorkIcon from '@mui/icons-material/Work';
 
 const ShareJobDetailsSection = (props) => {
     const dispatch = useDispatch();
@@ -317,116 +318,38 @@ const ShareJobDetailsSection = (props) => {
                 return !item.publishFlag &&
                     tabValue === 0 &&
                     props?.universityId !== "OffCampus" ? (
-                    <div className="row align-items-center">
-                        <div
-                            className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
-                            style={{ maxWidth: "100%" }}
-                        >
-                            {item.status === "open" ? (
-                                <Checkbox
-                                    size={"small"}
-                                    color={"primary"}
-                                    checked={selectedItems.includes(item?.jobID) ? true : false}
-                                    onChange={(e) => {
-                                        onCheckHandler(item?.jobID);
-                                    }}
-                                />
-                            ) : (
-                                <></>
-                            )}
-
-                            <div className="col-md-4">
-                                <div className="row align-items-center">
-                                    <div
-                                        className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
-                                        style={{ borderRadius: "5px", width: "60px" }}
-                                    >
-                                        <i
-                                            className="fas fa-briefcase"
-                                            style={{ color: "white", padding: "10px" }}
-                                        />
-                                    </div>
-                                    <p
-                                        className="col-9 job-label text-ellipsis"
-                                        style={{ maxWidth: "220px", textTransform: "capitalize" }}
-                                    >
-                                        {item.jobName}
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div
-                                    style={{
-                                        border: "1px solid #cacaca",
-                                        borderRadius: "4px",
-                                        padding: "8px 4px",
-                                        maxWidth: "100px",
-                                        marginLeft: "10%",
-                                    }}
-                                >
-                                    <p
-                                        style={{
-                                            marginLeft: "10px",
-                                            textTransform: "capitalize",
-                                            fontSize: ".800rem",
-                                        }}
-                                    >
-                                        {item.status}
-                                    </p>
-                                </div>
-                            </div>
-                            <div className={"col-md-4 d-flex align-items-center"}>
-                                <button
-                                    type="button"
-                                    className="btn d-flex justify-content-around align-items-center"
-                                    style={{
-                                        height: "30px",
-                                        width: "100px",
-                                        fontSize: ".700rem",
-                                        borderRadius: "4px",
-                                        textTransform: "uppercase",
-                                        fontWeight: "bolder",
-                                        marginLeft: "40%",
-                                    }}
-                                    disabled={item.status !== "open" ? true : false}
-                                    // onClick={() => {
-                                    //   setMode("VIEW");
-                                    //   setSelectedHcId(item.hiringCriteriaID);
-                                    //   setSection({
-                                    //     firstSection: true,
-                                    //     secondSection: false,
-                                    //   });
-                                    //   setSelectedJob(item);
-                                    // }}
-                                    onClick={() => {
-                                        showDetails(item.jobID, item.cdID);
-                                    }}
-                                >
-                                    <p>Details</p>
-                                    <i className="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                ) : (item.publishFlag && tabValue === 1) ||
-                    props?.universityId === "OffCampus" ? (
-                    <div className="jobs-cdx"  style={{width:'70%'}}>
+                    <div className="jobs-cdx" style={{marginTop:'10px'}}>
                         <div className="row align-items-center">
                             <div
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
-                                style={{ maxWidth: "900px" }}
+                                style={{ maxWidth: "100%" }}
                             >
+                                {item.status === "open" ? (
+                                    <Checkbox
+                                        size={"small"}
+                                        color={"primary"}
+                                        checked={selectedItems.includes(item?.jobID) ? true : false}
+                                        onChange={(e) => {
+                                            onCheckHandler(item?.jobID);
+                                        }}
+                                    />
+                                ) : (
+                                    <></>
+                                )}
+
                                 <div className="col-md-4">
                                     <div className="row align-items-center">
                                         <div
                                             className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
                                             style={{ borderRadius: "5px", width: "60px" }}
                                         >
-                                           <Work/>
+                                            <i>
+                                                <WorkIcon/>
+                                                </i>
                                         </div>
                                         <p
                                             className="col-9 job-label text-ellipsis"
-                                            style={{ maxWidth: "220px", textTransform: "capitalize" }}
+                                            style={{ maxWidth: "220px", textTransform: "capitalize",marginTop:'15px' }}
                                         >
                                             {item.jobName}
                                         </p>
@@ -445,6 +368,86 @@ const ShareJobDetailsSection = (props) => {
                                         <p
                                             style={{
                                                 marginLeft: "10px",
+                                                textTransform: "capitalize",
+                                                fontSize: ".800rem",
+                                            }}
+                                        >
+                                            {item.status}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className={"col-md-4 d-flex align-items-center"}>
+                                    <button
+                                        type="button"
+                                        className="btn d-flex justify-content-around align-items-center"
+                                        style={{
+                                            height: "30px",
+                                            width: "100px",
+                                            fontSize: ".700rem",
+                                            borderRadius: "4px",
+                                            textTransform: "uppercase",
+                                            fontWeight: "bolder",
+                                            marginLeft: "40%",
+                                        }}
+                                        disabled={item.status !== "open" ? true : false}
+                                        // onClick={() => {
+                                        //   setMode("VIEW");
+                                        //   setSelectedHcId(item.hiringCriteriaID);
+                                        //   setSection({
+                                        //     firstSection: true,
+                                        //     secondSection: false,
+                                        //   });
+                                        //   setSelectedJob(item);
+                                        // }}
+                                        onClick={() => {
+                                            showDetails(item.jobID, item.cdID);
+                                        }}
+                                    >
+                                        Details
+                                        {/* <i className="fas fa-chevron-right"></i> */}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ) : (item.publishFlag && tabValue === 1) ||
+                    props?.universityId === "OffCampus" ? (
+                    <div className="jobs-cdx" style={{ width: '90%',marginTop:'20px' }}>
+                        <div className="row align-items-center">
+                            <div
+                                className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
+                                style={{ maxWidth: "900px" }}
+                            >
+                                <div className="col-md-4">
+                                    <div className="row align-items-center">
+                                        <div
+                                            className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
+                                            style={{ borderRadius: "5px", width: "60px" }}
+                                        >
+                                            <Work />
+                                        </div>
+                                        <p
+                                            className="col-9 job-label text-ellipsis"
+                                            style={{ maxWidth: "220px", textTransform: "capitalize",marginTop:'10px' }}
+                                        >
+                                            {item.jobName}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="col-md-4">
+                                    <div
+                                        style={{
+                                            border: "1px solid #cacaca",
+                                            borderRadius: "4px",
+                                            padding: "8px 4px",
+                                            maxWidth: "100px",
+                                            marginLeft: "10%",
+                                        }}
+                                    >
+                                        <p
+                                            style={{
+                                                marginLeft: "10px",
+                                                marginTop:'10px',
                                                 textTransform: "capitalize",
                                                 fontSize: ".800rem",
                                             }}
@@ -603,7 +606,7 @@ const ShareJobDetailsSection = (props) => {
                                 jobsList.some((item) => !item.publishFlag) ? (
                                 <div
                                     className="w-full d-flex justify-content-start align-content-center publish-selected-btn-container"
-                                    style={{ marginTop: '25px' }}
+                                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                                 >
                                     <Checkbox
                                         size={"small"}
