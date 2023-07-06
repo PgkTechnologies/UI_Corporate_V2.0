@@ -83,11 +83,11 @@ const OnCampusJobs = (props) => {
                     onChange={handleTabChange}
                 >
                     <Tab
-                        // icon={
-                        //     <Badge color="error">
-                        //         <TiDownload size={30} />
-                        //     </Badge>
-                        // }
+                        icon={
+                            <Badge color="error">
+                                <TiDownload size={30} />
+                            </Badge>
+                        }
                         label={'Campus Invite Received' }
                         wrapped
                         style={{
@@ -97,19 +97,19 @@ const OnCampusJobs = (props) => {
                         }}
                     />
                     <Tab
-                        // icon={
-                        //     <Badge color="error">
-                        //         <OutboxIcon  />
+                        icon={
+                            <Badge color="error">
+                                <OutboxIcon size={30} />
 
-                        //     </Badge>
-                        // }
+                            </Badge>
+                        }
                         label={ 'Campus Invite Sent' }
                         wrapped
                         style={{
                             fontWeight:'bold',
                             outline: "none",
                             minWidth: '15%',
-                            minHeight: '100px'
+                            height: '150px',
                         }}
                     />
                 </Tabs>

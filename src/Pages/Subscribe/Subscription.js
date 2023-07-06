@@ -57,9 +57,10 @@ const SubscriptionHistory = () => {
                 <SchoolRoundedIcon />
               </Badge>
             }
-            label={tabValue === 0 ? "CampusDrive" : ""}
+            label={ "CampusDrive" }
             wrapped
             style={{
+              fontWeight:'bold',
               outline: "none",
               minWidth: "12%",
             }}
@@ -70,9 +71,10 @@ const SubscriptionHistory = () => {
                 <AttachEmailRoundedIcon />
               </Badge>
             }
-            label={tabValue === 1 ? "OtherInformation" : ""}
+            label={  "OtherInformation" }
             wrapped
             style={{
+              fontWeight:'bold',
               outline: "none",
               minWidth: "12%",
             }}
@@ -84,9 +86,10 @@ const SubscriptionHistory = () => {
                 <GroupsIcon />
               </Badge>
             }
-            label={tabValue === 2 ? "Students" : ""}
+            label={  "Students" }
             wrapped
             style={{
+              fontWeight:'bold',
               outline: "none",
               minWidth: "12%",
             }}
@@ -97,18 +100,24 @@ const SubscriptionHistory = () => {
                 <AccountCircle />
               </Badge>
             }
-            label={tabValue === 3 ? "Profile" : ""}
+            label={ "Profile" }
             wrapped
             style={{
+              fontWeight:'bold',
               outline: "none",
               minWidth: "12%",
             }}
           />
         </Tabs>
       </div>
-      <div className="student-content">
+      <div 
+      // className="container-body"
+      >
         {tabValue === 0 && (
-          <div className="univ-subscription-list-container d-flex flex-column align-items-center w-full">
+          <div 
+          // className="univ-subscription-list-container d-flex flex-column align-items-center w-full"
+          // className="container-body"
+          >
             {!subscriptionList?.some(
               (item) => item?.generalNote === "Campus Hiring"
             ) && "No subscriptions subscribed yet"}
@@ -121,7 +130,9 @@ const SubscriptionHistory = () => {
           </div>
         )}
         {tabValue === 1 && (
-          <div className="univ-subscription-list-container d-flex flex-column align-items-center w-full">
+          <div 
+          // className="univ-subscription-list-container d-flex flex-column align-items-center w-full"
+          >
             {!subscriptionList?.some(
               (item) =>
                 !["Other Information", "University Information"].includes(
@@ -148,7 +159,9 @@ const SubscriptionHistory = () => {
           </div>
         )}
         {tabValue === 2 && (
-          <div className="univ-subscription-list-container d-flex flex-column align-items-center w-full">
+          <div 
+          // className="univ-subscription-list-container d-flex flex-column align-items-center w-full"
+          >
             {!subscriptionList?.some(
               (item) => item?.generalNote === "Student Database"
             ) && "No subscriptions subscribed yet"}
@@ -164,7 +177,9 @@ const SubscriptionHistory = () => {
           </div>
         )}
         {tabValue === 3 && (
-          <div className="univ-subscription-list-container d-flex flex-column align-items-center w-full">
+          <div 
+          // className="univ-subscription-list-container d-flex flex-column align-items-center w-full"
+          >
             {!subscriptionList?.some(
               (item) => item?.generalNote === "Profile"
             ) && "No subscriptions subscribed yet"}

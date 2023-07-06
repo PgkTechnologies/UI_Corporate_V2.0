@@ -134,9 +134,10 @@ const Requests = (props) => {
                 <InstallDesktopSharpIcon />
               </Badge>
             }
-            label={tabValue === 0 && "Request Received"}
+            label={"Request Received"}
             wrapped
             style={{
+              fontWeight:'bold',
               outline: "none",
               minWidth: "13%",
             }}
@@ -147,9 +148,10 @@ const Requests = (props) => {
                 <HistoryEduSharpIcon />
               </Badge>
             }
-            label={tabValue === 1 && "Request Sent"}
+            label={"Request Sent"}
             wrapped
             style={{
+              fontWeight:'bold',
               outline: "none",
               minWidth: "13%",
             }}

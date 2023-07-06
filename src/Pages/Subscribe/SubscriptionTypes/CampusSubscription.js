@@ -4,7 +4,8 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { actionGetCorporateSingleNotificationRequest } from "../../../Store/Actions/SagaActions/NotificationsSagaAction";
-//import { Modal, ModalBody } from "reactstrap";
+import { Modal, ModalBody } from "reactstrap";
+// import { Modal, ModalBody } from "react-bootstrap";
 import CancelSharpIcon from "@mui/icons-material/CancelSharp";
 
 const CampusSubscription = (props) => {
@@ -67,7 +68,7 @@ const CampusSubscription = (props) => {
             |
           </span>
           <span style={{ fontWeight: "bold" }}>
-            {props?.item?.publisherName}{" "}
+            {props?.item?.publisherName}{" "} ( {props?.item?.location}{" "} )
           </span>
           <span
             style={{ color: "gray", paddingRight: "35px", paddingLeft: "35px" }}
@@ -75,22 +76,12 @@ const CampusSubscription = (props) => {
             |
           </span>
 
-          <div style={{ marginTop: "5px", marginLeft: "900px" }}>
+          <div
+            style={{ marginTop: "5px", marginLeft: "900px" }}
+          >
             <span
               className="btn"
-              // style={{
-              //   paddingLeft: '35px',
-              //   padding: "7px",
-              //   background: "#044071",
-              //   borderRadius: '7px',
-              //   marginTop: '0px',
-              //   color: '#e6e6e6',
-              //   fontWeight: 'normal',
-              //   fontSize: ' 13px',
-              //   border: 'none',
-              //   cursor: 'pointer',
-
-              // }}
+              style={{ cursor: 'default' }}
               onClick={() => {
                 getHiringItemById(props?.item?.nftID);
               }}
@@ -98,12 +89,11 @@ const CampusSubscription = (props) => {
               view More
             </span>
           </div>
-
-          <br />
-          <span style={{ paddingLeft: "450px", marginTop: "55px" }}>
+        
+          {/* <span style={{ paddingLeft: "450px", marginTop: "55px" }}>
             {" "}
             {props?.item?.location}{" "}
-          </span>
+          </span> */}
 
           <div className="card-date-main">
             <div className="card-date">
@@ -113,33 +103,38 @@ const CampusSubscription = (props) => {
         </div>
       </div>
 
-      {/* //Css */}
       {props?.item?.campusDriveStatus === "Accepted" ? (
         <div className="col-lg-3 col-sm-12  choice-btns ">
           <span style={{ paddingRight: "15px", fontWeight: "bold" }}>
             Status {""}:
           </span>
-          <div className="btn accepted">Accepted</div>
+          <div
+            style={{ border: 'none', boxShadow: 'none', cursor: 'default', color: '#12AD07' }}
+          >Accepted</div>
         </div>
       ) : props?.item?.campusDriveStatus === "Pending" ? (
         <div className="col-lg-3 col-sm-12 choice-btns">
           <span style={{ paddingRight: "15px", fontWeight: "bold" }}>
             Status {""}:
           </span>
-          <div className="btn pending">Pending</div>
+          <div
+            style={{ border: 'none', boxShadow: 'none', cursor: 'default', color: "#FEBE10" }}
+          >Pending</div>
         </div>
       ) : (
         <div className="col-lg-3 col-sm-12 choice-btns">
           <span style={{ paddingRight: "5px", fontWeight: "bold" }}>
             Status{""}:
           </span>
-          <div className="btn pending">Sent</div>
+          <div
+            style={{ border: 'none', boxShadow: 'none', cursor: 'default', color: '#20B2AA' }}
+          >Sent</div>
         </div>
       )}
       {console.log(hiringItem, "hiring Item Vaule")}
       {console.log(showModal, "modalDispayCheck")}
 
-      {/* {showModal && (
+      {showModal && (
         <Modal isOpen={showModal}>
           <ModalBody>
             <CancelSharpIcon
@@ -219,7 +214,7 @@ const CampusSubscription = (props) => {
             </div>
           </ModalBody>
         </Modal>
-      )} */}
+      )}
     </div>
   );
 };
