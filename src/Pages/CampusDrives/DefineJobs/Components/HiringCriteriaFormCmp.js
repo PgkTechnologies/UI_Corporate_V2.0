@@ -346,6 +346,7 @@ const HiringCriteriaFormCmp = (props) => {
           <div className={`row  m-0 ${props?.cdJob ? " w-full" : ""}`}>
             <div className="col-md-4">
               <PgkTextField
+              
                 name="jobName"
                 onChange={props?.handleJobChange}
                 value={
@@ -357,7 +358,7 @@ const HiringCriteriaFormCmp = (props) => {
                 inputLabelProps={{ style: { fontSize: ".800rem" } }}
                 inputProps={{ style: { fontSize: ".800rem" } }}
                 errorMessage={props?.jobFormData?.jobName?.errorMessage}
-                required={props?.jobFormData?.jobName?.isRequired}
+                required={props?.jobFormData?.jobName?.isRequired }
                 disabled={props?.jobFormData?.jobName?.isDisabled}
                 autoFocus
               />
@@ -413,7 +414,7 @@ const HiringCriteriaFormCmp = (props) => {
             </div>
           </div>
         </div>
-        <div style={{ marginBottom: "20px" }}>
+        <div style={{ marginBottom: "0px" }}>
           <div
             className={`row m-0 ${props?.cdJob ? " w-full" : ""}`}
             style={{ position: "relative" }}
@@ -432,7 +433,7 @@ const HiringCriteriaFormCmp = (props) => {
               <div
                 style={{
                   position: "relative",
-                  top: "-17px",
+                  top: "-25px",
                   zIndex: "10",
                   focus: "none",
                 }}
@@ -479,7 +480,7 @@ const HiringCriteriaFormCmp = (props) => {
                 validations={["isNumericWithDecimal", "min_1"]}
                 inputLabelProps={{
                   style: {
-                    fontSize: `${props?.cdJob ? ".700rem" : ".800rem"}`,
+                    fontSize: `${props?.cdJob ? ".700rem" : ".800rem"}`
                   },
                 }}
                 inputProps={{ style: { fontSize: ".800rem" } }}
@@ -498,7 +499,7 @@ const HiringCriteriaFormCmp = (props) => {
                 onChange={props?.handleChange}
                 options={props?.branchCatalog}
                 labelStyles={{ fontSize: ".800rem" }}
-                selectStyles={{ fontSize: ".800rem" }}
+                selectStyles={{ fontSize: ".800rem", }}
                 menuStyles={{ fontSize: ".800rem" }}
                 label={`Branch`}
                 errorMessage={props?.hiringData?.hcPrograms?.errorMessage}
@@ -508,7 +509,7 @@ const HiringCriteriaFormCmp = (props) => {
             </div>
           </div>
         </div>
-        <div style={{ marginBottom: "20px" }}>
+        <div style={{ marginBottom: "25px" }}>
           <div className={`row m-0 ${props?.cdJob ? " w-full" : ""}`}>
             <div className="col-md-4">
               <PgkTextField
@@ -544,7 +545,7 @@ const HiringCriteriaFormCmp = (props) => {
             </div>
           </div>
         </div>
-        <div className={`row m-0 ${props?.cdJob ? " w-full" : ""}`}>
+        <div className={`row m-0 ${props?.cdJob ? " w-full" : ""}` } style={{bottom:'-20px'}}>
           <div className="col-md-4">
             <PgkTextField
               name="monthOfHiring"
@@ -557,7 +558,7 @@ const HiringCriteriaFormCmp = (props) => {
                   : null
               }
               label={"Date of hiring"}
-              inputLabelProps={{ style: { fontSize: ".800rem" } }}
+              inputLabelProps={{ style: { fontSize: ".700rem", transform: 'translateY(-17px)' } }}
               inputProps={{
                 style: { fontSize: ".800rem" },
                 min: moment().format("YYYY-MM-DD"),
@@ -586,6 +587,13 @@ const HiringCriteriaFormCmp = (props) => {
               <div>
                 <input
                   className="dataFieldInput"
+                  style={{
+                    width: '310px',
+                    padding: '8px',
+                    border: '1px solid #ccc',
+                    borderRadius: '4px',
+                    fontSize: '14px'
+                  }}
                   list="cities"
                   name="location"
                   ref={location}
@@ -611,7 +619,7 @@ const HiringCriteriaFormCmp = (props) => {
                   left: "10px",
                   color: "rgba(0, 0, 0, 0.5)",
                   zIndex: "1",
-                  fontSize: "0.8rem",
+                  fontSize: '14px',
                 }}
               >
                 {props?.jobFormData?.location?.value}
@@ -967,7 +975,7 @@ const HiringCriteriaFormCmp = (props) => {
                         className="file_label"
                         style={{ fontWeight: 'bold', color: '#0D6EFD' }}
                       >
-                       Attachment *
+                        Attachment *
                         {/* {" "}
                         <p className="fas fa-paperclip mr-2"> Attachment *</p> */}
                       </label>
@@ -1094,6 +1102,7 @@ const HiringCriteriaFormCmp = (props) => {
                         {"Cancel"}
                       </button>{" "}
                       <button
+                      style={{marginLeft:'40px'}}
                         type="button"
                         onClick={() => handleSubmit(JobID)}
                         className="btn mr-4"

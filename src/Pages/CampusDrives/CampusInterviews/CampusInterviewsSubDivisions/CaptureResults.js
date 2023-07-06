@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { TextField } from "@material-ui/core";
-import { useDispatch } from "react-redux"; 
+import { useDispatch, useSelector } from "react-redux"; 
 import * as XLSX from "xlsx";
 import { actionPostStudentsListForRoundSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/CampusInterviewSagaAction";
 import { actionGetCampusDriveStudentResumeRequest } from "../../../../Store/Actions/SagaActions/CampusDriveSagaActions";
+import PreLoader from "../../../../utils/PreLoader";
 
 const CaptureResults = (props) => {
   console.log(props.studentsListForRound.studentsList, "Std");
@@ -13,6 +14,10 @@ const CaptureResults = (props) => {
   const [columns, setColumns] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
   const [showAlert, setShowAlert] = useState(false);
+
+  const apiStatus = useSelector(
+    (state) => state?.CorporateReducer?.apiStatus
+  );
 
   const hiddenFileInput = React.useRef(null);
 
@@ -560,14 +565,15 @@ const CaptureResults = (props) => {
             marginLeft: 20,
             marginRight: 20,
           }}
-        ></div>
+        >{apiStatus? <PreLoader/>:''}</div>
         <br />
         <div
-          className="d-flex flex-row justify-content-around align-items-center job-details-form w-full"
+          className="d-flex flex-row justify-content-center align-items-center job-details-form w-full"
           style={{ background: "white" }}
         >
           <button
             type="button"
+            style={{marginRight:'40px'}}
             className="btn mr-4"
             onClick={() => {
               props.onCancel();

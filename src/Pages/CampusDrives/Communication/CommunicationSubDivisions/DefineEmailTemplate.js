@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Close from '@material-ui/icons/Close';
 import CreateEmailTemplate from './CreateEmailTemplate'
 import { actionDeleteEmailTemplateInfoRequestSaga, actionGetCampusDriveEmailTemplatesListRequestSaga, actionGetEmailTemplateInfoRequestSaga, actionPatchEmailTemplateInfoRequestSaga, actionPostNewEmailTemplateRequestSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/CommunicationSagaAction";
+import ViewInArIcon from '@mui/icons-material/ViewInAr';
 
 const DefineEmailTemplate = (props) => {
     const [allEmailTemplates, setAllEmailTemplates] = useState({});
@@ -186,22 +187,21 @@ const DefineEmailTemplate = (props) => {
                                                             <div className="col-sm-4">
                                                                 <div className="row">
                                                                     <div className="col-sm-4">
-                                                                        <div className="job-icon job-blue-icon d-flex justify-content-center align-items-center">
-                                                                            <i className="fas fa-cube" style={{ float: "right" }} />
+                                                                        <div className="job-icon job-blue-icon d-flex justify-content-center align-items-center" style={{paddingTop:'15px'}}>
+                                                                            <i><ViewInArIcon style={{ fontSize: '2.5rem',color:'#0291ff' }}/></i> 
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-sm-8">
                                                                         <p className="job-label" style={{ fontWeight: "bold", fontFamily: "Poppins-Regular" }}> Name</p>
-                                                                        <br />
-
-                                                                        <p className="job-label" style={{   fontFamily: "Poppins-Regular" }}>{item.emailTemplateName}</p>
+                                                                        
+                                                                        <p className="job-label" style={{   fontFamily: "Poppins-Regular",fontSize: '1.0rem' }}>{item.emailTemplateName}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div className="col-sm-3">
                                                                 <p className="job-label" style={{   fontWeight: "bold", fontFamily: "Poppins-Regular" }}> Subject </p>
-                                                                <br />
-                                                                <p className="job-label" style={{   fontFamily: "Poppins-Regular" }}>{item.emailSubject} </p>
+                                                               
+                                                                <p className="job-label" style={{   fontFamily: "Poppins-Regular",fontSize: '1.0rem' }}>{item.emailSubject} </p>
                                                             </div>
                                                             <div className="col-sm-3">
                                                                 <div className={'d-flex align-items-center'}>
@@ -209,7 +209,6 @@ const DefineEmailTemplate = (props) => {
                                                                         type="button"
                                                                         className="btn d-flex justify-content-around align-items-center"
                                                                         style={{
-
                                                                             width: "100px",
                                                                             fontSize: ".700rem",
                                                                             marginRight: "47px",

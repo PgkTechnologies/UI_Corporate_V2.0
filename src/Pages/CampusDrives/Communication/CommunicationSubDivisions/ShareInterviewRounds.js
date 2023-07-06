@@ -8,6 +8,7 @@ import moment from "moment";
 import { actionGetCampusDriveDefineJobsListRequestSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/DefineJobsSagaActions";
 import { actionGetInterviewRoundsRequestSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/CampusInterviewSagaAction";
 import { actionGetCampusDriveEmailTemplatesListRequestSaga, actionShareInterviewRoundsSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/CommunicationSagaAction";
+import PreLoader from "../../../../utils/PreLoader";
 
 const ShareInterviewRounds = (props) => {
   const dispatch = useDispatch();
@@ -18,6 +19,10 @@ const ShareInterviewRounds = (props) => {
   const [enableSuccessModal, setEnableSuccessModal] = useState(false);
   const profileInfo = useSelector(
     (state) => state.DashboardReducer.profileInfo
+  );
+
+  const apiStatus = useSelector(
+    (state) => state.CorporateReducer.apiStatus
   );
   const [selectedEmailTemplateName, setSelectedEmailTemplateName] =
     useState("");
@@ -707,8 +712,8 @@ const ShareInterviewRounds = (props) => {
             className="d-flex flex-row justify-content-around align-items-center job-details-form w-full"
             style={{ background: "white" }}
           >
-            <div className="d-attach" style={{ maxWidth: "95%" }}>
-              <p
+            <div className="d-attach" style={{ maxWidth: "95%", margin: '0px 0px 20px 100px' }}>
+              {/* <p
                 className="float-left"
                 style={{
                   fontSize: "18px",
@@ -717,7 +722,7 @@ const ShareInterviewRounds = (props) => {
                 }}
               >
                 {shareRoundsModel.roundAttachFileName}
-              </p>
+              </p> */}
               <p
                 style={{
                   position: "absolute",
@@ -739,58 +744,19 @@ const ShareInterviewRounds = (props) => {
                 onChange={onChange}
                 disabled={!isSharable()}
               />
-              <label htmlFor="roundAttachFile" className="d-label">
+              {/* <label htmlFor="roundAttachFile" className="d-label">
                 <i className="fas fa-paperclip mr-2"></i> Attach File *
-              </label>
+              </label> */}
             </div>
           </div>
 
-          {/* <div className="d-attach">
-                  {props?.tempAttachment?.attachmentName ? (
-                    <div
-                      className={
-                        "d-flex justify-content-between align-items-center"
-                      }
-                      style={{ width: "84%" }}
-                    >
-                      <p
-                        className="float-left"
-                        style={{
-                          padding: "8px",
-                          fontSize: ".800rem",
-                          flex: "1",
-                        }}
-                      >
-                        {props?.tempAttachment?.attachmentName}
-                      </p>
-                    </div>
-                  ) : null}
-                  <input
-                    type="file"
-                    onChange={props?.fileHandler}
-                    className="d-inp d-none"
-                    name="attachment"
-                    accept=".pdf"
-                    disabled={props?.disable ? true : false}
-                    id="attachment"
-                  />
-                  <label
-                    htmlFor="attachment"
-                    className="d-label"
-                    style={{ backgroundColor: "#253AA3" }}
-                  >
-                    {" "}
-                    <i className="fas fa-paperclip mr-2"></i> Attachment
-                  </label>
-                  
-                </div> */}
 
           <div
             className="d-flex flex-row justify-content-around align-items-center job-details-form w-full"
             style={{ background: "white" }}
           >
-            <div className="d-attach" style={{ maxWidth: "95%" }}>
-              <p
+            <div className="d-attach" style={{ maxWidth: "95%",marginBottom:'20px' }}>
+              {/* <p
                 style={{
                   paddingLeft: "150px",
                   fontSize: "18px",
@@ -799,7 +765,7 @@ const ShareInterviewRounds = (props) => {
                 }}
               >
                 {selectedEmailTemplateName}
-              </p>
+              </p> */}
               <p
                 style={{
                   position: "absolute",
@@ -815,9 +781,9 @@ const ShareInterviewRounds = (props) => {
               <label
                 htmlFor="EmailTemplate"
                 className="d-label"
-                style={{ left: "-1px" ,marginRight:'7px' }}
+                style={{ left: "-1px", marginRight: '7px' }}
               >
-              Email Template *
+                Email Template *
               </label>
               <select
                 name="emailTemplateID"
@@ -833,7 +799,7 @@ const ShareInterviewRounds = (props) => {
                     {allEmailTemplates?.map((email) => (
                       <option
                         value={email.emailTemplateID}
-                        // selected={inductionInfo.emailTemplateID === email.emailTemplateID ? true : false}
+                      // selected={inductionInfo.emailTemplateID === email.emailTemplateID ? true : false}
                       >
                         {email.emailTemplateName}
                       </option>
@@ -845,12 +811,15 @@ const ShareInterviewRounds = (props) => {
               </select>
             </div>
           </div>
+          <div style={{display:'flex',justifyContent:'center'}}>
+            {apiStatus ? <PreLoader/> :''}
+          </div>
           <div
             className="d-flex flex-row justify-content-around align-items-center job-details-form w-full"
             style={{ background: "white" }}
           >
-            <button type="submit" className="btn" style={{marginTop:'17px'}} disabled={!isSharable()}>
-               Share
+            <button type="submit" className="btn" style={{ marginTop: '17px' }} disabled={!isSharable()}>
+              Share
             </button>
           </div>
           <br />

@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FormControl, Grid, TextField } from '@material-ui/core';
-import { useDispatch, useSelector } from "react-redux"; 
+import { useDispatch, useSelector } from "react-redux";
 import { actionGetCampusDriveEmailTemplatesListRequestSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/CommunicationSagaAction";
 import { actionGetCampusDriveDefineJobsListRequestSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/DefineJobsSagaActions";
 import { actionGetCampusDriveOfferLetterRequest, actionGetFinalStudentsListSaga, actionPostStudentOfferLetterSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/CampusInterviewSagaAction";
 import PgkSelectField from "../../../../Components/FormFields/PgkSelectField";
 import { actionGetCountryCodesSagaAction } from "../../../../Store/Actions/SagaActions/CommonSagaActions";
+import PreLoader from "../../../../utils/PreLoader";
+import { toast } from "react-toastify";
+import Modal from "react-bootstrap/Modal";
 
 const ReleaseOfferLetters = (props) => {
 
@@ -38,6 +41,7 @@ const ReleaseOfferLetters = (props) => {
     const [offerLetterInformation, setOfferLetterInformation] = useState(initialModel);
     const [allEmailTemplates, setAllEmailTemplates] = useState({});
     const [states, setStates] = useState([]);
+    const [showAlert, setShowAlert] = useState(false);
     const countryName = useSelector(state => state.DashboardReducer.profileInfo?.corporateHQAddressCountry);
 
     const [studentEmailTemplateId, setStudentEmailTemplateId] = useState();
@@ -46,6 +50,8 @@ const ReleaseOfferLetters = (props) => {
     const getAllEmailTemplates = (data) => {
         setAllEmailTemplates(data);
     }
+
+    const apiStatus = useSelector(state => state.DashboardReducer.apiStatus);
 
     const getEmailTemplateAvailable = () => {
         const model =
@@ -229,6 +235,8 @@ const ReleaseOfferLetters = (props) => {
     const onSuccess = () => {
         setStudentsList({});
         setOfferLetterInformation(initialModel);
+        setShowAlert(true);
+        // toast.success('Released Offer Letters Successfully')
 
     }
 
@@ -258,8 +266,10 @@ const ReleaseOfferLetters = (props) => {
     }
 
     return (
+
         <div className="bgWhite" style={{ width: "910px", height: "590px" }}>
-            <div className="d-flex flex-column justify-content-start align-items-center w-full">
+            {apiStatus ? <PreLoader /> : ''}
+            <div className="d-flex flex-column justify-content-start align-items-center ">
                 <p className="heading" style={{ color: "#253AA3", fontWeight: "bold", fontFamily: "Poppins-Regular", display: "block" }}>
                     Release Offer Results
                 </p>
@@ -321,175 +331,174 @@ const ReleaseOfferLetters = (props) => {
                             />
                         </div>
                         <br />
-                        <div style={{height:"250px", overflowY:"scroll", overflowX:"scroll"}}>
-                        <table class="table table-striped table-bordered">
-                            <thead style={{ backgroundColor: "#01253cf5", color: "white" }}>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Student Name</th>
-                                    {/* <th>College Roll No.</th> */}
-                                    <th>Email ID</th>
-                                    <th>Designation</th>
-                                    <th>Joining Location</th>
-                                    <th>Joining Date</th>
-                                    <th>Offer Letter</th>
-                                    <th>Salary</th>
-                                    <th>Remarks</th>
-                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    studentFinalList?.studentsList.map((student, index) => (
-                                        <>
-                                            <tr>
-                                                <th>{index + 1}</th>
-                                                <td>{student.name}</td>
-                                                {/* <td>{student.collegeRollNo}</td> */}
-                                                <td>{student.email}</td>
-                                                <td>
-                                                    <TextField
-                                                        label="Designation"
-                                                        value={offerLetterInformation?.jobOffers[index].designation}
-                                                        onChange={(event) => handleChange(event, index)}
-                                                        InputLabelProps={{
-                                                            shrink: true,
-                                                            style: { fontFamily: "Poppins-Regular", display: "block" }
-                                                        }}
-                                                        inputProps={{
-                                                            name: "designation",
-                                                            style: { fontFamily: "Poppins-Regular", display: "block" }
-                                                        }}
-                                                        style={{ width: "100%" }}
-                                                        variant="outlined"
-                                                        margin="dense"
-                                                        required={true}
-                                                        type="text"
-                                                        disabled={offerLetterInformation?.jobOffers[index].offerLetterShared}
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <TextField
-                                                        onChange={(event) => handleChange(event, index)}
-                                                        select
-                                                        label="Location"
-                                                        value={offerLetterInformation?.jobOffers[index].location}
-                                                        InputLabelProps={{
-                                                            shrink: true,
-                                                            style: { fontFamily: "Poppins-Regular", display: "block" }
-                                                        }}
-                                                        inputProps={{
-                                                            name: "location",
-                                                            style: { fontFamily: "Poppins-Regular", display: "block" }
-                                                        }}
-                                                        style={{ width: "100%" }}
-                                                        variant="outlined"
-                                                        margin="dense"
-                                                        required={true}
-                                                        SelectProps={{
-                                                            native: true,
-                                                        }}
-                                                        disabled={offerLetterInformation?.jobOffers[index].offerLetterShared}
-                                                    >
-                                                        <option value={'DEFAULT'}>Select a location</option>
-                                                        {states?.length && (
-                                                            states.map((item) => {
-                                                                return <option value={item.value}
-                                                                    key={item.value}
-                                                                >{item.label}</option>
-                                                            })
-                                                        )}
-                                                    </TextField>
-                                                </td>
-                                                <td>
-                                                    <TextField
-                                                        onChange={(event) => handleChange(event, index)}
-                                                        label="Joining Date"
-                                                        InputLabelProps={{
-                                                            shrink: true,
-                                                            style: { fontFamily: "Poppins-Regular", display: "block" }
-                                                        }}
-                                                        inputProps={{
-                                                            name: "joiningDate",
-                                                            style: { fontFamily: "Poppins-Regular", display: "block" }
-                                                        }}
-                                                        value={offerLetterInformation?.jobOffers[index].joiningDate}
-                                                        style={{ width: "100%" }}
-                                                        variant="outlined"
-                                                        margin="dense"
-                                                        required={true}
-                                                        type="date"
-                                                        disabled={offerLetterInformation?.jobOffers[index].offerLetterShared}
-                                                    />
+                        <div style={{ height: "250px", overflowY: "scroll", overflowX: "scroll" }}>
+                            <table class="table table-striped table-bordered">
+                                <thead style={{ backgroundColor: "#01253cf5", color: "white" }}>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Student Name</th>
+                                        {/* <th>College Roll No.</th> */}
+                                        <th>Email ID</th>
+                                        <th>Designation</th>
+                                        <th>Joining Location</th>
+                                        <th>Joining Date</th>
+                                        <th>Offer Letter</th>
+                                        <th>Salary</th>
+                                        <th>Remarks</th>
 
-                                                </td>
-                                                <td>
-                                                    <div className="d-attach" onClick={offerLetterInformation?.jobOffers[index].offerLetterShared ? () => {
-                                                        getOfferLetter(offerLetterInformation?.jobOffers[index].applicantID, offerLetterInformation?.jobOffers[index].offerLetterID)
-                                                    } : undefined}>
-                                                        <p className="float-left" style={{ fontSize: "18px", fontFamily: "Poppins-Regular", display: "block" }}> {offerLetterInformation?.jobOffers[index].offerLetterFileName}</p>
-                                                        {/* <p style={{ position: "absolute", top: "40px", fontSize: "18px", fontFamily: "Poppins-Regular", display: "block", color: "red" }}>{'fa234fa'}</p> */}
-                                                        <input
-                                                            type="file"
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        studentFinalList?.studentsList.map((student, index) => (
+                                            <>
+                                                <tr>
+                                                    <th>{index + 1}</th>
+                                                    <td>{student.name}</td>
+                                                    {/* <td>{student.collegeRollNo}</td> */}
+                                                    <td>{student.email}</td>
+                                                    <td>
+                                                        <TextField
+                                                            label="Designation"
+                                                            value={offerLetterInformation?.jobOffers[index].designation}
                                                             onChange={(event) => handleChange(event, index)}
-                                                            className="d-inp"
-                                                            accept=".pdf"
-                                                            name="offerLetterFile"
-                                                            id={"offerLetterFile" + index}
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                            }}
+                                                            inputProps={{
+                                                                name: "designation",
+                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                            }}
+                                                            style={{ width: "100%" }}
+                                                            variant="outlined"
+                                                            margin="dense"
+                                                            required={true}
+                                                            type="text"
                                                             disabled={offerLetterInformation?.jobOffers[index].offerLetterShared}
                                                         />
-                                                        <label id={"offerLetterFile" + index} className="d-label">
-                                                            <i className="fas fa-paperclip mr-2"></i> Offer Letter
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <TextField
-                                                        label="Salary"
-                                                        value={offerLetterInformation?.jobOffers[index].salary}
-                                                        onChange={(event) => handleChange(event, index)}
-                                                        InputLabelProps={{
-                                                            shrink: true,
-                                                            style: { fontFamily: "Poppins-Regular", display: "block" }
-                                                        }}
-                                                        inputProps={{
-                                                            name: "salary",
-                                                            style: { fontFamily: "Poppins-Regular", display: "block" }
-                                                        }}
-                                                        style={{ width: "150px" }}
-                                                        variant="outlined"
-                                                        margin="dense"
-                                                        required={true}
-                                                        type="number"
-                                                        disabled={offerLetterInformation?.jobOffers[index].offerLetterShared}
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <TextField
-                                                        label="Remarks" 
-                                                        value={offerLetterInformation?.jobOffers[index].remarks}
-                                                        onChange={(event) => handleChange(event, index)}
-                                                        InputLabelProps={{
-                                                            shrink: true,
-                                                            style: { fontFamily: "Poppins-Regular", display: "block" }
-                                                        }}
-                                                        inputProps={{
-                                                            name: "remarks",
-                                                            style: { fontFamily: "Poppins-Regular", display: "block" }
-                                                        }}
-                                                        variant="outlined"
-                                                        margin="dense"
-                                                        type="text"
-                                                        disabled={offerLetterInformation?.jobOffers[index].offerLetterShared}
-                                                    />
-                                                </td>
-                                                
-                                            </tr>
-                                        </>
-                                    ))
-                                }
-                            </tbody>
-                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <TextField
+                                                            onChange={(event) => handleChange(event, index)}
+                                                            select
+                                                            label="Location"
+                                                            value={offerLetterInformation?.jobOffers[index].location}
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                            }}
+                                                            inputProps={{
+                                                                name: "location",
+                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                            }}
+                                                            style={{ width: "100%" }}
+                                                            variant="outlined"
+                                                            margin="dense"
+                                                            required={true}
+                                                            SelectProps={{
+                                                                native: true,
+                                                            }}
+                                                            disabled={offerLetterInformation?.jobOffers[index].offerLetterShared}
+                                                        >
+                                                            <option value={'DEFAULT'}>Select a location</option>
+                                                            {states?.length && (
+                                                                states.map((item) => {
+                                                                    return <option value={item.value}
+                                                                        key={item.value}
+                                                                    >{item.label}</option>
+                                                                })
+                                                            )}
+                                                        </TextField>
+                                                    </td>
+                                                    <td>
+                                                        <TextField
+                                                            onChange={(event) => handleChange(event, index)}
+                                                            label="Joining Date"
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                            }}
+                                                            inputProps={{
+                                                                name: "joiningDate",
+                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                            }}
+                                                            value={offerLetterInformation?.jobOffers[index].joiningDate}
+                                                            style={{ width: "100%" }}
+                                                            variant="outlined"
+                                                            margin="dense"
+                                                            required={true}
+                                                            type="date"
+                                                            disabled={offerLetterInformation?.jobOffers[index].offerLetterShared}
+                                                        />
+
+                                                    </td>
+                                                    <td>
+                                                        <div className="d-attach" onClick={offerLetterInformation?.jobOffers[index].offerLetterShared ? () => {
+                                                            getOfferLetter(offerLetterInformation?.jobOffers[index].applicantID, offerLetterInformation?.jobOffers[index].offerLetterID)
+                                                        } : undefined}>
+                                                            <input
+                                                                style={{ paddingTop: '10px' }}
+                                                                type="file"
+                                                                onChange={(event) => handleChange(event, index)}
+                                                                className="d-inp"
+                                                                accept=".pdf"
+                                                                name="offerLetterFile"
+                                                                id={"offerLetterFile" + index}
+                                                                disabled={offerLetterInformation?.jobOffers[index].offerLetterShared}
+                                                            />
+                                                            {/* <label id={"offerLetterFile" + index} className="d-label">
+                                                                <i className="fas fa-paperclip mr-2"></i> Offer Letter
+                                                            </label> */}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <TextField
+                                                            label="Salary"
+                                                            value={offerLetterInformation?.jobOffers[index].salary}
+                                                            onChange={(event) => handleChange(event, index)}
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                            }}
+                                                            inputProps={{
+                                                                name: "salary",
+                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                            }}
+                                                            style={{ width: "150px" }}
+                                                            variant="outlined"
+                                                            margin="dense"
+                                                            required={true}
+                                                            type="number"
+                                                            disabled={offerLetterInformation?.jobOffers[index].offerLetterShared}
+                                                        />
+                                                    </td>
+                                                    <td>
+                                                        <TextField
+                                                            label="Remarks"
+                                                            value={offerLetterInformation?.jobOffers[index].remarks}
+                                                            onChange={(event) => handleChange(event, index)}
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                            }}
+                                                            inputProps={{
+                                                                name: "remarks",
+                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                            }}
+                                                            variant="outlined"
+                                                            margin="dense"
+                                                            type="text"
+                                                            disabled={offerLetterInformation?.jobOffers[index].offerLetterShared}
+                                                        />
+                                                    </td>
+
+                                                </tr>
+                                            </>
+                                        ))
+                                    }
+                                </tbody>
+                            </table>
                         </div>
                         <br />
                         <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full" style={{ background: "white" }}>
@@ -500,6 +509,7 @@ const ReleaseOfferLetters = (props) => {
                                     setStudentEmailTemplateId(value);
                                 }}
                                 label="Email Template for Student"
+                                inputLabelProps={{ style: { fontSize: ".700rem", transform: 'translateY(-17px)' } }}
                                 options={allEmailTemplates?.length ? allEmailTemplates.map((item) => {
                                     return { value: item?.emailTemplateID?.toString(), label: item?.emailTemplateName }
                                 }) : []}
@@ -516,6 +526,7 @@ const ReleaseOfferLetters = (props) => {
                                 onChange={(name, value, errorMessage) => {
                                     setUnivEmailTemplateId(value);
                                 }}
+                                inputLabelProps={{ style: { fontSize: ".700rem", transform: 'translateY(-17px)' } }}
                                 label="Email Template for University"
                                 options={allEmailTemplates?.length ? allEmailTemplates.map((item) => {
                                     return { value: item?.emailTemplateID?.toString(), label: item?.emailTemplateName }
@@ -545,6 +556,19 @@ const ReleaseOfferLetters = (props) => {
                     </>
             }
             <br />
+            {showAlert &&
+            <Modal
+                size="md"
+                show={showAlert}
+                onHide={() => setShowAlert(false)}
+                aria-labelledby="example-modal-sizes-title-sm"
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title id="example-modal-sizes-title-sm">Success</Modal.Title>
+                </Modal.Header>
+                <Modal.Body style={{height:'200px'}}><h3 style={{marginTop:'30px'}}>Released Offer Letters Successfully</h3></Modal.Body>
+            </Modal>
+        }
         </div>
     );
 };

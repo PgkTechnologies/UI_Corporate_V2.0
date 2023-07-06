@@ -210,3 +210,12 @@
     -moz-box-shadow: 1px 1px 10px 0px #0228449b;
     box-shadow: 1px 1px 10px 0px #0228449b;
 }
+
+.ReactTags__tagInput input.ReactTags__tagInputField {
+    /* Styles for the input field */
+    width: 310px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }

@@ -61,7 +61,7 @@ const ProfileCmp = (props) => {
             }
           />
         </div>
-        <div className="col-2">
+        <div className="col-12">
           
             <label htmlFor="accredationfile" className="file_label">
               Attach File

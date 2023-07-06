@@ -111,7 +111,7 @@ const Profile = () => {
                                         <AccountCircle />
                                     </Badge>
                                 }
-                                label={tabValue === 0 ? "Profile" : ""}
+                                label={"Profile" }
                                 wrapped
                                 style={{
                                     outline: "none",
@@ -127,7 +127,7 @@ const Profile = () => {
                                         <AddchartSharpIcon />
                                     </Badge>
                                 }
-                                label={tabValue === 1 ? "Other Information" : ""}
+                                label={ "Other Information"}
                                 wrapped
                                 style={{
                                     outline: "none",

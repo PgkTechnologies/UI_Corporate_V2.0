@@ -294,7 +294,7 @@ const DefineInduction = (props) => {
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    console.log(allEmailTemplates,'hiuu')
+    console.log(allEmailTemplates, 'hiuu')
 
     return (
         <>
@@ -435,7 +435,7 @@ const DefineInduction = (props) => {
                                                                 <label
                                                                     htmlFor="attachment"
                                                                     className="file_label"
-                                                                    style={{ fontWeight: 'bold', color: '#0D6EFD', marginRight:'20px' }}
+                                                                    style={{ fontWeight: 'bold', color: '#0D6EFD', marginRight: '20px' }}
                                                                 >
                                                                     Attachment *
                                                                 </label>
@@ -458,36 +458,42 @@ const DefineInduction = (props) => {
                                                         <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full" style={fileSizeErr ? { paddingTop: "20px", background: "white" } : { paddingTop: "0px", background: "white" }}>
                                                             <div className="d-attach" style={{ maxWidth: "95%" }}>
                                                                 <p style={{ paddingLeft: "10px", fontSize: "18px", fontFamily: "Poppins-Regular", display: "block" }}>
-                                                                                        </p>
+                                                                </p>
                                                                 <p style={{ position: "absolute", top: "40px", fontSize: "18px", fontFamily: "Poppins-Regular", display: "block", color: "red" }}>{emailTemplateErr}</p>
-                                                                <label htmlFor="EmailTemplate" className="d-label" style={{ left: "-1px",marginRight:'10px' }}>
+                                                                <label htmlFor="EmailTemplate" className="d-label" style={{ left: "-1px", marginRight: '10px' }}>
                                                                     <i className="fas fa-envelope mr-2"></i>Choose Email Template
                                                                 </label>
                                                                 <select
                                                                     name="emailTemplateID"
-                                                                    class="d-inp"
+                                                                    style={{
+                                                                        width: '250px',
+                                                                        padding: '8px',
+                                                                        border: '2px solid #ccc',
+                                                                        borderRadius: '4px',
+                                                                        fontSize: '14px'
+                                                                    }}
                                                                     id="inputGroupSelect01"
                                                                     onChange={handleChange}
                                                                     required={true}>
                                                                     <option selected>
-                                                                    {
-                                                                        allEmailTemplates?.length > 0 ?
-                                                                            <div >
+                                                                        {
+                                                                            allEmailTemplates?.length > 0 ?
+                                                                                <div >
 
-                                                                                {
-                                                                                    allEmailTemplates.map((email) => {
-                                                                                        if (inductionInfo.emailTemplateID == email.emailTemplateID) {
-                                                                                            return email.emailTemplateName;
-                                                                                        }
-                                                                                    })
-                                                                                }
-                                                                            </div>
-                                                                            :
-                                                                            <>
-                                                                            Choose...
-                                                                            </>
-                                                                    }
-                                           
+                                                                                    {
+                                                                                        allEmailTemplates.map((email) => {
+                                                                                            if (inductionInfo.emailTemplateID == email.emailTemplateID) {
+                                                                                                return email.emailTemplateName;
+                                                                                            }
+                                                                                        })
+                                                                                    }
+                                                                                </div>
+                                                                                :
+                                                                                <>
+                                                                                    Choose...
+                                                                                </>
+                                                                        }
+
                                                                     </option>
                                                                     {
                                                                         allEmailTemplates?.length > 0 ?
@@ -511,20 +517,23 @@ const DefineInduction = (props) => {
                                                     </Grid>
                                                 </div>
                                                 <div className="row align-items-center" sstyle={{ marginLeft: '50px', marginTop: '57px' }}>
-                                                    <div style={{ marginLeft: '50px', display: 'inline-flex', alignItems: 'center' }}>
-                                                        <Checkbox size={'small'}
-                                                            checked={inductionInfo?.sendEmail}
-                                                            onClick={() => {
-                                                                setInductionInfo((prevOtherInfo) => ({
-                                                                    ...prevOtherInfo,
-                                                                    sendEmail: !inductionInfo?.sendEmail,
-                                                                }));
-                                                            }}
-                                                            color={'primary'} />
-                                                        <p style={{ fontSize: '14px', marginTop: '35px' }}>
-                                                            On Clicking Save, a notification and email will be triggered to the university<br/>
-                                                             and its students
-                                                        </p>
+                                                    <div style={{ marginLeft: '150px', display: 'inline-flex', alignItems: 'center' }}>
+                                                        <div style={{ marginTop: '20px' }}>
+                                                            <Checkbox size={'small'}
+                                                                checked={inductionInfo?.sendEmail}
+                                                                onClick={() => {
+                                                                    setInductionInfo((prevOtherInfo) => ({
+                                                                        ...prevOtherInfo,
+                                                                        sendEmail: !inductionInfo?.sendEmail,
+                                                                    }));
+                                                                }}
+                                                                color={'primary'} /></div>
+                                                        <div>
+                                                            <p style={{ fontSize: '14px', marginTop: '35px' }}>
+                                                                On Clicking Save, a notification and email will be triggered to the university
+                                                                and its students
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className="card-footer">
@@ -542,12 +551,12 @@ const DefineInduction = (props) => {
                             </div>
                         </>
                 }
-            </div>
+            </div >
             {
                 enableSuccessModal
                     ?
                     <>
-                        <div>
+                        < div >
                             <Modal isOpen={enableSuccessModal} toggle={toggleSuccessModal}>
                                 <ModalBody style={{ textAlign: "center" }} >
                                     <CancelOutlinedIcon className="cancelbtn" onClick={toggleSuccessModal} />
@@ -560,7 +569,7 @@ const DefineInduction = (props) => {
                                     <p style={{ textAlign: "center" }} className="paragraph2">{operationType} successfully</p>
                                 </ModalBody>
                             </Modal>
-                        </div>
+                        </div >
                     </>
                     :
                     <>
