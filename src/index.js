@@ -13,6 +13,8 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import AllReducers from "./Store/Reducers";
 import { Provider } from "react-redux";
 import { AuthPorvider } from "./utils/Auth";
+import thunk from "redux-thunk";
+
 
 //Tostify Properties
 
@@ -22,7 +24,7 @@ const sagaMiddleware = createSagaMiddleware();
 //Store
 const store = createStore(
   AllReducers,
-  composeWithDevTools(applyMiddleware(sagaMiddleware))
+  composeWithDevTools(applyMiddleware(sagaMiddleware,thunk))
 );
 
 sagaMiddleware.run(webportalAppRootSaga);
