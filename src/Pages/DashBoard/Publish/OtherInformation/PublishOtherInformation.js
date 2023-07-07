@@ -211,10 +211,10 @@ const PublishOtherInformation = () => {
     const onAddOtherInformation = (response) => {
         console.log(response, 'respoooom')
         toast.success('Other Information stored successfully')
-        setOtherInfo(initialData);
+        resetPublishOtherInformation();
         localStorage.setItem('otherInfoID', response?.id)
         // if (response?.id) {
-        //   dispatch(actionPostPublishOtherInformationRequest({
+        //   dispatch(`actionPostPublishOtherInformationRequest`({
         //     apiPayloadRequest: [response.id],
         //     callback: onPublish
         //   }))
@@ -304,11 +304,11 @@ const PublishOtherInformation = () => {
                                         accept=".pdf"
                                         name="attachment"
                                         id="attachment"
-                                        alt=""
+                                        
                                         required
                                     />
                                 </div>
-                                <div >
+                                <div style={{ }}>
                                     <p className="attach-inp_label"
                                         style={{ color: 'blue', cursor: 'pointer' }}
                                     // onClick={() => {
