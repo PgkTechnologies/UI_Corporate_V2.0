@@ -8,7 +8,7 @@ const History = () => {
             <div className='row history-container'>
                 <h1 style={{ marginLeft: '15px', fontWeight: 'bold' }}>History</h1>
                 <div className='col-lg-3 col-md-4 col-sm-6' 
-                // onClick={() => history('/history/broadcast')}
+                onClick={() => history('/history/OtherInformationHist')}
                 >
                     <div className='history-item'>
                         Other Information
