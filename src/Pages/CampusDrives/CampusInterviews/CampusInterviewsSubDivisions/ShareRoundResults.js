@@ -191,7 +191,11 @@ const ShareRoundResults = (props) => {
                     // onChange={props.handleChange}
                     InputLabelProps={{
                         shrink: true,
-                        style: { fontFamily: "Poppins-Regular", display: "block" }
+                        style: { fontFamily: "Poppins-Regular", display: "block" ,
+                        fontSize: ".800rem",
+                        background: "#fff",
+                        paddingLeft: "2px",
+                        paddingRight: "2px",}
                     }}
                     inputProps={{
                         style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -224,7 +228,11 @@ const ShareRoundResults = (props) => {
                     // onChange={props.handleChange}
                     InputLabelProps={{
                         shrink: true,
-                        style: { fontFamily: "Poppins-Regular", display: "block" }
+                        style: { fontFamily: "Poppins-Regular", display: "block",
+                        fontSize: ".800rem",
+                        background: "#fff",
+                        paddingLeft: "2px",
+                        paddingRight: "2px", }
                     }}
                     inputProps={{
                         style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -351,7 +359,11 @@ const ShareRoundResults = (props) => {
                     // onChange={props.handleChange}
                     InputLabelProps={{
                         shrink: true,
-                        style: { fontFamily: "Poppins-Regular", display: "block" }
+                        style: { fontFamily: "Poppins-Regular", display: "block",
+                        fontSize: ".800rem",
+                        background: "#fff",
+                        paddingLeft: "2px",
+                        paddingRight: "2px", }
                     }}
                     inputProps={{
                         style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -370,11 +382,19 @@ const ShareRoundResults = (props) => {
                     // onChange={props.handleChange}
                     InputLabelProps={{
                         shrink: true,
-                        style: { fontFamily: "Poppins-Regular", display: "block" }
+                        style: { fontFamily: "Poppins-Regular", display: "block",
+                        fontSize: ".800rem",
+                        background: "#fff",
+                        paddingLeft: "2px",
+                        paddingRight: "2px", }
                     }}
                     inputProps={{
                         // min: props.addProgram.startDate,
-                        style: { fontFamily: "Poppins-Regular", display: "block" }
+                        style: { fontFamily: "Poppins-Regular", display: "block" 
+                    , fontSize: ".800rem",
+                    background: "#fff",
+                    paddingLeft: "2px",
+                    paddingRight: "2px",}
                     }}
                     //disabled={props.addProgram.startDate.length > 0 ? false : true}
                     variant="outlined"
@@ -390,7 +410,11 @@ const ShareRoundResults = (props) => {
                     className="form-control"
                     InputLabelProps={{
                         shrink: true,
-                        style: { fontFamily: "Poppins-Regular", display: "block" }
+                        style: { fontFamily: "Poppins-Regular", display: "block",
+                        fontSize: ".800rem",
+                        background: "#fff",
+                        paddingLeft: "2px",
+                        paddingRight: "2px", }
                     }}
                     inputProps={{
                         style: { fontFamily: "Poppins-Regular", display: "block" }

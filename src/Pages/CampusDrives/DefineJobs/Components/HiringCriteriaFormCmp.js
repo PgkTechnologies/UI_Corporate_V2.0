@@ -346,7 +346,6 @@ const HiringCriteriaFormCmp = (props) => {
           <div className={`row  m-0 ${props?.cdJob ? " w-full" : ""}`}>
             <div className="col-md-4">
               <PgkTextField
-              
                 name="jobName"
                 onChange={props?.handleJobChange}
                 value={
@@ -355,7 +354,14 @@ const HiringCriteriaFormCmp = (props) => {
                     : ""
                 }
                 label={"Name of the job"}
-                inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                inputLabelProps={{
+                  style: {
+                    fontSize: ".800rem",
+                    background: "#fff",
+                    paddingLeft: "2px",
+                    paddingRight: "2px",
+                  },
+                }}
                 inputProps={{ style: { fontSize: ".800rem" } }}
                 errorMessage={props?.jobFormData?.jobName?.errorMessage}
                 required={props?.jobFormData?.jobName?.isRequired }
@@ -480,7 +486,10 @@ const HiringCriteriaFormCmp = (props) => {
                 validations={["isNumericWithDecimal", "min_1"]}
                 inputLabelProps={{
                   style: {
-                    fontSize: `${props?.cdJob ? ".700rem" : ".800rem"}`
+                    fontSize: `${props?.cdJob ? ".700rem" : ".800rem"}` ,
+                    background: "#fff",
+                    paddingLeft: "2px",
+                    paddingRight: "2px",
                   },
                 }}
                 inputProps={{ style: { fontSize: ".800rem" } }}
@@ -517,7 +526,14 @@ const HiringCriteriaFormCmp = (props) => {
                 onChange={props?.handleJobChange}
                 value={props?.jobFormData?.noOfPositions?.value}
                 label={"No of positions"}
-                inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                inputLabelProps={{
+                  style: {
+                    fontSize: ".800rem",
+                    background: "#fff",
+                    paddingLeft: "2px",
+                    paddingRight: "2px",
+                  },
+                }}
                 inputProps={{ style: { fontSize: ".800rem" } }}
                 validations={["isNumeric"]}
                 errorMessage={props?.jobFormData?.noOfPositions?.errorMessage}
@@ -535,6 +551,10 @@ const HiringCriteriaFormCmp = (props) => {
                 inputLabelProps={{
                   style: {
                     fontSize: `${props?.cdJob ? ".700rem" : ".800rem"}`,
+                    background: "#fff",
+                    paddingLeft: "2px",
+                    paddingRight: "2px",
+
                   },
                 }}
                 inputProps={{ style: { fontSize: ".800rem" } }}
@@ -664,7 +684,15 @@ const HiringCriteriaFormCmp = (props) => {
                   "min_35.00",
                   "max_100.00",
                 ]}
-                inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                 
+                inputLabelProps={{
+                  style: {
+                    fontSize: ".800rem",
+                    background: "#fff",
+                    paddingLeft: "2px",
+                    paddingRight: "2px",
+                  },
+                }}
                 inputProps={{ style: { fontSize: ".800rem" } }}
                 errorMessage={
                   props?.hiringData?.minimumCutoffPercentage10th?.errorMessage
@@ -694,7 +722,15 @@ const HiringCriteriaFormCmp = (props) => {
                       "min_35.00",
                       "max_100.00",
                     ]}
-                    inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                    
+                    inputLabelProps={{
+                      style: {
+                        fontSize: ".800rem",
+                        background: "#fff",
+                        paddingLeft: "2px",
+                        paddingRight: "2px",
+                      },
+                    }}
                     inputProps={{ style: { fontSize: ".800rem" } }}
                     errorMessage={
                       props?.hiringData?.minimumCutoffPercentage12th
@@ -725,7 +761,15 @@ const HiringCriteriaFormCmp = (props) => {
                         "min_35.00",
                         "max_100.00",
                       ]}
-                      inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                      // inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                      inputLabelProps={{
+                        style: {
+                          fontSize: ".800rem",
+                          background: "#fff",
+                          paddingLeft: "2px",
+                          paddingRight: "2px",
+                        },
+                      }}
                       inputProps={{ style: { fontSize: ".800rem" } }}
                       errorMessage={
                         props?.hiringData?.minimumCutoffPercentageDiploma
@@ -755,7 +799,15 @@ const HiringCriteriaFormCmp = (props) => {
                         "min_35.00",
                         "max_100.00",
                       ]}
-                      inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                      // inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                      inputLabelProps={{
+                        style: {
+                          fontSize: ".800rem",
+                          background: "#fff",
+                          paddingLeft: "2px",
+                          paddingRight: "2px",
+                        },
+                      }}
                       inputProps={{ style: { fontSize: ".800rem" } }}
                       errorMessage={
                         props?.hiringData?.minimumCutoffPercentageITI
@@ -786,7 +838,15 @@ const HiringCriteriaFormCmp = (props) => {
                   "min_35.00",
                   "max_100.00",
                 ]}
-                inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                // inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                inputLabelProps={{
+                  style: {
+                    fontSize: ".800rem",
+                    background: "#fff",
+                    paddingLeft: "2px",
+                    paddingRight: "2px",
+                  },
+                }}
                 inputProps={{ style: { fontSize: ".800rem" } }}
                 errorMessage={
                   props?.hiringData?.minimumCutoffPercentageGrad?.errorMessage
@@ -855,7 +915,15 @@ const HiringCriteriaFormCmp = (props) => {
                     : null
                 }
                 label={"How many Backlogs?"}
-                inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                // inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                inputLabelProps={{
+                  style: {
+                    fontSize: ".800rem",
+                    background: "#fff",
+                    paddingLeft: "2px",
+                    paddingRight: "2px",
+                  },
+                }}
                 inputProps={{ style: { fontSize: ".800rem" } }}
                 validations={["isNumeric", "min_0", "max_25"]}
                 errorMessage={
@@ -879,7 +947,9 @@ const HiringCriteriaFormCmp = (props) => {
                   { value: "open", label: "Open" },
                   { value: "close", label: "Close" },
                 ]}
-                labelStyles={{ fontSize: ".800rem" }}
+                labelStyles={{ fontSize: ".800rem" , background: "#fff",
+                paddingLeft: "2px",
+                paddingRight: "2px", }}
                 selectStyles={{ fontSize: ".800rem" }}
                 menuStyles={{ fontSize: ".800rem" }}
                 errorMessage={props?.jobFormData?.status?.errorMessage}
@@ -901,7 +971,15 @@ const HiringCriteriaFormCmp = (props) => {
                 disabled={props?.jobFormData?.remarks?.isDisabled}
                 errorMessage={props?.jobFormData?.remarks?.errorMessage}
                 onChange={props?.handleJobChange}
-                inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                // inputLabelProps={{ style: { fontSize: ".800rem" } }}
+                inputLabelProps={{
+                  style: {
+                    fontSize: ".800rem",
+                    background: "#fff",
+                    paddingLeft: "2px",
+                    paddingRight: "2px",
+                  },
+                }}
                 inputProps={{ style: { fontSize: ".800rem" } }}
                 multiline={true}
                 minRows={6}

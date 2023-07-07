@@ -205,7 +205,7 @@ const RoundWiseResults = (props) => {
             <TextField
               select
               label="Job Name"
-              variant="outlined"
+              variant="filled"
               style={{ width: "80%" }}
               InputLabelProps={{
                 shrink: true,
@@ -280,7 +280,7 @@ const RoundWiseResults = (props) => {
                             <button
                               type="button"
                               className="btn"
-                              style={{ backgroundColor: "green" }}
+                              style={{ backgroundColor: "green"  , color:"#ffffff", border:'none'}}
                             >
                               <p>Captured Results</p>
                             </button>
@@ -327,7 +327,7 @@ const RoundWiseResults = (props) => {
                             <button
                               type="button"
                               className="btn"
-                              style={{ backgroundColor: "green" }}
+                              style={{ backgroundColor: "green" , color:"#ffffff", border:'none'}}
                             >
                               <p>Captured Results</p>
                             </button>
@@ -374,7 +374,7 @@ const RoundWiseResults = (props) => {
                             <button
                               type="button"
                               className="btn"
-                              style={{ backgroundColor: "green",color:'black' }}
+                              style={{ backgroundColor: "green", color:"#ffffff" , border:'none' }}
                             >
                               <p>Captured Results</p>
                             </button>
@@ -421,7 +421,7 @@ const RoundWiseResults = (props) => {
                             <button
                               type="button"
                               className="btn"
-                              style={{ backgroundColor: "green",color:'black' }}
+                              style={{ backgroundColor: "green", color:"#ffffff", border:'none' }}
                             >
                               <p>Captured Results</p>
                             </button>
@@ -468,7 +468,7 @@ const RoundWiseResults = (props) => {
                             <button
                               type="button"
                               className="btn"
-                              style={{ backgroundColor: "green",color:'black' }}
+                              style={{ backgroundColor: "green", color:"#ffffff", border:'none' }}
                             >
                               <p>Captured Results</p>
                             </button>
@@ -515,7 +515,7 @@ const RoundWiseResults = (props) => {
                             <button
                               type="button"
                               className="btn"
-                              style={{ backgroundColor: "green",color:'black' }}
+                              style={{ backgroundColor: "green", color:"#ffffff", border:'none' }}
                             >
                               <p>Captured Results</p>
                             </button>
@@ -562,7 +562,7 @@ const RoundWiseResults = (props) => {
                             <button
                               type="button"
                               className="btn"
-                              style={{ backgroundColor: "green",color:'black' }}
+                              style={{ backgroundColor: "green", color:"#ffffff", border:'none' }}
                             >
                               <p>Captured Results</p>
                             </button>
@@ -608,7 +608,7 @@ const RoundWiseResults = (props) => {
                             <button
                               type="button"
                               className="btn"
-                              style={{ backgroundColor: "green",color:'black' }}
+                              style={{ backgroundColor: "green", color:"#ffffff" , border:'none'}}
                             >
                               <p>Captured Results</p>
                             </button>
@@ -655,7 +655,7 @@ const RoundWiseResults = (props) => {
                             <button
                               type="button"
                               className="btn"
-                              style={{ backgroundColor: "green",color:'black' }}
+                              style={{ backgroundColor: "green", color:"#ffffff" , border:'none'}}
                             >
                               <p>Captured Results</p>
                             </button>
@@ -705,7 +705,7 @@ const RoundWiseResults = (props) => {
                             <button
                               type="button"
                               className="btn"
-                              style={{ backgroundColor: "green" }}
+                              style={{ backgroundColor: "green", color:"#ffffff" , border:'none'}}
                             >
                               <p>Captured Results</p>
                             </button>

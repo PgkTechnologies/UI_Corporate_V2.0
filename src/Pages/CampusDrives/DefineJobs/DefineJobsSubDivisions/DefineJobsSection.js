@@ -479,7 +479,7 @@ const DefineJobsSection = (props) => {
                                 <div className="define-job-modal">
                                     <div className="define-job-header" style={{ background: '#03355bdc', display: 'flex', width: '100%', justifyContent: "space-between",  alignItems: 'center' }}>
 
-                                        <p style={{paddingLeft:'400px',color:'white',marginTop:'5px'}} >{jobType} Job</p>
+                                        <p style={{paddingLeft:'535px',color:'white',marginTop:'5px'}} >{jobType} Job </p>
 
                                         <IconButton
                                             style={{ color: "white" }}

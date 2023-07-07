@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FormControl, Grid, TextField } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
-import { CSVLink } from "react-csv"; 
+import { CSVLink } from "react-csv";
 import { actionGetCampusDriveDefineJobsListRequestSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/DefineJobsSagaActions";
 import { actionGetInterviewRoundsRequestSaga, actionGetStudentsListSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/CampusInterviewSagaAction";
 import { actionGetCampusDriveStudentResumeRequest } from "../../../../Store/Actions/SagaActions/CampusDriveSagaActions";
@@ -113,8 +113,8 @@ const ValidateProfiles = (props) => {
       var windo = window.open("#", "_blank");
       windo.document.write(
         "<html><title>" +
-          fileName +
-          '</title><body style="margin-top: 0px; margin - left: 0px; margin - right: 0px; margin - bottom: 0px; ">'
+        fileName +
+        '</title><body style="margin-top: 0px; margin - left: 0px; margin - right: 0px; margin - bottom: 0px; ">'
       );
       windo.document.write(objbuilder);
       windo.document.write("</body></html>");
@@ -146,7 +146,7 @@ const ValidateProfiles = (props) => {
       <CSVLink
         data={
           studentsListForRound?.studentsList &&
-          studentsListForRound?.studentsList.length > 0
+            studentsListForRound?.studentsList.length > 0
             ? studentsListForRound.studentsList
             : "DummyData"
         }
@@ -181,7 +181,13 @@ const ValidateProfiles = (props) => {
           // onChange={props.handleChange}
           InputLabelProps={{
             shrink: true,
-            style: { fontFamily: "Poppins-Regular", display: "block" },
+            style: {
+              fontFamily: "Poppins-Regular", display: "block",
+              fontSize: ".800rem",
+              background: "#fff",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            },
           }}
           inputProps={{
             style: { fontFamily: "Poppins-Regular", display: "block" },
@@ -195,7 +201,7 @@ const ValidateProfiles = (props) => {
           }}
           placeholder="dd-mon-yyyy"
           onChange={onJobChange}
-          // value={props.addProgram.startDate}
+        // value={props.addProgram.startDate}
         >
           <option value={"DEFAULT"}>Select a Job</option>
           {jobsList?.length &&
@@ -215,7 +221,13 @@ const ValidateProfiles = (props) => {
           // onChange={props.handleChange}
           InputLabelProps={{
             shrink: true,
-            style: { fontFamily: "Poppins-Regular", display: "block" },
+            style: {
+              fontFamily: "Poppins-Regular", display: "block",
+              fontSize: ".800rem",
+              background: "#fff",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            },
           }}
           inputProps={{
             style: { fontFamily: "Poppins-Regular", display: "block" },
@@ -314,7 +326,13 @@ const ValidateProfiles = (props) => {
           // onChange={props.handleChange}
           InputLabelProps={{
             shrink: true,
-            style: { fontFamily: "Poppins-Regular", display: "block" },
+            style: {
+              fontFamily: "Poppins-Regular", display: "block",
+              fontSize: ".800rem",
+              background: "#fff",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            },
           }}
           inputProps={{
             style: { fontFamily: "Poppins-Regular", display: "block" },
@@ -332,7 +350,11 @@ const ValidateProfiles = (props) => {
           // onChange={props.handleChange}
           InputLabelProps={{
             shrink: true,
-            style: { fontFamily: "Poppins-Regular", display: "block" },
+            style: { fontFamily: "Poppins-Regular", display: "block" ,
+            fontSize: ".800rem",
+            background: "#fff",
+            paddingLeft: "2px",
+            paddingRight: "2px",},
           }}
           inputProps={{
             // min: props.addProgram.startDate,
@@ -352,7 +374,11 @@ const ValidateProfiles = (props) => {
           className="form-control"
           InputLabelProps={{
             shrink: true,
-            style: { fontFamily: "Poppins-Regular", display: "block" },
+            style: { fontFamily: "Poppins-Regular", display: "block",
+            fontSize: ".800rem",
+            background: "#fff",
+            paddingLeft: "2px",
+            paddingRight: "2px", },
           }}
           inputProps={{
             style: { fontFamily: "Poppins-Regular", display: "block" },
@@ -361,8 +387,8 @@ const ValidateProfiles = (props) => {
           margin="dense"
           style={{ maxWidth: "30%" }}
           value={studentsListForRound.noOfStudentsSelected} //{props.addRanking.rank}
-          // helperText={props.rankNumberErr}
-          // error={props.rankNumberErr ? true : false}
+        // helperText={props.rankNumberErr}
+        // error={props.rankNumberErr ? true : false}
         />
       </div>
       <br />
@@ -389,7 +415,7 @@ const ValidateProfiles = (props) => {
           </thead>
           <tbody>
             {studentsListForRound?.studentsList &&
-            studentsListForRound?.studentsList?.length > 0 ? (
+              studentsListForRound?.studentsList?.length > 0 ? (
               <>
                 {studentsListForRound.studentsList
                   .filter((studentInfo) => studentInfo.selected === true)

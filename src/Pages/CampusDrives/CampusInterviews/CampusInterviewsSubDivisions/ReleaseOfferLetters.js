@@ -281,7 +281,11 @@ const ReleaseOfferLetters = (props) => {
                     label="Job Name"
                     InputLabelProps={{
                         shrink: true,
-                        style: { fontFamily: "Poppins-Regular", display: "block" }
+                        style: { fontFamily: "Poppins-Regular", display: "block" ,
+                        fontSize: ".800rem",
+                        background: "#fff",
+                        paddingLeft: "2px",
+                        paddingRight: "2px",}
                     }}
                     inputProps={{
                         style: { fontFamily: "Poppins-Regular", display: "block" }
