@@ -2,11 +2,15 @@ import React from "react";
 import { ListGroup, Modal } from "react-bootstrap";
 
 const Publish = (props) => {
+
+    const filteredData = props?.publishedFlag?.filter((item) => item?.publishedFlag === false);
+
     let isNotDisabled =
-        props.allProfiles?.publishedFlag === false;
+        props.allProfiles?.publishedFlag === false || filteredData.map((data) =>data?.publishedFlag === false) 
 
-        console.log(props.allProfiles,'hihiihi')
+const cleck = filteredData?.map((item) => (item?.id)  )
 
+    console.log(cleck,filteredData, props?.infoID, 'mikkeeee')
     return (
         <Modal
             show={props?.showPublish}
@@ -42,10 +46,39 @@ const Publish = (props) => {
                                     <></>
                                 )}
 
+                                { props?.infoID ? (
+                                    <ListGroup.Item>
+                                        <div className="d-flex">
+                                            <input
+                                                type="checkbox"
+                                                name="otherInformation"
+                                                id="otherInformation"
+                                                onChange={props?.handleChange}
+                                            />
+                                            <label className="sub-title" htmlFor="otherInformation">
+                                                Other Information
+                                            </label>
+                                        </div>
+                                    </ListGroup.Item>)
+                                    :<></>}
+
+                               
+                                   
+                               
+
+
                             </div>
                         ) : (
                             <></>
                         )}
+                        {/* {props?.infoID ?
+                            (<div className="d-flex" style={{ flexDirection: "column" }}>
+                             
+                            </div>) 
+                            : 
+                            <></>} */}
+
+
 
 
                         <div className="d-flex justify-content-center align-items-center mt-5">

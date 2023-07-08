@@ -6,6 +6,7 @@ import history from "../../@history";
 import {
   ACTION_POST_ADD_OTHER_INFORMATION_REQUEST,
   ACTION_POST_PUBLISH_OTHER_INFORMATION_REQUEST,
+  ACTION_GET_PUBLISH_OTHER_INFORMATION_REQUEST,
   ACTION_GET_PUBLISH_OTHER_INFORMATION_LIST_REQUEST,
 } from "../Actions/SagaActions/SagaActionTypes";
 import { actionUpdateGlobalLoaderSagaAction } from "../Actions/SagaActions/CommonSagaActions";
@@ -75,6 +76,40 @@ function* postPublishOtherInformationRequestSaga(action) {
   }
 }
 
+const getPublishOtherInformation = (otherInformationId) => {
+  const URL = "/p/crp/oi/";
+  return Axios.get(URL).then((resp) => resp.data);
+};
+
+function* getPublishOtherInformationRequestSaga(action) {
+  yield put(actionUpdateGlobalLoaderSagaAction(true));
+
+  try {
+    //  for (
+    //   let index = 0;
+    //   index < action.payload.apiPayloadRequest.length;
+    //   index++
+    // ) {
+      
+      const response =  yield call(
+        getPublishOtherInformation,
+        action.payload.apiPayloadRequest
+      );
+    action.payload.callback(response);
+  } catch (err) {
+    if (err.response) {
+      toast.error(
+        err?.response?.data?.errors?.length &&
+          err?.response?.data?.errors[0]?.message
+      );
+    } else {
+      //toast.error("Something Wrong!", err.message);
+    }
+  } finally {
+    yield put(actionUpdateGlobalLoaderSagaAction(false));
+  }
+}
+
 const getPublishOtherInformationListRequest = () => {
   const URL = "/p/crp/oi/published";
   return Axios.get(URL).then((resp) => resp.data);
@@ -108,6 +143,10 @@ export default function* OtherInformationWatcherSaga() {
   yield takeLatest(
     ACTION_POST_PUBLISH_OTHER_INFORMATION_REQUEST,
     postPublishOtherInformationRequestSaga
+  );
+  yield takeLatest(
+    ACTION_GET_PUBLISH_OTHER_INFORMATION_REQUEST,
+    getPublishOtherInformationRequestSaga
   );
   yield takeLatest(
     ACTION_GET_PUBLISH_OTHER_INFORMATION_LIST_REQUEST,

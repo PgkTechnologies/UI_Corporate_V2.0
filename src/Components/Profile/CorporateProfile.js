@@ -22,6 +22,7 @@ import {
 } from "../../Store/Actions/SagaActions/CorporateProfileSagaActions";
 import Publish from "../../Pages/DashBoard/Publish/Publish";
 import { toast } from "react-toastify";
+import { actionGetPublishOtherInformationListRequest, actionGetPublishOtherInformationRequest, actionPostPublishOtherInformationRequest } from "../../Store/Actions/SagaActions/OtherInformationSagaActions";
 
 const requiredFields = [
   "stakeholderID",
@@ -93,6 +94,7 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
 
   const initialData = {
     universityProfile: false,
+    otherInformation: false,
   };
 
   const [profile, setProfile] = useState();
@@ -100,6 +102,9 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
   const [showModal, setShowModal] = useState(false);
   const [showTermsAndConditions, setShowTermsAndConditions] = useState(false);
   const [profilePicture, setProfilePicture] = useState();
+  const [publishedFlag, setPublishedFlag] = useState();
+  const [oterInfoModal, setOterInfoModal] = useState(false)
+  const [infoID, setInfoID] = useState();
   const [attachment, setAttachment] = useState({
     attachment: undefined,
     attachmentName: undefined,
@@ -143,8 +148,12 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
     (state) => state.DashboardReducer.profileInfo
   );
 
+  
+
   useEffect(() => {
     setIsTermsAndConditionsChecked(false);
+    savedOtherInfo()
+    setInfoID(localStorage.getItem('otherInfoID'))
   }, []);
 
   const downloadPDF = (path, next) => {
@@ -624,21 +633,21 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
       ...updatedProfile,
       corporateHQAddressPhone:
         updatedProfile.corporateHQAddressPhone &&
-        updatedProfile.corporateHQAddressPhone.toString().trim() !== ""
+          updatedProfile.corporateHQAddressPhone.toString().trim() !== ""
           ? "+91" + updatedProfile.corporateHQAddressPhone
           : "",
       corporateLocalBranchAddressPhone:
         updatedProfile.corporateLocalBranchAddressPhone &&
-        updatedProfile.corporateLocalBranchAddressPhone.toString().trim() !==
+          updatedProfile.corporateLocalBranchAddressPhone.toString().trim() !==
           "" &&
-        updatedProfile.corporateLocalBranchAddressPhone.toString().trim()
-          .length === 10
+          updatedProfile.corporateLocalBranchAddressPhone.toString().trim()
+            .length === 10
           ? "+91" + updatedProfile.corporateLocalBranchAddressPhone
           : "",
       primaryContactPhone:
         updatedProfile.primaryContactPhone &&
-        updatedProfile.primaryContactPhone.toString().trim() !== "" &&
-        updatedProfile.primaryContactPhone.toString().trim().length === 10
+          updatedProfile.primaryContactPhone.toString().trim() !== "" &&
+          updatedProfile.primaryContactPhone.toString().trim().length === 10
           ? "+91" + updatedProfile.primaryContactPhone
           : "",
       dateOfJoining: moment(updatedProfile.dateOfJoining),
@@ -745,7 +754,7 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
     };
     addPublishProfileForm(finalModel);
     setShowPublish(false);
-    toast.success("Data published Successfully");
+   
   };
 
   const handleChange = (event) => {
@@ -765,10 +774,53 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
     } else {
       setInputError("Select atleast one profile to publish");
     }
+
+    if (postPublishProfile?.otherInformation) {
+      setInputError("");
+      PostOtherInfo();
+    }
   };
 
-  console.log(profile, profileInfo, "TOT");
-  console.log(profile?.companyProfile, "direc corp msu");
+  const savedOtherInfo = () => {
+    dispatch(actionGetPublishOtherInformationRequest({
+      apiPayloadRequest: [infoID],
+      callback: getSavedData
+    }))
+  }
+
+  const getSavedData = (response) => {
+    console.log(response, 'reepppo')
+    setPublishedFlag(response);
+  }
+
+  const onPublish = () => {
+    getPublishedOtherInformation();
+  }
+
+  const PostOtherInfo = () => {
+    dispatch(actionPostPublishOtherInformationRequest({
+      apiPayloadRequest: [infoID],
+      callback: onPublish
+    }))
+  }
+
+  const getPublishedOtherInformation = (response) => {
+    dispatch(
+      actionGetPublishOtherInformationListRequest({
+        callback: onOtherInformationListResponse,
+      })
+    );
+  }
+  const onOtherInformationListResponse = (response) => {
+    localStorage.removeItem('otherInfoID')
+    setShowPublish(!showPublish);
+    setOterInfoModal(true);
+   
+
+  };
+  // console.log(publishedFlag, 'publiseddd')
+  // console.log(profile, profileInfo, "TOT");
+  // console.log(profile?.companyProfile, "direc corp msu");
 
   return (
     <>
@@ -825,10 +877,10 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
             hqCities={hqCities}
             localStates={localStates}
             localCities={localCities}
-            // profileData={profileInfo}
-            // countries={storedContries}
-            // cityListLocal={cityListLocal}
-            // toggleCorporateHeadQuarters={toggleCorporateHeadQuarters}
+          // profileData={profileInfo}
+          // countries={storedContries}
+          // cityListLocal={cityListLocal}
+          // toggleCorporateHeadQuarters={toggleCorporateHeadQuarters}
           />
 
           <ProfileCmp
@@ -837,7 +889,7 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
             tempAttachment={attachment}
             fileHandler={fileHandler}
             downloadPDF={downloadPDF}
-            // profileData={profileInfo}
+          // profileData={profileInfo}
           />
 
           <PasswordForm
@@ -866,7 +918,7 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
                   onClick={() => {
                     handleShow(true);
                   }}
-                  style={{ color: "#0291ff", cursor: "pointer" }}
+                  style={{ color: "#0291ff", cursor: "pointer", }}
                 >
                   {" "}
                   Terms & Conditions
@@ -895,6 +947,8 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
           handleClose={() => {
             setShowPublish(!showPublish);
           }}
+          publishedFlag={publishedFlag}
+          infoID={infoID}
           allProfiles={profileInfo}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
@@ -1231,6 +1285,18 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
           <Modal.Title id="example-modal-sizes-title-sm">Success</Modal.Title>
         </Modal.Header>
         <Modal.Body>Your Profile has been updated successfully</Modal.Body>
+      </Modal>
+
+      <Modal
+        size="sm"
+        show={oterInfoModal}
+        onHide={() => setOterInfoModal(false)}
+        aria-labelledby="example-modal-sizes-title-sm"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-sm">Success</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Your Other Information Published successfully</Modal.Body>
       </Modal>
     </>
   );

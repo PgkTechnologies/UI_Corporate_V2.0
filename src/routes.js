@@ -68,6 +68,11 @@ const ForgotPassword = React.lazy(() =>
 );
 
 
+const OtherInformationHist = React.lazy(() =>
+import("./Pages/DashBoard/Publish/OtherInformation/OtherInformationList")
+);
+
+
 const routes = [
   {
     path: "/",
@@ -300,6 +305,15 @@ const routes = [
     role: "dashboard",
     name: "Support",
     component: <TicketChatCmp />,
+  },
+  
+  {
+    path: "/history/OtherInformationHist",
+    strict: true,
+    exact: true,
+    role: "dashboard",
+    name: "OtherInformationHist",
+    component: <OtherInformationHist />,
   },
 ];
 

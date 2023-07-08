@@ -233,6 +233,7 @@ const Notifications = () => {
     return d.getDate() + " " + month[d.getMonth()] + ", " + d.getFullYear();
   }
 
+console.log(filterdNtf,'nfttttt')
   return (
     <div className="container-body" style={{marginTop:'100px'}}>
       <div
@@ -295,6 +296,7 @@ const Notifications = () => {
           <div style={{ display: "flex" }}>
             <div>
               {filterdNtf?.map((item, index) => (
+                
                 <div className="container justify-content-start" key={index}>
                   {(item?.notificationRead === true && item?.receiverID) ||
                   (item?.readNotifications?.filter(
@@ -357,16 +359,16 @@ const Notifications = () => {
                         ? "Campus Drive Request from"
                         : item?.notificationType === "CampusHiring Response"
                         ? "Response about your Campus Drive Request from"
-                        : item?.content + " " + "by"}{" "}
+                        : item?.content + " " }{" "}
                       <span
                         style={{
                           fontWeight: "bold",
                           textTransform: "capitalize",
                         }}
                       >
-                        <span style={{ textTransform: "capitalize" }}>
+                        {/* <span style={{ textTransform: "capitalize" }}>
                           {item?.senderName}
-                        </span>
+                        </span> */}
                       </span>
                     </div>
                     <div className="content-time">
