@@ -338,7 +338,12 @@ const DefineInduction = (props) => {
                                                                     onChange={handleChange}
                                                                     InputLabelProps={{
                                                                         shrink: true,
-                                                                        style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                                        style: {
+                                                                            fontFamily: "Poppins-Regular", display: "block",
+                                                                            paddingLeft: '2px',
+                                                                            paddingRight: '2px',
+                                                                            background: '#fff'
+                                                                        }
                                                                     }}
                                                                     inputProps={{
                                                                         style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -359,7 +364,10 @@ const DefineInduction = (props) => {
                                                                     onChange={handleChange}
                                                                     InputLabelProps={{
                                                                         shrink: true,
-                                                                        style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                                        style: { fontFamily: "Poppins-Regular", display: "block" ,
+                                                                        paddingLeft: '2px',
+                                                                        paddingRight: '2px',
+                                                                        background: '#fff'}
                                                                     }}
                                                                     inputProps={{
                                                                         min: currentSystemDate,
@@ -383,7 +391,10 @@ const DefineInduction = (props) => {
                                                                     onChange={handleChange}
                                                                     InputLabelProps={{
                                                                         shrink: true,
-                                                                        style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                                        style: { fontFamily: "Poppins-Regular", display: "block" ,
+                                                                        paddingLeft: '2px',
+                                                                        paddingRight: '2px',
+                                                                        background: '#fff'}
                                                                     }}
                                                                     inputProps={{
                                                                         style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -404,7 +415,9 @@ const DefineInduction = (props) => {
                                                                     onChange={handleChange}
                                                                     InputLabelProps={{
                                                                         shrink: true,
-                                                                        style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                                        style: { fontFamily: "Poppins-Regular", display: "block", paddingLeft: '2px',
+                                                                        paddingRight: '2px',
+                                                                        background: '#fff' }
                                                                     }}
                                                                     inputProps={{
                                                                         style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -518,7 +531,7 @@ const DefineInduction = (props) => {
                                                 </div>
                                                 <div className="row align-items-center" sstyle={{ marginLeft: '50px', marginTop: '57px' }}>
                                                     <div style={{ marginLeft: '150px', display: 'inline-flex', alignItems: 'center' }}>
-                                                        <div style={{ marginTop: '20px' }}>
+                                                        <div style={{ marginTop: '20px' , marginLeft:'150px'}}>
                                                             <Checkbox size={'small'}
                                                                 checked={inductionInfo?.sendEmail}
                                                                 onClick={() => {

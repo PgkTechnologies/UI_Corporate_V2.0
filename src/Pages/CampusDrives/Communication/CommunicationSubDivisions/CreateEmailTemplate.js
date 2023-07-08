@@ -5,10 +5,10 @@ const CreateEmailTemplate = (props) => {
 
     return (
         <>
-        {console.log(props)}
+            {console.log(props)}
             <div className="container">
                 <form className="row add-new-jobs-section" onSubmit={props.handleSubmit} style={{ background: "white" }}  >
-                    <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full" style={{ background: "white",marginTop:'10px' }} >
+                    <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full" style={{ background: "white", marginTop: '10px' }} >
                         <TextField
                             label="Email Template ID"
                             type="text"
@@ -17,7 +17,13 @@ const CreateEmailTemplate = (props) => {
                             className="form-control"
                             InputLabelProps={{
                                 shrink: true,
-                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                style: {
+                                    fontFamily: "Poppins-Regular", display: "block",
+                                    background: '#fff',
+                                    fontWeight:'bold',
+                                    paddingLeft: '2px',
+                                    paddingRight: '2px'
+                                }
                             }}
                             inputProps={{
                                 style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -36,7 +42,11 @@ const CreateEmailTemplate = (props) => {
                             className="form-control"
                             InputLabelProps={{
                                 shrink: true,
-                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                style: { fontFamily: "Poppins-Regular", display: "block",
+                                background: '#fff',
+                                fontWeight:'bold',
+                                paddingLeft: '2px',
+                                paddingRight: '2px' }
                             }}
                             inputProps={{
                                 style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -56,7 +66,11 @@ const CreateEmailTemplate = (props) => {
                             onChange={props.handleChange}
                             InputLabelProps={{
                                 shrink: true,
-                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                style: { fontFamily: "Poppins-Regular", display: "block",
+                                background: '#fff',
+                                fontWeight:'bold',
+                                paddingLeft: '2px',
+                                paddingRight: '2px' }
                             }}
                             inputProps={{
                                 style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -76,7 +90,12 @@ const CreateEmailTemplate = (props) => {
                             onChange={props.handleChange}
                             InputLabelProps={{
                                 shrink: true,
-                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                style: { fontFamily: "Poppins-Regular", display: "block",
+                                background: '#fff',
+                                // fontSize:'.800rem',
+                                paddingLeft: '2px',
+                                paddingRight: '2px',
+                            fontWeight:'bold' }
                             }}
                             inputProps={{
                                 style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -92,8 +111,8 @@ const CreateEmailTemplate = (props) => {
                     </div>
                     <div className="d-flex flex-row justify-content-center align-items-center job-details-form w-full"
                         style={{ background: "white" }}>
-                        <button type="button" style={{margin:'30px 30px 0px 0px'}} className="btn mr-4" onClick={() => { props.onCancel() }}>Cancel</button>
-                        <button type="submit" style={{margin:'30px 0px 0px 0px'}} className="btn" >Save</button>
+                        <button type="button" style={{ margin: '30px 30px 0px 0px' }} className="btn mr-4" onClick={() => { props.onCancel() }}>Cancel</button>
+                        <button type="submit" style={{ margin: '30px 0px 0px 0px' }} className="btn" >Save</button>
                     </div>
                 </form>
             </div>
