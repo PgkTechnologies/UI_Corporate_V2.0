@@ -276,7 +276,7 @@ const ApplicationWindowForm = (props) => {
       >
         <h5
           className="modal-title"
-          style={{ fontSize: "12px", alignSelf: "center",color:'white' }}
+          style={{ fontSize: "12px", alignSelf: "center",color:'white', marginLeft:'530px' }}
         >
           Define Published Job Window
         </h5>
@@ -291,7 +291,11 @@ const ApplicationWindowForm = (props) => {
       </div>
       <div className={"row"} style={{margin:'10px 0px 0px 15px',width:'97%'}}>
         <PgkTextField
-          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem",
+          background: "#fff",
+          paddingLeft: "2px",
+          paddingRight: "2px", 
+       } }}
           name="jobName"
           onChange={handleFormChange}
           value={applicationForm?.jobName?.value}
@@ -317,7 +321,10 @@ const ApplicationWindowForm = (props) => {
               : null
           }
           label={"From Date"}
-          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem" ,
+          background: "#fff",
+          paddingLeft: "2px",
+          paddingRight: "2px", } }}
           inputProps={{
             style: { fontSize: ".800rem" },
             min: applicationForm?.jobApplWindowFromDate?.value
@@ -348,7 +355,10 @@ const ApplicationWindowForm = (props) => {
               : null
           }
           label={"To Date"}
-          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem" ,
+          background: "#fff",
+          paddingLeft: "2px",
+          paddingRight: "2px",  } }}
           inputProps={{
             style: { fontSize: ".800rem" },
             min: applicationForm?.jobApplWindowFromDate?.value
@@ -378,7 +388,10 @@ const ApplicationWindowForm = (props) => {
           onChange={handleFormChange}
           value={applicationForm?.jobApplWindowFromTime?.value}
           label={"From Time"}
-          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem",
+          background: "#fff",
+          paddingLeft: "2px",
+          paddingRight: "2px",  } }}
           inputProps={{ style: { fontSize: ".800rem" } }}
           errorMessage={applicationForm?.jobApplWindowFromTime?.errorMessage}
           required={applicationForm?.jobApplWindowFromTime?.isRequired}
@@ -391,7 +404,11 @@ const ApplicationWindowForm = (props) => {
           onChange={handleFormChange}
           value={applicationForm?.jobApplWindowToTime?.value}
           label={"To Time"}
-          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem",
+           background: "#fff",
+          paddingLeft: "2px",
+          paddingRight: "2px", 
+         } }}
           inputProps={{ style: { fontSize: ".800rem" } }}
           errorMessage={applicationForm?.jobApplWindowToTime?.errorMessage}
           required={applicationForm?.jobApplWindowToTime?.isRequired}
@@ -409,7 +426,9 @@ const ApplicationWindowForm = (props) => {
             label={`Email Template`}
             options={emailTemplates}
             styles={{ width: "75%" }}
-            labelStyles={{ fontSize: ".800rem" }}
+            labelStyles={{ fontSize: ".800rem" , background: "#fff",
+            paddingLeft: "2px",
+            paddingRight: "2px",  }}
             selectStyles={{ fontSize: ".800rem" }}
             menuStyles={{ fontSize: ".800rem" }}
             // errorMessage={applicationForm?.emailTemplateId?.errorMessage}

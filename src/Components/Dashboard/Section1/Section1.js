@@ -1047,7 +1047,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Tentative Passouts &amp; Passing Month
                 </Typography>
@@ -1079,7 +1079,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Conversion Ratio History
                 </Typography>
@@ -1111,7 +1111,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   History of Offers Made
                 </Typography>
@@ -1143,7 +1143,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Type of Universities/ Colleges in India
                 </Typography>
@@ -1175,7 +1175,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Universities/ Colleges and their Program Offerings
                 </Typography>
@@ -1207,7 +1207,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Universities/ Colleges In India by Accreditation Type
                 </Typography>
@@ -1239,7 +1239,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Universities/ Colleges in India with national and international
                   Tie-Ups
@@ -1272,7 +1272,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Universities/ Colleges in India with Centers Of Excellence
                 </Typography>
@@ -1304,7 +1304,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Universities/ Colleges in India with some Special Offerings
                 </Typography>
@@ -1336,7 +1336,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Projects at various colleges
                 </Typography>
@@ -1368,7 +1368,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Internship Programs at various colleges
                 </Typography>
@@ -1400,7 +1400,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Students Split by Skill Set
                 </Typography>
@@ -1432,7 +1432,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Events at various colleges
                 </Typography>
@@ -1464,7 +1464,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Conversion Ratio History For Your Industry
                 </Typography>
@@ -1496,7 +1496,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   History Of Offers Made By Industry Relevent To You
                 </Typography>
@@ -1528,7 +1528,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Conversion Ratio History For Your Corporate
                 </Typography>
@@ -1560,7 +1560,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   History Of Offers Made By You
                 </Typography>
@@ -1592,7 +1592,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Blockchain Transactions
                 </Typography>
@@ -1624,7 +1624,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   University wise Verified Students
                 </Typography>
@@ -1655,7 +1655,7 @@ const Section1 = (props) => {
               >
                 <Typography
                   className="accordianText"
-                  style={{ fontFamily: "Poppins-Regular" }}
+                  // style={{ fontFamily: "Poppins-Regular" }}
                 >
                   Corporate wise applied Students
                 </Typography>

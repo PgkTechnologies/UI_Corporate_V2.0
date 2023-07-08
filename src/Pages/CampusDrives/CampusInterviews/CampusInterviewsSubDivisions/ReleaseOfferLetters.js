@@ -267,7 +267,7 @@ const ReleaseOfferLetters = (props) => {
 
     return (
 
-        <div className="bgWhite" style={{ width: "910px", height: "590px" }}>
+        <div className="bgWhite" style={{ width: "100%", height: "590px" }}>
             {apiStatus ? <PreLoader /> : ''}
             <div className="d-flex flex-column justify-content-start align-items-center ">
                 <p className="heading" style={{ color: "#253AA3", fontWeight: "bold", fontFamily: "Poppins-Regular", display: "block" }}>
@@ -281,11 +281,13 @@ const ReleaseOfferLetters = (props) => {
                     label="Job Name"
                     InputLabelProps={{
                         shrink: true,
-                        style: { fontFamily: "Poppins-Regular", display: "block" ,
-                        fontSize: ".800rem",
-                        background: "#fff",
-                        paddingLeft: "2px",
-                        paddingRight: "2px",}
+                        style: {
+                            fontFamily: "Poppins-Regular", display: "block",
+                            fontSize: ".800rem",
+                            background: "#fff",
+                            paddingLeft: "2px",
+                            paddingRight: "2px",
+                        }
                     }}
                     inputProps={{
                         style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -314,7 +316,8 @@ const ReleaseOfferLetters = (props) => {
                     ?
                     <>
                         <br />
-                        <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full mr-4" style={{ background: "white", width: "500px" }}>
+                        <div
+                            className="d-flex flex-row justify-content-around align-items-center job-details-form w-full mr-4" style={{ background: "white", width: "350px", marginLeft: "15px" }}>
                             <TextField
                                 label="ShortListed Students"
                                 type="number"
@@ -323,7 +326,14 @@ const ReleaseOfferLetters = (props) => {
                                 className="form-control"
                                 InputLabelProps={{
                                     shrink: true,
-                                    style: { fontFamily: "Poppins-Regular", display: "block" }
+                                    style: {
+                                        fontFamily: "Poppins-Regular",
+                                        display: "block",
+                                        fontSize: ".800rem",
+                                        background: "#fff",
+                                        paddingLeft: "2px",
+                                        paddingRight: "2px",
+                                    }
                                 }}
                                 inputProps={{
                                     readOnly: true,
@@ -335,7 +345,7 @@ const ReleaseOfferLetters = (props) => {
                             />
                         </div>
                         <br />
-                        <div style={{ height: "250px", overflowY: "scroll", overflowX: "scroll" }}>
+                        <div style={{ height: "350px", overflowY: "scroll", overflowX: "scroll" }}>
                             <table class="table table-striped table-bordered">
                                 <thead style={{ backgroundColor: "#01253cf5", color: "white" }}>
                                     <tr>
@@ -368,7 +378,14 @@ const ReleaseOfferLetters = (props) => {
                                                             onChange={(event) => handleChange(event, index)}
                                                             InputLabelProps={{
                                                                 shrink: true,
-                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                                style: {
+                                                                    fontFamily: "Poppins-Regular",
+                                                                    display: "block",
+                                                                    fontSize: ".800rem",
+                                                                    background: "#fff",
+                                                                    paddingLeft: "2px",
+                                                                    paddingRight: "2px",
+                                                                }
                                                             }}
                                                             inputProps={{
                                                                 name: "designation",
@@ -390,13 +407,17 @@ const ReleaseOfferLetters = (props) => {
                                                             value={offerLetterInformation?.jobOffers[index].location}
                                                             InputLabelProps={{
                                                                 shrink: true,
-                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                                style: { fontFamily: "Poppins-Regular", display: "block" ,
+                                                                fontSize: ".800rem",
+                                                                background: "#fff",
+                                                                paddingLeft: "2px",
+                                                                paddingRight: "2px",}
                                                             }}
                                                             inputProps={{
                                                                 name: "location",
                                                                 style: { fontFamily: "Poppins-Regular", display: "block" }
                                                             }}
-                                                            style={{ width: "100%" }}
+                                                            style={{ width: "150px" }}
                                                             variant="outlined"
                                                             margin="dense"
                                                             required={true}
@@ -421,7 +442,11 @@ const ReleaseOfferLetters = (props) => {
                                                             label="Joining Date"
                                                             InputLabelProps={{
                                                                 shrink: true,
-                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                                style: { fontFamily: "Poppins-Regular", display: "block" ,
+                                                                fontSize: ".800rem",
+                                                                background: "#fff",
+                                                                paddingLeft: "2px",
+                                                                paddingRight: "2px",}
                                                             }}
                                                             inputProps={{
                                                                 name: "joiningDate",
@@ -463,11 +488,19 @@ const ReleaseOfferLetters = (props) => {
                                                             onChange={(event) => handleChange(event, index)}
                                                             InputLabelProps={{
                                                                 shrink: true,
-                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                                style: { fontFamily: "Poppins-Regular", display: "block",
+                                                                fontSize: ".800rem",
+                                                                background: "#fff",
+                                                                paddingLeft: "2px",
+                                                                paddingRight: "2px", }
                                                             }}
                                                             inputProps={{
                                                                 name: "salary",
-                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                                style: { fontFamily: "Poppins-Regular", display: "block",
+                                                                fontSize: ".800rem",
+                                                                background: "#fff",
+                                                                paddingLeft: "2px",
+                                                                paddingRight: "2px", }
                                                             }}
                                                             style={{ width: "150px" }}
                                                             variant="outlined"
@@ -484,7 +517,11 @@ const ReleaseOfferLetters = (props) => {
                                                             onChange={(event) => handleChange(event, index)}
                                                             InputLabelProps={{
                                                                 shrink: true,
-                                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                                style: { fontFamily: "Poppins-Regular", display: "block",
+                                                                fontSize: ".800rem",
+                                                                background: "#fff",
+                                                                paddingLeft: "2px",
+                                                                paddingRight: "2px", }
                                                             }}
                                                             inputProps={{
                                                                 name: "remarks",
@@ -513,11 +550,20 @@ const ReleaseOfferLetters = (props) => {
                                     setStudentEmailTemplateId(value);
                                 }}
                                 label="Email Template for Student"
-                                inputLabelProps={{ style: { fontSize: ".700rem", transform: 'translateY(-17px)' } }}
+                                inputLabelProps={{
+                                    style: {
+                                        fontSize: ".700rem", transform: 'translateY(-17px)'
+                                    }
+                                }}
                                 options={allEmailTemplates?.length ? allEmailTemplates.map((item) => {
                                     return { value: item?.emailTemplateID?.toString(), label: item?.emailTemplateName }
                                 }) : []}
-                                labelStyles={{ fontSize: '.800rem' }}
+                                labelStyles={{
+                                    fontSize: ".800rem",
+                                    background: "#fff",
+                                    paddingLeft: "2px",
+                                    paddingRight: "2px",
+                                }}
                                 selectStyles={{ fontSize: '.800rem' }}
                                 menuStyles={{ fontSize: '.800rem' }}
                                 styles={{ width: '45%' }}
@@ -535,7 +581,12 @@ const ReleaseOfferLetters = (props) => {
                                 options={allEmailTemplates?.length ? allEmailTemplates.map((item) => {
                                     return { value: item?.emailTemplateID?.toString(), label: item?.emailTemplateName }
                                 }) : []}
-                                labelStyles={{ fontSize: '.800rem' }}
+                                labelStyles={{
+                                    fontSize: ".800rem",
+                                    background: "#fff",
+                                    paddingLeft: "2px",
+                                    paddingRight: "2px",
+                                }}
                                 selectStyles={{ fontSize: '.800rem' }}
                                 menuStyles={{ fontSize: '.800rem' }}
                                 styles={{ width: '45%' }}
@@ -561,18 +612,18 @@ const ReleaseOfferLetters = (props) => {
             }
             <br />
             {showAlert &&
-            <Modal
-                size="md"
-                show={showAlert}
-                onHide={() => setShowAlert(false)}
-                aria-labelledby="example-modal-sizes-title-sm"
-            >
-                <Modal.Header closeButton>
-                    <Modal.Title id="example-modal-sizes-title-sm">Success</Modal.Title>
-                </Modal.Header>
-                <Modal.Body style={{height:'200px'}}><h3 style={{marginTop:'30px'}}>Released Offer Letters Successfully</h3></Modal.Body>
-            </Modal>
-        }
+                <Modal
+                    size="md"
+                    show={showAlert}
+                    onHide={() => setShowAlert(false)}
+                    aria-labelledby="example-modal-sizes-title-sm"
+                >
+                    <Modal.Header closeButton>
+                        <Modal.Title id="example-modal-sizes-title-sm">Success</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body style={{ height: '200px' }}><h3 style={{ marginTop: '30px' }}>Released Offer Letters Successfully</h3></Modal.Body>
+                </Modal>
+            }
         </div>
     );
 };
