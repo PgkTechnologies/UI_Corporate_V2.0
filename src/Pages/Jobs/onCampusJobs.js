@@ -60,8 +60,10 @@ const OnCampusJobs = (props) => {
         setTabValue(newValue);
     }
 
-    const navigateToCampusDrive = (campusDriveId, universityId) => {
-        history('/jobs/' + campusDriveId + '/define-jobs/' + universityId)
+    const navigateToCampusDrive = (campusDriveId, universityId , receiverName , initiatorName) => {
+        history('/jobs/' + campusDriveId + '/define-jobs/' + universityId);
+        localStorage.setItem("onCampReceiver" , receiverName );
+        localStorage.setItem("onCampInitiator" , initiatorName );
     }
 
     console.log(sentList, receivedList, 'sentVALUE    ')
@@ -126,7 +128,7 @@ const OnCampusJobs = (props) => {
                                 sentList?.map((item, index) => {
 
                                     return (
-                                        <div className="cards-container">
+                                        <div className="cards-container" key={index}>
 
                                             <div className='jobs-cards-container'>
 
@@ -160,7 +162,7 @@ const OnCampusJobs = (props) => {
                                                             <ArrowRight
                                                                 style={{ fontSize: "50px", color: "darkblue", cursor: "pointer" }}
                                                                 onClick={() => {
-                                                                    navigateToCampusDrive(item?.campusDriveID, item?.receiverID);
+                                                                    navigateToCampusDrive(item?.campusDriveID, item?.receiverID , item?.receiverName);
                                                                 }}
                                                             />
                                                         )}
@@ -242,7 +244,7 @@ const OnCampusJobs = (props) => {
                                                         <ArrowRight
                                                             style={{ fontSize: "50px", color: "darkblue", cursor: "pointer" }}
                                                             onClick={() => {
-                                                                navigateToCampusDrive(item?.campusDriveID, item?.initiatorID)
+                                                                navigateToCampusDrive(item?.campusDriveID, item?.initiatorID , item?.initiatorName)
                                                             }}
                                                         />
                                                     )}

@@ -9,6 +9,11 @@ import ShareRoundResults from "../../../../CampusDrives/CampusInterviews/CampusI
 import ValidateProfiles from "../../../../CampusDrives/CampusInterviews/CampusInterviewsSubDivisions/ValidateProfiles";
 import OffCampusDriveLayout from "../../OffDefineJobs/OffCampusDriveLayout";
 import OffEndCampusDrive from "./OffEndCampusDrive";
+import WorkIcon from '@mui/icons-material/Work';
+import CancelIcon from '@mui/icons-material/Cancel';
+import FactCheckIcon from '@mui/icons-material/FactCheck';
+import DescriptionIcon from '@mui/icons-material/Description';
+import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 
 const OffCampusInterviews = () => {
   const { universityId, offCampusDriveId } = useParams();
@@ -34,7 +39,7 @@ const OffCampusInterviews = () => {
   const [tabs, setTabs] = useState([
     {
       label: "Capture Round wise Interview Results",
-      iconName: "fa-file-alt",
+      iconName: DescriptionIcon,
       isActive: true,
       isDisabled: false,
       onClick: onTabClick,
@@ -47,7 +52,7 @@ const OffCampusInterviews = () => {
     },
     {
       label: "Share Round-wise Interview Results",
-      iconName: "fa-calendar-alt",
+      iconName: ScreenShareIcon,
       isActive: false,
       isDisabled: false,
       onClick: onTabClick,
@@ -60,7 +65,7 @@ const OffCampusInterviews = () => {
     },
     {
       label: "View & Validate Final List of Students",
-      iconName: "fa-calendar-alt",
+      iconName: FactCheckIcon,
       isActive: false,
       isDisabled: false,
       onClick: onTabClick,
@@ -68,7 +73,7 @@ const OffCampusInterviews = () => {
     },
     {
       label: "Release Offer Letters",
-      iconName: "fa-briefcase",
+      iconName: WorkIcon,
       isActive: false,
       isDisabled: false,
       onClick: onTabClick,
@@ -81,7 +86,7 @@ const OffCampusInterviews = () => {
     },
     {
       label: "End Campus Drive",
-      iconName: "fa-briefcase",
+      iconName: CancelIcon,
       isActive: false,
       isDisabled: false,
       onClick: onTabClick,

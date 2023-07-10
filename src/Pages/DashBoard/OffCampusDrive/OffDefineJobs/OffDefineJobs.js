@@ -6,6 +6,7 @@ import DefineJobApplicationWindowSection from "../../../CampusDrives/DefineJobs/
 import ShareJobDetailsSection from "../../../CampusDrives/DefineJobs/DefineJobsSubDivisions/ShareJobDetailsSection/ShareJobDetailsSection";
 import OffCampusDriveLayout from "./OffCampusDriveLayout";
 import DateAndLocationFinalization from "./Sections/DateAndLocationFinalization";
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 // import DefineJobsSection from "./Sections/DefineJobsSection";
 // import OffCampusDriveLayout from "../Components/OffCampuDriveLayout";
 // import DefineJobApplicationWindowSection from "../../CampusDrive/DefineJobs/Sections/DefineJobApplicationWindowSection/DefineJobApplicationWindowSection";
@@ -30,7 +31,7 @@ const OffDefineJobs = (props) => {
     const [tabs, setTabs] = useState([
         {
             label: "Dates and Location Finalization",
-            iconName: "fa-calendar-alt",
+            iconName:CalendarMonthIcon,
             isActive: true,
             isDisabled: false,
             onClick: onTabClick,
@@ -43,7 +44,7 @@ const OffDefineJobs = (props) => {
         },
         {
             label: "Define Jobs",
-            iconName: "fa-file-alt",
+            iconName:CalendarMonthIcon,
             isActive: false,
             isDisabled: false,
             onClick: onTabClick,
@@ -56,7 +57,7 @@ const OffDefineJobs = (props) => {
         },
         {
             label: "Share Job Details",
-            iconName: "fa-briefcase",
+            iconName: CalendarMonthIcon,
             isActive: false,
             isDisabled: false,
             onClick: onTabClick,
@@ -69,7 +70,7 @@ const OffDefineJobs = (props) => {
         },
         {
             label: "Define Job Application Window",
-            iconName: "fa-briefcase",
+            iconName: CalendarMonthIcon,
             isActive: false,
             isDisabled: false,
             onClick: onTabClick,

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import JobSmallTab from "./DefineJobs/DefineJobsSubDivisions/JobSmallTab";
+import { Work } from "@mui/icons-material";
 
 const CampusDriveLayout = (props) => {
 
@@ -51,6 +52,9 @@ const CampusDriveLayout = (props) => {
     );
   };
 
+  const InitiatorName = localStorage.getItem("onCampInitiator");
+  const ReceiverName = localStorage.getItem("onCampReceiver");
+
   return <>
 
     <div className="jobs-layout-main">
@@ -64,6 +68,10 @@ const CampusDriveLayout = (props) => {
           <div className="home-main">Home </div>
         </div>
         <div className="col-10 title-steps-main">
+                    <div style={{ display:'flex' , alignItems:"center",justifyContent:'center', fontSize: "25px", fontWeight: "bold" }}>
+                        <Work style={{ marginRight: "10px", fontSize: "20px" }} />{" "}
+                        {ReceiverName ? ReceiverName : InitiatorName}
+                    </div>
           <div className="steper-main">
             <div
               className={

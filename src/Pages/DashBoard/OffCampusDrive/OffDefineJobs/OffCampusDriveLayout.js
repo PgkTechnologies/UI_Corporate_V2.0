@@ -120,7 +120,7 @@ const OffCampusDriveLayout = (props) => {
                         ? props.tabs.map((item, index) => {
                             return (
                                 <div className={item?.isActive ? 'sub-job-tabs sec-select' : 'sub-job-tabs'} onClick={() => { item.onClick(index) }}>
-                                    <div className='sub-job-tabs-names'>
+                                    <div style={{fontSize:'12px'}} className='sub-job-tabs-names'>
                                         {item?.label}
                                     </div>
                                     <div className='d-flex justify-content-center align-items-center' style={{ width: "30%" }}>
