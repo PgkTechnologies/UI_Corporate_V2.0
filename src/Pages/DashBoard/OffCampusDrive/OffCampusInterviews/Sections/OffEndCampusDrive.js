@@ -41,8 +41,8 @@ const OffEndCampusDrive = (props) => {
             <div className={'row align-items-center justify-content-center'}>
                 <button onClick={() => {
                     setConfirm(true);
-                }} className={'btn'} type={'button'} style={{ height: '35px', width: '120px', backgroundColor: 'green', fontSize: '.900rem', borderRadius: '30px', marginRight: '12px' }}>Yes</button>
-                <button className={'btn'} type={'button'} style={{ height: '35px', width: '120px', backgroundColor: 'red', fontSize: '.900rem', borderRadius: '30px' }}>No</button>
+                }} className={'btn'} type={'button'} style={{ height: '40px', width: '120px', backgroundColor: 'green', fontSize: '.900rem', borderRadius: '30px', marginRight: '12px',color:'white' }}>Yes</button>
+                <button className={'btn'} type={'button'} style={{ height: '40px', width: '120px', backgroundColor: 'red', fontSize: '.900rem', borderRadius: '30px',color:'white' }}>No</button>
             </div>
         </div>
         
