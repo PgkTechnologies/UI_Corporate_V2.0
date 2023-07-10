@@ -721,7 +721,7 @@ const SaveInterviewRounds = (props) => {
                     value={props.jobName}
                     InputLabelProps={{
                         shrink: true,
-                        style: { fontFamily: "Poppins-Regular", display: "block" }
+                        style: { fontFamily: "Poppins-Regular", display: "block",padding:'0px 2px 5px 2px',background:'#fff' },
                     }}
                     inputProps={{
                         style: { fontFamily: "Poppins-Regular", display: "block" }
