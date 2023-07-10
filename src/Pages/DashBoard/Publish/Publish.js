@@ -6,11 +6,8 @@ const Publish = (props) => {
     const filteredData = props?.publishedFlag?.filter((item) => item?.publishedFlag === false);
 
     let isNotDisabled =
-        props.allProfiles?.publishedFlag === false || filteredData.map((data) =>data?.publishedFlag === false) 
+        props?.allProfiles?.publishedFlag === false || filteredData?.map((data) => data?.publishedFlag === false)
 
-const cleck = filteredData?.map((item) => (item?.id)  )
-
-    console.log(cleck,filteredData, props?.infoID, 'mikkeeee')
     return (
         <Modal
             show={props?.showPublish}
@@ -46,7 +43,7 @@ const cleck = filteredData?.map((item) => (item?.id)  )
                                     <></>
                                 )}
 
-                                { props?.infoID ? (
+                                {props?.infoID ? (
                                     <ListGroup.Item>
                                         <div className="d-flex">
                                             <input
@@ -60,25 +57,14 @@ const cleck = filteredData?.map((item) => (item?.id)  )
                                             </label>
                                         </div>
                                     </ListGroup.Item>)
-                                    :<></>}
+                                    : <></>}
 
-                               
-                                   
-                               
 
 
                             </div>
                         ) : (
                             <></>
                         )}
-                        {/* {props?.infoID ?
-                            (<div className="d-flex" style={{ flexDirection: "column" }}>
-                             
-                            </div>) 
-                            : 
-                            <></>} */}
-
-
 
 
                         <div className="d-flex justify-content-center align-items-center mt-5">

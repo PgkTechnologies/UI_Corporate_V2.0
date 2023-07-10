@@ -9,6 +9,8 @@ import { actionGetS3AttachRequest } from "../../../../Store/Actions/SagaActions/
 import { onGetFileInfo } from "../../../../utils/utils";
 import { actionGetPublishOtherInformationListRequest } from "../../../../Store/Actions/SagaActions/OtherInformationSagaActions";
 import { useDispatch } from "react-redux";
+import OtherInfoModal from "./OtherInfoModal";
+import { SouthWestOutlined } from "@mui/icons-material";
 
 
 const OtherInformationHist = (props) => {
@@ -44,69 +46,9 @@ const OtherInformationHist = (props) => {
 
   const OtherInformationListItem = (info) => {
     return (
-      // <div
-      //   className="row align-items-center jobs-list-item w-full"
-      //   style={{marginTop:'100px'}}
-      //   key={info?.id}
-      // >
-      //   <div className="col-md-2 row align-items-center p-0">
-      //     <div className="job-icon job-blue-icon d-flex justify-content-center align-items-center">
-      //       <i className="fas fa-cube"></i>
-      //     </div>
-      //     <p
-      //       className="job-label text-ellipsis"
-      //       style={{
-      //         marginLeft: "14px",
-      //         maxWidth: "200px",
-      //         textTransform: "capitalize",
-      //         fontWeight: 'bold'
-      //       }}
-      //     >{info?.publishID ? info?.publishID : "-"}</p>
-      //   </div>
-      //   <div className="col-md-3">
-      //     <p className="job-published-date" style={{ textOverflow: 'ellipsis', fontWeight: 'bold' }}>{info?.title}</p>
-      //   </div>
-      //   <div className="col-md-1">
-      //   </div>
-      //   <div className="col-md-3">
-      //     <p className="job-published-date" style={{ color: "#454545", textAlign: 'center', fontSize: '13px', fontWeight: 'bold' }}>
-      //       {info?.creationDate &&
-      //         `Published on`}
-      //     </p>
-      //     <p className="job-published-date" style={{ color: "#454545", textAlign: 'center', fontSize: '13px', fontWeight: 'bold' }}>
-      //       {info?.creationDate &&
-      //         `${moment(info.creationDate).format("DD-MMM-YYYY")}`}
-      //     </p>
-      //   </div>
-      //   <div className={`col-md-2 row item p-0 d-flex justify-content-between align-items-center`}>
-      //     <div className="vertical-divider" />
-      //     <button
-      //       type="button"
-      //       className="btn d-flex justify-content-around align-items-center"
-      //       style={{
-      //         height: "30px",
-      //         width: "100px",
-      //         fontSize: ".700rem",
-      //         marginRight: "10px",
-      //         borderRadius: "4px",
-      //         textTransform: "uppercase",
-      //         fontWeight: "bolder",
-      //       }}
-      //       onClick={() => {
-      //         setShowModal(!showModal);
-      //         setOtherInformation(info);
-      //         console.log(showModal, 'hii')
-      //         console.log(info, 'hiiiiiiiiiiiiiiiii')
-
-      //       }}
-      //     >
-      //       <p>Details</p>
-      //       <i className="fas fa-chevron-right"></i>
-      //     </button>
-      //   </div>
-      // </div>
-      <div className="row align-items-center" >
-        <div className="jobs-cdx" style={{ marginTop: '100px',flexDirection:'row' }} >
+     
+      <div style={{ flexDirection: 'column' }} >
+        <div className="jobs-cdx"  >
           <div className="row align-items-center">
             <div
               className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
@@ -122,13 +64,13 @@ const OtherInformationHist = (props) => {
                   </div>
                   <p
                     className="col-9 job-label text-ellipsis"
-                    style={{ maxWidth: "220px", textTransform: "capitalize" }}
+                    style={{ maxWidth: "220px", textTransform: "capitalize", fontWeight: 'bold',marginTop:'10px' }}
                   >
                     {info?.publishID ? info?.publishID : "-"}
                   </p>
                 </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-3">
                 <div
                   style={{
                     border: "1px solid #cacaca",
@@ -150,26 +92,24 @@ const OtherInformationHist = (props) => {
                 </div>
               </div>
 
-              <div className="col-md-4">
+              <div className="col-md-3">
                 <div className="row align-items-center">
-                  <div
-                    className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
-                    style={{ borderRadius: "5px", width: "60px" }}
-                  >
-                    <Work />
-                  </div>
                   <p
                     className="col-9 job-label text-ellipsis"
-                    style={{ maxWidth: "220px", textTransform: "capitalize" }}
+                    style={{ maxWidth: "220px", textTransform: "capitalize", fontWeight: 'bold' }}
                   >
                     {info?.creationDate &&
                       `Published on`}
+                  </p>
+                  <p className="job-published-date" style={{ color: "#454545", textAlign: 'center', fontSize: '13px', fontWeight: 'bold', paddingRight: '200px' }}>
+                    {info?.creationDate &&
+                      `${moment(info.creationDate).format("DD-MMM-YYYY")}`}
                   </p>
                 </div>
               </div>
 
 
-              <div className={"col-md-4 d-flex align-items-center"}>
+              <div className={"col-md-2 d-flex align-items-center"}>
                 <button
                   type="button"
                   className="btn d-flex justify-content-around align-items-center"
@@ -182,9 +122,8 @@ const OtherInformationHist = (props) => {
                     fontWeight: "bolder",
                     marginLeft: "40%",
                   }}
-                  // disabled={item.status !== "open" ? true : false}
                   onClick={() => {
-                    setShowModal(!showModal);
+                    setShowModal(true);
                     setOtherInformation(info);
                   }
                   }
@@ -192,26 +131,16 @@ const OtherInformationHist = (props) => {
                   <p>Details</p>
                   <i className="fas fa-chevron-right"></i>
                 </button>
-                {/* {!item.publishFlag ? (
-              <IconButton
-                style={{ color: "white" }}
-                onClick={() => {
-                  deleteJob(item.jobID);
-                }}
-                component="span"
-              >
-                <Close color={"primary"} />
-              </IconButton>
-            ) : (
-              <></>
-            )} */}
+
               </div>
             </div>
           </div>
         </div>
       </div>
+
     );
   };
+  console.log(showModal, 'yyyyy');
 
   const getOtherInformationList = () => {
     return otherInformationList.map((item) => {
@@ -238,95 +167,26 @@ const OtherInformationHist = (props) => {
       windo.document.write(objbuilder);
       windo.document.write('</body></html>');
     }
-    props.setPath(props.certificateDetails.attachment)
+
   }
 
   return otherInformationList?.length ? (
     <>
-      {getOtherInformationList()}
-      {/* <CustomModal
-      show={showModal}
-    >
-      <div className="hiring-modal">
-        <div className="modal-header hiring-modal-header">
-          <h5 className="modal-title" style={{ fontSize: '1rem' }} id="exampleModalLabel">
-            Published Information Details
-          </h5>
-          <IconButton style={{ color: 'white' }} size={'small'} onClick={() => {
-            setShowModal(false);
-          }} component="span">
-            <Close style={{ fontSize: '1.2rem' }} />
-          </IconButton>
-        </div>
-        <form className="hiring-modal-form">
-          <div className="row">
-            <div className="col-md">
-              <div className="mb-20">
-                <PgkTextField
-                  onChange={() => { }}
-                  value={otherInformation?.publishID}
-                  label={'Publish ID'}
-                  inputLabelProps={{ style: { fontSize: '.800rem' } }}
-                  inputProps={{ style: { fontSize: '.800rem' } }}
-                  disabled
-                />
-              </div>
-            </div>
-            <div className="col-md">
-              <div className="mb-20">
-                <PgkTextField
-                  onChange={() => { }}
-                  value={otherInformation?.creationDate ? `Published on {moment(otherInformation?.creationDate).format("DD-MM-YYYY")}` : ''}
-                  label={'Published Date & Time'}
-                  inputLabelProps={{ style: { fontSize: '.800rem' } }}
-                  inputProps={{ style: { fontSize: '.800rem' } }}
-                  disabled
-                />
-              </div>
-            </div>
-            <div className="w-100"></div>
-            <div className="col-md">
-              <div className="mb-20">
-                <PgkTextField
-                  onChange={() => { }}
-                  value={otherInformation?.title ? otherInformation?.title : ''}
-                  label={'Title'}
-                  inputLabelProps={{ style: { fontSize: '.800rem' } }}
-                  inputProps={{ style: { fontSize: '.800rem' } }}
-                  disabled
-                />
-              </div>
-            </div>
-            <div className="w-100"></div>
-            <div className="col-md">
-              <div className="mb-20">
-                <PgkTextField
-                  value={otherInformation?.information ? otherInformation?.information : ''}
-                  label={"Content"}
-                  disabled
-                  onChange={() => { }}
-                  multiline={true}
-                  minRows={6}
-                  inputLabelProps={{ style: { fontSize: '.800rem' } }}
-                  inputProps={{ style: { fontSize: '.800rem' } }}
-                />
-              </div>
-            </div>
-            <div className="w-100"></div>
-            {(otherInformation?.attachment?.trim() !== '' && otherInformation?.attachmentName?.trim() !== '') ?
-              <div className="d-flex justify-content-between align-items-center attachmentStripeContainer w-full">
-                <p className="label">Attachment Present (if any)</p>
-                <div onClick={() => { openFileInBrowser(otherInformation?.attachment, otherInformation?.attachmentName) }} style={{ textDecoration: 'none', outline: 'none', width: '70%', cursor: 'pointer' }}>
-                  <div className="attachmentStripe d-flex justify-content-between align-items-center">
-                    <p>{otherInformation?.attachmentName}</p>
-                    <i className="fas fa-paperclip"></i>
-                  </div>
-                </div>
-              </div> : null}
-          </div>
-        </form>
+      <div className="container-body" style={{ marginTop: '100px' }}>
+        <h2 style={{ marginBottom: '15px' }}> Other Information History</h2>
+        {getOtherInformationList()}
+
+        {showModal &&
+          <OtherInfoModal
+            show={showModal}
+            setShowModal={setShowModal}
+            otherInformation={otherInformation}
+            openFileInBrowser={openFileInBrowser}
+          />
+        }
+
+
       </div>
-    </CustomModal> */}
     </>
   ) : (
     <div className="row jobs-saved-section-list" style={{ marginTop: '200px' }}>
