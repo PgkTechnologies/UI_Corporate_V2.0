@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux"; 
 import { NavLink, useNavigate } from "react-router-dom";
 import { actionPostCampusDriveCloseRequest } from "../../../../Store/Actions/SagaActions/CampusDriveSagaActions";
-import { Modal, ModalBody } from "reactstrap";
+import Modal from "react-bootstrap/Modal";
 import { CancelOutlined } from "@material-ui/icons";
 import CustomDialogPopup from "../../../../Components/CustomDialogPopup";
 
@@ -50,14 +50,22 @@ const EndCampusDrive = (props) => {
             //     iconNameClass={"fa-check"}
             //     message={"Campus Drive Closed Successfully!"}
             // />
-            <Modal isOpen={showAlert} >
-                <ModalBody>
-                    <CancelOutlined onClick={() => {
+            <Modal show={showAlert} >
+                <Modal.Header>
+
+                    <Modal.Title>Drive Status</Modal.Title>
+                    <CancelOutlined 
+                    // style={{marginLeft:'350px'}}
+                    onClick={() => {
                         setShowAlert(false);
                         // history.replace('/dashboard/campus-drive/', 'urlhistory');
                     }} />
-                    <h3>{"Campus Drive Closed Successfully!"}</h3>
-                </ModalBody>
+                </Modal.Header>
+                <Modal.Body 
+                style={{height:'200px'}}
+                >
+                    <h3 style={{marginTop:'30px'}} >{"Campus Drive Closed Successfully!"}</h3>
+                </Modal.Body>
             </Modal>
         }
         {confirm && <CustomDialogPopup
