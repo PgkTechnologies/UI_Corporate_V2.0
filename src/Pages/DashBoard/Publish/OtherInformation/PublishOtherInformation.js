@@ -46,22 +46,12 @@ const PublishOtherInformation = () => {
         }
     };
 
-    const getPublishedOtherInformation = (response) => {
 
-        // dispatch(
-        //   actionGetPublishOtherInformationListRequest({
-        //     callback: onOtherInformationListResponse,
-        //   })
-        // );
-    }
 
     const getAttach = (data) => {
         dispatch(actionGetS3AttachRequest({ path: data, callback: onGetFileInfo }));
     };
 
-    //   useEffect(() => {
-    //     getPublishedOtherInformation();
-    //   }, [])
 
     const updateField = (name, value, error = undefined) => {
         let data = otherInfo[name];
@@ -101,7 +91,7 @@ const PublishOtherInformation = () => {
         switch (name) {
             case 'attachment':
                 if (error) {
-                    
+
                     let data = otherInfo[name];
                     data["value"] = undefined;
                     data["errorMessage"] = error;
@@ -192,19 +182,12 @@ const PublishOtherInformation = () => {
             }
         }
 
-        // if (isValid) {
-        //     if (otherInfo?.attachment?.isRequired && otherInfo?.attachment?.errorMessage) {
-        //         isValid = false
-        //     }
-        // }
-
         return isValid;
     }
 
 
     const onPublish = () => {
         resetPublishOtherInformation();
-        getPublishedOtherInformation();
         setShowModal(true);
     }
 
@@ -222,7 +205,7 @@ const PublishOtherInformation = () => {
     }
 
     const addOtherInformation = () => {
-        // if (isFormValid()) {
+
         const updatedOtherInformation = {
             title: otherInfo?.title?.value,
             information: otherInfo?.information?.value,
@@ -235,7 +218,7 @@ const PublishOtherInformation = () => {
             callback: onAddOtherInformation
         }
         ));
-        // }
+
     }
 
     const [tabValue, setTabValue] = useState(0);
@@ -255,7 +238,7 @@ const PublishOtherInformation = () => {
                 <p className="modal-title"> Other Information </p>
 
                 <div className="cmp-main">
-                    {/* <p className="cmp-head">Basic</p> */}
+
                     <div className="row">
                         <div className="col-12">
                             <TextField
@@ -265,7 +248,6 @@ const PublishOtherInformation = () => {
                                 variant="filled"
                                 onChange={changeHandler}
                                 style={{ width: "100%", marginBottom: "15px" }}
-                                // error={otherInfo?.title?.error}
                                 value={otherInfo?.title?.value}
                                 required={true}
                             />
@@ -292,7 +274,6 @@ const PublishOtherInformation = () => {
                             <label htmlFor="accredationfile" className="file_label">
                                 Attach File *
                             </label>
-                            {/* <p>{props?.fileSizeErr}</p> */}
                             <div style={{ display: 'flex' }}>
                                 <div>
                                     <input
@@ -304,11 +285,11 @@ const PublishOtherInformation = () => {
                                         accept=".pdf"
                                         name="attachment"
                                         id="attachment"
-                                        
+
                                         required
                                     />
                                 </div>
-                                <div style={{ }}>
+                                <div style={{}}>
                                     <p className="attach-inp_label"
                                         style={{ color: 'blue', cursor: 'pointer' }}
                                     // onClick={() => {

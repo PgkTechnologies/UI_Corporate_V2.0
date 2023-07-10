@@ -56,10 +56,12 @@ label {
 p {
   line-height: 1.4rem;
 }
+
 .d-grp {
   position: relative;
   margin-bottom: 18px;
 }
+
 .d-grp .d-inp {
   width: 100%;
   border-radius: 4px;
@@ -85,6 +87,7 @@ p {
   margin-bottom: 4px;
   line-height: 1;
 }
+
 .sub-title {
   padding: 20px;
   font-size: 16px;
@@ -736,13 +739,15 @@ p {
   margin-bottom: 5px;
   border-radius: 5px;
 }
+
 .jobs-list-item .item .job-label {
   flex: 1;
   font-size: 1rem;
   font-weight: 500;
   padding-left: 20px;
 }
-.jobs-cdx{
+
+.jobs-cdx {
   border: 0.5px solid rgba(2, 112, 131, 0.406);
   margin-top: 5px;
   margin-bottom: 5px;
@@ -751,6 +756,7 @@ p {
   margin-left: 15px;
   margin-right: 15px;
 }
+
 .card-Induction {
   width: 100;
   background-color: #f0f0f0;
@@ -907,13 +913,13 @@ p {
 } */
 .Drives-buttons {
   text-transform: uppercase;
-  color:#03355b;
-  background:  #1ba4f968;
+  background: #1ba4f968;
   border: 4px solid #03355b;
-  font-size: 25px;
+  color: #03355b;
+  font-size: 24px;
   font-weight: bold;
   border-radius: 50px;
-  padding: 20px 35px 20px;
+  padding: 12px 22px 12px;
 }
 
 .Drives-buttons:hover {
@@ -1657,54 +1663,71 @@ p {
 .feature-widget-report-Three {
   height: 463px;
 }
+
 .feature-widget-report-Four {
   height: 400px;
 }
+
 .feature-widget-report-Five {
   height: 400px;
 }
+
 .feature-widget-report-Six {
   height: 420px;
 }
+
 .feature-widget-report-Seven {
   height: 330px;
 }
+
 .feature-widget-report-Eight {
   height: 280px;
 }
+
 .feature-widget-report-Nine {
   height: 300px;
 }
+
 .feature-widget-report-Ten {
   height: 300px;
 }
+
 .feature-widget-report-Eleven {
   height: 300px;
 }
+
 .feature-widget-report-Twelve {
   height: 360px;
 }
+
 .feature-widget-report-Thirteen {
   height: 310px;
 }
+
 .feature-widget-report-Fourteen {
   height: 360px;
 }
+
 .feature-widget-report-Fifteen {
   height: 450px;
 }
+
 .feature-widget-report-Sixteen {
   height: 450px;
 }
+
 .feature-widget-report-Sixteen {
   height: 450px;
 }
+
 .feature-widget-report-Seventeen {
   height: 450px;
 }
+
 .feature-widget-report-Eighteen {
   height: 450px;
 }
+
 .feature-widget-report-Nineteen {
   height: 450px;
 }
@@ -1723,10 +1746,12 @@ p {
   height: 250px;
   width: 320px;
 }
+
 .feature-widget .feature-widget-map-report-body {
   height: 1000px;
   width: 100%;
 }
+
 .feature-widget .feature-widget-map-report-body {
   height: 1000px;
   width: 100%;

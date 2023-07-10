@@ -511,7 +511,7 @@ const ShareInterviewRounds = (props) => {
             style={{ width: "80%" }}
             InputLabelProps={{
               shrink: true,
-              style: { fontFamily: "Poppins-Regular", display: "block" },
+              style: { fontFamily: "Poppins-Regular", display: "block",padding:'0px 2px 5px 2px',background:'#fff' },
             }}
             inputProps={{
               name: "programType",

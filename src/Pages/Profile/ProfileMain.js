@@ -160,10 +160,12 @@ const Profile = () => {
                     <div className="student-content">
                         {
                             tabValue === 1 && (
+                                <div>
                                 <PublishOtherInformation
-                                    
-
+                                   setShowPublish = {setShowPublish}
+                                    showPublish={showPublish} 
                                 />
+                                </div>
                             )
                         }
 
