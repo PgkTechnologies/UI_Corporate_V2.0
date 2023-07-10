@@ -93,8 +93,10 @@ const OffCampusDriveCmp = () => {
     return (
         <>
             <div style={{ width: '100%', marginTop: '100px', overflowY: 'auto' }}>
-                <div style={{ display: 'flex', alignItems: 'center' ,justifyContent:'center'}}>
-                    <h1>Off Campus Drive</h1>
+                <div 
+                // style={{ display: 'flex', alignItems: 'center' ,justifyContent:'center'}}
+                >
+                    <h3 style={{ fontWeight: 'bold' }} >Off Campus Drive</h3>
                 </div>
 
                 <div  style={{ display : 'flex',alignItems:'center', justifyContent:'center' }}><button type="button"

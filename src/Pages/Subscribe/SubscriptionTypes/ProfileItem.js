@@ -2,7 +2,7 @@ import AccountCircleSharpIcon from "@mui/icons-material/AccountCircleSharp";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { actionSagaGetCorporateSingleSubscriptionRequest } from "../../../Store/Actions/SagaActions/SubscriptionSagaAction";
-import { Modal, ModalBody } from "reactstrap";
+import Modal from "react-bootstrap/Modal";
 import moment from "moment";
 import CancelSharpIcon from "@mui/icons-material/CancelSharp";
 import LocalLibraryRoundedIcon from "@mui/icons-material/LocalLibraryRounded";
@@ -92,8 +92,8 @@ const ProfileItem = (props) => {
         </div>
       </div>
       {showModal &&
-                <Modal isOpen={showModal} >
-                    <ModalBody>
+                <Modal show={showModal} >
+                    <Modal.Body>
                         <div className={'mail-modal'}>
 
                             <div className="modal-header d-block">
@@ -135,7 +135,7 @@ const ProfileItem = (props) => {
                                 }) : 'No information found!'}
                             </div>
                         </div>
-                    </ModalBody>
+                    </Modal.Body>
                 </Modal>
             }
     </div>

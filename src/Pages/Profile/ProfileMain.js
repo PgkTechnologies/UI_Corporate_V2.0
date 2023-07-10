@@ -103,6 +103,7 @@ const Profile = () => {
                             textColor="primary"
                             variant="scrollable"
                             onChange={handleTabChange}
+                            style={{background:'#39bdf60b'}}
                         >
                         {/* needto add pub;is oter info */}
                             <Tab
@@ -114,8 +115,9 @@ const Profile = () => {
                                 label={"Profile" }
                                 wrapped
                                 style={{
-                                    outline: "none",
-                                    minwidth: '12%'
+                                    outline: "none",                   
+                                    minwidth: '12%',
+                                    background:'#39bdf60b'
                                 }}
                             >
 
@@ -131,7 +133,8 @@ const Profile = () => {
                                 wrapped
                                 style={{
                                     outline: "none",
-                                    minwidth: '12%'
+                                    minwidth: '12%',
+                                    background:'#39bdf60b'
                                 }}
                             >
 

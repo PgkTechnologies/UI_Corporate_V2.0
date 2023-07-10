@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { actionSagaGetCorporateSingleSubscriptionRequest } from "../../../Store/Actions/SagaActions/SubscriptionSagaAction";
-import { Modal, ModalBody, ModalHeader } from "reactstrap";
+import Modal from "react-bootstrap/Modal";
 import CancelSharpIcon from "@mui/icons-material/CancelSharp";
 import { AccountBalance } from "@mui/icons-material";
 
@@ -85,8 +85,8 @@ const UniversityItem = (props) => {
       </div>
 
       {showModal && (
-        <Modal isOpen={showModal}>
-          <ModalHeader>
+        <Modal show={showModal}>
+          <Modal.Header>
             <div>
               <CancelSharpIcon
                 style={{ marginLeft: "450px" }}
@@ -97,8 +97,8 @@ const UniversityItem = (props) => {
               />
               <h4>Insights : {props?.item?.publisherName}</h4>
             </div>
-          </ModalHeader>
-          <ModalBody>
+          </Modal.Header>
+          <Modal.Body>
             <div>
               <div className="row">
                 <div className="col-4">
@@ -193,7 +193,7 @@ const UniversityItem = (props) => {
                 </div>
               </div>
             </div>
-          </ModalBody>
+          </Modal.Body>
         </Modal>
       )}
     </div>

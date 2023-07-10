@@ -120,6 +120,7 @@ const Requests = (props) => {
 
   return (
     <div className="container-body" style={{marginTop:'100px'}}>
+      <h3 style={{ fontWeight: 'bold' }} >Requests</h3>
       <div className="row">
         <Tabs
           value={tabValue}
@@ -127,6 +128,7 @@ const Requests = (props) => {
           indicatorColor="secondary"
           textColor="primary"
           variant="scrollable"
+          style={{background:'#39bdf60b'}}
         >
           <Tab
             icon={
@@ -140,6 +142,7 @@ const Requests = (props) => {
               fontWeight:'bold',
               outline: "none",
               minWidth: "13%",
+              background:'#39bdf60b'
             }}
           />
           <Tab
@@ -154,6 +157,7 @@ const Requests = (props) => {
               fontWeight:'bold',
               outline: "none",
               minWidth: "13%",
+              background:'#39bdf60b'
             }}
           />
         </Tabs>
@@ -161,7 +165,7 @@ const Requests = (props) => {
       <div className="student-content">
         {tabValue === 0 && (
           <div>
-            {requests === null && (
+            {requests.length === 0  && (
               <p className="text-center">No new requests received!</p>
             )}
             {requests.map((item) => {
@@ -239,6 +243,9 @@ const Requests = (props) => {
       </div>
       {tabValue === 1 && (
         <div>
+          {requests.length === 0  && (
+              <p className="text-center">No requests sent yet!</p>
+            )}
           {sentRequests.map((item) => (
             <div className="cards-border">
               <div className="col-lg-9 col-sm-12 card-content">

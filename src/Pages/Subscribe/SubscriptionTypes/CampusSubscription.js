@@ -4,8 +4,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { actionGetCorporateSingleNotificationRequest } from "../../../Store/Actions/SagaActions/NotificationsSagaAction";
-import { Modal, ModalBody } from "reactstrap";
-// import { Modal, ModalBody } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
 import CancelSharpIcon from "@mui/icons-material/CancelSharp";
 
 const CampusSubscription = (props) => {
@@ -135,8 +134,8 @@ const CampusSubscription = (props) => {
       {console.log(showModal, "modalDispayCheck")}
 
       {showModal && (
-        <Modal isOpen={showModal}>
-          <ModalBody>
+        <Modal show={showModal}>
+          <Modal.Body>
             <CancelSharpIcon
               onClick={() => {
                 setShowModal(false);
@@ -207,14 +206,21 @@ const CampusSubscription = (props) => {
                       minHeight: "400px",
                     }}
                     defaultValue={hiringItem?.emailBody}
-                    //   readOnly
+                      readOnly
                   />
                 </div>
               </div>
             </div>
-          </ModalBody>
+          </Modal.Body>
         </Modal>
       )}
+ 
+     {/* {showModal && (
+      <Modal>
+
+      </Modal>
+     )} */}
+
     </div>
   );
 };

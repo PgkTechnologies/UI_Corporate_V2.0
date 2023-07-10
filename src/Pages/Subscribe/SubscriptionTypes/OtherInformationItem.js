@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 import { actionSagaGetCorporateSingleSubscriptionRequest } from "../../../Store/Actions/SagaActions/SubscriptionSagaAction";
-import { Modal, ModalBody } from "reactstrap";
+import Modal from "react-bootstrap/Modal";
 import { AccountBalance } from "@mui/icons-material";
 import DatasetLinkedSharpIcon from "@mui/icons-material/DatasetLinkedSharp";
 
@@ -113,8 +113,8 @@ const OtherInformationItem = (props) => {
           </div>
         </div>
       </div>
-      {showModal && <Modal  isOpen={showModal}>
-        <ModalBody>
+      {showModal && <Modal  show={showModal}>
+        <Modal.Body>
         <div className="hiring-modal">
           <div className="modal-header hiring-modal-header">
             <h5
@@ -186,7 +186,7 @@ const OtherInformationItem = (props) => {
             </div>
           </form>
         </div>
-        </ModalBody>
+        </Modal.Body>
       </Modal>}
     
     </>

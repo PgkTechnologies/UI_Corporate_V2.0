@@ -11,7 +11,7 @@ const CreateOffCampusDriveCmp = (props) => {
                 <div className="card">
                     <div className="card-header" style={{ textAlign: "center", background: "#03355bdc", color: "white" }}>
                         Create new Off-Campus Drive
-                        <CancelOutlined className="cancelbtn2" onClick={props?.togglePopup} style={{float:"right"}} />
+                        <CancelOutlined className="cancelbtn2" onClick={props?.togglePopup} style={{ float: "right" }} />
                     </div>
                     <form style={{ background: "white" }} onSubmit={props.handleSubmit}>
                         <div className="card-body">
@@ -25,7 +25,13 @@ const CreateOffCampusDriveCmp = (props) => {
                                             onChange={props.handleChange}
                                             InputLabelProps={{
                                                 shrink: true,
-                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                style: {
+                                                    fontFamily: "Poppins-Regular", display: "block",
+                                                    paddingLeft: '2px',
+                                                    paddingRight: '2px',
+                                                    background:'#fff',
+                                                    // fontSize:'0.8rem'
+                                                }
                                             }}
                                             inputProps={{
                                                 style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -45,10 +51,16 @@ const CreateOffCampusDriveCmp = (props) => {
                                             onChange={props.handleChange}
                                             InputLabelProps={{
                                                 shrink: true,
-                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                style: { fontFamily: "Poppins-Regular", display: "block" ,
+                                                paddingLeft: '2px',
+                                                paddingRight: '2px',
+                                                background:'#fff',}
                                             }}
                                             inputProps={{
-                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                style: { fontFamily: "Poppins-Regular", display: "block" ,
+                                                paddingLeft: '2px',
+                                                paddingRight: '2px',
+                                                background:'#fff',}
                                             }}
                                             required={true}
                                             variant="outlined"
@@ -65,7 +77,10 @@ const CreateOffCampusDriveCmp = (props) => {
                                             onChange={props.handleChange}
                                             InputLabelProps={{
                                                 shrink: true,
-                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                style: { fontFamily: "Poppins-Regular", display: "block" ,
+                                                paddingLeft: '2px',
+                                                paddingRight: '2px',
+                                                background:'#fff',}
                                             }}
                                             inputProps={{
                                                 style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -84,7 +99,11 @@ const CreateOffCampusDriveCmp = (props) => {
                                             onChange={props.handleChange}
                                             InputLabelProps={{
                                                 shrink: true,
-                                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                                style: { fontFamily: "Poppins-Regular", display: "block" ,
+                                                paddingLeft: '2px',
+                                                paddingRight: '2px',
+                                                background:'#fff',
+                                            }
                                             }}
                                             inputProps={{
                                                 style: { fontFamily: "Poppins-Regular", display: "block" }

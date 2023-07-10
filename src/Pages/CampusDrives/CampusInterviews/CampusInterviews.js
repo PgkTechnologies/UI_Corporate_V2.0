@@ -10,6 +10,11 @@ import ShareRoundResults from "./CampusInterviewsSubDivisions/ShareRoundResults"
 import ValidateProfiles from "./CampusInterviewsSubDivisions/ValidateProfiles";
 import ReleaseOfferLetters from "./CampusInterviewsSubDivisions/ReleaseOfferLetters";
 import EndCampusDrive from "./CampusInterviewsSubDivisions/EndCampusDrive";
+import WorkIcon from '@mui/icons-material/Work';
+import CancelIcon from '@mui/icons-material/Cancel';
+import FactCheckIcon from '@mui/icons-material/FactCheck';
+import DescriptionIcon from '@mui/icons-material/Description';
+import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 
 const CampusInterviews = (props) => {
 
@@ -35,7 +40,7 @@ const CampusInterviews = (props) => {
     const [tabs, setTabs] = useState([
         {
           label: "Capture Round wise Interview Results",
-          iconName: "fa-file-alt",
+          iconName: DescriptionIcon,
           isActive: true,
           isDisabled: false,
           onClick: onTabClick,
@@ -45,7 +50,7 @@ const CampusInterviews = (props) => {
         },
         {
           label: "Share Round-wise Interview Results",
-          iconName: "fa-calendar-alt",
+          iconName: ScreenShareIcon,
           isActive: false,
           isDisabled: false,
           onClick: onTabClick,
@@ -58,7 +63,7 @@ const CampusInterviews = (props) => {
         },
         {
           label: "View & Validate Final List of Students",
-          iconName: "fa-calendar-alt",
+          iconName: FactCheckIcon,
           isActive: false,
           isDisabled: false,
           onClick: onTabClick,
@@ -68,7 +73,7 @@ const CampusInterviews = (props) => {
         },
         {
           label: "Release Offer Letters",
-          iconName: "fa-briefcase",
+          iconName: WorkIcon,
           isActive: false,
           isDisabled: false,
           onClick: onTabClick,
@@ -81,7 +86,7 @@ const CampusInterviews = (props) => {
         },
         {
           label: "End Campus Drive",
-          iconName: "fa-briefcase",
+          iconName: CancelIcon,
           isActive: false,
           isDisabled: false,
           onClick: onTabClick,

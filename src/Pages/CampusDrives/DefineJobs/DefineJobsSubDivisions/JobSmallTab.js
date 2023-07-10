@@ -3,11 +3,13 @@ import React from 'react'
 const JobSmallTab = (props) => {
     return (
         <div className={props.active ? 'sub-job-tabs sec-select' : 'sub-job-tabs'} onClick={() => { props.onTab(props.index) }}>
-            <div className='sub-job-tabs-names'>
+            <div className='sub-job-tabs-names' 
+            style={{fontSize:'12px'}}
+             >
                 {props.lable}
-            </div>
+            </div>      
             <div className='d-flex justify-content-center align-items-center' style={{ width: "30%" }}>
-                <props.icon />
+                <props.icon /> 
             </div>
         </div>
     )

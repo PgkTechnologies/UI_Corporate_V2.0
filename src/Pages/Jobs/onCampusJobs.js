@@ -76,40 +76,46 @@ const OnCampusJobs = (props) => {
             }}>
                 <h3 style={{ fontWeight: 'bold' }} >Campus Drives</h3>
                 <Tabs
-                    value={tabValue}
-                    indicatorColor="secondary"
-                    textColor="primary"
-                    // variant="scrollable"
-                    onChange={handleTabChange}
+                     value={tabValue}
+                     onChange={handleTabChange}
+                     indicatorColor="secondary"
+                     textColor="primary"
+                     variant="scrollable"
+                     style={{background:'#39bdf60b'}}
                 >
                     <Tab
-                        icon={
-                            <Badge color="error">
-                                <TiDownload size={30} />
-                            </Badge>
-                        }
+                        // icon={
+                        //     <Badge color="error">
+                        //         <TiDownload size={30} />
+                        //     </Badge>
+                        // }
                         label={'Campus Invite Received' }
                         wrapped
                         style={{
                             fontWeight:'bold',
                             outline: "none",
-                            minWidth: '15%'
+                            minWidth: '15%',
+                            background:'#39bdf60b'
+                            // background:'#B9D9EB',
+                            // borderRadius:'15px '
                         }}
                     />
                     <Tab
-                        icon={
-                            <Badge color="error">
-                                <OutboxIcon size={30} />
+                        // icon={
+                        //     <Badge color="error">
+                        //         <OutboxIcon size={30} />
 
-                            </Badge>
-                        }
+                        //     </Badge>
+                        // }
                         label={ 'Campus Invite Sent' }
                         wrapped
                         style={{
                             fontWeight:'bold',
                             outline: "none",
                             minWidth: '15%',
-                            height: '150px',
+                            background:'#39bdf60b',
+                            // borderRadius:'15px '
+                            // height: '150px',
                         }}
                     />
                 </Tabs>

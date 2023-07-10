@@ -50,6 +50,7 @@ const SubscriptionHistory = () => {
           indicatorColor="secondary"
           textColor="primary"
           variant="scrollable"
+          style={{background:'#39bdf60b'}}
         >
           <Tab
             icon={
@@ -63,6 +64,7 @@ const SubscriptionHistory = () => {
               fontWeight:'bold',
               outline: "none",
               minWidth: "12%",
+              background:'#39bdf60b'
             }}
           />
           <Tab
@@ -77,6 +79,7 @@ const SubscriptionHistory = () => {
               fontWeight:'bold',
               outline: "none",
               minWidth: "12%",
+              background:'#39bdf60b'
             }}
           />
 
@@ -92,6 +95,7 @@ const SubscriptionHistory = () => {
               fontWeight:'bold',
               outline: "none",
               minWidth: "12%",
+              background:'#39bdf60b'
             }}
           />
           <Tab
@@ -106,6 +110,7 @@ const SubscriptionHistory = () => {
               fontWeight:'bold',
               outline: "none",
               minWidth: "12%",
+              background:'#39bdf60b'
             }}
           />
         </Tabs>

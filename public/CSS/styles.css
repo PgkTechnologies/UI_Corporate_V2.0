@@ -882,26 +882,45 @@ p {
   cursor: default;
 }
 
-.campus-jobs{
+/* .campus-jobs{
   background: none;
   border: none;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 17px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  height: 75px;
   padding: 12px 25px 12px;
   margin-left: 15px;
 }
 
 .campus-jobs:hover {
+  color:  #03355b;
+  color: #ffffff;
   outline: 4px solid #03355b;
   border-radius: 50px;
   background: #c3d7e368;
+  background: #03355b;
+} */
+.Drives-buttons {
+  text-transform: uppercase;
+  color:#03355b;
+  background:  #1ba4f968;
+  border: 4px solid #03355b;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 20px 35px 20px;
 }
 
+.Drives-buttons:hover {
+  color: #ffffff;
+  background: #03355b;
+  cursor: pointer;
+}
 
 .tab-select {
   background: #1ba4f968;

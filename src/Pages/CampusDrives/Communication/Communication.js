@@ -6,6 +6,11 @@ import DefineEmailTemplate from "./CommunicationSubDivisions/DefineEmailTemplate
 import DefineInduction from "./CommunicationSubDivisions/DefineInduction";
 import DefineInterviewRounds from "./CommunicationSubDivisions/DefineInterviewRounds";
 import ShareInterviewRounds from "./CommunicationSubDivisions/ShareInterviewRounds";
+import CastForEducationIcon from '@mui/icons-material/CastForEducation';
+import WorkIcon from '@mui/icons-material/Work';
+import EmailIcon from '@mui/icons-material/Email';
+import PeopleSharpIcon from '@mui/icons-material/PeopleSharp';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
 
 const Communication = (props) => {
 
@@ -28,7 +33,7 @@ const Communication = (props) => {
     const [tabs, setTabs] = useState([
         {
           label: "Define Email Template",
-          iconName: "fa-envelope",
+          iconName: EmailIcon,
           isActive: true,
           isDisabled: false,
           onClick: onTabClick,
@@ -36,7 +41,7 @@ const Communication = (props) => {
         },
         {
           label: "Pre-Campus Induction Session by Corporate (optional)",
-          iconName: "fa-user",
+          iconName: Diversity3Icon,
           isActive: false,
           isDisabled: false,
           onClick: onTabClick,
@@ -49,7 +54,7 @@ const Communication = (props) => {
         },
         {
           label: "Define Interview Rounds",
-          iconName: "fa-briefcase",
+          iconName: WorkIcon,
           isActive: false,
           isDisabled: false,
           onClick: onTabClick,
@@ -57,7 +62,7 @@ const Communication = (props) => {
         },
         {
           label: "Share Round Details",
-          iconName: "fa-window-restore",
+          iconName: CastForEducationIcon,
           isActive: false,
           isDisabled: false,
           onClick: onTabClick,
