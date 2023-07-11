@@ -298,7 +298,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round1SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray" ,color:"#ffffff" , border:'none'}}
+                              style={{ backgroundColor: "gray" ,color:"black" , border:'none'}}
                             >
                               <p>Capture Results</p>
                             </button>

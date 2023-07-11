@@ -15,11 +15,13 @@ import PreLoader from "../../../../utils/PreLoader";
 import { Button, Modal } from "react-bootstrap";
 import { Tab, Tabs } from "@material-ui/core";
 import OtherInformationItems from "./OtherInformations";
+import { useAuth } from "../../../../utils/Auth";
 
 const University = (props) => {
   const corpProfileInfo = useSelector(
     (state) => state.DashboardReducer.profileInfo
   );
+  const auth = useAuth();
 
   const TokenData = useSelector((state) => state.DashboardReducer.balance);
 
@@ -313,7 +315,7 @@ const University = (props) => {
     const newVal = Math.abs(val);
     setAdditionalTokens(newVal);
     setIsSubscribe(false);
-    setIsTokenModalOpen(true);
+    auth.setTokenPurchase(true);
     // localStorage.setItem("pathname", history.location.pathname);
   };
 
@@ -677,7 +679,7 @@ const University = (props) => {
               variant="outline-secondary"
               onClick={() => closeSubModal(additionalTOkens)}
             >
-              Add Tokens
+              Add Tokens...
             </Button>
             {publishId?.type !== "CR" ? (
               <Button

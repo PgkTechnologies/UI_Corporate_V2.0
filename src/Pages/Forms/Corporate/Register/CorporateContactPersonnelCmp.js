@@ -337,10 +337,10 @@ const ContactPersonnelCmp = (props) => {
 
             <div className="row cmp-register-main">
                 <div className="cmp-register-head mt-2 mb-3" style={{ fontWeight: 'bold' }}>GSTN</div>
-                <div className="col-4">
+                <div className="col-12">
 
                     <FormControl component="fieldset">
-                        <FormLabel component="legend">
+                        <FormLabel component="legend" style={{width:'100%'}}>
                             Have a GSTN (Goods and Services Tax Number) ? *
                         </FormLabel>
                         <RadioGroup row aria-label="position" name="gstn" onChange={handlerChange} value={valueRadio} >

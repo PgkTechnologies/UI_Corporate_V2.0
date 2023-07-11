@@ -10,7 +10,7 @@ const CorporateSecondaryCmp = (props) => {
         ? props.countryCodes?.map((item, i) => ({ value: item.value, label: item.label })) : (null);
     const history = useNavigate();
     const apiStatus = useSelector(state => state.DashboardReducer.apiStatus);
-    
+
     return (
         <form onSubmit={props?.handleSubmit} className="d-flex justify-content-center align-items-center" style={{ flexDirection: 'column' }}>
             <div className="row cmp-register-main">
@@ -253,7 +253,7 @@ const CorporateSecondaryCmp = (props) => {
                         type="checkbox"
                         onChange={props.saveData} />
                     <label>Same as Headquarters</label>
-                    </div>
+                </div>
 
                 <div className="col-4">
                     <FormControl
@@ -483,29 +483,35 @@ const CorporateSecondaryCmp = (props) => {
 
             <div className="row cmp-register-main">
                 <div className="cmp-register-head mt-2 mb-3" style={{ fontWeight: 'bold' }}>Profile</div>
-                <div style={{marginBottom : '15px'}}>
-                    
-                    <TextField 
-                     type='Text' 
-                     label={'Website/URL (if any)'}
-                     variant="filled"
-                     style={{ width: "100%" }}
+                <div style={{ marginBottom: '15px' }}>
+
+                    <TextField
+                        name="attribute7"
+                        onChange={props?.handleChange}
+                        value={props?.corporateSecondary?.attribute7}
+                        type='Text'
+                        label={'Website/URL (if any)'}
+                        variant="filled"
+                        style={{ width: "100%" }}
 
                     />
-                    </div>
-
-                    <div style={{marginBottom : '15px'}}>
-                    <TextField 
-                     type='Text' 
-                     label={'Company Profile (in Brief)'}
-                     variant="filled"
-                     style={{ width: "100%" }}
-
-                    />  
-                    </div>                
                 </div>
 
-                <div style={{ width: '100%' }}>
+                <div style={{ marginBottom: '15px' }}>
+                    <TextField
+                        name="companyProfile"
+                        onChange={props?.handleChange}
+                        value={props?.corporateSecondary?.companyProfile}
+                        type='Text'
+                        label={'Company Profile (in Brief)'}
+                        variant="filled"
+                        style={{ width: "100%" }}
+
+                    />
+                </div>
+            </div>
+
+            <div style={{ width: '100%' }}>
                 <div style={{ float: 'left' }}>
                     <button className="btn" type="button"
                         onClick={() => props?.history("/register")}

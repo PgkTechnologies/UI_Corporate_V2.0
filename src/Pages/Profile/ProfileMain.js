@@ -83,6 +83,7 @@ const Profile = () => {
                                     <p>{GetProfileData?.yearOfEstablishment}</p>
                                 </div>
                             </div>
+                            {tabValue === 0 ?
                             <div className="col-lg-5 col-sm-6 d-flex align-items-center justify-content-end">
                                 <button
                                     type="submit"
@@ -93,7 +94,7 @@ const Profile = () => {
                                 >
                                     Publish Profile
                                 </button>
-                            </div>
+                            </div>:<></>}
                         </div>
                     </div>
                     <div>
