@@ -226,7 +226,10 @@ const University = (props) => {
         ? "UP"
         : "UO"
     );
-  };
+    if (isAdditionalTokensRequired)
+ {
+  toast.error('Please Add tokens before Subscription ')
+ }  };
 
   // BONUS CALCULATION
   const bonusCalc = (event) => {
@@ -679,7 +682,7 @@ const University = (props) => {
               variant="outline-secondary"
               onClick={() => closeSubModal(additionalTOkens)}
             >
-              Add Tokens...
+              Add Tokens
             </Button>
             {publishId?.type !== "CR" ? (
               <Button
