@@ -91,7 +91,7 @@ const OnCampusJobs = (props) => {
                         //         <TiDownload size={30} />
                         //     </Badge>
                         // }
-                        label={'Campus Invite Received' }
+                        label={'Campus Invite Sent' }
                         wrapped
                         style={{
                             fontWeight:'bold',
@@ -109,7 +109,7 @@ const OnCampusJobs = (props) => {
 
                         //     </Badge>
                         // }
-                        label={ 'Campus Invite Sent' }
+                        label={ 'Campus Invite Received' }
                         wrapped
                         style={{
                             fontWeight:'bold',
