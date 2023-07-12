@@ -288,7 +288,12 @@ const CaptureResults = (props) => {
             value={props.captureResultsModel.jobName}
             InputLabelProps={{
               shrink: true,
-              style: { fontFamily: "Poppins-Regular", display: "block" },
+              style: { fontFamily: "Poppins-Regular", display: "block" , 
+              background:'#fff',
+              paddingLeft:'2px',
+              paddingRight:'2px',
+            
+            },
             }}
             inputProps={{
               style: { fontFamily: "Poppins-Regular", display: "block" },
@@ -303,7 +308,10 @@ const CaptureResults = (props) => {
             value={props.captureResultsModel.roundName}
             InputLabelProps={{
               shrink: true,
-              style: { fontFamily: "Poppins-Regular", display: "block" },
+              style: { fontFamily: "Poppins-Regular", display: "block",
+              background:'#fff',
+              paddingLeft:'2px',
+              paddingRight:'2px', },
             }}
             inputProps={{
               style: { fontFamily: "Poppins-Regular", display: "block" },
@@ -324,7 +332,10 @@ const CaptureResults = (props) => {
             // onChange={props.handleChange}
             InputLabelProps={{
               shrink: true,
-              style: { fontFamily: "Poppins-Regular", display: "block" },
+              style: { fontFamily: "Poppins-Regular", display: "block",
+              background:'#fff',
+              paddingLeft:'2px',
+              paddingRight:'2px', },
             }}
             inputProps={{
               style: { fontFamily: "Poppins-Regular", display: "block" },
@@ -341,7 +352,10 @@ const CaptureResults = (props) => {
             // onChange={props.handleChange}
             InputLabelProps={{
               shrink: true,
-              style: { fontFamily: "Poppins-Regular", display: "block" },
+              style: { fontFamily: "Poppins-Regular", display: "block" ,
+              background:'#fff',
+              paddingLeft:'2px',
+              paddingRight:'2px',},
             }}
             inputProps={{
               // min: props.addProgram.startDate,
@@ -375,7 +389,7 @@ const CaptureResults = (props) => {
                     /> */}
         </div>
         <br />
-        <div>
+        <div style={{marginLeft:'30px' , marginBottom:'25px'}} >
           <TextField
             label="Search Student"
             variant="outlined"
@@ -385,7 +399,10 @@ const CaptureResults = (props) => {
             value={props?.searchItems}
             InputLabelProps={{
               shrink: true,
-              style: { fontFamily: "Poppins-Regular", display: "block" },
+              style: { fontFamily: "Poppins-Regular", display: "block" ,
+              background:'#fff',
+              paddingLeft:'2px',
+              paddingRight:'2px',},
             }}
             inputProps={{
               style: { fontFamily: "Poppins-Regular", display: "block" },
@@ -406,7 +423,7 @@ const CaptureResults = (props) => {
 
         <button
           className="btn mr-2"
-          style={{ marginLeft: "75%" }}
+          style={{ marginLeft: "75%"  , marginBottom:'25px'}}
           type="button"
           onClick={() => {
             hiddenFileInput.current.click();
@@ -579,7 +596,7 @@ const CaptureResults = (props) => {
               props.onCancel();
             }}
           >
-            <p>Cancel</p>
+             Cancel 
           </button>
           <button
             type="button"
@@ -588,7 +605,7 @@ const CaptureResults = (props) => {
               onSubmit();
             }}
           >
-            <p>Save</p>
+            Save
           </button>
         </div>
         <br />

@@ -110,10 +110,12 @@ const DefineJobApplicationWindowSection = (props) => {
                                     >
                                         <p
                                             style={{
-                                                margin: "10px 0px 0px 20px",
+                                                // margin: "10px 0px 0px 20px",
+                                                marginTop:'13px',
+                                                marginLeft:'25px',
                                                 textTransform: "capitalize",
                                                 fontSize: ".800rem",
-                                                padding:'12px 0px 0px 15px',
+                                                padding:'2px',
                                             }}
                                         >
                                             {item.status}
@@ -182,7 +184,7 @@ const DefineJobApplicationWindowSection = (props) => {
                                                 marginTop:'19px',
                                                 textTransform: "capitalize",
                                                 fontSize: ".800rem",
-                                                padding:'12px 0px 0px 15px',
+                                                padding:'2px',
                                             }}
                                         >
                                             {item.status}
@@ -248,7 +250,7 @@ const DefineJobApplicationWindowSection = (props) => {
 
     return (
         <div className="bgWhite">
-            <p className="text-center text-primary p-2">Define Job Window</p>
+            <p className="text-center text-primary p-2">Define Job Window </p>
             {!selectedJob ? (
                 <div
                     className="CD-define-jobs-list"

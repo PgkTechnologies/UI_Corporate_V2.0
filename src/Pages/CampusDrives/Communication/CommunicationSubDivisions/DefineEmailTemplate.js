@@ -9,7 +9,7 @@ import CreateEmailTemplate from './CreateEmailTemplate'
 import { actionDeleteEmailTemplateInfoRequestSaga, actionGetCampusDriveEmailTemplatesListRequestSaga, actionGetEmailTemplateInfoRequestSaga, actionPatchEmailTemplateInfoRequestSaga, actionPostNewEmailTemplateRequestSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/CommunicationSagaAction";
 import ViewInArIcon from '@mui/icons-material/ViewInAr';
 import ThumbUpAltSharpIcon from '@mui/icons-material/ThumbUpAltSharp';
-
+import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 const DefineEmailTemplate = (props) => {
     const [allEmailTemplates, setAllEmailTemplates] = useState({});
     const [creatEmailTemplate, setCreateEmailTemplate] = useState(false);
@@ -280,6 +280,8 @@ const DefineEmailTemplate = (props) => {
                                     <div className="notification-icon d-flex flex-column justify-content-center align-items-center">
                                         <div style={{ color: "#253AA3", background: "lightblue", borderRadius: "50%", width: "100px", height: "100px", textAlign: "center", display: "inline-block" }}>
                                             {/* <i className="fa fa-envelope fa-4x" style={{ marginTop: "10px" }} /> */}
+                                            <ThumbUpAltSharpIcon style={{ fontSize: 50 ,  marginTop: "25px" }}   />
+                                           
                                         </div>
                                     </div>
                                     <p style={{ textAlign: "center" }} className="paragraph">Email Template</p>

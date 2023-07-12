@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
- 
+
 import IconButton from "@material-ui/core/IconButton";
 import Close from "@material-ui/icons/Close";
 import { TextField } from "@material-ui/core";
@@ -334,9 +334,16 @@ const CompareCriteriaCmp = (props) => {
         <PgkTextField
           value={applicationForm?.hiringCriteria?.hiringCriteriaName}
           label={"Hiring Criteria Name"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{
+            style: {
+              fontSize: ".800rem",
+              background: '#fff',
+              paddingLeft: '2px',
+              paddingRight: '2px'
+            }
+          }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
-          styles={{ width: "40%", alignSelf: "center" }}
+          styles={{ width: "40%", alignSelf: "center", marginBottom: '25px' }}
         />
       </div>
       <div
@@ -346,7 +353,9 @@ const CompareCriteriaCmp = (props) => {
         <PgkTextField
           value={getNameByType("PROGRAM")}
           label={"Program"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px' } }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
         />
@@ -357,11 +366,13 @@ const CompareCriteriaCmp = (props) => {
               (x) => x.currentlyPursuingFlag
             )[0] !== undefined
               ? applicationForm?.studentAcademics?.filter(
-                  (x) => x.currentlyPursuingFlag
-                )[0]?.programName
+                (x) => x.currentlyPursuingFlag
+              )[0]?.programName
               : "Not Provided"
           }
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" ,  background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px'} }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
           errorMessage={validateApplication("PROGRAM")}
@@ -375,18 +386,20 @@ const CompareCriteriaCmp = (props) => {
           values={
             getNameByType("BRANCH") !== undefined
               ? getNameByType("BRANCH").map((item) => {
-                  return { value: item.value, label: item.label };
-                })
+                return { value: item.value, label: item.label };
+              })
               : []
           }
           options={
             getNameByType("BRANCH") !== undefined
               ? getNameByType("BRANCH").map((item) => {
-                  return { value: item.value, label: item.label };
-                })
+                return { value: item.value, label: item.label };
+              })
               : []
           }
-          labelStyles={{ fontSize: ".800rem" }}
+          labelStyles={{ fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px'}}
           selectStyles={{ fontSize: ".800rem" }}
           menuStyles={{ fontSize: ".800rem" }}
           styles={{ width: "60%", margin: "0px 3px" }}
@@ -398,12 +411,14 @@ const CompareCriteriaCmp = (props) => {
               (x) => x.currentlyPursuingFlag
             )[0] !== undefined
               ? applicationForm?.studentAcademics?.filter(
-                  (x) => x.currentlyPursuingFlag
-                )[0].branchName
+                (x) => x.currentlyPursuingFlag
+              )[0].branchName
               : "Not Provided"
           }
           label={"Student Branch"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px' } }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
           errorMessage={validateApplication("BRANCH")}
@@ -454,7 +469,9 @@ const CompareCriteriaCmp = (props) => {
         <PgkTextField
           value={applicationForm?.hiringCriteria?.numberOfAllowedBacklogs + " "}
           label={"How many Backlogs ?"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem", background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px' } }}
           inputProps={{ style: { fontSize: ".800rem" } }}
           styles={{ readOnly: true, width: "60%", margin: "0px 3px" }}
         />
@@ -464,12 +481,14 @@ const CompareCriteriaCmp = (props) => {
               (x) => x.currentlyPursuingFlag
             )[0] !== undefined
               ? applicationForm?.studentAcademics?.filter(
-                  (x) => x.currentlyPursuingFlag
-                )[0].activeBacklogsNumber
+                (x) => x.currentlyPursuingFlag
+              )[0].activeBacklogsNumber
               : 100
           }
           label={"Student Active Backlogs"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px'} }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
           errorMessage={validateApplication("ACTIVE_BACKLOGS")}
@@ -482,7 +501,9 @@ const CompareCriteriaCmp = (props) => {
         <PgkTextField
           value={applicationForm?.hiringCriteria?.minimumCutoffPercentage10th}
           label={"> X/SSC Percentage"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem", background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px' } }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
         />
@@ -492,12 +513,14 @@ const CompareCriteriaCmp = (props) => {
               (x) => x.programType === "Tenth"
             )[0] !== undefined
               ? applicationForm?.studentAcademics?.filter(
-                  (x) => x.programType === "Tenth"
-                )[0].percentage
+                (x) => x.programType === "Tenth"
+              )[0].percentage
               : "Not Provided"
           }
           label={"Student X/SSC Percentage"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px'} }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
           errorMessage={validateApplication("TENTH_PERCENTAGE")}
@@ -510,7 +533,9 @@ const CompareCriteriaCmp = (props) => {
         <PgkTextField
           value={applicationForm?.hiringCriteria?.minimumCutoffPercentage12th}
           label={">= XII/Intermediate Percentage"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px'} }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
         />
@@ -520,12 +545,14 @@ const CompareCriteriaCmp = (props) => {
               (x) => x.programType === "Twelth"
             )[0] !== undefined
               ? applicationForm?.studentAcademics?.filter(
-                  (x) => x.programType === "Twelth"
-                )[0].percentage
+                (x) => x.programType === "Twelth"
+              )[0].percentage
               : "Not Provided"
           }
           label={"Student XII/Intermediate Percentage"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px'} }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
           errorMessage={validateApplication("TWELTH")}
@@ -538,7 +565,9 @@ const CompareCriteriaCmp = (props) => {
         <PgkTextField
           value={applicationForm?.hiringCriteria?.minimumCutoffPercentageGrad}
           label={">= Undergraduation Percentage"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px'} }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
         />
@@ -548,12 +577,14 @@ const CompareCriteriaCmp = (props) => {
               (x) => x.programType === "UG"
             )[0] !== undefined
               ? applicationForm?.studentAcademics?.filter(
-                  (x) => x.programType === "UG"
-                )[0].percentage
+                (x) => x.programType === "UG"
+              )[0].percentage
               : "Not Provided"
           }
           label={"Student Undergraduation Percentage"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px' } }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
           errorMessage={validateApplication("GRADUATION")}
@@ -566,7 +597,9 @@ const CompareCriteriaCmp = (props) => {
         <PgkTextField
           value={applicationForm?.hiringCriteria?.yearOfPassing}
           label={"Year of Passing"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px'} }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
         />
@@ -581,14 +614,16 @@ const CompareCriteriaCmp = (props) => {
               (x) => x.currentlyPursuingFlag
             )[0] !== undefined
               ? new Date(
-                  applicationForm?.studentAcademics?.filter(
-                    (x) => x.currentlyPursuingFlag
-                  )[0].monthYearOfPassing
-                ).getFullYear() + ""
+                applicationForm?.studentAcademics?.filter(
+                  (x) => x.currentlyPursuingFlag
+                )[0].monthYearOfPassing
+              ).getFullYear() + ""
               : "Not Provided"
           }
           label={"Student Year of Passing"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px' } }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
           errorMessage={validateApplication("YEAR_OF_PASSING")}
@@ -684,14 +719,18 @@ const CompareCriteriaCmp = (props) => {
         <PgkTextField
           value={applicationForm?.hiringCriteria?.eduGapsSchool + ""}
           label={"In Months"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px' } }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
         />
         <PgkTextField
           value={educationGaps?.eduGapSchooling + ""}
           label={"In Months"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px'} }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
           errorMessage={validateGaps("SCHOOLING")}
@@ -744,14 +783,18 @@ const CompareCriteriaCmp = (props) => {
         <PgkTextField
           value={applicationForm?.hiringCriteria?.eduGaps11N12 + ""}
           label={"In Months"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px' } }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
         />
         <PgkTextField
           value={educationGaps?.eduGap11N12 + ""}
           label={"In Months"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px'} }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
           errorMessage={validateGaps("TWELTH")}
@@ -832,14 +875,18 @@ const CompareCriteriaCmp = (props) => {
         <PgkTextField
           value={applicationForm?.hiringCriteria?.eduGapsGrad + ""}
           label={"In Months"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px'} }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
         />
         <PgkTextField
           value={educationGaps?.eduGapGrad + ""}
           label={"In Months"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px' } }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
           errorMessage={validateGaps("GRADUATION")}
@@ -892,14 +939,18 @@ const CompareCriteriaCmp = (props) => {
         <PgkTextField
           value={applicationForm?.hiringCriteria?.eduGapsGradNPG + ""}
           label={"In Months"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem", background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px' } }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
         />
         <PgkTextField
           value={educationGaps?.eduGapsGradAndPg + ""}
           label={"In Months"}
-          inputLabelProps={{ style: { fontSize: ".800rem" } }}
+          inputLabelProps={{ style: { fontSize: ".800rem" , background: '#fff',
+          paddingLeft: '2px',
+          paddingRight: '2px' } }}
           inputProps={{ readOnly: true, style: { fontSize: ".800rem" } }}
           styles={{ width: "60%", margin: "0px 3px" }}
           errorMessage={validateGaps("GRAD_AND_PG")}

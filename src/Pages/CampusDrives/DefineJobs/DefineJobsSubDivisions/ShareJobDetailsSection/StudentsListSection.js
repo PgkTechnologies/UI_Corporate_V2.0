@@ -289,8 +289,8 @@ const StudentsListSection = (props) => {
               fontSize: "15px",
               padding: "6px",
               maxWidth: "250px",
-              margin: "12px 0px 12px 2px",
-              textAlign:'center'
+              margin: "12px 0px 12px 35px",
+              textAlign:'center', 
             }}
           >
             {props?.jobItem?.jobName}
@@ -430,8 +430,9 @@ const StudentsListSection = (props) => {
                                 onViewDetails(student?.applicantID);
                               }}
                               style={{
-                                width: "80px",
-                                height: "26px",
+                                color:'whitesmoke',
+                                // width: "80px",
+                                // height: "26px",
                                 fontSize: ".700rem",
                               }}
                             >

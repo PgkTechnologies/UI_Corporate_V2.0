@@ -357,7 +357,7 @@ const DefineJobsSection = (props) => {
                                                 marginTop:'19px',
                                                 marginLeft: "25px",
                                                 textTransform: "capitalize",
-                                                padding:'12px 0px 0px 15px',
+                                                padding:'2px',
                                                 fontSize: ".800rem",
                                             }}
                                         >
@@ -377,7 +377,7 @@ const DefineJobsSection = (props) => {
                                             textTransform: "uppercase",
                                             fontWeight: "bolder",
                                             marginLeft: "40%",
-                                            paddingTop:'20px',
+                                            // paddingTop:'20px',
                                                                                         
                                         }}
                                         onClick={() => {
@@ -620,7 +620,7 @@ const DefineJobsSection = (props) => {
                 ) : (
                     <>
                         {!section.firstSection && !section.secondSection ? (
-                            <div className="Jobs-Add-btn" style={{marginTop:'-150px'}} >
+                            <div className="Jobs-Add-btn" style={{marginTop:'-70px'}} >
                                 <button
                                     type="button"
                                     onClick={() => {
