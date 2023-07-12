@@ -286,7 +286,7 @@ const DefineJobApplicationWindowSection = (props) => {
 
           {jobsList.length === 0 && !selectedJob ? (
             <div className="center">
-              <p className="no-list-label">Please add jobs to continue...</p>
+              <p className="no-list-label">Please add jobs to continue... </p>
             </div>
           ) : undefined}
 

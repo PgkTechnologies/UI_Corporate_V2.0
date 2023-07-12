@@ -9,6 +9,7 @@ import { actionGetCampusDriveDefineJobsListRequestSaga } from "../../../../Store
 import { actionGetInterviewRoundsRequestSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/CampusInterviewSagaAction";
 import { actionGetCampusDriveEmailTemplatesListRequestSaga, actionShareInterviewRoundsSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/CommunicationSagaAction";
 import PreLoader from "../../../../utils/PreLoader";
+import ThumbUpAltSharpIcon from '@mui/icons-material/ThumbUpAltSharp';
 
 const ShareInterviewRounds = (props) => {
   const dispatch = useDispatch();
@@ -847,10 +848,7 @@ const ShareInterviewRounds = (props) => {
                       display: "inline-block",
                     }}
                   >
-                    <i
-                      className="fa fa-envelope fa-4x"
-                      style={{ marginTop: "10px" }}
-                    />
+                    <ThumbUpAltSharpIcon style={{ fontSize: 50, marginTop: "25px" }} />
                   </div>
                 </div>
                 <p style={{ textAlign: "center" }} className="paragraph">

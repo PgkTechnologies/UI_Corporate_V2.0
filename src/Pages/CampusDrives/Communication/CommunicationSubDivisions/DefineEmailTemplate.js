@@ -8,6 +8,7 @@ import Close from '@material-ui/icons/Close';
 import CreateEmailTemplate from './CreateEmailTemplate'
 import { actionDeleteEmailTemplateInfoRequestSaga, actionGetCampusDriveEmailTemplatesListRequestSaga, actionGetEmailTemplateInfoRequestSaga, actionPatchEmailTemplateInfoRequestSaga, actionPostNewEmailTemplateRequestSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/CommunicationSagaAction";
 import ViewInArIcon from '@mui/icons-material/ViewInAr';
+import ThumbUpAltSharpIcon from '@mui/icons-material/ThumbUpAltSharp';
 
 const DefineEmailTemplate = (props) => {
     const [allEmailTemplates, setAllEmailTemplates] = useState({});
@@ -151,12 +152,12 @@ const DefineEmailTemplate = (props) => {
     return (
         <>
             <div className="bgWhite">
-                <div className="d-flex flex-column justify-content-start align-items-center w-full" style={{background:'#e4f0fa81'}}>
+                <div className="d-flex flex-column justify-content-start align-items-center w-full" style={{ background: '#e4f0fa81' }}>
                     <p className="heading" style={{ color: "#253AA3", fontWeight: "bold", fontFamily: "Poppins-Regular", display: "block" }}>
                         Define Email Template
                     </p>
                 </div>
-                
+
                 {
                     creatEmailTemplate
                         ?
@@ -170,7 +171,7 @@ const DefineEmailTemplate = (props) => {
                         </>
                         :
                         <>
-                            <div className="d-flex flex-column justify-content-start align-items-center w-full" style={{background:'#e4f0fa81',borderRadius:'0px 0px 10px 10px'}}>
+                            <div className="d-flex flex-column justify-content-start align-items-center w-full" style={{ background: '#e4f0fa81', borderRadius: '0px 0px 10px 10px' }}>
                                 <p className="heading" style={{ fontFamily: "Poppins-Regular", display: "block" }}>
                                     Existing Templates
                                 </p>
@@ -187,21 +188,21 @@ const DefineEmailTemplate = (props) => {
                                                             <div className="col-sm-4">
                                                                 <div className="row">
                                                                     <div className="col-sm-4">
-                                                                        <div className="job-icon job-blue-icon d-flex justify-content-center align-items-center" style={{paddingTop:'15px'}}>
-                                                                            <i><ViewInArIcon style={{ fontSize: '2.5rem',color:'#0291ff' }}/></i> 
+                                                                        <div className="job-icon job-blue-icon d-flex justify-content-center align-items-center" style={{ paddingTop: '15px' }}>
+                                                                            <i><ViewInArIcon style={{ fontSize: '2.5rem', color: '#0291ff' }} /></i>
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-sm-8">
                                                                         <p className="job-label" style={{ fontWeight: "bold", fontFamily: "Poppins-Regular" }}> Name</p>
-                                                                        
-                                                                        <p className="job-label" style={{   fontFamily: "Poppins-Regular",fontSize: '1.0rem' }}>{item.emailTemplateName}</p>
+
+                                                                        <p className="job-label" style={{ fontFamily: "Poppins-Regular", fontSize: '1.0rem' }}>{item.emailTemplateName}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div className="col-sm-3">
-                                                                <p className="job-label" style={{   fontWeight: "bold", fontFamily: "Poppins-Regular" }}> Subject </p>
-                                                               
-                                                                <p className="job-label" style={{   fontFamily: "Poppins-Regular",fontSize: '1.0rem' }}>{item.emailSubject} </p>
+                                                                <p className="job-label" style={{ fontWeight: "bold", fontFamily: "Poppins-Regular" }}> Subject </p>
+
+                                                                <p className="job-label" style={{ fontFamily: "Poppins-Regular", fontSize: '1.0rem' }}>{item.emailSubject} </p>
                                                             </div>
                                                             <div className="col-sm-3">
                                                                 <div className={'d-flex align-items-center'}>
@@ -225,17 +226,17 @@ const DefineEmailTemplate = (props) => {
                                                                         <IconButton style={{ color: 'white' }}
                                                                             component="span"
                                                                             onClick={() => { onDeleteTemplate(item.emailTemplateID) }}>
-                                                                                  <p
-                                                                                    style={{
-                                                                                        fontSize:"0.9rem",
-                                                                                        marginRight:'7px',
-                                                                                        color: '#01253CF5',
-                                                                                        marginTop:'17px',
-                                                                                        fontWeight: "bold", fontFamily: "Poppins-Regular"
-                                                                                    }}>Delete
-                                                                                </p>
+                                                                            <p
+                                                                                style={{
+                                                                                    fontSize: "0.9rem",
+                                                                                    marginRight: '7px',
+                                                                                    color: '#01253CF5',
+                                                                                    marginTop: '17px',
+                                                                                    fontWeight: "bold", fontFamily: "Poppins-Regular"
+                                                                                }}>Delete
+                                                                            </p>
                                                                             <Close color={'primary'} >
-                                                                              
+
                                                                             </Close>
                                                                         </IconButton>
                                                                     </div>
@@ -262,7 +263,7 @@ const DefineEmailTemplate = (props) => {
                             </div>
                             <br />
                             <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full" style={{ background: "white" }}>
-                                <button type="button" className="btn" onClick={onCreateEmailTemplate}><p>Create Email Template</p></button>
+                                <button type="button" className="btn" onClick={onCreateEmailTemplate}>Create Email Template</button>
                             </div>
                         </>
                 }
@@ -278,7 +279,7 @@ const DefineEmailTemplate = (props) => {
                                     <CancelOutlinedIcon className="cancelbtn" onClick={toggleSuccessModal} />
                                     <div className="notification-icon d-flex flex-column justify-content-center align-items-center">
                                         <div style={{ color: "#253AA3", background: "lightblue", borderRadius: "50%", width: "100px", height: "100px", textAlign: "center", display: "inline-block" }}>
-                                            <i className="fa fa-envelope fa-4x" style={{ marginTop: "10px" }} />
+                                            {/* <i className="fa fa-envelope fa-4x" style={{ marginTop: "10px" }} /> */}
                                         </div>
                                     </div>
                                     <p style={{ textAlign: "center" }} className="paragraph">Email Template</p>
@@ -301,7 +302,7 @@ const DefineEmailTemplate = (props) => {
                                     <CancelOutlinedIcon className="cancelbtn" onClick={toggleDeleteSuccessModal} />
                                     <div className="notification-icon d-flex flex-column justify-content-center align-items-center">
                                         <div style={{ color: "#253AA3", background: "lightblue", borderRadius: "50%", width: "100px", height: "100px", textAlign: "center", display: "inline-block" }}>
-                                            <i className="fa fa-envelope fa-4x" style={{ marginTop: "10px" }} />
+                                        <ThumbUpAltSharpIcon style={{ fontSize: 50, marginTop: "25px" }} />
                                         </div>
                                     </div>
                                     <p style={{ textAlign: "center" }} className="paragraph">Email Template</p>

@@ -6,7 +6,8 @@ import CancelOutlinedIcon from "@material-ui/icons/CancelOutlined";
 import { actionGetCampusDriveDefineJobsListRequestSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/DefineJobsSagaActions";
 import SaveInterviewRounds from "./SaveInterviewRounds";
 import { Work } from "@material-ui/icons";
- 
+import ThumbUpAltSharpIcon from '@mui/icons-material/ThumbUpAltSharp';
+
 const DefineInterviewRounds = (props) => {
   const dispatch = useDispatch();
   const [jobsList, setJobsList] = useState([]);
@@ -191,11 +192,8 @@ const DefineInterviewRounds = (props) => {
                       textAlign: "center",
                       display: "inline-block",
                     }}
-                  >
-                    <i
-                      className="fa fa-file-alt fa-4x"
-                      style={{ marginTop: "10px" }}
-                    />
+                  >  
+                  <ThumbUpAltSharpIcon style={{ fontSize: 50, marginTop: "25px" }} />
                   </div>
                 </div>
                 <p style={{ textAlign: "center" }} className="paragraph">

@@ -428,7 +428,9 @@ const ShareJobDetailsSection = (props) => {
                                         </div>
                                         <p
                                             className="col-9 job-label text-ellipsis"
-                                            style={{ maxWidth: "220px", textTransform: "capitalize",marginTop:'10px' }}
+                                            style={{ maxWidth: "220px", 
+                                            textTransform: "capitalize",
+                                            marginTop:'19px' }}
                                         >
                                             {item.jobName}
                                         </p>
@@ -439,14 +441,14 @@ const ShareJobDetailsSection = (props) => {
                                         style={{
                                             border: "1px solid #cacaca",
                                             borderRadius: "4px",
-                                            padding: "8px 4px",
+                                            padding: "2px",
                                             maxWidth: "100px",
                                             marginLeft: "10%",
                                         }}
                                     >
                                         <p
                                             style={{
-                                                marginLeft: "10px",
+                                                marginLeft: "27px",
                                                 marginTop:'10px',
                                                 textTransform: "capitalize",
                                                 fontSize: ".800rem",
@@ -593,7 +595,7 @@ const ShareJobDetailsSection = (props) => {
                         !section.firstSection &&
                         !section.secondSection ? (
                         <div className="center">
-                            <p className="no-list-label">Please add jobs to continue...</p>
+                            <p style={{marginLeft:'450px' , marginTop:"30px", fontWeight:'bold'}}>Please add jobs to continue...</p>
                         </div>
                     ) : undefined}
 

@@ -3,6 +3,8 @@ import { Row, Col } from 'reactstrap';
 import { useDispatch, useSelector } from "react-redux";
 import { FormControl, Grid, TextField } from '@material-ui/core';
 import { Modal, ModalBody } from 'reactstrap';
+import CheckCircleSharpIcon from '@mui/icons-material/CheckCircleSharp';
+import ThumbUpAltSharpIcon from '@mui/icons-material/ThumbUpAltSharp';
 //import { jsPDF } from 'jspdf-react';
 import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 import CreateEmailTemplate from './CreateEmailTemplate';
@@ -575,8 +577,10 @@ const DefineInduction = (props) => {
                                     <CancelOutlinedIcon className="cancelbtn" onClick={toggleSuccessModal} />
                                     <div className="notification-icon d-flex flex-column justify-content-center align-items-center">
                                         <div style={{ color: "#253AA3", background: "lightblue", borderRadius: "50%", width: "100px", height: "100px", textAlign: "center", display: "inline-block" }}>
-                                            <i className="fa fa-envelope fa-4x" style={{ marginTop: "10px" }} />
-                                        </div>
+                                            {/* <i className="fa fa-envelope fa-4x" style={{ marginTop: "10px" }} /> */}
+                                            <ThumbUpAltSharpIcon style={{ fontSize: 50, marginTop: "25px" }} />
+
+                                                    </div>
                                     </div>
                                     <p style={{ textAlign: "center" }} className="paragraph">Pre-Induction</p>
                                     <p style={{ textAlign: "center" }} className="paragraph2">{operationType} successfully</p>
@@ -598,7 +602,7 @@ const DefineInduction = (props) => {
                                     <CancelOutlinedIcon className="cancelbtn" onClick={toggleEmailTemplateSuccessModal} />
                                     <div className="notification-icon d-flex flex-column justify-content-center align-items-center">
                                         <div style={{ color: "#253AA3", background: "lightblue", borderRadius: "50%", width: "100px", height: "100px", textAlign: "center", display: "inline-block" }}>
-                                            <i className="fa fa-envelope fa-4x" style={{ marginTop: "10px" }} />
+                                        <ThumbUpAltSharpIcon style={{ fontSize: 50, marginTop: "25px" }} />
                                         </div>
                                     </div>
                                     <p style={{ textAlign: "center" }} className="paragraph">New Email Template</p>

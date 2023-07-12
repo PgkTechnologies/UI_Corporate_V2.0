@@ -368,7 +368,7 @@ const ReleaseOfferLetters = (props) => {
                                             <>
                                                 <tr>
                                                     <th>{index + 1}</th>
-                                                    <td>{student.name}</td>
+                                                    <td> <p style={{width:'190px'}} >{student.name} </p></td>
                                                     {/* <td>{student.collegeRollNo}</td> */}
                                                     <td>{student.email}</td>
                                                     <td>
@@ -605,7 +605,7 @@ const ReleaseOfferLetters = (props) => {
                     :
                     <>
                         <br />
-                        <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full mr-4" style={{ background: "white", width: "500px" }}>
+                        <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full mr-4" style={{ background: "white", width: "500px" , marginLeft:'330px' , fontWeight:'bold'}}>
                             <p> Please select right job to fetch shortlisted information</p>
                         </div>
                     </>

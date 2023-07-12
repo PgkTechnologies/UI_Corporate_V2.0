@@ -337,8 +337,8 @@ const DefineJobsSection = (props) => {
                                         </div>
                                         <p
                                             className="col-9 job-label text-ellipsis"
-                                            style={{ maxWidth: "220px", textTransform: "capitalize" }}
-                                        >
+                                            style={{ maxWidth: "220px", textTransform: "capitalize",marginTop:'19px' }}
+                                       >
                                             {item.jobName}
                                         </p>
                                     </div>
@@ -348,14 +348,15 @@ const DefineJobsSection = (props) => {
                                         style={{
                                             border: "1px solid #cacaca",
                                             borderRadius: "4px",
-                                            padding: "8px 4px",
+                                            padding: "2px",
                                             maxWidth: "100px",
                                             marginLeft: "10%",
                                         }}
                                     >
                                         <p
                                             style={{
-                                                marginLeft: "10px",
+                                                marginTop:'19px',
+                                                marginLeft: "25px",
                                                 textTransform: "capitalize",
                                                 fontSize: ".800rem",
                                             }}
@@ -389,8 +390,9 @@ const DefineJobsSection = (props) => {
                                             //setSelectedJob(item);
                                         }}
                                     >
-                                        <p>Details</p>
-                                        <i className="fas fa-chevron-right"></i>
+                                        Details
+                                        {/* <p   >Details</p> */}
+                                        {/* <i className="fas fa-chevron-right"></i> */}
                                     </button>
                                     {!item.publishFlag ? (
                                         <IconButton
@@ -619,7 +621,7 @@ const DefineJobsSection = (props) => {
                 ) : (
                     <>
                         {!section.firstSection && !section.secondSection ? (
-                            <div className="Jobs-Add-btn">
+                            <div className="Jobs-Add-btn" style={{marginTop:'-150px'}} >
                                 <button
                                     type="button"
                                     onClick={() => {

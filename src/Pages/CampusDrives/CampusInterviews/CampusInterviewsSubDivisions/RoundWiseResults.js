@@ -6,6 +6,7 @@ import CancelOutlinedIcon from "@material-ui/icons/CancelOutlined";
 import { actionGetCampusDriveDefineJobsListRequestSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/DefineJobsSagaActions";
 import { actionGetInterviewRoundsRequestSaga, actionGetStudentsListSaga } from "../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/CampusInterviewSagaAction";
 import CaptureResults from "./CaptureResults";
+import ThumbUpAltSharpIcon from '@mui/icons-material/ThumbUpAltSharp';
 
 const RoundWiseResults = (props) => {
   const dispatch = useDispatch();
@@ -345,7 +346,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round2SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'black' ,border:'none' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -392,7 +393,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round3SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'black' ,border:'none'}}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -439,7 +440,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round4SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'black' ,border:'none'}}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -486,7 +487,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round5SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'black', border:'none' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -533,7 +534,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round6SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'black',border:'none' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -580,7 +581,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round7SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'black',border:'none' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -626,7 +627,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round8SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'black',border:'none' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -673,7 +674,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round9SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'black' ,border:'none' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -723,7 +724,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round10SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'black',border:'none' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -794,10 +795,7 @@ const RoundWiseResults = (props) => {
                       display: "inline-block",
                     }}
                   >
-                    <i
-                      className="fa fa-envelope fa-4x"
-                      style={{ marginTop: "10px" }}
-                    />
+                    <ThumbUpAltSharpIcon style={{ fontSize: 50, marginTop: "25px" }} />
                   </div>
                 </div>
                 <p style={{ textAlign: "center" }} className="paragraph">
