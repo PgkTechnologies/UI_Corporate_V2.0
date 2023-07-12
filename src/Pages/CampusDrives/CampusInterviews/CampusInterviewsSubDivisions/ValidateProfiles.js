@@ -459,7 +459,7 @@ const ValidateProfiles = (props) => {
         className="d-flex flex-row justify-content-around align-items-center job-details-form w-full"
         style={{ background: "white" }}
       >
-        <button type="button" className="btn" onClick={onDownloadData}>
+        <button type="button" className="btn" onClick={onDownloadData} style={{paddingTop:'10px',height:'50px'}}>
           <p>Download</p>
         </button>
       </div>

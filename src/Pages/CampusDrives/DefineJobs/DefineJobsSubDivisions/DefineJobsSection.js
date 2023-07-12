@@ -321,7 +321,7 @@ const DefineJobsSection = (props) => {
         if (jobsList.length) {
             return jobsList.map((item) => {
                 return (
-                    <div className="jobs-cdx" >
+                    <div className="jobs-cdx" style={{ padding:'15px' }}>
                         <div className="row align-items-center">
                             <div
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
@@ -331,13 +331,13 @@ const DefineJobsSection = (props) => {
                                     <div className="row align-items-center">
                                         <div
                                             className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
-                                            style={{ borderRadius: "5px", width: "60px" }}
+                                            style={{ borderRadius: "5px", width: "60px",marginBottom:'15px' }}
                                         >
                                             <Work />
                                         </div>
                                         <p
                                             className="col-9 job-label text-ellipsis"
-                                            style={{ maxWidth: "220px", textTransform: "capitalize" }}
+                                            style={{ maxWidth: "220px", textTransform: "capitalize"}}
                                         >
                                             {item.jobName}
                                         </p>
@@ -348,7 +348,6 @@ const DefineJobsSection = (props) => {
                                         style={{
                                             border: "1px solid #cacaca",
                                             borderRadius: "4px",
-                                            padding: "8px 4px",
                                             maxWidth: "100px",
                                             marginLeft: "10%",
                                         }}
@@ -357,6 +356,7 @@ const DefineJobsSection = (props) => {
                                             style={{
                                                 marginLeft: "10px",
                                                 textTransform: "capitalize",
+                                                padding:'12px 0px 0px 15px',
                                                 fontSize: ".800rem",
                                             }}
                                         >
@@ -369,24 +369,22 @@ const DefineJobsSection = (props) => {
                                         type="button"
                                         className="btn d-flex justify-content-around align-items-center"
                                         style={{
-
+                                            height: "40px",
                                             width: "100px",
                                             fontSize: ".700rem",
                                             borderRadius: "4px",
                                             textTransform: "uppercase",
                                             fontWeight: "bolder",
                                             marginLeft: "40%",
+                                            paddingTop:'20px',
+                                                                                        
                                         }}
-                                        // disabled={item.status !== "open" ? true : false}
                                         onClick={() => {
                                             if (!item.publishFlag) {
                                                 setMode("EDIT");
                                             }
                                             showDetails(item.jobID, item.cdID);
-                                            //setMode("VIEW");
-                                            //setSelectedHcId(item.hiringCriteriaID);
-
-                                            //setSelectedJob(item);
+                                            
                                         }}
                                     >
                                         <p>Details</p>
@@ -466,6 +464,7 @@ const DefineJobsSection = (props) => {
                             style={{
                                 overflowY: "scroll",
                                 overflowX: "hidden",
+                                height:'330px'
                             }}
                         >
                             {jobsList.length === 0 &&

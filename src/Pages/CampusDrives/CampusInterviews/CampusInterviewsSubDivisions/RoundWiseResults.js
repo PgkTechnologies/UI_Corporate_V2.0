@@ -298,7 +298,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round1SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray" ,color:"black" , border:'none'}}
+                              style={{ backgroundColor: "gray" ,color:"white" }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -345,7 +345,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round2SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'white' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -392,7 +392,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round3SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'white' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -439,7 +439,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round4SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'white' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -486,7 +486,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round5SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'white' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -533,7 +533,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round6SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'white' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -580,7 +580,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round7SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'white' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -626,7 +626,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round8SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'white' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -673,7 +673,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round9SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'white' }}
                             >
                               <p>Capture Results</p>
                             </button>
@@ -723,7 +723,7 @@ const RoundWiseResults = (props) => {
                                   interviewRoundsInfo?.round10SharedFlag
                                 );
                               }}
-                              style={{ backgroundColor: "gray",color:'black' }}
+                              style={{ backgroundColor: "gray",color:'white' }}
                             >
                               <p>Capture Results</p>
                             </button>
