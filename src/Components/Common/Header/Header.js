@@ -114,6 +114,11 @@ const Header = (props) => {
     onMore(); 
   }
 
+  const onProfile = () => {
+    history('/profile');
+    onMore(); 
+  }
+
   return (
     <>
       <div className="header">
@@ -202,7 +207,7 @@ const Header = (props) => {
           </Badge>
           {more ? (
             <div className="more-data">
-              <div className="more-card">
+              <div className="more-card"  onClick={() => onProfile()}>
                 <div className="more-content">
                   <AccountCircleIcon
                     style={{

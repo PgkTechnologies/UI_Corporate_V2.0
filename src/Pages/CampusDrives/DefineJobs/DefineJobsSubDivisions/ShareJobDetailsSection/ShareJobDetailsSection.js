@@ -318,7 +318,7 @@ const ShareJobDetailsSection = (props) => {
                 return !item.publishFlag &&
                     tabValue === 0 &&
                     props?.universityId !== "OffCampus" ? (
-                    <div className="jobs-cdx" style={{marginTop:'10px'}}>
+                    <div className="jobs-cdx" style={{marginTop:'10px',padding:'15px'}}>
                         <div className="row align-items-center">
                             <div
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
@@ -341,7 +341,7 @@ const ShareJobDetailsSection = (props) => {
                                     <div className="row align-items-center">
                                         <div
                                             className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
-                                            style={{ borderRadius: "5px", width: "60px" }}
+                                            style={{ borderRadius: "5px", width: "60px",paddingBottom:'5px',paddingLeft:'20px' }}
                                         >
                                             <i>
                                                 <WorkIcon/>
@@ -360,7 +360,6 @@ const ShareJobDetailsSection = (props) => {
                                         style={{
                                             border: "1px solid #cacaca",
                                             borderRadius: "4px",
-                                            padding: "8px 4px",
                                             maxWidth: "100px",
                                             marginLeft: "10%",
                                         }}
@@ -370,6 +369,7 @@ const ShareJobDetailsSection = (props) => {
                                                 marginLeft: "10px",
                                                 textTransform: "capitalize",
                                                 fontSize: ".800rem",
+                                                padding:'12px 0px 0px 15px'
                                             }}
                                         >
                                             {item.status}
@@ -381,30 +381,22 @@ const ShareJobDetailsSection = (props) => {
                                         type="button"
                                         className="btn d-flex justify-content-around align-items-center"
                                         style={{
-                                            height: "30px",
+                                            height: "40px",
                                             width: "100px",
                                             fontSize: ".700rem",
                                             borderRadius: "4px",
                                             textTransform: "uppercase",
                                             fontWeight: "bolder",
                                             marginLeft: "40%",
+                                                                                        
                                         }}
                                         disabled={item.status !== "open" ? true : false}
-                                        // onClick={() => {
-                                        //   setMode("VIEW");
-                                        //   setSelectedHcId(item.hiringCriteriaID);
-                                        //   setSection({
-                                        //     firstSection: true,
-                                        //     secondSection: false,
-                                        //   });
-                                        //   setSelectedJob(item);
-                                        // }}
                                         onClick={() => {
                                             showDetails(item.jobID, item.cdID);
                                         }}
                                     >
                                         Details
-                                        {/* <i className="fas fa-chevron-right"></i> */}
+                                       
                                     </button>
                                 </div>
                             </div>
@@ -412,7 +404,7 @@ const ShareJobDetailsSection = (props) => {
                     </div>
                 ) : (item.publishFlag && tabValue === 1) ||
                     props?.universityId === "OffCampus" ? (
-                    <div className="jobs-cdx" style={{ width: '90%',marginTop:'20px' }}>
+                    <div className="jobs-cdx" style={{ width: '95%',marginTop:'20px' ,padding:'18px'}}>
                         <div className="row align-items-center">
                             <div
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
@@ -422,7 +414,7 @@ const ShareJobDetailsSection = (props) => {
                                     <div className="row align-items-center">
                                         <div
                                             className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
-                                            style={{ borderRadius: "5px", width: "60px" }}
+                                            style={{ borderRadius: "5px", width: "60px",marginBottom:'5px' }}
                                         >
                                             <Work />
                                         </div>
@@ -441,17 +433,16 @@ const ShareJobDetailsSection = (props) => {
                                         style={{
                                             border: "1px solid #cacaca",
                                             borderRadius: "4px",
-                                            padding: "2px",
                                             maxWidth: "100px",
                                             marginLeft: "10%",
                                         }}
                                     >
                                         <p
                                             style={{
-                                                marginLeft: "27px",
-                                                marginTop:'10px',
+                                                marginLeft: "10px",
                                                 textTransform: "capitalize",
                                                 fontSize: ".800rem",
+                                                padding:'12px 0px 0px 15px'
                                             }}
                                         >
                                             {item.status}
@@ -608,7 +599,7 @@ const ShareJobDetailsSection = (props) => {
                                 jobsList.some((item) => !item.publishFlag) ? (
                                 <div
                                     className="w-full d-flex justify-content-start align-content-center publish-selected-btn-container"
-                                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',marginTop:'15px' }}
                                 >
                                     <Checkbox
                                         size={"small"}
@@ -643,6 +634,7 @@ const ShareJobDetailsSection = (props) => {
                                             color: 'whitesmoke',
                                             width: "100px",
                                             fontSize: ".700rem",
+                                            marginBottom:'10px',
                                         }}
                                         onClick={publishSelected}
                                     >

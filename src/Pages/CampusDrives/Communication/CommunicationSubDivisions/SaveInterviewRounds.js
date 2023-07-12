@@ -734,7 +734,7 @@ const SaveInterviewRounds = (props) => {
             <div style={{ borderTop: "1px solid black", width: "100%", marginLeft: 20, marginRight: 20 }}></div>
             <br />
             <form onSubmit={onSubmit} style={{ height: "330px", overflowY: "scroll", overflowX: "scroll" }}>
-                <button type="button" className="btn" onClick={() => { AddRound() }} style={{ marginLeft: "75%", marginBottom: "15px" }}>+ Add Round </button>
+                <button type="button" className="btn" onClick={() => { AddRound() }} style={{ marginLeft: "75%", marginBottom: "2px",paddingTop:'20px',height:'60px' }}><p>+ Add Round</p></button>
                 <table className="table table-striped table-bordered">
                     <thead style={{ backgroundColor: "#01253cf5", color: "white" }}>
                         <tr>
@@ -1472,8 +1472,8 @@ const SaveInterviewRounds = (props) => {
                 <div style={{ borderTop: "1px solid black", width: "100%", marginLeft: 20, marginRight: 20 }}></div>
                 <br />
                 <div style={{ background: "white",display:'flex',justifyContent:'center' }}>
-                  <div>  <button type="button" className="btn" style={{ marginRight: "50px" }} onClick={() => { props.onCancel() }} > Cancel</button>
-                    <button type="submit" className="btn"> Save </button></div>
+                  <div>  <button type="button" className="btn mr-2" style={{ marginRight: "50px",paddingTop:'10px',height:'50px' }} onClick={() => { props.onCancel() }} ><p>Cancel</p></button>
+                    <button style={{ paddingTop:'10px',height:'50px' }} type="submit" className="btn mr-2"><p>Save</p></button></div>
                 </div>
                 <br />
             </form>

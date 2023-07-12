@@ -472,7 +472,7 @@ const ShareRoundResults = (props) => {
             <br />
             <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full" style={{ background: "white" }}>
 
-                <button type="button" className="btn" onClick={shareRoundResults} disabled={roundId ? interviewRoundsInfo[`round${roundId}ResultsSharedFlag`] : true} > Share </button>
+                <button type="button" className="btn" onClick={shareRoundResults} style={{paddingTop:'10px',height:'50px'}} disabled={roundId ? interviewRoundsInfo[`round${roundId}ResultsSharedFlag`] : true} ><p>Share</p></button>
                 {/* <button type="button" className="btn" onClick={shareRoundResults} ><p>Share</p></button> */}
             </div>
             {showToastModal ?

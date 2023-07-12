@@ -263,7 +263,7 @@ const DefineEmailTemplate = (props) => {
                             </div>
                             <br />
                             <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full" style={{ background: "white" }}>
-                                <button type="button" className="btn" onClick={onCreateEmailTemplate}>Create Email Template</button>
+                                <button type="button" className="btn" onClick={onCreateEmailTemplate} style={{ paddingTop:'15px'}}><p>Create Email Template</p></button>
                             </div>
                         </>
                 }

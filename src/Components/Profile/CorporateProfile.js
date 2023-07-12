@@ -102,6 +102,8 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
   const [showModal, setShowModal] = useState(false);
   const [showTermsAndConditions, setShowTermsAndConditions] = useState(false);
   const [profilePicture, setProfilePicture] = useState();
+  const [universityCheck,setUniversityCheck] = useState();
+  const [otherInfoCheck,setOtherInfoCheck] = useState();
   const [publishedFlag, setPublishedFlag] = useState();
   const [oterInfoModal, setOterInfoModal] = useState(false)
   const [infoID, setInfoID] = useState();
@@ -748,9 +750,8 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
     }
 
     const finalModel = {
-      //   infoPublished: false,
       profilePublished: postPublishProfile.universityProfile,
-      //   otherPublished: false,
+      
     };
     addPublishProfileForm(finalModel);
     setShowPublish(false);
@@ -764,26 +765,41 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
       [name]: checked,
     }));
     setInputError("");
+
+    switch (name) {
+      case "universityProfile":
+        if(checked){
+          setUniversityCheck(true)
+        }
+        return;
+
+
+        case "otherInformation":
+        if(checked){
+          setOtherInfoCheck(true)
+        }
+        return;
+
+            default:
+                break;
   };
+}
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (postPublishProfile.universityProfile) {
-      setInputError("");
+    if (universityCheck === true) {
       publishData();
-    } else {
-      setInputError("Select atleast one profile to publish");
-    }
+    } 
 
-    if (postPublishProfile?.otherInformation) {
-      setInputError("");
+    if (otherInfoCheck === true) {
       PostOtherInfo();
     }
   };
 
+  
   const savedOtherInfo = () => {
     dispatch(actionGetPublishOtherInformationRequest({
-      apiPayloadRequest: [infoID],
+      apiPayloadRequest: [localStorage.getItem('otherInfoID')],
       callback: getSavedData
     }))
   }
@@ -819,7 +835,7 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
 
   };
   // console.log(publishedFlag, 'publiseddd')
-  // console.log(profile, profileInfo, "TOT");
+  console.log(profile, profileInfo, "TOT");
   // console.log(profile?.companyProfile, "direc corp msu");
 
   return (
@@ -827,7 +843,7 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
       {apiStatus ? <PreLoader /> : null}
       <div className="modal-main">
         <p className="modal-title"> Corporate Profile </p>
-        {profile?.publishedFlag ? (
+        {profileInfo?.publishedFlag ? (
           <p
             className="sub-title"
             style={{
