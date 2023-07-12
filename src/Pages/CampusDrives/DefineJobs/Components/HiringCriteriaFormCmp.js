@@ -1079,58 +1079,6 @@ const HiringCriteriaFormCmp = (props) => {
                     </div>
                   </div>
 
-                  {/* Disabling The Download option for Attachment by -MSU March 10 */}
-
-                  {/* {props?.jobFormData?.attachment?.value?.attachment && (
-                    <div className="col-md-1" style={{ margin: 0, padding: 0 }}>
-                      <div
-                        className="d-attach"
-                        style={{
-                          cursor: "pointer",
-                          backgroundColor: "#253AA3",
-                        }}
-                      >
-                        {props?.jobFormData?.attachment?.value?.attachment?.trim() !==
-                          "" ? (
-                          <div
-                            // href={
-                            //   "data:application/pdf;base64," +
-                            //   props?.jobFormData?.attachment?.value?.attachment
-                            // }
-                            onClick={() => {
-                              openFileInBrowser(
-                                props?.jobFormData.attachment.value.attachment,
-                                props?.jobFormData?.attachment?.value
-                                  ?.attachmentName
-                              );
-                            }}
-                            style={{
-                              textDecoration: "none",
-                              outline: "none",
-                              width: "100%",
-                              cursor: "pointer",
-                            }}
-                          // download
-                          >
-                            {" "}
-                            <label
-                              style={{
-                                backgroundColor: "#253AA3",
-                                width: "100%",
-                                height: "100%",
-                                paddingTop: "10px",
-                                color: "white",
-                                textAlign: "center",
-                                cursor: "pointer",
-                              }}
-                            >
-                              <i className="fas fa-download mr-2"></i>
-                            </label>
-                          </div>
-                        ) : null}
-                      </div>
-                    </div>
-                  )} */}
                 </div>
                 {props?.jobFormData?.attachment?.errorMessage ? (
                   <p

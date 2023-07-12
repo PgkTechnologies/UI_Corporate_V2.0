@@ -102,7 +102,12 @@ const Register = () => {
   };
 
   const handleChangeImg = (event) => {
+    const { name, error } = event.target;
+    console.log(name,error,'handleeeimg')
     event.preventDefault();
+
+    switch (name) {
+      case 'attachment' :
     if (event.target.files) {
       if (event.target.files[0].type === "application/pdf") {
         let imageObj = event.target.files[0];
@@ -117,10 +122,20 @@ const Register = () => {
           ...preState,
           attachment: event.target.files[0],
         }));
+
       } else {
         toast.error("PDF only");
       }
     }
+    else {
+      setErrors((preState) => ({
+        ...preState,
+        [name]: 'invalid',
+      }));
+    }
+    return;
+    default:break ;
+  }
   };
 
   // const dataURLtoFile = (dataurl, filename, type) => {

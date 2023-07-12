@@ -50,7 +50,7 @@ const CorporatePrimaryCmp = (props) => {
 
     const history = useNavigate();
 
-    // console.log(props?.corporatePrimaryData?.referral, 'typeeList')
+     console.log(props?.corporatePrimaryData?.attachment?.name, 'typeeList')
     return (
         <form onSubmit={props?.handleSubmit} className="d-flex justify-content-center align-items-center" style={{ flexDirection: 'column' }}>
             <div className="row cmp-register-main">
@@ -234,7 +234,7 @@ const CorporatePrimaryCmp = (props) => {
 
             <div className="row cmp-register-main">
                 <div className="cmp-register-head mt-2" style={{ fontWeight: 'bold' }}>
-                    Profile picture*(if any)
+                    About Corporate*(if any)
                 </div>
                 <div className="row row-container">
                     <div className="col-12">
@@ -255,12 +255,25 @@ const CorporatePrimaryCmp = (props) => {
                                 className="btn-secondary"
                                 name="attachment"
                                 id="attachment"
-                                required={false}
+                                required={true}
+                                errorMessage = {props?.errors?.attachment ? true : false}
                             />
 
                         </div>
                     </div>
                 </div>
+                {/* {props?.corporatePrimaryData?.attachment?.errorMessage ? (
+                    <p
+                        style={{
+                            color: "red",
+                            fontSize: ".800rem",
+                            marginTop: "-15px",
+                        }}
+                    >
+                        {props?.corporatePrimaryData?.attachment?.errorMessage}
+                    </p>
+                ) : null} */}
+
             </div>
 
             <div className="row cmp-register-main" >

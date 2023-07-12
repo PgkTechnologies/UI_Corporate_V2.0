@@ -605,7 +605,7 @@ const ReleaseOfferLetters = (props) => {
                     :
                     <>
                         <br />
-                        <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full mr-4" style={{ background: "white", width: "500px" }}>
+                        <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full mr-4" style={{ background: "white", justifyContent:'center',alignItems:'center' }}>
                             <p> Please select right job to fetch shortlisted information</p>
                         </div>
                     </>

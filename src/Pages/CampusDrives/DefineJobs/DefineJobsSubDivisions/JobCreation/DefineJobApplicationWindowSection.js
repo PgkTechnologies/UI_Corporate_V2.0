@@ -77,7 +77,7 @@ const DefineJobApplicationWindowSection = (props) => {
                     !item.jobAppWindowDefined &&
                     tabValue === 0 ? (
                     <div className="row align-items-center">
-                        <div className="jobs-cdx" style={{ width: '90%' }} >
+                        <div className="jobs-cdx" style={{ width: '95%',padding:'18px' }} >
                             <div
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
                                 style={{ maxWidth: "100%" }}
@@ -86,7 +86,7 @@ const DefineJobApplicationWindowSection = (props) => {
                                     <div className="row align-items-center">
                                         <div
                                             className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
-                                            style={{ borderRadius: "5px", width: "60px" }}
+                                            style={{ borderRadius: "5px", width: "60px",paddingBottom:'10px' }}
                                         >   
                                             <Work />
                                             
@@ -104,7 +104,6 @@ const DefineJobApplicationWindowSection = (props) => {
                                         style={{
                                             border: "1px solid #cacaca",
                                             borderRadius: "4px",
-                                            padding: "8px 4px",
                                             maxWidth: "100px",
                                             marginLeft: "10%",
                                         }}
@@ -114,6 +113,7 @@ const DefineJobApplicationWindowSection = (props) => {
                                                 margin: "10px 0px 0px 20px",
                                                 textTransform: "capitalize",
                                                 fontSize: ".800rem",
+                                                padding:'12px 0px 0px 15px',
                                             }}
                                         >
                                             {item.status}
@@ -146,7 +146,7 @@ const DefineJobApplicationWindowSection = (props) => {
                     </div>
                 ) : item.publishFlag && item.jobAppWindowDefined && tabValue === 1 ? (
                     <div className="row align-items-center">
-                        <div className="jobs-cdx" style={{width:'90%'}} >
+                        <div className="jobs-cdx" style={{width:'95%',padding:'18px'}} >
                             <div
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
                                 style={{ maxWidth: "100%" }}
@@ -155,13 +155,13 @@ const DefineJobApplicationWindowSection = (props) => {
                                     <div className="row align-items-center">
                                         <div
                                             className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
-                                            style={{ borderRadius: "5px", width: "60px" }}
+                                            style={{ borderRadius: "5px", width: "60px",paddingBottom:'10px' }}
                                         >
                                             <Work />
                                         </div>
                                         <p
                                             className="col-9 job-label text-ellipsis"
-                                            style={{ maxWidth: "220px", textTransform: "capitalize" }}
+                                            style={{ maxWidth: "220px", textTransform: "capitalize",marginTop:'10px' }}
                                         >
                                             {item.jobName}
                                         </p>
@@ -172,7 +172,6 @@ const DefineJobApplicationWindowSection = (props) => {
                                         style={{
                                             border: "1px solid #cacaca",
                                             borderRadius: "4px",
-                                            padding: "8px 4px",
                                             maxWidth: "100px",
                                             marginLeft: "10%",
                                         }}
@@ -182,6 +181,7 @@ const DefineJobApplicationWindowSection = (props) => {
                                                 marginLeft: "10px",
                                                 textTransform: "capitalize",
                                                 fontSize: ".800rem",
+                                                padding:'12px 0px 0px 15px',
                                             }}
                                         >
                                             {item.status}
