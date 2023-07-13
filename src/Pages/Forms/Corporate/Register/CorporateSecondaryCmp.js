@@ -509,6 +509,40 @@ const CorporateSecondaryCmp = (props) => {
 
                     />
                 </div>
+                <div>
+                    <div className="cmp-register-head " style={{ fontSize: '20px' }}>
+                         Profile Picture(if any)
+                    </div>
+                    {/* <div className="row row-container"> */}
+                    <div className="col-12">
+                        <div className="reg-attach" style={{ marginLeft: '10px' }}>
+
+                            <p
+                                style={{
+                                    display: "block",
+                                    color: "red",
+                                }}
+                            >
+                                {/* {errors.fileSizeErr} */}
+                            </p>
+                            <input
+                                type="file"
+                                onChange={props?.handleChangeImg}
+                                accept="image/"
+                                className="btn-secondary"
+                                name="attachment"
+                                id="attachment"
+                                required={false}
+                                errorMessage={props?.errors?.attachment ? true : false}
+                            />
+
+                        </div>
+                    </div>
+                    {/* </div> */}
+
+
+
+                </div>
             </div>
 
             <div style={{ width: '100%' }}>

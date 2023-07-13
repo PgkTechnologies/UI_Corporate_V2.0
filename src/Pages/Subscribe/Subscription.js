@@ -126,8 +126,7 @@ const SubscriptionHistory = () => {
             {!subscriptionList?.some(
               (item) => item?.generalNote === "Campus Hiring"
             ) && "No subscriptions subscribed yet"}
-            {subscriptionList.length &&
-              subscriptionList.map((item, index) => {
+            {subscriptionList.map((item, index) => {
                 if (item?.generalNote === "Campus Hiring") {
                   return <CampusSubscription item={item} index={index} />;
                 }
@@ -144,8 +143,7 @@ const SubscriptionHistory = () => {
                   item?.generalNote
                 )
             ) && "No subscriptions subscribed yet"}
-            {subscriptionList.length &&
-              subscriptionList.map((item, index) => {
+            {subscriptionList.map((item, index) => {
                 switch (item?.generalNote) {
                   case "Other Information":
                     return (
@@ -170,8 +168,8 @@ const SubscriptionHistory = () => {
             {!subscriptionList?.some(
               (item) => item?.generalNote === "Student Database"
             ) && "No subscriptions subscribed yet"}
-            {subscriptionList.length &&
-              subscriptionList.map((item, index) => {
+            {
+              subscriptionList?.map((item, index) => {
                 switch (item?.generalNote) {
                   case "Student Database":
                     return <StudentListItem item={item} index={index} />;
@@ -188,8 +186,7 @@ const SubscriptionHistory = () => {
             {!subscriptionList?.some(
               (item) => item?.generalNote === "Profile"
             ) && "No subscriptions subscribed yet"}
-            {subscriptionList.length &&
-              subscriptionList.map((item, index) => {
+            {subscriptionList.map((item, index) => {
                 console.log(item, "test11");
                 switch (item?.generalNote) {
                   case "Profile":

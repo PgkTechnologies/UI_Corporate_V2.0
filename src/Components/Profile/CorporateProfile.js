@@ -102,8 +102,8 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
   const [showModal, setShowModal] = useState(false);
   const [showTermsAndConditions, setShowTermsAndConditions] = useState(false);
   const [profilePicture, setProfilePicture] = useState();
-  const [universityCheck,setUniversityCheck] = useState();
-  const [otherInfoCheck,setOtherInfoCheck] = useState();
+  const [universityCheck, setUniversityCheck] = useState();
+  const [otherInfoCheck, setOtherInfoCheck] = useState();
   const [publishedFlag, setPublishedFlag] = useState();
   const [oterInfoModal, setOterInfoModal] = useState(false)
   const [infoID, setInfoID] = useState();
@@ -150,7 +150,7 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
     (state) => state.DashboardReducer.profileInfo
   );
 
-  
+
 
   useEffect(() => {
     setIsTermsAndConditionsChecked(false);
@@ -367,7 +367,6 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
 
   const updateProfileData = (event) => {
     const { name, value, errorMessage } = event.target;
-    console.log(name, value, "testing");
     let data = profile[name];
     data["value"] = value;
     data["errorMessage"] = errorMessage;
@@ -386,8 +385,6 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
         },
       };
     }
-
-    console.log(updatedProfile, "testing1111");
 
     if (
       name === "corporateHQAddressCountry" ||
@@ -549,7 +546,7 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
             setProfilePicture(ev.target.result.split(",")[1]);
           } else if (name === "attachment") {
             getFile(event.target.files[0]).then((customJsonFile) => {
-              console.log(customJsonFile, "cc");
+
               setAttachment({
                 attachment: customJsonFile.base64StringFile,
                 attachmentName: event.target.files[0].name,
@@ -655,7 +652,7 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
       dateOfJoining: moment(updatedProfile.dateOfJoining),
       ...attachment,
     };
-    console.log(attachment, "hgjg");
+
     if (updatedProfile?.attachment === undefined) {
       delete updatedProfile.attachment;
     }
@@ -715,6 +712,7 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
   };
 
   const addPublishProfileForm = (data) => {
+    console.log(data, 'datataa')
     dispatch(
       actionPostPublishCorporateProfileSagaAction({
         apiPayloadRequest: data,
@@ -751,11 +749,11 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
 
     const finalModel = {
       profilePublished: postPublishProfile.universityProfile,
-      
+
     };
     addPublishProfileForm(finalModel);
     setShowPublish(false);
-   
+
   };
 
   const handleChange = (event) => {
@@ -768,35 +766,35 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
 
     switch (name) {
       case "universityProfile":
-        if(checked){
+        if (checked) {
           setUniversityCheck(true)
         }
         return;
 
 
-        case "otherInformation":
-        if(checked){
+      case "otherInformation":
+        if (checked) {
           setOtherInfoCheck(true)
         }
         return;
 
-            default:
-                break;
-  };
-}
+      default:
+        break;
+    };
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (universityCheck === true) {
       publishData();
-    } 
+    }
 
     if (otherInfoCheck === true) {
       PostOtherInfo();
     }
   };
 
-  
+
   const savedOtherInfo = () => {
     dispatch(actionGetPublishOtherInformationRequest({
       apiPayloadRequest: [localStorage.getItem('otherInfoID')],
@@ -813,11 +811,18 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
     getPublishedOtherInformation();
   }
 
-  const PostOtherInfo = () => {
-    dispatch(actionPostPublishOtherInformationRequest({
-      apiPayloadRequest: [infoID],
-      callback: onPublish
-    }))
+  const PostOtherInfo = async () => {
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await dispatch(actionPostPublishOtherInformationRequest({
+        apiPayloadRequest: [localStorage.getItem('otherInfoID')],
+        callback: onPublish
+      }))
+      console.log(localStorage.getItem('otherInfoID'), 'data')
+    }
+    catch (err) {
+
+    }
   }
 
   const getPublishedOtherInformation = (response) => {
@@ -828,14 +833,15 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
     );
   }
   const onOtherInformationListResponse = (response) => {
-    localStorage.removeItem('otherInfoID')
-    setShowPublish(!showPublish);
-    setOterInfoModal(true);
-   
+    if (response) {
+      localStorage.removeItem('otherInfoID')
+      setShowPublish(!showPublish);
+      setOterInfoModal(true);
+    }
 
   };
   // console.log(publishedFlag, 'publiseddd')
-  console.log(profile, profileInfo, "TOT");
+  // console.log(profile, profileInfo, "TOT");
   // console.log(profile?.companyProfile, "direc corp msu");
 
   return (
