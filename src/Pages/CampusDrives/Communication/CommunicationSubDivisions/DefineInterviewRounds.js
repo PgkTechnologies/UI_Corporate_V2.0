@@ -178,6 +178,7 @@ const DefineInterviewRounds = (props) => {
             <Modal isOpen={enableSuccessModal} toggle={toggleSuccessModal}>
               <ModalBody style={{ textAlign: "center" }}>
                 <CancelOutlinedIcon
+                style={{float:'right'}}
                   className="cancelbtn"
                   onClick={toggleSuccessModal}
                 />
@@ -196,11 +197,11 @@ const DefineInterviewRounds = (props) => {
                   <ThumbUpAltSharpIcon style={{ fontSize: 50, marginTop: "25px" }} />
                   </div>
                 </div>
-                <p style={{ textAlign: "center" }} className="paragraph">
-                  Interview rounds
+                <p style={{ textAlign: "center",marginTop:'10px' }} className="paragraph">
+                  Interview rounds saved Successfully
                 </p>
                 <p style={{ textAlign: "center" }} className="paragraph2">
-                  saved Successfully
+                  
                 </p>
               </ModalBody>
             </Modal>

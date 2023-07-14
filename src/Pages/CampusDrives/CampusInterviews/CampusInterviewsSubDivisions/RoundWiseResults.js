@@ -780,6 +780,7 @@ const RoundWiseResults = (props) => {
             <Modal isOpen={enableSuccessModal} toggle={toggleSuccessModal}>
               <ModalBody style={{ textAlign: "center" }}>
                 <CancelOutlinedIcon
+                style={{float:'right'}}
                   className="cancelbtn"
                   onClick={toggleSuccessModal}
                 />
@@ -798,11 +799,11 @@ const RoundWiseResults = (props) => {
                     <ThumbUpAltSharpIcon style={{ fontSize: 50, marginTop: "25px" }} />
                   </div>
                 </div>
-                <p style={{ textAlign: "center" }} className="paragraph">
-                  Capture Results
+                <p style={{ textAlign: "center",marginTop:'15px' }} className="paragraph">
+                  Capture Results saved successfully
                 </p>
                 <p style={{ textAlign: "center" }} className="paragraph2">
-                  saved successfully
+                 
                 </p>
               </ModalBody>
             </Modal>

@@ -621,7 +621,7 @@ const ReleaseOfferLetters = (props) => {
                     <Modal.Header closeButton>
                         <Modal.Title id="example-modal-sizes-title-sm">Success</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body style={{ height: '200px' }}><h3 style={{ marginTop: '30px' }}>Released Offer Letters Successfully</h3></Modal.Body>
+                    <Modal.Body style={{ height: '150px' }}><h4 style={{ marginTop: '30px' }}>Released Offer Letters Successfully</h4></Modal.Body>
                 </Modal>
             }
         </div>

@@ -161,7 +161,7 @@ const ShareRoundResults = (props) => {
                 apiPayloadRequest: inputModel,
                 callback: (response) => {
                     setShowToastModal(true);
-                    toast.success('Round results shared successfully!')
+                    toast.success('Round results shared successfully')
                 }
             }))
         }
@@ -493,7 +493,7 @@ const ShareRoundResults = (props) => {
                                 getStudentsList(roundId);
                             }}
                         />
-                        <h3>{'Round results shared successfully!'}</h3>
+                        <h3>{'Round results shared successfully'}</h3>
                     </ModalBody>
                 </Modal>)
                 :
