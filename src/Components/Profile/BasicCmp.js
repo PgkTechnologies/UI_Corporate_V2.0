@@ -16,12 +16,12 @@ const BasicCmp = (props) => {
   const [corporateTypes, setCorporateTypes] = useState([]);
   const [corporateCategories, setCorporateCategories] = useState([]);
   const [corporateIndustries, setCorporateIndustries] = useState([]);
-  const [corpSector , setCorpSector] = useState([]);
-  const [corpCategory , setCorpCategory] = useState([]);
-  const [corpIndustry , setCorpIndustry] = useState([]);
+  const [corpSector, setCorpSector] = useState([]);
+  const [corpCategory, setCorpCategory] = useState([]);
+  const [corpIndustry, setCorpIndustry] = useState([]);
 
   const onGetDependencyLookUpsResponse = (response) => {
-    console.log(response,'ressppiii')
+    console.log(response, 'ressppiii')
     setCorporateTypes(
       response?.corporateType?.length
         ? response?.corporateType?.map((item) => {
@@ -36,7 +36,7 @@ const BasicCmp = (props) => {
       response?.corporateCategory?.length
         ? response?.corporateCategory?.map((item) => {
           if (item?.categoryCode === props?.profileInfo?.corporateCategory) {
-            setCorpCategory(item?.categoryName) 
+            setCorpCategory(item?.categoryName)
           }
         })
         : []
@@ -67,143 +67,159 @@ const BasicCmp = (props) => {
     );
   }, []);
 
- 
+
   //console.log(props, "BASIC")
   localStorage.setItem('tpID', props?.profileData?.stakeholderID?.value);
   return (
     <div className="cmp-main">
       <p className="cmp-head">Basic</p>
       <div className="row">
-        <div className="col-3">
-          <TextField
-            label="Stakeholder ID"
-            type="text"
-            name="stakeholderID"
-            variant="filled"
-            style={{ width: "100%", marginBottom: "15px" }}
-            value={
-              props?.profileData?.stakeholderID
-                ? props?.profileData?.stakeholderID?.value
-                : ""
-            }
-            required={true}
-            disabled={true}
-          />
+        <div className="col-sm-3">
+          <div>
+            <TextField
+              label="Stakeholder ID"
+              type="text"
+              name="stakeholderID"
+              variant="filled"
+              style={{ width: "100%", marginBottom: "15px" }}
+              value={
+                props?.profileData?.stakeholderID
+                  ? props?.profileData?.stakeholderID?.value
+                  : ""
+              }
+              required={true}
+              disabled={true}
+            />
+          </div>
         </div>
-        <div className="col-3">
-          <TextField
-            label="Date of Joining the Platform"
-            type="text"
-            name="dateOfJoiningThePlatform"
-            variant="filled"
-            style={{ width: "100%", marginBottom: "15px" }}
-            required={true}
-            disabled={true}
-            InputLabelProps={{
-              shrink: true,
-            }}
-            value={
-              props?.profileInfo?.dateOfJoining ?  moment(props?.profileInfo?.dateOfJoining).format("DD-MM-YYYY")
-              : "-"
-            }
-          />
+        <div className="col-sm-3">
+          <div>
+            <TextField
+              label="Date of Joining the Platform"
+              type="text"
+              name="dateOfJoiningThePlatform"
+              variant="filled"
+              style={{ width: "100%", marginBottom: "15px" }}
+              required={true}
+              disabled={true}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              value={
+                props?.profileInfo?.dateOfJoining ? moment(props?.profileInfo?.dateOfJoining).format("DD-MM-YYYY")
+                  : "-"
+              }
+            />
+          </div>
         </div>
 
-        <div className="col-3">
-          <TextField
-            label="Corporate Sector"
-            type="text"
-            name="corporateType"
-            variant="filled"
-            style={{ width: "100%", marginBottom: "15px" }}
-            onChange={props?.onChange}
-            InputLabelProps={{
-              shrink: true
-            }}
-            required={true}
-            disabled={true}
-            value={props?.profileInfo?.corporateType ? corpSector : ''}
-            
-          />
+        <div className="col-sm-3">
+          <div>
+            <TextField
+              label="Corporate Sector"
+              type="text"
+              name="corporateType"
+              variant="filled"
+              style={{ width: "100%", marginBottom: "15px" }}
+              onChange={props?.onChange}
+              InputLabelProps={{
+                shrink: true
+              }}
+              required={true}
+              disabled={true}
+              value={props?.profileInfo?.corporateType ? corpSector : ''}
+
+            />
+          </div>
         </div>
-        <div className="col-3">
-          <TextField
-            label="Year Of Establishment"
-            type="text"
-            name="yearOfEstablishment"
-            variant="filled"
-            style={{ width: "100%", marginBottom: "15px" }}
-            onChange={props?.onChange}
-            InputLabelProps={{
-              shrink: true
-            }}
-            value={ props?.profileData?.yearOfEstablishment?.value !== undefined
-                    ? parseInt(props?.profileData?.yearOfEstablishment?.value)
-                    : ""}
-            required={true}
-            disabled={true}
-          />
+        <div className="col-sm-3">
+          <div>
+            <TextField
+              label="Year Of Establishment"
+              type="text"
+              name="yearOfEstablishment"
+              variant="filled"
+              style={{ width: "100%", marginBottom: "15px" }}
+              onChange={props?.onChange}
+              InputLabelProps={{
+                shrink: true
+              }}
+              value={props?.profileData?.yearOfEstablishment?.value !== undefined
+                ? parseInt(props?.profileData?.yearOfEstablishment?.value)
+                : ""}
+              required={true}
+              disabled={true}
+            />
+          </div>
         </div>
-        <div className="col-6">
-          <TextField
-            label="Corporate Name"
-            type="text"
-            name="CorporateName"
-            variant="filled"
-            style={{ width: "100%", marginBottom: "15px" }}
-            InputLabelProps={{
-              shrink: true
-            }}
-            required={true}
-            disabled={true}
-            value={props?.profileInfo?.corporateName}
-          />
+        <div className="col-sm-6">
+          <div>
+            <TextField
+              label="Corporate Name"
+              type="text"
+              name="CorporateName"
+              variant="filled"
+              style={{ width: "100%", marginBottom: "15px" }}
+              InputLabelProps={{
+                shrink: true
+              }}
+              required={true}
+              disabled={true}
+              value={props?.profileInfo?.corporateName}
+            />
+          </div>
         </div>
-        <div className="col-6">
-          <TextField
-            label="Organisation Registration ID / CIN"
-            type="text"
-            name="CorporateId"
-            variant="filled"
-            style={{ width: "100%", marginBottom: "15px" }}
-            InputLabelProps={{
-              shrink: true
-            }}
-            required={true}
-            value={props?.profileInfo?.CIN }
-            onChange = {props?.onChange}
-            disabled={true}
-          />
+        <div className="col-sm-6">
+          <div>
+            <TextField
+              label="Organisation Registration ID / CIN"
+              type="text"
+              name="CorporateId"
+              variant="filled"
+              style={{ width: "100%", marginBottom: "15px" }}
+              InputLabelProps={{
+                shrink: true
+              }}
+              required={true}
+              value={props?.profileInfo?.CIN}
+              onChange={props?.onChange}
+              disabled={true}
+            />
+          </div>
         </div>
-        <div className="col-6">
-          <TextField
-            label="Corporate Category"
-            type="text"
-            name="CorporateCategory"
-            variant="filled"
-            style={{ width: "100%", marginBottom: "15px" }}
-            InputLabelProps={{
-              shrink: true
-          }}
-            required={true}
-            disabled={true}
-            value={props?.profileInfo?.corporateCategory ? corpCategory : ''}
-          />
+        <div className="col-sm-6">
+          <div>
+            <TextField
+              label="Corporate Category"
+              type="text"
+              name="CorporateCategory"
+              variant="filled"
+              style={{ width: "100%", marginBottom: "15px" }}
+              InputLabelProps={{
+                shrink: true
+              }}
+              required={true}
+              disabled={true}
+              value={props?.profileInfo?.corporateCategory ? corpCategory : ''}
+            />
+          </div>
         </div>
-        <div className="col-6">
-          <TextField
-            label="Industry Vertical"
-            type="text"
-            name="IndustryVertical"
-            variant="filled"
-            style={{ width: "100%", marginBottom: "15px" }}
-            InputLabelProps={{
-              shrink: true
-          }}
-            required={true}
-            disabled={true}
-            value={props?.profileInfo?.corporateIndustry ? corpIndustry : ''}
-          />
+        <div className="col-sm-6">
+          <div>
+            <TextField
+              label="Industry Vertical"
+              type="text"
+              name="IndustryVertical"
+              variant="filled"
+              style={{ width: "100%", marginBottom: "15px" }}
+              InputLabelProps={{
+                shrink: true
+              }}
+              required={true}
+              disabled={true}
+              value={props?.profileInfo?.corporateIndustry ? corpIndustry : ''}
+            />
+          </div>
         </div>
         {/* <div className="col-6">
           <TextField
@@ -220,20 +236,22 @@ const BasicCmp = (props) => {
             value={props?.profileData?.primaryContactEmail}
           />
         </div> */}
-        <div className="col-6" style={{width:'100%'}}>
-          <TextField
-            label="GSTN"
-            type="text"
-            name="GSTN"
-            variant="filled"
-            style={{ width: "100%", marginBottom: "15px" }}
-            InputLabelProps={{
-              shrink: true
-            }}
-            required={true}
-            disabled={true}
-            value={props?.profileInfo?.gstn }
-          />
+        <div className="col-sm-6">
+          <div>
+            <TextField
+              label="GSTN"
+              type="text"
+              name="GSTN"
+              variant="filled"
+              style={{ width: "100%", marginBottom: "15px" }}
+              InputLabelProps={{
+                shrink: true
+              }}
+              required={true}
+              disabled={true}
+              value={props?.profileInfo?.gstn}
+            />
+          </div>
         </div>
       </div>
     </div>
