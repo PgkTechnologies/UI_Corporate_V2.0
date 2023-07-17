@@ -205,7 +205,7 @@ const PublishOtherInformation = () => {
     }
 
     const addOtherInformation = () => {
-
+       if(otherInfo?.title?.value !== undefined) {
         const updatedOtherInformation = {
             title: otherInfo?.title?.value,
             information: otherInfo?.information?.value,
@@ -218,6 +218,7 @@ const PublishOtherInformation = () => {
             callback: onAddOtherInformation
         }
         ));
+    }
 
     }
 
