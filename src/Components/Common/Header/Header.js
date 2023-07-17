@@ -231,7 +231,7 @@ const Header = (props) => {
                   History
                 </div>
               </div>
-              <div className="more-card">
+              <div className="more-card" onClick={() => onProfile()}>
                 <div className="more-content">
                   <ManageAccountsIcon
                     style={{
