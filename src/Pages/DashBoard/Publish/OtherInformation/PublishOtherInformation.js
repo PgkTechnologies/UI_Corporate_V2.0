@@ -203,22 +203,26 @@ const PublishOtherInformation = () => {
         //   }))
         // }
     }
+    const handleSubmit = (event) => {
+        event?.preventDefault();
+        addOtherInformation();
+    }
 
     const addOtherInformation = () => {
-       if(otherInfo?.title?.value !== undefined) {
-        const updatedOtherInformation = {
-            title: otherInfo?.title?.value,
-            information: otherInfo?.information?.value,
-            attachment: otherInfo?.attachment?.value?.attachment,
-            attachmentName: otherInfo?.attachment?.value?.attachmentName,
+        if (otherInfo?.title?.value !== undefined) {
+            const updatedOtherInformation = {
+                title: otherInfo?.title?.value,
+                information: otherInfo?.information?.value,
+                attachment: otherInfo?.attachment?.value?.attachment,
+                attachmentName: otherInfo?.attachment?.value?.attachmentName,
+            }
+            console.log(updatedOtherInformation, 'nfejnfewjfk')
+            dispatch(actionPostAddOtherInformationRequest({
+                apiPayloadRequest: updatedOtherInformation,
+                callback: onAddOtherInformation
+            }
+            ));
         }
-        console.log(updatedOtherInformation, 'nfejnfewjfk')
-        dispatch(actionPostAddOtherInformationRequest({
-            apiPayloadRequest: updatedOtherInformation,
-            callback: onAddOtherInformation
-        }
-        ));
-    }
 
     }
 
@@ -235,93 +239,95 @@ const PublishOtherInformation = () => {
 
     return (
         <>
-            <div className="modal-main">
-                <p className="modal-title"> Other Information </p>
+            <form onSubmit={handleSubmit}>
+                <div className="modal-main">
+                    <p className="modal-title"> Other Information </p>
 
-                <div className="cmp-main">
+                    <div className="cmp-main">
 
-                    <div className="row">
-                        <div className="col-12">
-                            <TextField
-                                label="Title"
-                                type="text"
-                                name="title"
-                                variant="filled"
-                                onChange={changeHandler}
-                                style={{ width: "100%", marginBottom: "15px" }}
-                                value={otherInfo?.title?.value}
-                                required={true}
-                            />
-                        </div>
+                        <div className="row">
+                            <div className="col-12">
+                                <TextField
+                                    label="Title"
+                                    type="text"
+                                    name="title"
+                                    variant="filled"
+                                    onChange={changeHandler}
+                                    style={{ width: "100%", marginBottom: "15px" }}
+                                    value={otherInfo?.title?.value}
+                                    required={true}
+                                />
+                            </div>
 
-                        <div className="col-12">
-                            <TextField
-                                label="Information/Text"
-                                type="text"
-                                multiline
-                                minRows={4}
-                                name="information"
-                                variant="filled"
-                                style={{ width: "100%", marginBottom: "15px", }}
-                                value={otherInfo?.information?.value}
-                                onChange={changeHandler}
-                                error={otherInfo?.information?.error}
-                                required={true}
-                            />
-                        </div>
+                            <div className="col-12">
+                                <TextField
+                                    label="Information/Text"
+                                    type="text"
+                                    multiline
+                                    minRows={4}
+                                    name="information"
+                                    variant="filled"
+                                    style={{ width: "100%", marginBottom: "15px", }}
+                                    value={otherInfo?.information?.value}
+                                    onChange={changeHandler}
+                                    error={otherInfo?.information?.error}
+                                    required={true}
+                                />
+                            </div>
 
-                        <div className="col-12">
+                            <div className="col-12">
 
-                            <label htmlFor="accredationfile" className="file_label">
-                                Attach File *
-                            </label>
-                            <div style={{ display: 'flex' }}>
-                                <div>
-                                    <input
-                                        type="file"
-                                        onChange={(e) => {
-                                            onChangeHandler('attachment', e);
-                                        }}
-                                        className="attach-inp"
-                                        accept=".pdf"
-                                        name="attachment"
-                                        id="attachment"
+                                <label htmlFor="accredationfile" className="file_label">
+                                    Attach File *
+                                </label>
+                                <div style={{ display: 'flex' }}>
+                                    <div>
+                                        <input
+                                            type="file"
+                                            onChange={(e) => {
+                                                onChangeHandler('attachment', e);
+                                            }}
+                                            className="attach-inp"
+                                            accept=".pdf"
+                                            name="attachment"
+                                            id="attachment"
 
-                                        required
-                                    />
-                                </div>
-                                <div style={{}}>
-                                    <p className="attach-inp_label"
-                                        style={{ color: 'blue', cursor: 'pointer' }}
-                                    // onClick={() => {
-                                    //     handleDownload(
-                                    //         props?.tempAttachment?.attachment,
-                                    //         props?.tempAttachment?.attachmentName
-                                    //     );
-                                    // }}
-                                    >
-                                        {otherInfo?.attachment?.value?.attachmentName}
-                                    </p>
+                                            required
+                                        />
+                                    </div>
+                                    <div style={{}}>
+                                        <p className="attach-inp_label"
+                                            style={{ color: 'blue', cursor: 'pointer' }}
+                                        // onClick={() => {
+                                        //     handleDownload(
+                                        //         props?.tempAttachment?.attachment,
+                                        //         props?.tempAttachment?.attachmentName
+                                        //     );
+                                        // }}
+                                        >
+                                            {otherInfo?.attachment?.value?.attachmentName}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
+
+                        </div>
+                    </div>
+
+                    <div style={{ float: "right" }}>
+                        <button className="btn" type="submit">
+                            Save
+                        </button>
 
                     </div>
+
+
+
+
+
                 </div>
-
-                <div
-                    className="btn"
-                    style={{ float: "right" }}
-                    onClick={() => addOtherInformation()}
-                >
-                    Save
-                </div>
-
-
-
-
-            </div>
+            </form>
 
         </>
     )
