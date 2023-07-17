@@ -753,7 +753,7 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
     };
     addPublishProfileForm(finalModel);
     setShowPublish(false);
-
+    setOterInfoModal(true);
   };
 
   const handleChange = (event) => {
@@ -836,7 +836,8 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
     if (response) {
       localStorage.removeItem('otherInfoID')
       setShowPublish(!showPublish);
-      setOterInfoModal(true);
+      toast.success('Your Other Information Published successfully')
+      
     }
 
   };
@@ -1315,10 +1316,10 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
         onHide={() => setOterInfoModal(false)}
         aria-labelledby="example-modal-sizes-title-sm"
       >
-        <Modal.Header closeButton>
+        <Modal.Header style={{height:'60px'}} closeButton>
           <Modal.Title id="example-modal-sizes-title-sm">Success</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Your Other Information Published successfully</Modal.Body>
+        <Modal.Body style={{height:'100px',paddingTop:'30px'}}>Your Profile Published successfully</Modal.Body>
       </Modal>
     </>
   );

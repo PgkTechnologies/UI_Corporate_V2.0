@@ -138,7 +138,7 @@ const Login = () => {
     }
 
     if (navigateUrl === "/dashboard") {
-      history("/dashboard");
+      history("/profile");
     } else if (navigateUrl === "/verify") {
       history("/register/authentication");
     } else {

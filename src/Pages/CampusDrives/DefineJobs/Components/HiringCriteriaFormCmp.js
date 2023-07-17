@@ -610,7 +610,7 @@ const HiringCriteriaFormCmp = (props) => {
                 <input
                   className="dataFieldInput"
                   style={{
-                    width: '310px',
+                    width: '100%',
                     padding: '8px',
                     border: '1px solid #ccc',
                     borderRadius: '4px',
