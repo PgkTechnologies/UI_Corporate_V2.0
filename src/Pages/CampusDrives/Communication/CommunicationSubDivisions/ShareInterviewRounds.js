@@ -831,8 +831,9 @@ const ShareInterviewRounds = (props) => {
         <>
           <div>
             <Modal isOpen={enableSuccessModal} toggle={toggleSuccessModal}>
-              <ModalBody style={{ textAlign: "center" }}>
+              <ModalBody style={{ textAlign: "center" ,}}>
                 <CancelOutlinedIcon
+                style={{float:'right'}}
                   className="cancelbtn"
                   onClick={toggleSuccessModal}
                 />
@@ -851,11 +852,11 @@ const ShareInterviewRounds = (props) => {
                     <ThumbUpAltSharpIcon style={{ fontSize: 50, marginTop: "25px" }} />
                   </div>
                 </div>
-                <p style={{ textAlign: "center" }} className="paragraph">
-                  Job Interview Round Information{" "}
+                <p style={{ textAlign: "center",marginTop:'15px' }} className="paragraph">
+                  Job Interview Round Information{" "}shared successfully
                 </p>
                 <p style={{ textAlign: "center" }} className="paragraph2">
-                  shared successfully
+                  
                 </p>
               </ModalBody>
             </Modal>

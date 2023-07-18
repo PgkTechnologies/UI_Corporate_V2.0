@@ -10,7 +10,7 @@
 }
 
 .container-body {
-  padding: 10px;
+  /* padding: 10px;   ehtasham commented */
   display: inline flex;
   justify-content: center;
   background: white;
@@ -212,6 +212,7 @@ p {
   font-size: 35px;
   margin: 20px 20px;
   margin-bottom: 40px;
+  width: 100%;
 }
 
 .job-title-main {

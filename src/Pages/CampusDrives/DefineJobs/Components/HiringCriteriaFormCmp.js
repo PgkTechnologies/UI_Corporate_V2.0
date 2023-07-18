@@ -339,6 +339,8 @@ const HiringCriteriaFormCmp = (props) => {
     }
   };
 
+  console.log(props?.hiringData?.numberOfAllowedBacklogs?.value,'bacckloggs')
+
   return (
     <form className="hiring-modal-form" style={props?.hiringCriteriaFormStyles}>
       <div className="container-fluid mt-3 mb-3 h-100">
@@ -608,7 +610,7 @@ const HiringCriteriaFormCmp = (props) => {
                 <input
                   className="dataFieldInput"
                   style={{
-                    width: '310px',
+                    width: '100%',
                     padding: '8px',
                     border: '1px solid #ccc',
                     borderRadius: '4px',
@@ -910,9 +912,9 @@ const HiringCriteriaFormCmp = (props) => {
                 name="numberOfAllowedBacklogs"
                 onChange={props?.handleChange}
                 value={
-                  props?.hiringData?.numberOfAllowedBacklogs.value
-                    ? String(props?.hiringData?.numberOfAllowedBacklogs.value)
-                    : null
+                  props?.hiringData?.numberOfAllowedBacklogs?.value === 0 
+                    ? '0'
+                    : (props?.hiringData?.numberOfAllowedBacklogs.value)
                 }
                 label={"How many Backlogs?"}
                 // inputLabelProps={{ style: { fontSize: ".800rem" } }}
