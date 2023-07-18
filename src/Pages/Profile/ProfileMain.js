@@ -108,11 +108,11 @@ const Profile = () => {
                         >
                         {/* needto add pub;is oter info */}
                             <Tab
-                                icon={
-                                    <Badge color="error" variant={profileCheck === 'n' ? 'dot' : ''} >
-                                        <AccountCircle />
-                                    </Badge>
-                                }
+                                // icon={
+                                //     <Badge color="error" variant={profileCheck === 'n' ? 'dot' : ''} >
+                                //         <AccountCircle />
+                                //     </Badge>
+                                // }
                                 label={"Profile" }
                                 wrapped
                                 style={{
@@ -125,11 +125,11 @@ const Profile = () => {
                             </Tab>
 
                             <Tab
-                                icon={
-                                    <Badge color="error" variant={profileCheck === 'n' ? 'dot' : ''} >
-                                        <AddchartSharpIcon />
-                                    </Badge>
-                                }
+                                // icon={
+                                //     <Badge color="error" variant={profileCheck === 'n' ? 'dot' : ''} >
+                                //         <AddchartSharpIcon />
+                                //     </Badge>
+                                // }
                                 label={ "Other Information"}
                                 wrapped
                                 style={{
