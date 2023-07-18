@@ -53,11 +53,11 @@ const SubscriptionHistory = () => {
           style={{background:'#39bdf60b'}}
         >
           <Tab
-            icon={
-              <Badge color="error">
-                <SchoolRoundedIcon />
-              </Badge>
-            }
+            // icon={
+            //   <Badge color="error">
+            //     <SchoolRoundedIcon />
+            //   </Badge>
+            // }
             label={ "CampusDrive" }
             wrapped
             style={{
@@ -68,13 +68,14 @@ const SubscriptionHistory = () => {
             }}
           />
           <Tab
-            icon={
-              <Badge color="error">
-                <AttachEmailRoundedIcon />
-              </Badge>
-            }
+            // icon={
+            //   <Badge color="error">
+            //     <AttachEmailRoundedIcon />
+            //   </Badge>
+            // }
             label={  "OtherInformation" }
             wrapped
+            disabled
             style={{
               fontWeight:'bold',
               outline: "none",
@@ -84,13 +85,14 @@ const SubscriptionHistory = () => {
           />
 
           <Tab
-            icon={
-              <Badge color="error">
-                <GroupsIcon />
-              </Badge>
-            }
+            // icon={
+            //   <Badge color="error">
+            //     <GroupsIcon />
+            //   </Badge>
+            // }
             label={  "Students" }
             wrapped
+            disabled
             style={{
               fontWeight:'bold',
               outline: "none",
@@ -99,13 +101,14 @@ const SubscriptionHistory = () => {
             }}
           />
           <Tab
-            icon={
-              <Badge color="error">
-                <AccountCircle />
-              </Badge>
-            }
+            // icon={
+            //   <Badge color="error">
+            //     <AccountCircle />
+            //   </Badge>
+            // }
             label={ "Profile" }
             wrapped
+            disabled
             style={{
               fontWeight:'bold',
               outline: "none",

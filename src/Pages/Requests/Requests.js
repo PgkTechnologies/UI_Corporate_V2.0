@@ -131,11 +131,11 @@ const Requests = (props) => {
           style={{background:'#39bdf60b'}}
         >
           <Tab
-            icon={
-              <Badge>
-                <InstallDesktopSharpIcon />
-              </Badge>
-            }
+            // icon={
+            //   <Badge>
+            //     <InstallDesktopSharpIcon />
+            //   </Badge>
+            // }
             label={"Request Received"}
             wrapped
             style={{
@@ -146,11 +146,11 @@ const Requests = (props) => {
             }}
           />
           <Tab
-            icon={
-              <Badge>
-                <HistoryEduSharpIcon />
-              </Badge>
-            }
+            // icon={
+            //   <Badge>
+            //     <HistoryEduSharpIcon />
+            //   </Badge>
+            // }
             label={"Request Sent"}
             wrapped
             style={{

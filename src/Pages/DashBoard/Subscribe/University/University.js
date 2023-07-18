@@ -157,9 +157,8 @@ const University = (props) => {
     setSendMailObj((prevState) => ({
       ...prevState,
       emailSubject: ` Requesting for Campus Placements Hiring`,
-      emailBody: `This is with regards to the subject line, we ${
-        corpProfileInfo?.corporateName ? corpProfileInfo?.corporateName : ""
-      }, ${getCorporateAddress()} would be interested in conducting a recruitment drive in your organization to recruit the final / pre-final year students.
+      emailBody: `This is with regards to the subject line, we ${corpProfileInfo?.corporateName ? corpProfileInfo?.corporateName : ""
+        }, ${getCorporateAddress()} would be interested in conducting a recruitment drive in your organization to recruit the final / pre-final year students.
                 Appreciate if you could revert with your interest to take the process forward using the below link:\n http://university.c2hire.com/university/dashboard
                 /Subscribe/corporationInfo/${corpProfileInfo.stakeholderID}`,
     }));
@@ -219,17 +218,17 @@ const University = (props) => {
       type === "campusDrive"
         ? "CR"
         : type === "unvStuData"
-        ? "SD"
-        : type === "unvInsight"
-        ? "UI"
-        : type === "profileInfo"
-        ? "UP"
-        : "UO"
+          ? "SD"
+          : type === "unvInsight"
+            ? "UI"
+            : type === "profileInfo"
+              ? "UP"
+              : "UO"
     );
-    if (isAdditionalTokensRequired)
- {
-  toast.error('Please Add tokens before Subscription ')
- }  };
+    if (isAdditionalTokensRequired) {
+      toast.error('Please Add tokens before Subscription ')
+    }
+  };
 
   // BONUS CALCULATION
   const bonusCalc = (event) => {
@@ -479,7 +478,7 @@ const University = (props) => {
 
   return (
     <>
-      <div className="container-body" style={{marginTop:'100px'}}>
+      <div className="container-body" style={{ marginTop: '100px' }}>
         <div className="acc-main">
           <div
             style={{
@@ -496,7 +495,7 @@ const University = (props) => {
                     src={
                       universityInfo?.profilePicture
                         ? "data:image/jpg;base64," +
-                          universityInfo?.profilePicture
+                        universityInfo?.profilePicture
                         : null
                     }
                     className="profile-pic-img"
@@ -506,7 +505,7 @@ const University = (props) => {
               </div>
               <div className="acc-name-main">
                 <p>{universityInfo?.universityName}</p>
-                <button
+                {/* <button
                   type="button"
                   className="btn"
                   style={{
@@ -517,18 +516,32 @@ const University = (props) => {
                   onClick={() => subscribeModal("campusDrive")}
                 >
                   REQUEST FOR A CAMPUS DRIVE
-                </button>
+                </button> */}
               </div>
             </div>
             <div className="col-4 d-flex justify-content-end align-items-center">
-              <Button
+              {/* <Button
                 // disabled={disabled}
                 type="button"
                 className="acc-sub-btn"
                 // onClick={() => handleShow(publishId)}
               >
                 Subscribe
-              </Button>
+              </Button> */}
+
+              <button
+                type="button"
+                className="btn"
+                style={{
+                  fontSize: "10px",
+                  fontWeight: "bold",
+                  textTransform: "uppercase",
+                }}
+                onClick={() => subscribeModal("campusDrive")}
+              >
+                REQUEST FOR A CAMPUS DRIVE
+              </button>
+
             </div>
           </div>
 
@@ -645,13 +658,13 @@ const University = (props) => {
                     {subscribeType === "unvInsight"
                       ? universityInfo?.universityName + " University Insights"
                       : subscribeType === "unvStuData"
-                      ? "Students Data"
-                      : subscribeType === "profileInfo"
-                      ? "Profile information"
-                      : subscribeType === "otherInfo"
-                      ? "Other information"
-                      : "Campus Hiring Request to " +
-                        universityInfo?.universityName}
+                        ? "Students Data"
+                        : subscribeType === "profileInfo"
+                          ? "Profile information"
+                          : subscribeType === "otherInfo"
+                            ? "Other information"
+                            : "Campus Hiring Request to " +
+                            universityInfo?.universityName}
                   </span>{" "}
                 </li>
               </div>
@@ -697,11 +710,11 @@ const University = (props) => {
               <Button
                 className="btnTwo"
                 variant="outline-primary"
-                //   onClick={() =>
-                //     onSubscribeInviteCampusPlacement(
-                //       props?.corporateSelectionInformation?.tokensRequired
-                //     )
-                //   }
+              //   onClick={() =>
+              //     onSubscribeInviteCampusPlacement(
+              //       props?.corporateSelectionInformation?.tokensRequired
+              //     )
+              //   }
               >
                 Pay & Send Request
               </Button>
