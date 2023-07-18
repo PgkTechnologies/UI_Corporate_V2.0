@@ -243,7 +243,7 @@ const Requests = (props) => {
       </div>
       {tabValue === 1 && (
         <div>
-          {requests.length === 0  && (
+          {sentRequests.length === 0  && (
               <p className="text-center">No requests sent yet!</p>
             )}
           {sentRequests.map((item) => (
