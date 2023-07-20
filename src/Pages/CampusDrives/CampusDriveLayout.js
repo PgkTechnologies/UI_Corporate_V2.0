@@ -60,14 +60,14 @@ const CampusDriveLayout = (props) => {
     <div className="jobs-layout-main">
       <div className="row home-title-steps-main">
         <div
-          className="col-2 d-flex justify-content-center align-items-center"
+          className="col-sm-2 d-flex justify-content-center align-items-center"
           onClick={() => {
             navigateToHome();
           }}
         >
           <div className="home-main">Home </div>
         </div>
-        <div className="col-10 title-steps-main">
+        <div className="col-sm-10 title-steps-main">
                     <div style={{ display:'flex' , alignItems:"center",justifyContent:'center', fontSize: "25px", fontWeight: "bold" }}>
                         <Work style={{ marginRight: "10px", fontSize: "20px" }} />{" "}
                         {ReceiverName ? ReceiverName : InitiatorName}
@@ -110,7 +110,7 @@ const CampusDriveLayout = (props) => {
         </div>
       </div>
       <div className="row home-title-steps-main">
-        <div className="col-2">
+        <div className="col-sm-2">
           {props.tabs.map((item, index) => (
             <JobSmallTab
               index={index}
@@ -121,7 +121,7 @@ const CampusDriveLayout = (props) => {
             />
           ))}
         </div>
-        <div className="col-10 content-main">
+        <div className="col-sm-10 content-main">
           {!props?.tabs.some((item) => item.isActive === true) ? (
             <div
               className="d-flex justify-content-center align-items-center"

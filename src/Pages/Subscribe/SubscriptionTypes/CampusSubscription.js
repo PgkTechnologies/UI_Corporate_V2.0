@@ -50,7 +50,7 @@ const CampusSubscription = (props) => {
   };
 
   return (
-    <div className="cards-border" key={props.index}>
+    <div className="cards-border" key={props.index} style={{ overflowX: "auto" }}>
       <div className="col-lg-9 col-sm-12 card-content">
         <div className="icon" style={{ marginRight: "20px" }}>
           <AccountBalance />
@@ -104,7 +104,7 @@ const CampusSubscription = (props) => {
 
       {props?.item?.campusDriveStatus === "Accepted" ? (
         <div className="col-lg-3 col-sm-12  choice-btns ">
-          <span style={{ paddingRight: "15px", fontWeight: "bold" }}>
+          <span style={{  fontWeight: "bold" }}>
             Status {""}:
           </span>
           <div

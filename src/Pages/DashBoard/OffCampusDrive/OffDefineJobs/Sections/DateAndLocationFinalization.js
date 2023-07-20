@@ -337,7 +337,7 @@ const DateAndLocationFinalization = (props) => {
                                     </div>
                                 </div>
                                 <div className="d-flex justify-content-center align-items-center mt-5">
-                                    <button type="submit" className="btn" style={{marginRight : '50px' }} >
+                                    <button type="submit" className="btn" style={{marginRight : '30px' }} >
                                         Save
                                     </button>
                                 

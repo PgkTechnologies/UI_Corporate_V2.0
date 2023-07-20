@@ -442,7 +442,7 @@ const CaptureResults = (props) => {
           style={{
             height: "230px",
             overflowY: "scroll",
-            overflowX: "hidden",
+            overflowX: "auto",
             margin: "0",
             padding: "0",
           }}

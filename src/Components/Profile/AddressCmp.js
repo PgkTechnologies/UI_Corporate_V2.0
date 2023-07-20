@@ -145,7 +145,7 @@ const AddressCmp = (props) => {
                 </Select>
               </FormControl>
             </div>
-            <div className="col-4">
+            <div className="col-6">
               <FormControl
                 variant="filled"
                 style={{ width: "100%", marginBottom: "15px" }}
@@ -177,7 +177,7 @@ const AddressCmp = (props) => {
                 </Select>
               </FormControl>
             </div>
-            <div className="col-4">
+            <div className="col-6">
               <TextField
                 label="District"
                 type="text"
@@ -193,7 +193,7 @@ const AddressCmp = (props) => {
                 }
               />
             </div>
-            <div className="col-4">
+            <div className="col-sm-4">
               <TextField
                 label="Zipcode"
                 type="number"
@@ -368,7 +368,7 @@ const AddressCmp = (props) => {
                 </Select>
               </FormControl>
             </div>
-            <div className="col-4">
+            <div className="col-6">
               <FormControl
                 variant="filled"
                 style={{ width: "100%", marginBottom: "15px" }}
@@ -400,7 +400,7 @@ const AddressCmp = (props) => {
                 </Select>
               </FormControl>
             </div>
-            <div className="col-4">
+            <div className="col-6">
               <TextField
                 label="District"
                 type="text"
@@ -416,7 +416,7 @@ const AddressCmp = (props) => {
                 }
               />
             </div>
-            <div className="col-4">
+            <div className="col-sm-4">
               <TextField
                 label="Zipcode"
                 type="text"

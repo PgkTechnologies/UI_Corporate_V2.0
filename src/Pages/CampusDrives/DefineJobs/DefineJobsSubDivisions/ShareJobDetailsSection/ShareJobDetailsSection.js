@@ -318,7 +318,7 @@ const ShareJobDetailsSection = (props) => {
                 return !item.publishFlag &&
                     tabValue === 0 &&
                     props?.universityId !== "OffCampus" ? (
-                    <div className="jobs-cdx" style={{marginTop:'10px',padding:'15px'}}>
+                    <div className="jobs-cdx" style={{marginTop:'10px',padding:'15px',overflowX:'clip'}}>
                         <div className="row align-items-center">
                             <div
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
@@ -337,7 +337,7 @@ const ShareJobDetailsSection = (props) => {
                                     <></>
                                 )}
 
-                                <div className="col-md-4">
+                                <div className="col-sm-4">
                                     <div className="row align-items-center">
                                         <div
                                             className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
@@ -355,7 +355,7 @@ const ShareJobDetailsSection = (props) => {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="col-md-4">
+                                <div className="col-sm-4">
                                     <div
                                         style={{
                                             border: "1px solid #cacaca",
@@ -376,7 +376,7 @@ const ShareJobDetailsSection = (props) => {
                                         </p>
                                     </div>
                                 </div>
-                                <div className={"col-md-4 d-flex align-items-center"}>
+                                <div className={"col-sm-4 d-flex align-items-center"}>
                                     <button
                                         type="button"
                                         className="btn d-flex justify-content-around align-items-center"
@@ -404,13 +404,13 @@ const ShareJobDetailsSection = (props) => {
                     </div>
                 ) : (item.publishFlag && tabValue === 1) ||
                     props?.universityId === "OffCampus" ? (
-                    <div className="jobs-cdx" style={{ width: '95%',marginTop:'20px' ,padding:'18px'}}>
+                    <div className="jobs-cdx" style={{ width: '95%',marginTop:'20px' ,padding:'18px',overflowX:'clip'}}>
                         <div className="row align-items-center">
                             <div
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
-                                style={{ maxWidth: "900px" }}
+                                style={{ maxWidth: "900px",overflowX:'auto' }}
                             >
-                                <div className="col-md-4">
+                                <div className="col-sm-4">
                                     <div className="row align-items-center">
                                         <div
                                             className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
@@ -428,7 +428,7 @@ const ShareJobDetailsSection = (props) => {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="col-md-4">
+                                <div className="col-sm-4">
                                     <div
                                         style={{
                                             border: "1px solid #cacaca",
@@ -449,7 +449,7 @@ const ShareJobDetailsSection = (props) => {
                                         </p>
                                     </div>
                                 </div>
-                                <div className={"col-md-4 d-flex align-items-center"}>
+                                <div className={"col-sm-4 d-flex align-items-center"}>
                                     <button
                                         type="button"
                                         className="btn"

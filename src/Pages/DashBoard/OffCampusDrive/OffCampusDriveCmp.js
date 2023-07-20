@@ -82,7 +82,7 @@ const OffCampusDriveCmp = () => {
         AllCampusRequests();
     }, [page]);
 
-    const navigateToOffCampusDrive = (offCampusDriveId, universityId, RoutePath,driveName) => {
+    const navigateToOffCampusDrive = (offCampusDriveId, universityId, RoutePath, driveName) => {
         // history('/dashboard/off-campus-drive/' + offCampusDriveId + '/home')
         history("/dashboard/off-campus-drive/" + offCampusDriveId + RoutePath + universityId);
         localStorage.setItem('driveName',driveName)
@@ -92,7 +92,7 @@ const OffCampusDriveCmp = () => {
 
     return (
         <>
-            <div style={{ width: '100%', marginTop: '100px', overflowY: 'auto' }}>
+            <div style={{ width: '100%', marginTop: '120px', overflowY: 'auto' }}>
                 <div 
                 // style={{ display: 'flex', alignItems: 'center' ,justifyContent:'center'}}
                 >
@@ -118,7 +118,7 @@ const OffCampusDriveCmp = () => {
 
                                         <div className="row job-card-main">
                                             <div
-                                                className="col-5 d-flex justify-content-flex-start align-items-center"
+                                                className="col-sm-5 col-md-5 d-flex justify-content-flex-start align-items-center"
                                                 style={{ fontWeight: "bold" }}
                                             >
                                                 <AccountBalance style={{ fontSize: "30px", marginRight: "25px" }} />
@@ -126,20 +126,20 @@ const OffCampusDriveCmp = () => {
                                                
                                             </div>
                                             <div
-                                                className="col-3 d-flex justify-content-flex-start align-items-center"
+                                                className="col-sm-3 col-md-3 d-flex justify-content-flex-start align-items-center"
                                                 style={{ fontSize: "15px", color: "gray" }}
                                             >
                                                 <LocationOn style={{ marginRight: "10px", color: "gray" }} />
                                                 {item.location}
                                             </div>
                                             <div
-                                                className="col-3 d-flex justify-content-flex-start align-items-center"
+                                                className="col-sm-3 col-md-3 d-flex justify-content-flex-start align-items-center"
                                                 style={{ fontSize: "15px", color: "gray" }}
                                             >
                                                 <CalendarMonth style={{ marginRight: "10px", color: "gray" }} />
                                                 {item.startDate}
                                             </div>
-                                            <div className="col-1 d-flex justify-content-end align-items-center">
+                                            <div className="col-sm-1 col-md-1 d-flex justify-content-end align-items-center">
                                             { item?.campusDriveClosed ? <HttpsIcon style={{color:'#FF1D18',cursor: "not-allowed"}}/> : 
                                                 <ArrowRight
                                                     style={{ fontSize: "50px", color: "darkblue", cursor: "pointer" }}

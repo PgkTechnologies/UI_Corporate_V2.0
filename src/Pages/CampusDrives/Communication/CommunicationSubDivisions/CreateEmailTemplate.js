@@ -26,12 +26,12 @@ const CreateEmailTemplate = (props) => {
                                 }
                             }}
                             inputProps={{
-                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                style: { fontFamily: "Poppins-Regular", display: "block",paddingTop:'15.5px' }
                             }}
                             disabled={true}
                             variant="outlined"
                             margin="dense"
-                            style={{ maxWidth: "40%" }}
+                            style={{ width: "100%" }}
                             value={props?.addEmailTemplate?.emailTemplateID}
                         />
                         <TextField
@@ -49,12 +49,12 @@ const CreateEmailTemplate = (props) => {
                                 paddingRight: '2px' }
                             }}
                             inputProps={{
-                                style: { fontFamily: "Poppins-Regular", display: "block" }
+                                style: { fontFamily: "Poppins-Regular", display: "block",paddingTop:'15.5px' }
                             }}
                             required={true}
                             variant="outlined"
                             margin="dense"
-                            style={{ maxWidth: "40%" }}
+                            style={{ width: "100%" }}
                             value={props?.addEmailTemplate?.emailTemplateName}
                         />
                     </div>
@@ -77,7 +77,7 @@ const CreateEmailTemplate = (props) => {
                             }}
                             variant="outlined"
                             margin="dense"
-                            style={{ width: "90%" }}
+                            style={{ width: "100%" }}
                             required={true}
                             value={props.addEmailTemplate.emailSubject}
                         />
@@ -104,7 +104,7 @@ const CreateEmailTemplate = (props) => {
                             margin="dense"
                             rows={6}
                             multiline={true}
-                            style={{ width: "90%" }}
+                            style={{ width: "100%" }}
                             required={true}
                             value={props.addEmailTemplate.emailBody}
                         />

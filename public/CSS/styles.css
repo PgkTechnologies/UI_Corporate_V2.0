@@ -756,6 +756,7 @@ p {
   padding: 25px;
   margin-left: 15px;
   margin-right: 15px;
+  overflow-x: auto;
 }
 
 .card-Induction {
@@ -920,6 +921,7 @@ p {
   font-weight: bold;
   border-radius: 50px;
   padding: 12px 22px 12px;
+  width: 100%;
 }
 
 .Drives-buttons:hover {
@@ -927,6 +929,8 @@ p {
   background: #03355b;
   cursor: pointer;
 }
+
+
 
 .tab-select {
   background: #1ba4f968;
@@ -1225,7 +1229,8 @@ p {
   margin-top: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
+  overflow-x: auto;
   padding: 5px;
   width: 100%;
   border-radius: 5px;

@@ -12,7 +12,7 @@ const NewlyRegisterCorp = (props) => {
     }
 
     return (
-        <div className='col-6'>
+        <div className='col-sm-6' style={{marginBottom:'10px'}}>
             <div className='list-table'>
                 <p className="table-heading" >
                     Registered Corporates

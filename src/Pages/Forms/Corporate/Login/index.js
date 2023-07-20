@@ -165,7 +165,7 @@ const Login = () => {
             <div className="page">
               <form className="row log-in-container" onSubmit={handleSubmit}>
                 <div
-                  className="col-lg-6 col-md-6 col-sm-12 log-in-content"
+                  className="col-lg-6 col-md-12 col-sm-12 log-in-content"
                   style={{}}
                 >
                   <p
@@ -173,6 +173,7 @@ const Login = () => {
                       paddingLeft: "10px",
                       textAlign: "center",
                       lineHeight: "5rem",
+                      
                     }}
                   >
                     Perfect Recruitment Solution

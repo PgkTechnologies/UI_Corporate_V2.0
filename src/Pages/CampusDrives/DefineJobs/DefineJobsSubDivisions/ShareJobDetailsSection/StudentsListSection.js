@@ -296,8 +296,9 @@ const StudentsListSection = (props) => {
             {props?.jobItem?.jobName}
           </div>
           {tabValue === 0 ? (
+            <div style={{overflowX:"auto"}}>
             <React.Fragment>
-              <table className={"table table-bordered"}>
+              <table className={"table table-bordered"} >
                 <thead>
                   <tr>
                     <th style={tableHeader}>Student Name</th>
@@ -328,7 +329,9 @@ const StudentsListSection = (props) => {
                 </tbody>
               </table>
             </React.Fragment>
+            </div>
           ) : (
+            <div style={{overflowX:"auto"}}>
             <React.Fragment>
               <table className={"table table-bordered"}>
                 <thead>
@@ -493,6 +496,7 @@ const StudentsListSection = (props) => {
                 </button>
               </div>
             </React.Fragment>
+            </div>
           )}
         </div>
       )}

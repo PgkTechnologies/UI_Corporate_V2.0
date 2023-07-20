@@ -9,9 +9,6 @@ import HistoryIcon from "@mui/icons-material/History";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useDispatch, useSelector } from "react-redux";
-// // import { getUserTokenData } from "../../../Store/Actions/ProfileActions";
-// // import { actionGetSearchCorporates } from "../../../Store/Actions/SubscriptionActions";
-// // import { SaveUniversityCriteriaData } from "../../../Store/Actions/UniversityActions";
 import { useAuth } from "../../../utils/Auth";
 import { useNavigate } from 'react-router-dom';
 import SearchBar from "./SearchBar/SearchBar";
@@ -19,6 +16,10 @@ import TokenPurchase from "./TokenPurchase";
 import { actionGetCorporateProfileSagaAction } from "../../../Store/Actions/SagaActions/CorporateProfileSagaActions";
 import { getTokensSagaAction } from "../../../Store/Actions/SagaActions/DashboardSagaAction";
 import { actionGetBulkTokenNumberRequest } from "../../../Store/Actions/SagaActions/CommonSagaActions";
+import { MenuSharp } from "@material-ui/icons";
+import SideBar from "../SideBar/SideBar";
+import CloseIcon from '@mui/icons-material/Close';
+
 
 const Header = (props) => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const Header = (props) => {
   );
 
   const balance = useSelector((state) => state.DashboardReducer.balance);
-  console.log(balance , 'Selectorx');
+  console.log(balance, 'Selectorx');
   const auth = useAuth();
 
   const [searchList, setSearchList] = useState([]);
@@ -59,14 +60,14 @@ const Header = (props) => {
     }
   }, [auth.tokenPurchase]);
 
-  useEffect (()=>{
+  useEffect(() => {
     dispatch(actionGetCorporateProfileSagaAction({
-      callback : getResponse
+      callback: getResponse
     }));
-  },[])
+  }, [])
 
-  const getResponse= (data) => {
-    localStorage.setItem('stakeholderID',data?.stakeholderID)
+  const getResponse = (data) => {
+    localStorage.setItem('stakeholderID', data?.stakeholderID)
   }
 
   const onChange = (name, value, errorMessage = undefined) => {
@@ -82,17 +83,17 @@ const Header = (props) => {
 
   let tokesDataView = true;
 
-  useEffect(()=>{
-    dispatch(actionGetBulkTokenNumberRequest({callback: tokensCount}))
-  },[])
- 
-  const tokensCount = (data) =>{
- console.log(data, 'dataTOKENnUm')
+  useEffect(() => {
+    dispatch(actionGetBulkTokenNumberRequest({ callback: tokensCount }))
+  }, [])
+
+  const tokensCount = (data) => {
+    console.log(data, 'dataTOKENnUm')
   }
 
   useEffect(() => {
     if (tokesDataView) {
-      dispatch( getTokensSagaAction({ callback: tokenBalance }));
+      dispatch(getTokensSagaAction({ callback: tokenBalance }));
       //dispatch(actionGetSearchCorporates({ apiPayloadRequest: searchInputs, callback: getSeachDataResult }))
     }
     return () => {
@@ -101,7 +102,7 @@ const Header = (props) => {
   }, []);
 
   const tokenBalance = (data) => {
-    console.log(data , 'CorpBalance')
+    console.log(data, 'CorpBalance')
     data ? settokensData(data) : settokensData([]);
   };
 
@@ -111,13 +112,38 @@ const Header = (props) => {
 
   const onHistory = () => {
     history('/history');
-    onMore(); 
+    onMore();
   }
 
   const onProfile = () => {
     history('/profile');
-    onMore(); 
+    onMore();
   }
+
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarVisible(!sidebarVisible);
+  };
+
+  const [isMobileSize, setIsMobileSize] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileSize(window.innerWidth <= 440); // Adjust the breakpoint as per your design
+    };
+
+    // Call handleResize initially and add event listener
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  console.log(window.innerWidth, 'widthh')
 
   return (
     <>
@@ -134,6 +160,23 @@ const Header = (props) => {
           >
             Corporate
           </p>
+          {isMobileSize ? <div>
+            {
+              sidebarVisible ?
+                <p style={{ fontSize: '18px', margin: '5px 0px 0px', fontWeight: "normal",paddingLeft:'5px' }}>
+                  <CloseIcon style={{
+                    color: 'white',
+                    background: '#246de8',
+                    marginRight: '5px',
+                    border:'1px solid #246de8',
+                    borderRadius:'5px'
+                  }}
+                    onClick={() => setSidebarVisible(false)} />Close</p>
+                :
+                <MenuSharp onClick={() => setSidebarVisible(true)}
+                />
+            }
+          </div> : ''}
         </div>
         <div
           className="col-4"
@@ -207,7 +250,7 @@ const Header = (props) => {
           </Badge>
           {more ? (
             <div className="more-data">
-              <div className="more-card"  onClick={() => onProfile()}>
+              <div className="more-card" onClick={() => onProfile()}>
                 <div className="more-content">
                   <AccountCircleIcon
                     style={{
@@ -248,7 +291,7 @@ const Header = (props) => {
                 style={{ background: "#0367b9" }}
                 onClick={props.logout}
               >
-                
+
                 <div className="more-content" style={{ color: "white" }}>
                   {/* <LogoutIcon
                     style={{
@@ -290,6 +333,15 @@ const Header = (props) => {
           <TokenPurchase handleClose={handleClose} />
         </Modal.Body>
       </Modal >
+
+      {
+        sidebarVisible ?
+          <div style={{ marginTop: '110px' }}>
+            <SideBar />
+          </div>
+          :
+          <></>
+      }
     </>
   );
 };

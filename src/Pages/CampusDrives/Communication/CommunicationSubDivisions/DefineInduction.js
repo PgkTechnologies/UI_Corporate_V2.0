@@ -327,7 +327,7 @@ const DefineInduction = (props) => {
                                         <div className="card-header" style={{ textAlign: "center", background: "#03355bdc", color: "white" }}>
                                             Define Induction
                                         </div>
-                                        <div style={{ overflowY: "scroll", overflowX: "hidden" }}>
+                                        <div style={{ overflowY: "scroll", overflowX: "auto", padding: '5px' }}>
                                             <form onSubmit={handleSubmit} style={{ background: "white" }}>
                                                 <div className="card-body" >
                                                     <Grid container item spacing={3}>
@@ -366,10 +366,12 @@ const DefineInduction = (props) => {
                                                                     onChange={handleChange}
                                                                     InputLabelProps={{
                                                                         shrink: true,
-                                                                        style: { fontFamily: "Poppins-Regular", display: "block" ,
-                                                                        paddingLeft: '2px',
-                                                                        paddingRight: '2px',
-                                                                        background: '#fff'}
+                                                                        style: {
+                                                                            fontFamily: "Poppins-Regular", display: "block",
+                                                                            paddingLeft: '2px',
+                                                                            paddingRight: '2px',
+                                                                            background: '#fff'
+                                                                        }
                                                                     }}
                                                                     inputProps={{
                                                                         min: currentSystemDate,
@@ -393,10 +395,12 @@ const DefineInduction = (props) => {
                                                                     onChange={handleChange}
                                                                     InputLabelProps={{
                                                                         shrink: true,
-                                                                        style: { fontFamily: "Poppins-Regular", display: "block" ,
-                                                                        paddingLeft: '2px',
-                                                                        paddingRight: '2px',
-                                                                        background: '#fff'}
+                                                                        style: {
+                                                                            fontFamily: "Poppins-Regular", display: "block",
+                                                                            paddingLeft: '2px',
+                                                                            paddingRight: '2px',
+                                                                            background: '#fff'
+                                                                        }
                                                                     }}
                                                                     inputProps={{
                                                                         style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -417,9 +421,11 @@ const DefineInduction = (props) => {
                                                                     onChange={handleChange}
                                                                     InputLabelProps={{
                                                                         shrink: true,
-                                                                        style: { fontFamily: "Poppins-Regular", display: "block", paddingLeft: '2px',
-                                                                        paddingRight: '2px',
-                                                                        background: '#fff' }
+                                                                        style: {
+                                                                            fontFamily: "Poppins-Regular", display: "block", paddingLeft: '2px',
+                                                                            paddingRight: '2px',
+                                                                            background: '#fff'
+                                                                        }
                                                                     }}
                                                                     inputProps={{
                                                                         style: { fontFamily: "Poppins-Regular", display: "block" }
@@ -434,19 +440,7 @@ const DefineInduction = (props) => {
 
                                                         <div className="d-flex flex-row justify-content-around align-items-center job-details-form w-full" style={{ background: "white" }}>
                                                             <div className="d-attach" style={{ maxWidth: "95%" }}>
-                                                                {/* <p className="attach-inp_label" style={{ fontSize: "18px", fontFamily: "Poppins-Regular", display: "block" }}>{inductionInfo.attachFileName}</p>
-                                                                <p style={{ position: "absolute", top: "40px", fontSize: "18px", fontFamily: "Poppins-Regular", display: "block", color: "red" }}>{fileSizeErr}</p>
-                                                                <input
-                                                                    type="file"
-                                                                    className="d-inp"
-                                                                    accept=".pdf"
-                                                                    name="attachFile"
-                                                                    id="attachFile"
-                                                                    onChange={handleChange}
-                                                                />
-                                                                <label htmlFor="attachFile" className="d-label">
-                                                                    <i className="file_label"></i> Attach File
-                                                                </label> */}
+
                                                                 <label
                                                                     htmlFor="attachment"
                                                                     className="file_label"
@@ -481,7 +475,7 @@ const DefineInduction = (props) => {
                                                                 <select
                                                                     name="emailTemplateID"
                                                                     style={{
-                                                                        width: '250px',
+                                                                        width: '40%',
                                                                         padding: '8px',
                                                                         border: '2px solid #ccc',
                                                                         borderRadius: '4px',
@@ -531,9 +525,9 @@ const DefineInduction = (props) => {
                                                         </div>
                                                     </Grid>
                                                 </div>
-                                                <div className="row align-items-center" sstyle={{ marginLeft: '50px', marginTop: '57px' }}>
-                                                    <div style={{ marginLeft: '150px', display: 'inline-flex', alignItems: 'center' }}>
-                                                        <div style={{ marginTop: '20px' , marginLeft:'150px'}}>
+                                                <div className="row align-items-center" style={{ marginTop: '20px' }}>
+                                                    <div style={{ display: 'inline-flex', alignItems: 'center',justifyContent:'center' }}>
+                                                        <div style={{ marginTop: '20px' }}>
                                                             <Checkbox size={'small'}
                                                                 checked={inductionInfo?.sendEmail}
                                                                 onClick={() => {
@@ -544,10 +538,12 @@ const DefineInduction = (props) => {
                                                                 }}
                                                                 color={'primary'} /></div>
                                                         <div>
+
                                                             <p style={{ fontSize: '14px', marginTop: '35px' }}>
                                                                 On Clicking Save, a notification and email will be triggered to the university
                                                                 and its students
                                                             </p>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -580,7 +576,7 @@ const DefineInduction = (props) => {
                                             {/* <i className="fa fa-envelope fa-4x" style={{ marginTop: "10px" }} /> */}
                                             <ThumbUpAltSharpIcon style={{ fontSize: 50, marginTop: "25px" }} />
 
-                                                    </div>
+                                        </div>
                                     </div>
                                     <p style={{ textAlign: "center" }} className="paragraph">Pre-Induction</p>
                                     <p style={{ textAlign: "center" }} className="paragraph2">{operationType} successfully</p>
@@ -602,7 +598,7 @@ const DefineInduction = (props) => {
                                     <CancelOutlinedIcon className="cancelbtn" onClick={toggleEmailTemplateSuccessModal} />
                                     <div className="notification-icon d-flex flex-column justify-content-center align-items-center">
                                         <div style={{ color: "#253AA3", background: "lightblue", borderRadius: "50%", width: "100px", height: "100px", textAlign: "center", display: "inline-block" }}>
-                                        <ThumbUpAltSharpIcon style={{ fontSize: 50, marginTop: "25px" }} />
+                                            <ThumbUpAltSharpIcon style={{ fontSize: 50, marginTop: "25px" }} />
                                         </div>
                                     </div>
                                     <p style={{ textAlign: "center" }} className="paragraph">New Email Template</p>

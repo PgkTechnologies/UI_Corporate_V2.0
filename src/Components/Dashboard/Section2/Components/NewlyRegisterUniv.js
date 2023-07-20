@@ -23,7 +23,7 @@ const NewlyRegisterUniv = (props) => {
   }
 
   return (
-    <div className="col-6 ">
+    <div className="col-sm-6 ">
       <div className="list-table">
         <p className="table-heading">Registered Universities</p>
         <div className="row list-cards" style={{ width: "100%" }}>

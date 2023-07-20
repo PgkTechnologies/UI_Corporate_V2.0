@@ -272,14 +272,15 @@ const ApplicationWindowForm = (props) => {
     >
       <div
         className="modal-header hiring-modal-header"
-        style={{ padding: "12px", alignSelf: "center",background:'#03355bdc' }}
+        style={{ background: '#03355bdc', display: 'flex', alignItems:'center',width:'100%'}}
       >
-        <h5
+        <div style={{width:'100%',textAlign: 'center'}}><h5
           className="modal-title"
-          style={{ fontSize: "12px", alignSelf: "center",color:'white', marginLeft:'530px' }}
+          style={{ fontSize: "12px",color:'white', }}
         >
           Define Published Job Window
-        </h5>
+        </h5></div>
+        <div>
         <IconButton
           style={{ color: "white" }}
           size={"small"}
@@ -288,6 +289,7 @@ const ApplicationWindowForm = (props) => {
         >
           <Close />
         </IconButton>
+        </div>
       </div>
       <div className={"row"} style={{margin:'10px 0px 0px 15px',width:'97%'}}>
         <PgkTextField

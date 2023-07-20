@@ -171,7 +171,7 @@ const Requests = (props) => {
             {requests.map((item) => {
               // if (item?.campusDriveStatus?.toLowerCase() === "pending") {
               return (
-                <div className="cards-border" key={item?.index}>
+                <div className="cards-border" key={item?.index} style={{overflowX:'auto' }}>
                   <div className="col-lg-9 col-sm-12 card-content">
                     <div className="icon" style={{ marginRight: "20px" }}>
                       <AccountBalance />
@@ -191,7 +191,7 @@ const Requests = (props) => {
                     </div>
                   </div>
                   {item?.campusDriveStatus === "Pending" ? (
-                    <div className="col-lg-3 col-sm-12 choice-btns">
+                    <div className="col-lg-3 col-sm-12  choice-btns">
                       <div
                         className="btn accept"
                         onClick={() => {
@@ -247,7 +247,7 @@ const Requests = (props) => {
               <p className="text-center">No requests sent yet!</p>
             )}
           {sentRequests.map((item) => (
-            <div className="cards-border">
+            <div className="cards-border" style={{ overflowX:"auto" }}>
               <div className="col-lg-9 col-sm-12 card-content">
                 <div className="icon" style={{ marginRight: "20px" }}>
                   <AccountBalance />

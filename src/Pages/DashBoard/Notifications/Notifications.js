@@ -175,12 +175,14 @@ const Notifications = () => {
   };
 
   const markAsRead = () => {
-    dispatch(
-      markNotifications({
-        selectedIDs: nftID,
-        callback: markAsCallBack,
-      })
-    );
+    if (nftID) {
+      dispatch(
+        markNotifications({
+          selectedIDs: nftID,
+          callback: markAsCallBack,
+        })
+      );
+    }
   };
 
   const markAsCallBack = () => {
@@ -233,12 +235,11 @@ const Notifications = () => {
     return d.getDate() + " " + month[d.getMonth()] + ", " + d.getFullYear();
   }
 
-console.log(filterdNtf,'nfttttt')
   return (
-    <div className="container-body" style={{marginTop:'100px'}}>
+    <div className="container-body" style={{ marginTop: '100px' }}>
       <div
         className="main"
-        style={{ display: "flex", flexDirection: "column" }}
+        style={{ display: "flex", flexDirection: "column", padding: '20px' }}
       >
         <div>
           {" "}
@@ -260,14 +261,14 @@ console.log(filterdNtf,'nfttttt')
             />
             <label
               className="btn1"
-              style={{ marginLeft: "20px" }}
+              style={{ marginLeft: "20px",marginTop:'10px' }}
               htmlFor="idss"
             >
               Select All
             </label>
             <button
               className="btn1"
-              style={{ marginLeft: "10px" }}
+              style={{ marginLeft: "35px",marginTop:'10px' }}
               onClick={markAsRead}
             >
               Mark as Read
@@ -275,7 +276,7 @@ console.log(filterdNtf,'nfttttt')
 
             <label htmlFor="filterSelect"></label>
             <select
-              style={{ float: "right" }}
+              style={{ float: "right",marginTop:'10px' }}
               name="filterSelect"
               id="filterSelect"
               className="btn1"
@@ -296,13 +297,13 @@ console.log(filterdNtf,'nfttttt')
           <div style={{ display: "flex" }}>
             <div>
               {filterdNtf?.map((item, index) => (
-                
+
                 <div className="container justify-content-start" key={index}>
                   {(item?.notificationRead === true && item?.receiverID) ||
-                  (item?.readNotifications?.filter(
-                    (data) => data?.notificationId === item?.notificationId
-                  ).length &&
-                    item?.receiverID) ? (
+                    (item?.readNotifications?.filter(
+                      (data) => data?.notificationId === item?.notificationId
+                    ).length &&
+                      item?.receiverID) ? (
                     <></>
                   ) : (
                     <div
@@ -342,11 +343,11 @@ console.log(filterdNtf,'nfttttt')
                         color:
                           (item?.notificationRead === true &&
                             item?.receiverID) ||
-                          (readNotifications?.filter(
-                            (data) =>
-                              data?.notificationId === item?.notificationID
-                          ).length &&
-                            item?.receiverID)
+                            (readNotifications?.filter(
+                              (data) =>
+                                data?.notificationId === item?.notificationID
+                            ).length &&
+                              item?.receiverID)
                             ? "#9E9E9E"
                             : "",
                       }}
@@ -356,10 +357,10 @@ console.log(filterdNtf,'nfttttt')
                           ? "New On-Campus Drive created by"
                           : "New Off-Campus Drive created by"
                         : item?.notificationType === "CampusHiring Request"
-                        ? "Campus Drive Request from"
-                        : item?.notificationType === "CampusHiring Response"
-                        ? "Response about your Campus Drive Request from"
-                        : item?.content + " " }{" "}
+                          ? "Campus Drive Request from"
+                          : item?.notificationType === "CampusHiring Response"
+                            ? "Response about your Campus Drive Request from"
+                            : item?.content + " "}{" "}
                       <span
                         style={{
                           fontWeight: "bold",

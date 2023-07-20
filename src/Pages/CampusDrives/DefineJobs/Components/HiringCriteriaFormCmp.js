@@ -339,14 +339,14 @@ const HiringCriteriaFormCmp = (props) => {
     }
   };
 
-  console.log(props?.hiringData?.numberOfAllowedBacklogs?.value,'bacckloggs')
+  console.log(props?.hiringData?.numberOfAllowedBacklogs?.value, 'bacckloggs')
 
   return (
     <form className="hiring-modal-form" style={props?.hiringCriteriaFormStyles}>
-      <div className="container-fluid mt-3 mb-3 h-100">
+      <div className="container-fluid mt-3 mb-3 h-100 justify-content-around">
         <div style={{ marginBottom: "20px" }}>
           <div className={`row  m-0 ${props?.cdJob ? " w-full" : ""}`}>
-            <div className="col-md-4">
+            <div className="col-sm-4">
               <PgkTextField
                 name="jobName"
                 onChange={props?.handleJobChange}
@@ -366,12 +366,12 @@ const HiringCriteriaFormCmp = (props) => {
                 }}
                 inputProps={{ style: { fontSize: ".800rem" } }}
                 errorMessage={props?.jobFormData?.jobName?.errorMessage}
-                required={props?.jobFormData?.jobName?.isRequired }
+                required={props?.jobFormData?.jobName?.isRequired}
                 disabled={props?.jobFormData?.jobName?.isDisabled}
                 autoFocus
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-sm-4">
               <PgkSelectField
                 name="jobType"
                 value={props?.jobFormData?.jobType?.value}
@@ -400,7 +400,7 @@ const HiringCriteriaFormCmp = (props) => {
                 disabled={props?.jobFormData?.jobType?.isDisabled}
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-sm-4">
               <PgkSelectField
                 name="programID"
                 value={props?.hiringData?.programID?.value}
@@ -427,7 +427,7 @@ const HiringCriteriaFormCmp = (props) => {
             className={`row m-0 ${props?.cdJob ? " w-full" : ""}`}
             style={{ position: "relative" }}
           >
-            <div className="col-md-4">
+            <div className="col-sm-4">
               <p
                 style={{
                   fontSize: "0.8rem",
@@ -479,30 +479,70 @@ const HiringCriteriaFormCmp = (props) => {
               ></div>
             </div>
 
-            <div className="col-md-4">
-              <PgkTextField
-                name="salaryMinRange"
-                onChange={props?.handleJobChange}
-                value={props?.jobFormData?.salaryMinRange?.value}
-                label={"Minimum Salary in LPA"}
-                validations={["isNumericWithDecimal", "min_1"]}
-                inputLabelProps={{
-                  style: {
-                    fontSize: `${props?.cdJob ? ".700rem" : ".800rem"}` ,
-                    background: "#fff",
-                    paddingLeft: "2px",
-                    paddingRight: "2px",
-                  },
-                }}
-                inputProps={{ style: { fontSize: ".800rem" } }}
-                errorMessage={props?.jobFormData?.salaryMinRange?.errorMessage}
-                required={props?.jobFormData?.salaryMinRange?.isRequired}
-                disabled={props?.jobFormData?.salaryMinRange?.isDisabled}
-              />
+            <div className="col-sm-4">
+              {" "}
+              <div
+                className="dataField"
+                style={{ position: "relative", top: "-26px" }}
+              >
+                <label
+                  style={{
+                    fontSize: "0.8rem",
+                    position: "relative",
+                    top: "3px",
+                    marginBottom:"15px",
+
+                  }}
+                >
+                  Location *
+                </label>
+                <div>
+                  <input
+                    className="dataFieldInput"
+                    style={{
+                      width: '100%',
+                      padding: '8px',
+                      border: '1px solid #ccc',
+                      borderRadius: '4px',
+                      fontSize: '14px'
+                    }}
+                    list="cities"
+                    name="location"
+                    ref={location}
+                    onChange={props?.handleRadio}
+                  />
+                </div>
+                <datalist
+                  id="cities"
+                  value={props?.jobFormData?.location?.value}
+                  style={{ background: "rgba(244, 67, 54)" }}
+                >
+                  {states.map((cities) => {
+                    return <option value={cities.value} />;
+                  })}
+                  errorMessage={props?.jobFormData?.location?.errorMessage}
+                  required={props?.jobFormData?.location?.isRequired}
+                  disabled={props?.jobFormData?.location?.isDisabled}
+                </datalist>
+                <div
+                  style={{
+                    position: "relative",
+                    top: "-30px",
+                    left: "10px",
+                    color: "rgba(0, 0, 0, 0.5)",
+                    zIndex: "1",
+                    fontSize: '14px',
+                  }}
+                >
+                  {props?.jobFormData?.location?.value}
+                </div>
+              </div>
             </div>
 
+
+
             <div
-              className="col-md-4 branchInput"
+              className="col-sm-4 branchInput"
             >
               <PgkMultiSelectField
                 name={"hcPrograms"}
@@ -522,28 +562,29 @@ const HiringCriteriaFormCmp = (props) => {
         </div>
         <div style={{ marginBottom: "25px" }}>
           <div className={`row m-0 ${props?.cdJob ? " w-full" : ""}`}>
-            <div className="col-md-4">
+
+            <div className="col-sm-4">
               <PgkTextField
-                name="noOfPositions"
+                name="salaryMinRange"
                 onChange={props?.handleJobChange}
-                value={props?.jobFormData?.noOfPositions?.value}
-                label={"No of positions"}
+                value={props?.jobFormData?.salaryMinRange?.value}
+                label={"Minimum Salary in LPA"}
+                validations={["isNumericWithDecimal", "min_1"]}
                 inputLabelProps={{
                   style: {
-                    fontSize: ".800rem",
+                    fontSize: `${props?.cdJob ? ".700rem" : ".800rem"}`,
                     background: "#fff",
                     paddingLeft: "2px",
                     paddingRight: "2px",
                   },
                 }}
                 inputProps={{ style: { fontSize: ".800rem" } }}
-                validations={["isNumeric"]}
-                errorMessage={props?.jobFormData?.noOfPositions?.errorMessage}
-                required={props?.jobFormData?.noOfPositions?.isRequired}
-                disabled={props?.jobFormData?.noOfPositions?.isDisabled}
+                errorMessage={props?.jobFormData?.salaryMinRange?.errorMessage}
+                required={props?.jobFormData?.salaryMinRange?.isRequired}
+                disabled={props?.jobFormData?.salaryMinRange?.isDisabled}
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-sm-4">
               <PgkTextField
                 name="salaryMaxRange"
                 onChange={props?.handleJobChange}
@@ -567,8 +608,8 @@ const HiringCriteriaFormCmp = (props) => {
             </div>
           </div>
         </div>
-        <div className={`row m-0 ${props?.cdJob ? " w-full" : ""}` } style={{bottom:'-20px'}}>
-          <div className="col-md-4">
+        <div className={`row m-0 ${props?.cdJob ? " w-full" : ""}`} style={{  }}>
+          <div className="col-sm-4">
             <PgkTextField
               name="monthOfHiring"
               onChange={props?.handleJobChange}
@@ -591,64 +632,31 @@ const HiringCriteriaFormCmp = (props) => {
               type={"date"}
             />
           </div>
-          <div className="col-md-4">
-            {" "}
-            <div
-              className="dataField"
-              style={{ position: "relative", top: "-26px" }}
-            >
-              <label
-                style={{
-                  fontSize: "0.8rem",
-                  position: "relative",
-                  top: "3px",
-                }}
-              >
-                Location *
-              </label>
-              <div>
-                <input
-                  className="dataFieldInput"
-                  style={{
-                    width: '100%',
-                    padding: '8px',
-                    border: '1px solid #ccc',
-                    borderRadius: '4px',
-                    fontSize: '14px'
-                  }}
-                  list="cities"
-                  name="location"
-                  ref={location}
-                  onChange={props?.handleRadio}
-                />
-              </div>
-              <datalist
-                id="cities"
-                value={props?.jobFormData?.location?.value}
-                style={{ background: "rgba(244, 67, 54)" }}
-              >
-                {states.map((cities) => {
-                  return <option value={cities.value} />;
-                })}
-                errorMessage={props?.jobFormData?.location?.errorMessage}
-                required={props?.jobFormData?.location?.isRequired}
-                disabled={props?.jobFormData?.location?.isDisabled}
-              </datalist>
-              <div
-                style={{
-                  position: "relative",
-                  top: "-30px",
-                  left: "10px",
-                  color: "rgba(0, 0, 0, 0.5)",
-                  zIndex: "1",
-                  fontSize: '14px',
-                }}
-              >
-                {props?.jobFormData?.location?.value}
-              </div>
-            </div>
+
+          <div className="col-sm-4">
+            <PgkTextField
+              name="noOfPositions"
+              onChange={props?.handleJobChange}
+              value={props?.jobFormData?.noOfPositions?.value}
+              label={"No of positions"}
+              inputLabelProps={{
+                style: {
+                  fontSize: ".800rem",
+                  background: "#fff",
+                  paddingLeft: "2px",
+                  paddingRight: "2px",
+                },
+              }}
+              inputProps={{ style: { fontSize: ".800rem" } }}
+              validations={["isNumeric"]}
+              errorMessage={props?.jobFormData?.noOfPositions?.errorMessage}
+              required={props?.jobFormData?.noOfPositions?.isRequired}
+              disabled={props?.jobFormData?.noOfPositions?.isDisabled}
+            />
           </div>
-          <div className="col-md-4">
+
+
+          <div className="col-sm-4">
             <PgkSelectField
               name="yearOfPassing"
               onChange={props?.handleChange}
@@ -673,9 +681,9 @@ const HiringCriteriaFormCmp = (props) => {
             />
           </div>
         </div>
-        <div style={{ marginBottom: "20px" }}>
+        <div style={{ marginBottom: "20px",marginTop:"20px" }}>
           <div className={`row m-0 ${props?.cdJob ? " w-full" : ""}`}>
-            <div className="col-md-4">
+            <div className="col-sm-4">
               <PgkTextField
                 name="minimumCutoffPercentage10th"
                 onChange={props?.handleChange}
@@ -686,7 +694,7 @@ const HiringCriteriaFormCmp = (props) => {
                   "min_35.00",
                   "max_100.00",
                 ]}
-                 
+
                 inputLabelProps={{
                   style: {
                     fontSize: ".800rem",
@@ -711,7 +719,7 @@ const HiringCriteriaFormCmp = (props) => {
               props?.hiringData?.programID?.value !== "ADP" &&
               props?.hiringData?.programID?.value !== "ITI" ? (
               <>
-                <div className="col-md-4">
+                <div className="col-sm-4">
                   <PgkTextField
                     name="minimumCutoffPercentage12th"
                     onChange={props?.handleChange}
@@ -724,7 +732,7 @@ const HiringCriteriaFormCmp = (props) => {
                       "min_35.00",
                       "max_100.00",
                     ]}
-                    
+
                     inputLabelProps={{
                       style: {
                         fontSize: ".800rem",
@@ -750,7 +758,7 @@ const HiringCriteriaFormCmp = (props) => {
             ) : (
               <>
                 {props?.hiringData?.programID?.value !== "ITI" ? (
-                  <div className="col-md-4">
+                  <div className="col-sm-4">
                     <PgkTextField
                       name="minimumCutoffPercentageDiploma"
                       onChange={props?.handleChange}
@@ -788,7 +796,7 @@ const HiringCriteriaFormCmp = (props) => {
                     />
                   </div>
                 ) : (
-                  <div className="col-md-4">
+                  <div className="col-sm-4">
                     <PgkTextField
                       name="minimumCutoffPercentageITI"
                       onChange={props?.handleChange}
@@ -829,7 +837,7 @@ const HiringCriteriaFormCmp = (props) => {
               </>
             )}
 
-            <div className="col-md-4">
+            <div className="col-sm-4">
               <PgkTextField
                 name="minimumCutoffPercentageGrad"
                 onChange={props?.handleChange}
@@ -865,7 +873,7 @@ const HiringCriteriaFormCmp = (props) => {
         </div>
         <div style={{ marginBottom: "20px" }}>
           <div className={`row m-0 ${props?.cdJob ? " w-full" : ""}`}>
-            <div className="col-md-6">
+            <div className="col-sm-6">
               <FormControl>
                 <FormLabel
                   id="verifiedProfilesOnly"
@@ -907,12 +915,12 @@ const HiringCriteriaFormCmp = (props) => {
                 </RadioGroup>
               </FormControl>
             </div>
-            <div className="col-md-4">
+            <div className="col-sm-4">
               <PgkTextField
                 name="numberOfAllowedBacklogs"
                 onChange={props?.handleChange}
                 value={
-                  props?.hiringData?.numberOfAllowedBacklogs?.value === 0 
+                  props?.hiringData?.numberOfAllowedBacklogs?.value === 0
                     ? '0'
                     : (props?.hiringData?.numberOfAllowedBacklogs.value)
                 }
@@ -939,7 +947,7 @@ const HiringCriteriaFormCmp = (props) => {
                 }
               />
             </div>
-            <div className="col-md-2">
+            <div className="col-sm-2">
               <PgkSelectField
                 name="status"
                 value={props?.jobFormData?.status?.value}
@@ -949,9 +957,11 @@ const HiringCriteriaFormCmp = (props) => {
                   { value: "open", label: "Open" },
                   { value: "close", label: "Close" },
                 ]}
-                labelStyles={{ fontSize: ".800rem" , background: "#fff",
-                paddingLeft: "2px",
-                paddingRight: "2px", }}
+                labelStyles={{
+                  fontSize: ".800rem", background: "#fff",
+                  paddingLeft: "2px",
+                  paddingRight: "2px",
+                }}
                 selectStyles={{ fontSize: ".800rem" }}
                 menuStyles={{ fontSize: ".800rem" }}
                 errorMessage={props?.jobFormData?.status?.errorMessage}
@@ -964,7 +974,7 @@ const HiringCriteriaFormCmp = (props) => {
 
         <div style={{ marginBottom: "20px" }}>
           <div className={`row m-0 ${props?.cdJob ? " w-full" : ""}`}>
-            <div className="col-md-12">
+            <div className="col-sm-12">
               <PgkTextField
                 name="remarks"
                 value={props?.jobFormData?.remarks?.value}
@@ -992,14 +1002,14 @@ const HiringCriteriaFormCmp = (props) => {
         </div>
         <div style={{ marginBottom: "20px" }}>
           <div className={`row m-0 ${props?.cdJob ? " w-full" : ""}`}>
-            <div className="col-md-12">
-              <div className={"col-md mt-3"}>
+            <div className="col-sm-12">
+              <div className={"col-sm mt-3"}>
                 <div
                   className="row d-flex justify-content-center align-items-center"
                   style={{ margin: 0, padding: 0 }}
                 >
                   <div
-                    className={`col-md-${props?.jobFormData?.attachment?.value?.attachment
+                    className={`col-sm-${props?.jobFormData?.attachment?.value?.attachment
                       ? "11"
                       : "12"
                       }`}
@@ -1121,7 +1131,8 @@ const HiringCriteriaFormCmp = (props) => {
                       </button>{" "}
                     </>
                   ) : (
-                    <>
+                    <div className="d-flex justify-content-center">
+                    <div>
                       <button
                         type="button"
                         onClick={props?.openCloseModal}
@@ -1129,15 +1140,18 @@ const HiringCriteriaFormCmp = (props) => {
                       >
                         {"Cancel"}
                       </button>{" "}
+                      </div>
+                      <div>
                       <button
-                      style={{marginLeft:'40px'}}
+                        style={{ marginLeft: '30px'}}
                         type="button"
                         onClick={() => handleSubmit(JobID)}
                         className="btn mr-4"
                       >
                         {"Save"}
                       </button>
-                    </>
+                      </div>
+                    </div>
                   )}
                 </div>
               </div>
