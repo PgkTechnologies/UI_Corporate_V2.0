@@ -39,13 +39,13 @@ const SupportCmp = (props) => {
                 }}
               >
                 <div className="row" style={{ width: "100%" }}>
-                  <div className="col-5" style={{ padding: "5px 25px 0px" }}>
+                  <div className="col-sm-5" style={{ padding: "5px 25px 0px" }}>
                     {item.ticketID}
                   </div>
-                  <div className="col-5 " style={{ padding: "5px" }}>
+                  <div className="col-sm-5 " style={{ padding: "5px" }}>
                     {getFormattedDate(item.creationDate)}
                   </div>
-                  <div className="col-2" style={{ padding: "5px" }}>
+                  <div className="col-sm-2" style={{ padding: "5px" }}>
                     <span style={{ color: item.status ? "green" : "red" }}>
                       {item.status ? "Active" : "Closed"}
                     </span>

@@ -455,7 +455,7 @@ const HiringCriteriaFormSection = (props) => {
     <>
       {section.firstSection ? (
         <div className={"row center"} style={{ height: "350px",display:'flex',justifyContent:'center' }}>
-          <div style={{ width: '50%' ,marginTop:'100px'}}>
+          <div className="col-sm-6" style={{ width: '50%' ,marginTop:'100px'}}>
           <PgkSelectField
             name="hiringCriteria"
             value={selectedHiringCriteria?.hiringCriteria?.value}
@@ -494,7 +494,7 @@ const HiringCriteriaFormSection = (props) => {
             <button
               type="button"
               onClick={moveNext}
-              style={{ marginLeft:'50px', width: "100px",height:'50px' }}
+              style={{ marginLeft:'20px', width: "80px",height:'50px' }}
               className="btn mr-0 ml-4"
             >
               Next

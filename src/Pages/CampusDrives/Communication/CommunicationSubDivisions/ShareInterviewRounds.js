@@ -547,7 +547,7 @@ const ShareInterviewRounds = (props) => {
         <br />
         <form
           onSubmit={onSubmit}
-          style={{ height: "280px", overflowY: "scroll", overflowX: "hidden" }}
+          style={{ height: "280px", overflowY: "scroll", overflowX: "auto" }}
         >
           <table className="table table-striped table-bordered">
             <thead style={{ backgroundColor: "#01253cf5", color: "white" }}>

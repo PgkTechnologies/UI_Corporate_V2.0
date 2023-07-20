@@ -135,27 +135,27 @@ const OnCampusJobs = (props) => {
 
                                                 <div className="row job-card-main">
                                                     <div
-                                                        className="col-5 d-flex justify-content-flex-start align-items-center"
+                                                        className="col-sm-5 d-flex justify-content-flex-start align-items-center"
                                                         style={{ fontWeight: "bold" }}
                                                     >
                                                         <AccountBalance style={{ fontSize: "30px", marginRight: "25px" }} />
                                                         {item?.receiverName}
                                                     </div>
                                                     <div
-                                                        className="col-3 d-flex justify-content-flex-start align-items-center"
+                                                        className="col-sm-3 d-flex justify-content-flex-start align-items-center"
                                                         style={{ fontSize: "15px", color: "gray" }}
                                                     >
                                                         <LocationOn style={{ marginRight: "10px", color: "gray" }} />
                                                         {item?.receiverLocation}
                                                     </div>
                                                     <div
-                                                        className="col-3 d-flex justify-content-flex-start align-items-center"
+                                                        className="col-sm-3 d-flex justify-content-flex-start align-items-center"
                                                         style={{ fontSize: "15px", color: "gray" }}
                                                     >
                                                         <CalendarMonth style={{ marginRight: "10px", color: "gray" }} />
                                                         {item.responseDate}
                                                     </div>
-                                                    <div className="col-1 d-flex justify-content-end align-items-center">
+                                                    <div className="col-sm-1 d-flex justify-content-end align-items-center">
                                                         {item?.campusDriveClosed ? (
                                                             <LockRoundedIcon style={{ color: 'red' }} />
                                                         ) : (
@@ -217,27 +217,27 @@ const OnCampusJobs = (props) => {
 
                                             <div className="row job-card-main">
                                                 <div
-                                                    className="col-5 d-flex justify-content-flex-start align-items-center"
+                                                    className="col-sm-5 d-flex justify-content-flex-start align-items-center"
                                                     style={{ fontWeight: "bold" }}
                                                 >
                                                     <AccountBalance style={{ fontSize: "30px", marginRight: "25px" }} />
                                                     {item?.initiatorName}
                                                 </div>
                                                 <div
-                                                    className="col-3 d-flex justify-content-flex-start align-items-center"
+                                                    className="col-sm-3 d-flex justify-content-flex-start align-items-center"
                                                     style={{ fontSize: "15px", color: "gray" }}
                                                 >
                                                     <LocationOn style={{ marginRight: "10px", color: "gray" }} />
                                                     {item?.initiatorLocation}
                                                 </div>
                                                 <div
-                                                    className="col-3 d-flex justify-content-flex-start align-items-center"
+                                                    className="col-sm-3 d-flex justify-content-flex-start align-items-center"
                                                     style={{ fontSize: "15px", color: "gray" }}
                                                 >
                                                     <CalendarMonth style={{ marginRight: "10px", color: "gray" }} />
                                                     {item.responseDate}
                                                 </div>
-                                                <div className="col-1 d-flex justify-content-end align-items-center">
+                                                <div className="col-sm-1 d-flex justify-content-end align-items-center">
                                                     {item?.campusDriveClosed ? (
                                                         <LockRoundedIcon style={{ color: 'red' }} />
                                                     ) : (

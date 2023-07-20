@@ -61,20 +61,20 @@ const OffCampusDriveLayout = (props) => {
         <div className="jobs-layout-main">
             <div className="row home-title-steps-main">
                 <div
-                    className="col-2 d-flex justify-content-center align-items-center"
+                    className="col-sm-2 d-flex justify-content-center align-items-center"
                     onClick={() => {
                         navigateToHome();
                     }}>
 
                     <div className="home-main">Home</div>
                 </div>
-                <div className="col-10 tile-steps-main">
+                <div className="col-sm-10 tile-steps-main">
                     <div style={{ fontSize: "25px", fontWeight: "bold" }}>
                         <Work style={{ marginRight: "10px", fontSize: "20px" }} />{" "}
                          {localStorage.getItem('driveName')}
 
                     </div>
-                    <div className="steper-main">
+                    <div className="col-sm-8 steper-main" >
                         <div
                             className={
                                 props.round === "1" ?
@@ -115,7 +115,7 @@ const OffCampusDriveLayout = (props) => {
                 </div>
             </div>
             <div className="row home-title-steps-main">
-                <div className="col-2">
+                <div className="col-sm-2">
                     {props?.tabs?.length
                         ? props.tabs.map((item, index) => {
                             return (
@@ -132,7 +132,7 @@ const OffCampusDriveLayout = (props) => {
                         : undefined}
                 </div>
 
-                <div className="col-10 content-main">
+                <div className="col-sm-10 content-main">
                     {!props?.tabs.some((item) => item.isActive === true) ? (
                         <div
                             className="d-flex justify-content-center align-items-center"

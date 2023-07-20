@@ -321,29 +321,29 @@ const DefineJobsSection = (props) => {
         if (jobsList.length) {
             return jobsList.map((item) => {
                 return (
-                    <div className="jobs-cdx" style={{ padding:'15px' }}>
+                    <div className="jobs-cdx" style={{ padding:'15px',overflowX:'clip' }}>
                         <div className="row align-items-center">
                             <div
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
-                                style={{ maxWidth: "100%" }}
+                                style={{ maxWidth: "100%",overflowX:'auto' }}
                             >
-                                <div className="col-md-4">
+                                <div className="col-sm-4">
                                     <div className="row align-items-center">
                                         <div
-                                            className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
+                                            className="col-sm-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
                                             style={{ borderRadius: "5px", width: "60px",marginBottom:'15px' }}
                                         >
                                             <Work />
                                         </div>
                                         <p
-                                            className="col-9 job-label text-ellipsis"
+                                            className="col-sm-9 job-label text-ellipsis"
                                             style={{ maxWidth: "220px", textTransform: "capitalize"}}
                                         >
                                             {item.jobName}
                                         </p>
                                     </div>
                                 </div>
-                                <div className="col-md-4">
+                                <div className="col-sm-4">
                                     <div
                                         style={{
                                             border: "1px solid #cacaca",
@@ -354,8 +354,9 @@ const DefineJobsSection = (props) => {
                                     >
                                         <p
                                             style={{
-                                                marginTop:'19px',
-                                                marginLeft: "25px",
+                                                
+                                                textAlign:'center',
+                                                paddingTop:'18px',
                                                 textTransform: "capitalize",
                                                 padding:'2px',
                                                 fontSize: ".800rem",
@@ -365,7 +366,7 @@ const DefineJobsSection = (props) => {
                                         </p>
                                     </div>
                                 </div>
-                                <div className={"col-md-4 d-flex align-items-center"}>
+                                <div className={"col-sm-4 d-flex align-items-center"}>
                                     <button
                                         type="button"
                                         className="btn d-flex justify-content-around align-items-center"
@@ -478,17 +479,17 @@ const DefineJobsSection = (props) => {
                             ) : undefined}
                             {section.firstSection || section.secondSection ? (
                                 <div className="define-job-modal">
-                                    <div className="define-job-header" style={{ background: '#03355bdc', display: 'flex', width: '100%', justifyContent: "space-between",  alignItems: 'center' }}>
+                                    <div style={{ background: '#03355bdc', display: 'flex', alignItems:'center',width:'100%' }}>
 
-                                        <p style={{paddingLeft:'460px',color:'white',marginTop:'5px'}} >{jobType} Job </p>
+                                        <div style={{width:'100%',textAlign: 'center'}}><p style={{color:'white',marginTop:'15px' }} >{jobType} Job </p></div>
 
-                                        <IconButton
+                                        <div style={{}}><IconButton
                                             style={{ color: "white" }}
                                             onClick={closeWindow}
                                             component="span"
                                         >
                                             <Close />
-                                        </IconButton>
+                                        </IconButton></div>
 
                                     </div>
 
@@ -537,7 +538,7 @@ const DefineJobsSection = (props) => {
                                 Off Campus Drive
                             </p>
                             <div
-                                className="col-md-6"
+                                className="col-sm-6"
                                 style={{
                                     padding: "0px 4px",
                                     alignContent: "center",

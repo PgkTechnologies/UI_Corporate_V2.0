@@ -924,7 +924,8 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
         </div>
         <div>
           <div className="d-grp">
-            <div className="custom-control custom-checkbox">
+            <div className="custom-control custom-checkbox" style={{display :'flex',justifyContent:'center'}}>
+            <div>
               <input
                 onChange={() => {
                   setIsTermsAndConditionsChecked(!isTermsAndConditionsChecked);
@@ -935,6 +936,8 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
                 id="accept"
                 required
               />
+              </div>
+              <div>
               <label className="custom-control-label" htmlFor="accept">
                 &nbsp; I hereby accept the
                 <span
@@ -948,6 +951,7 @@ const CorporateProfile = ({ setShowPublish, showPublish }) => {
                 </span>{" "}
                 of the Platform
               </label>
+              </div>
             </div>
           </div>
         </div>
