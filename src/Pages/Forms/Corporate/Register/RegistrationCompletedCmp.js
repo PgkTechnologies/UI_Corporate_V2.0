@@ -54,7 +54,7 @@ const RegistrationCompletedCmp = (props) => {
                                 <p className="reg-para">
                                     A detailed welcome mail has been sent to your primary email.
                                     You have to pay the registration fee in order to access full
-                                    Dashboard features. You can chose to pay now or pay later at
+                                    Dashboard features. You can choose to pay now or pay later at
                                     your convenience
                                 </p>
                                 <div className="reg-payment-btns">
