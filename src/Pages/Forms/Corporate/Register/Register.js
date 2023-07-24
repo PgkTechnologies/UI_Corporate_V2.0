@@ -207,7 +207,7 @@ const Register = () => {
 
         <div className="page container">
           <div className="log-in-container">
-            <div className=" col-12 register-card-main">
+            <div className=" col-12 register-card-main" style={{ padding: "0px" }}>
               <div className="registration-card">
                 <div style={{ width: "100%" }}>
                   <div className="register-as-text">

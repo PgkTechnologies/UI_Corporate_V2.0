@@ -71,7 +71,7 @@ const ContactPersonnelCmp = (props) => {
                 <div className="cmp-register-head mt-2 mb-3" style={{ fontWeight: 'bold' }}>Primary Contact</div>
 
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -94,7 +94,7 @@ const ContactPersonnelCmp = (props) => {
 
 
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -116,7 +116,7 @@ const ContactPersonnelCmp = (props) => {
 
 
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -137,7 +137,7 @@ const ContactPersonnelCmp = (props) => {
                 </div>
 
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -157,7 +157,7 @@ const ContactPersonnelCmp = (props) => {
                     </FormControl>
                 </div>
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -179,7 +179,7 @@ const ContactPersonnelCmp = (props) => {
                     </FormControl>
                 </div>
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -205,7 +205,7 @@ const ContactPersonnelCmp = (props) => {
                 <div className="cmp-register-head mt-2 mb-3" style={{ fontWeight: 'bold' }}>Secondary Contact</div>
 
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -228,7 +228,7 @@ const ContactPersonnelCmp = (props) => {
 
 
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -250,7 +250,7 @@ const ContactPersonnelCmp = (props) => {
 
 
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -271,7 +271,7 @@ const ContactPersonnelCmp = (props) => {
                 </div>
 
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -291,7 +291,7 @@ const ContactPersonnelCmp = (props) => {
                     </FormControl>
                 </div>
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -312,7 +312,7 @@ const ContactPersonnelCmp = (props) => {
                     </FormControl>
                 </div>
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -337,7 +337,7 @@ const ContactPersonnelCmp = (props) => {
 
             <div className="row cmp-register-main">
                 <div className="cmp-register-head mt-2 mb-3" style={{ fontWeight: 'bold' }}>GSTN</div>
-                <div className="col-12">
+                <div className="col-sm-12">
 
                     <FormControl component="fieldset">
                         <FormLabel component="legend" style={{width:'100%'}}>
@@ -391,7 +391,7 @@ const ContactPersonnelCmp = (props) => {
             <div className="row cmp-register-main">
                 <div className="cmp-register-head mt-2 mb-3" style={{ fontWeight: 'bold' }}>Password</div>
 
-                <div className="col-4" >
+                <div className="col-sm-4" >
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -412,7 +412,7 @@ const ContactPersonnelCmp = (props) => {
                     </FormControl>
                 </div>
 
-                <div className="col-4" >
+                <div className="col-sm-4" >
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>

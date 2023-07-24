@@ -52,10 +52,10 @@ const CorporatePrimaryCmp = (props) => {
 
      console.log(props?.corporatePrimaryData?.attachment?.name, 'typeeList')
     return (
-        <form onSubmit={props?.handleSubmit} className="d-flex justify-content-center align-items-center" style={{ flexDirection: 'column' }}>
+        <form onSubmit={props?.handleSubmit} className="d-flex justify-content-center align-items-center" style={{ flexDirection: 'column',width:'100%' }}>
             <div className="row cmp-register-main">
                 <div className="cmp-register-head mt-2 mb-3" style={{ fontWeight: 'bold' }}>Primary Details</div>
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -75,7 +75,7 @@ const CorporatePrimaryCmp = (props) => {
                     </FormControl>
                 </div>
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -97,7 +97,7 @@ const CorporatePrimaryCmp = (props) => {
                     </FormControl>
                 </div>
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -131,7 +131,7 @@ const CorporatePrimaryCmp = (props) => {
                 </div>
 
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -165,7 +165,7 @@ const CorporatePrimaryCmp = (props) => {
                 </div>
 
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}>
@@ -199,7 +199,7 @@ const CorporatePrimaryCmp = (props) => {
                 </div>
 
 
-                <div className="col-4">
+                <div className="col-sm-4">
                     <FormControl
                         variant="filled"
                         style={{ width: "100%", marginBottom: "15px" }}
@@ -237,7 +237,7 @@ const CorporatePrimaryCmp = (props) => {
                     About Corporate*(if any)
                 </div>
                 <div className="row row-container">
-                    <div className="col-12">
+                    <div className="col-sm-12">
                         <div className="reg-attach" style={{ marginLeft: '20px' }}>
 
                             <p
@@ -279,7 +279,7 @@ const CorporatePrimaryCmp = (props) => {
             <div className="row cmp-register-main" >
                 <div className="cmp-register-head mt-2 mb-3" style={{ fontWeight: 'bold' }}>Referral Code</div>
                 <div className="row row-container" >
-                    <div className="col-4">
+                    <div className="col-sm-4">
                         <FormControl
                             variant="filled"
                             style={{ width: "100%", marginBottom: "15px" }}>
