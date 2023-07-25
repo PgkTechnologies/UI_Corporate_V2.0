@@ -423,7 +423,7 @@ const CaptureResults = (props) => {
 
         <button
           className="btn mr-2"
-          style={{ marginLeft: "75%"  , marginBottom:'25px'}}
+          style={{ marginLeft: "40%"  , marginBottom:'10px'}}
           type="button"
           onClick={() => {
             hiddenFileInput.current.click();

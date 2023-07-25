@@ -119,7 +119,7 @@ const Requests = (props) => {
   };
 
   return (
-    <div className="container-body" style={{marginTop:'100px'}}>
+    <div className="container-body" style={{marginTop:'120px', paddingLeft:'15px'}}>
       <h3 style={{ fontWeight: 'bold' }} >Requests</h3>
       <div className="row">
         <Tabs

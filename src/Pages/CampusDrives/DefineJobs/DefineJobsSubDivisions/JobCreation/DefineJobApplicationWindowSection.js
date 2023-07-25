@@ -82,47 +82,52 @@ const DefineJobApplicationWindowSection = (props) => {
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
                                 style={{ maxWidth: "100%" }}
                             >
-                                <div className="col-sm-4">
-                                    <div className="row align-items-center">
-                                        <div
-                                            className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
-                                            style={{ borderRadius: "5px", width: "60px",paddingBottom:'10px' }}
-                                        >   
-                                            <Work />
-                                            
-                                        </div>
-                                        <p
-                                            className="col-9 job-label text-ellipsis"
-                                            style={{ maxWidth: "220px", textTransform: "capitalize",marginTop:'10px' }}
-                                        >
-                                            {item.jobName}
-                                        </p>
-                                    </div>
+                                 {/* <div className="col-sm-6"> */}
+                                {/* <div className="row align-items-center"> */}
+                                <div
+                                    className="col-2 job-icon job-blue-icon d-flex justify-content-center align-items-center"
+                                    style={{ borderRadius: "5px", width: "60px", marginBottom: '5px' }}
+                                >
+                                    <Work />
                                 </div>
-                                <div className="col-sm-4">
+                                <div>
+                                    <p
+                                        className="col-sm-4 job-label text-ellipsis"
+                                        style={{
+                                            maxWidth: "220px",
+                                            textTransform: "capitalize",
+                                            marginTop: '19px'
+                                        }}
+                                    >
+                                        {item.jobName}
+                                    </p>
+                                </div>
+                                {/* </div> */}
+                                {/* </div> */}
+                                <div className="col-3">
                                     <div
                                         style={{
                                             border: "1px solid #cacaca",
                                             borderRadius: "4px",
                                             maxWidth: "100px",
                                             marginLeft: "10%",
+                                            textAlign: 'center',
                                         }}
                                     >
                                         <p
                                             style={{
-                                                // margin: "10px 0px 0px 20px",
-                                                marginTop:'13px',
-                                                marginLeft:'25px',
+                                                marginLeft: "10px",
                                                 textTransform: "capitalize",
                                                 fontSize: ".800rem",
-                                                padding:'2px',
+                                                paddingRight: '5px',
+                                                paddingTop: '15px'
                                             }}
                                         >
                                             {item.status}
                                         </p>
                                     </div>
                                 </div>
-                                <div className={"col-sm-4 d-flex align-items-center"}>
+                                <div className={"col-sm-3 d-flex align-items-center"}>
                                     <button
                                         type="button"
                                         className="btn d-flex justify-content-around align-items-center"
@@ -153,45 +158,52 @@ const DefineJobApplicationWindowSection = (props) => {
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
                                 style={{ maxWidth: "100%" }}
                             >
-                                <div className="col-sm-4">
-                                    <div className="row align-items-center">
-                                        <div
-                                            className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
-                                            style={{ borderRadius: "5px", width: "60px",paddingBottom:'10px' }}
-                                        >
-                                            <Work />
-                                        </div>
-                                        <p
-                                            className="col-9 job-label text-ellipsis"
-                                            style={{ maxWidth: "220px", textTransform: "capitalize",marginTop:'10px' }}
-                                        >
-                                            {item.jobName}
-                                        </p>
-                                    </div>
+                                 {/* <div className="col-sm-6"> */}
+                                {/* <div className="row align-items-center"> */}
+                                <div
+                                    className="col-2 job-icon job-blue-icon d-flex justify-content-center align-items-center"
+                                    style={{ borderRadius: "5px", width: "60px", marginBottom: '5px' }}
+                                >
+                                    <Work />
                                 </div>
-                                <div className="col-sm-4">
+                                <div>
+                                    <p
+                                        className="col-sm-4 job-label text-ellipsis"
+                                        style={{
+                                            maxWidth: "220px",
+                                            textTransform: "capitalize",
+                                            marginTop: '19px'
+                                        }}
+                                    >
+                                        {item.jobName}
+                                    </p>
+                                </div>
+                                {/* </div> */}
+                                {/* </div> */}
+                                <div className="col-3">
                                     <div
                                         style={{
                                             border: "1px solid #cacaca",
                                             borderRadius: "4px",
                                             maxWidth: "100px",
                                             marginLeft: "10%",
+                                            textAlign: 'center',
                                         }}
                                     >
                                         <p
                                             style={{
-                                                marginLeft: "25px",
-                                                marginTop:'19px',
+                                                marginLeft: "10px",
                                                 textTransform: "capitalize",
                                                 fontSize: ".800rem",
-                                                padding:'2px',
+                                                paddingRight: '5px',
+                                                paddingTop: '15px'
                                             }}
                                         >
                                             {item.status}
                                         </p>
                                     </div>
                                 </div>
-                                <div className={"col-sm-4 d-flex align-items-center"}>
+                                <div className={"col-sm-3 d-flex align-items-center"}>
                                     <button
                                         type="button"
                                         className="btn d-flex justify-content-around align-items-center"

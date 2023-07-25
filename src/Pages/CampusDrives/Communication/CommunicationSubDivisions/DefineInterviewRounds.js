@@ -95,14 +95,14 @@ const DefineInterviewRounds = (props) => {
                     <div className="jobs-cdx" >
                     <div className="d-flex flex-row justify-content-between align-items-center jobs-list-item w-full">
                       <div className="item d-flex flex-row justify-content-between align-items-center w-full">
-                        <div className="col-sm-5">
-                          <div className="row">
-                            <div className="col-sm-3">
+                        {/* <div className="col-sm-5">
+                          <div className="row"> */}
+                            <div className="col-sm-1">
                               <div className="job-icon job-blue-icon d-flex justify-content-center align-items-center" style={{marginTop:'20px'}}>
                                 <Work/>
                               </div>
                             </div>
-                            <div className="col-sm-9">
+                            <div className="col-sm-3">
                               <p
                                 className="job-label"
                                 style={{
@@ -125,8 +125,8 @@ const DefineInterviewRounds = (props) => {
                                 {item.jobName}
                               </p>
                             </div>
-                          </div>
-                        </div>
+                          {/* </div>
+                        </div> */}
                         <div className="col-sm-3">
                           <p
                             className="job-label"

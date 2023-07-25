@@ -18,7 +18,7 @@ const ProfileCard = (props) => {
   
 
     return (
-        <div className='col-5 profile-card-main'>
+        <div className='col-sm-5 profile-card-main'>
             <div className='propfile-card'>
                 <div className='profile-card-name'><span style={{ fontWeight: 'normal' }}>Welcome, </span>{props?.allData?.primaryContactFirstName} !</div>
                 <div className='profile-card-designation'>{props?.allData?.profile?.primaryContactDesignation}</div>
@@ -32,7 +32,7 @@ const ProfileCard = (props) => {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 

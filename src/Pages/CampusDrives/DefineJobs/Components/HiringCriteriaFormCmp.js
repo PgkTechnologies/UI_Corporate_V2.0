@@ -542,7 +542,7 @@ const HiringCriteriaFormCmp = (props) => {
 
 
             <div
-              className="col-sm-4 branchInput"
+              className="col-sm-4 branchInput" 
             >
               <PgkMultiSelectField
                 name={"hcPrograms"}
@@ -551,7 +551,7 @@ const HiringCriteriaFormCmp = (props) => {
                 options={props?.branchCatalog}
                 labelStyles={{ fontSize: ".800rem" }}
                 selectStyles={{ fontSize: ".800rem", }}
-                menuStyles={{ fontSize: ".800rem" }}
+                menuStyles={{ fontSize:".520rem"}}
                 label={`Branch`}
                 errorMessage={props?.hiringData?.hcPrograms?.errorMessage}
                 required={props?.hiringData?.hcPrograms?.isRequired}
@@ -563,7 +563,7 @@ const HiringCriteriaFormCmp = (props) => {
         <div style={{ marginBottom: "25px" }}>
           <div className={`row m-0 ${props?.cdJob ? " w-full" : ""}`}>
 
-            <div className="col-sm-4">
+            <div className="col-sm-4" >
               <PgkTextField
                 name="salaryMinRange"
                 onChange={props?.handleJobChange}

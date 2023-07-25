@@ -734,7 +734,7 @@ const SaveInterviewRounds = (props) => {
             <div style={{ borderTop: "1px solid black", width: "100%", marginLeft: 20, marginRight: 20 }}></div>
             <br />
             <form onSubmit={onSubmit} style={{ height: "330px", overflowY: "scroll", overflowX: "scroll" }}>
-                <button type="button" className="btn" onClick={() => { AddRound() }} style={{ marginLeft: "75%", marginBottom: "2px",paddingTop:'20px',height:'60px' }}><p>+ Add Round</p></button>
+                <button type="button" className="btn" onClick={() => { AddRound() }} style={{ marginLeft: "35%", marginBottom: "2px",paddingTop:'15px',height:'60px' }}><p>+ Add Round</p></button>
                 <table className="table table-striped table-bordered">
                     <thead style={{ backgroundColor: "#01253cf5", color: "white" }}>
                         <tr>

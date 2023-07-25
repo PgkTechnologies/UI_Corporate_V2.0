@@ -148,7 +148,7 @@ const Header = (props) => {
   return (
     <>
       <div className="header">
-        <div className="col-4 logo-title">
+        <div className="col-sm-4 logo-title">
           <p style={{ padding: "0", margin: "0" }}>C2Hire.</p>
           <p
             style={{
@@ -179,7 +179,7 @@ const Header = (props) => {
           </div> : ''}
         </div>
         <div
-          className="col-4"
+          className="col-sm-4"
           style={{
             display: "flex",
             alignItems: "center",
@@ -192,7 +192,7 @@ const Header = (props) => {
           />
         </div>
         <div
-          className="col-3"
+          className="col-sm-3"
           style={{
             display: "flex",
             alignItems: "flex-end",
@@ -212,7 +212,7 @@ const Header = (props) => {
           </button>
         </div>
         <div
-          className="col-1"
+          className="col-sm-1"
           style={{
             display: "flex",
             alignItems: "center",

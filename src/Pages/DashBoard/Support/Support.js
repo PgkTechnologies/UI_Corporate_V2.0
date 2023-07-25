@@ -23,7 +23,7 @@ const Support = () => {
     }, []);
 
     return (
-        <div className='container-body' style={{marginTop:'100px'}}>
+        <div className='container-body' style={{marginTop:'120px',paddingLeft:'25px'}}>
             <SupportCmp
                 allTickets={allTickets}
             />

@@ -430,7 +430,7 @@ const ShareRoundResults = (props) => {
             <br />
             <div style={{ borderTop: "1px solid black", width: "100%", marginLeft: 20, marginRight: 20 }}></div>
             <br />
-            <div style={{ height: "250px", overflowY: "scroll", overflowX: "hidden" }}>
+            <div style={{ height: "250px", overflowY: "scroll", overflowX: "auto" }}>
                 <table class="table table-striped table-bordered">
                     <thead style={{ backgroundColor: "#01253cf5", color: "white" }}>
                         <tr>
