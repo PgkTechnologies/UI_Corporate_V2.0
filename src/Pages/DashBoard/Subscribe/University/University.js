@@ -160,7 +160,7 @@ const University = (props) => {
       emailBody: `This is with regards to the subject line, we ${corpProfileInfo?.corporateName ? corpProfileInfo?.corporateName : ""
         }, ${getCorporateAddress()} would be interested in conducting a recruitment drive in your organization to recruit the final / pre-final year students.
                 Appreciate if you could revert with your interest to take the process forward using the below link:\n http://university.c2hire.com/university/dashboard
-                /Subscribe/corporationInfo/${corpProfileInfo.stakeholderID}`,
+                /Subscribe/corporationInfo/${corpProfileInfo?.stakeholderID}`,
     }));
   };
 
@@ -478,7 +478,7 @@ const University = (props) => {
 
   return (
     <>
-      <div className="container-body" style={{ marginTop: '100px' }}>
+      <div className="container-body" style={{ marginTop: '100px',paddingLeft:'10px' }}>
         <div className="acc-main">
           <div
             style={{
@@ -488,7 +488,7 @@ const University = (props) => {
             }}
           ></div>
           <div className="row acc-card-container">
-            <div className="col-8 acc-details">
+            <div className="col-sm-8 acc-details">
               <div className="profile-picture">
                 {universityInfo?.profilePicture ? (
                   <img
@@ -519,7 +519,7 @@ const University = (props) => {
                 </button> */}
               </div>
             </div>
-            <div className="col-4 d-flex justify-content-end align-items-center">
+            <div className="col-sm-4 d-flex justify-content-end align-items-center">
               {/* <Button
                 // disabled={disabled}
                 type="button"

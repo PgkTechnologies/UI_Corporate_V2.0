@@ -354,8 +354,56 @@ p {
     justify-content: center;
     padding: 0px 0px 0px 150px ;
   }
+
+  .search-bar .search-results {
+    position: absolute;
+    width: 250px;
+    top: 45px;
+    left: 0px;
+        border-radius: 10px;
+    padding: 5px;
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  .payment-id {
+    font-size: 14px;
+    font-weight: 590;
+  }
+
+  .btn2 {
+    color: #0291ff;
+    padding: 10px 20px 10px;
+    border: 2px solid #0291ff;
+    border-radius: 5px;
+    margin: 20px 0px 0px 20px;
+  }
 }
 
+@media screen and (min-width: 768px) {
+  .search-bar .search-results {
+    position: absolute;
+    width: 90%;
+    top: 45px;
+    left: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  .btn2 {
+    color: #0291ff;
+    padding: 10px 20px 10px;
+    border: 2px solid #0291ff;
+    border-radius: 5px;
+    margin: 20px 0px 0px 85px;
+  }
+}
+
+.modal-body{
+  word-break: break-word;
+}
 
 .log-in-container .register-card-main {
   display: flex;
@@ -495,17 +543,7 @@ p {
   outline: none;
 }
 
-.search-bar .search-results {
-  position: absolute;
-  width: 90%;
-  top: 45px;
-  left: 30px;
-  border-radius: 10px;
-  padding: 5px;
-  max-height: 300px;
-  overflow: hidden;
-  overflow-y: auto;
-}
+
 
 .search-results .result {
   color: #042a67;
@@ -715,7 +753,7 @@ p {
 /* Student Verification */
 
 .tabs {
-  padding: 20px;
+  /* padding: 20px; */
   width: 100%;
   height: auto;
   display: flex;
@@ -1644,7 +1682,7 @@ p {
 
 .transaction-item {
   color: #156394;
-  padding: 5px 15px 5px;
+  padding: 5px 12px 5px;
   background: white;
   margin-left: 5px;
   border-radius: 5px;

@@ -347,7 +347,7 @@ const DefineJobsSection = (props) => {
                                         </div>
                                     {/* </div> */}
                                 {/* </div> */}
-                                <div className="col-3">
+                                <div className="col-4">
                                     <div
                                         style={{
                                             border: "1px solid #cacaca",

@@ -346,7 +346,7 @@ const ShareJobDetailsSection = (props) => {
                                     <Work />
                                 </div>
 
-                                <div className="col-3 job-label text-ellipsis" style={{marginLeft:'10px'}}>
+                                <div className="col-sm-3 job-label text-ellipsis" style={{marginLeft:'10px'}}>
                                     <p style={{
                                         maxWidth: "220px",
                                         textTransform: "capitalize",

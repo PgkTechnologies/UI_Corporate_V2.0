@@ -159,16 +159,15 @@ const TransactionHistory = () => {
                           className="col-lg-3 col-md-6 col-sm-12"
                           style={{ margin: "20px 0 20px" }}
                         >
-                          Payment ID :
+                          <span className="payment-id">Payment ID :</span>
                           <span className="transaction-item">
                             {registrationHist[0]?.paymentId}
                           </span>
                           <button
                             type="submit"
-                            className="btn btn-sm"
+                            className="btn2 btn2-sm"
                             style={{
                               background: "white",
-                              margin: "20px 0px 0px 80px",
                             }}
                             onClick={() =>
                               handleDownload(registrationHist[0]?.attachFile)
@@ -236,17 +235,16 @@ const TransactionHistory = () => {
                           className="col-lg-3 col-md-6 col-sm-12"
                           style={{ margin: "20px 0 20px" }}
                         >
-                          Payment ID :
+                         <span className="payment-id">Payment ID :</span>
                           <span className="transaction-item">
                             {tran?.paymentID}
                           </span>
                           {tran?.attachment ? (
                             <button
                               type="submit"
-                              className="btn btn-sm"
+                              className="btn2 btn2-sm"
                               style={{
                                 background: "white",
-                                margin: "20px 0px 0px 80px",
                               }}
                               onClick={() => handleDownload(tran?.attachment)}
                             >
@@ -324,13 +322,13 @@ const TransactionHistory = () => {
                           style={{ display: "flex", flexDirection: "column" }}
                         >
                           <div style={{ padding: "20px 0 20px" }}>
-                            Subscribed To :
+                          <span className="payment-id">Subscribed To :</span>
                             <span className="transaction-item">
                               {item.publisherName}{" "}
                             </span>
                           </div>
                           <div style={{ padding: "20px 0 20px" }}>
-                            Item Type :
+                          <span className="">Item Type :</span> 
                             <span className="transaction-item">
                               {item.publisherName}{" "}
                             </span>
@@ -341,13 +339,13 @@ const TransactionHistory = () => {
                           style={{ display: "flex", flexDirection: "column" }}
                         >
                           <div style={{ padding: "20px 0 20px" }}>
-                            Tokens Paid :
+                          <span className="">Tokens Paid :</span>
                             <span className="transaction-item">
                               {item.paidTokensTransacted}
                             </span>
                           </div>
                           <div style={{ padding: "20px 0 20px" }}>
-                            Bonus Tokens Paid :
+                          <span className="">Bonus Tokens Paid :</span>
                             <span className="transaction-item">
                               {item.bonusTokensTransacted}
                             </span>
@@ -357,7 +355,7 @@ const TransactionHistory = () => {
                           className="col-lg-3 col-sm-12"
                           style={{ margin: "20px 0 20px" }}
                         >
-                          Transaction ID :
+                          <span className="payment-id">Transaction ID :</span>
                           <span className="transaction-item">
                             {item.transactionID}
                           </span>
@@ -366,7 +364,7 @@ const TransactionHistory = () => {
                           className="col-lg-3 col-sm-12"
                           style={{ margin: "20px 0 20px" }}
                         >
-                          Subscribed Date :
+                          <span className="">Subscribed Date :</span>
                           <span className="transaction-item">
                             {getFormattedDate(item.transactionDate)}
                           </span>
