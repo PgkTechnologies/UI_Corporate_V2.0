@@ -58,7 +58,7 @@ const OtherInformationHist = (props) => {
                 {/* <div className="col-sm-3 row align-items-center"> */}
                   <div
                     className="col-sm-1 job-icon job-blue-icon d-flex justify-content-center align-items-center"
-                    style={{ borderRadius: "7px", width: "60px",marginBottom:'5px' }}
+                    style={{ borderRadius: "7px", width: "60px",marginBottom:'10px' }}
                   >
                     <Work />
                   </div>
@@ -126,7 +126,7 @@ const OtherInformationHist = (props) => {
                     textTransform: "uppercase",
                     fontWeight: "bolder",
                     marginLeft: "40%",
-                    marginRight:'10px',
+                    marginRight:'5px',
                     
                   }}
                   onClick={() => {
