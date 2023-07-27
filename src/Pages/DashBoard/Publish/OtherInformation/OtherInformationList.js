@@ -54,54 +54,58 @@ const OtherInformationHist = (props) => {
               className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
               style={{ maxWidth: "100%" }}
             >
-              <div className="col-md-4">
-                <div className="row align-items-center">
+              {/* <div className="col-sm-4"> */}
+                {/* <div className="col-sm-3 row align-items-center"> */}
                   <div
-                    className="col-3 job-icon job-blue-icon d-flex justify-content-center align-items-center"
+                    className="col-sm-1 job-icon job-blue-icon d-flex justify-content-center align-items-center"
                     style={{ borderRadius: "7px", width: "60px",marginBottom:'5px' }}
                   >
                     <Work />
                   </div>
+                  <div className="col-sm-2">
                   <p
-                    className="col-9 job-label text-ellipsis"
+                    className=" job-label text-ellipsis"
                     style={{ maxWidth: "220px", textTransform: "capitalize", fontWeight: 'bold',marginTop:'10px' }}
                   >
                     {info?.publishID ? info?.publishID : "-"}
                   </p>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div
-                  style={{
-                    border: "1px solid #cacaca",
-                    borderRadius: "4px",
-                    padding: "20px 0px 0px 20px",
-                    maxWidth: "100px",
-                    marginLeft: "10%",
-                  }}
-                >
-                  <p
-                    style={{
-                      marginLeft: "10px",
-                      textTransform: "capitalize",
-                      fontSize: ".800rem",
-                    }}
-                  >
-                    {info?.title}
-                  </p>
-                </div>
-              </div>
+                  </div>
+                {/* </div> */}
+              {/* </div> */}
+              <div className="col-3">
+                                    <div
+                                        style={{
+                                            border: "1px solid #cacaca",
+                                            borderRadius: "4px",
+                                            maxWidth: "100px",
+                                            marginLeft: "10%",
+                                            textAlign: 'center',
+                                        }}
+                                    >
+                                        <p
+                                            style={{
+                                                marginLeft: "10px",
+                                                textTransform: "capitalize",
+                                                fontSize: ".800rem",
+                                                paddingRight: '5px',
+                                                paddingTop: '15px'
+                                            }}
+                                        >
+                                            {info?.title}
+                                        </p>
+                                    </div>
+                                </div>
 
-              <div className="col-md-3">
+              <div className="col-sm-4" style={{marginLeft:'15px'}}>
                 <div className="row align-items-center">
                   <p
-                    className="col-9 job-label text-ellipsis"
+                    className="job-label text-ellipsis"
                     style={{ maxWidth: "220px", textTransform: "capitalize", fontWeight: 'bold' }}
                   >
                     {info?.creationDate &&
                       `Published on`}
                   </p>
-                  <p className="job-published-date" style={{ color: "#454545", textAlign: 'center', fontSize: '13px', fontWeight: 'bold', paddingRight: '220px' }}>
+                  <p className="job-published-date" style={{ color: "#454545",  fontSize: '13px', fontWeight: 'bold' }}>
                     {info?.creationDate &&
                       `${moment(info.creationDate).format("DD-MMM-YYYY")}`}
                   </p>
@@ -109,7 +113,7 @@ const OtherInformationHist = (props) => {
               </div>
 
 
-              <div className={"col-md-2 d-flex align-items-center"}>
+              <div className={"col-sm-2 d-flex align-items-center"}>
                 <button
                   type="button"
                   className="btn d-flex justify-content-around align-items-center"
@@ -122,6 +126,7 @@ const OtherInformationHist = (props) => {
                     textTransform: "uppercase",
                     fontWeight: "bolder",
                     marginLeft: "40%",
+                    marginRight:'10px',
                     
                   }}
                   onClick={() => {
@@ -174,7 +179,7 @@ const OtherInformationHist = (props) => {
 
   return otherInformationList?.length ? (
     <>
-      <div className="container-body" style={{ marginTop: '100px' }}>
+      <div className="container-body" style={{ marginTop: '120px' }}>
         <h2 style={{ marginBottom: '15px' }}> Other Information History</h2>
         {getOtherInformationList()}
 

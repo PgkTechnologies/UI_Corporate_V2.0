@@ -49,7 +49,7 @@ const Analytics = () => {
     }, [dispatch]);
 
     return (
-        <div className='container-body' style={{marginTop:'100px'}}>
+        <div className='container-body' style={{marginTop:'120px'}}>
             {reportInfomation && reportInfomation.length > 0 ? (
                 <PowerBIEmbed
                     embedConfig={{

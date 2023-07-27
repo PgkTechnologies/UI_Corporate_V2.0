@@ -40,7 +40,7 @@ const SubscriptionHistory = () => {
   }, []);
 
   return (
-    <div className="container-body" style={{marginTop:'100px'}}>
+    <div className="container-body" style={{marginTop:'120px'}}>
       <div className="row">
         <h2>Subscription History </h2>
         {apiStatus ? <PreLoader /> : null}

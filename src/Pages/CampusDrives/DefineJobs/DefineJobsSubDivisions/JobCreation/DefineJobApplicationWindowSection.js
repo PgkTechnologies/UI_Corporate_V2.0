@@ -77,7 +77,7 @@ const DefineJobApplicationWindowSection = (props) => {
                     !item.jobAppWindowDefined &&
                     tabValue === 0 ? (
                     <div className="row align-items-center">
-                        <div className="jobs-cdx" style={{ width: '95%',padding:'18px' }} >
+                        <div className="jobs-cdx" style={{ width: '90%',padding:'18px' }} >
                             <div
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
                                 style={{ maxWidth: "100%" }}
@@ -139,6 +139,7 @@ const DefineJobApplicationWindowSection = (props) => {
                                             textTransform: "uppercase",
                                             fontWeight: "bolder",
                                             marginLeft: "40%",
+                                            marginRight : "10px", 
                                         }}
                                         disabled={item.status !== "open" ? true : false}
                                         onClick={() => {
@@ -153,7 +154,7 @@ const DefineJobApplicationWindowSection = (props) => {
                     </div>
                 ) : item.publishFlag && item.jobAppWindowDefined && tabValue === 1 ? (
                     <div className="row align-items-center">
-                        <div className="jobs-cdx" style={{width:'95%',padding:'18px'}} >
+                        <div className="jobs-cdx" style={{width:'90%',padding:'18px'}} >
                             <div
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
                                 style={{ maxWidth: "100%" }}
@@ -215,6 +216,7 @@ const DefineJobApplicationWindowSection = (props) => {
                                             textTransform: "uppercase",
                                             fontWeight: "bolder",
                                             marginLeft: "40%",
+                                            marginRight : "10px",
                                         }}
                                         onClick={() => {
                                             getSingleWindowDetails(item);

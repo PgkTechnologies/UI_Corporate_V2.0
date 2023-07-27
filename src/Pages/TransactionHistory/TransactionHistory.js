@@ -328,7 +328,7 @@ const TransactionHistory = () => {
                             </span>
                           </div>
                           <div style={{ padding: "20px 0 20px" }}>
-                          <span className="">Item Type :</span> 
+                          <span className="payment-id">Item Type :</span> 
                             <span className="transaction-item">
                               {item.publisherName}{" "}
                             </span>
@@ -339,13 +339,13 @@ const TransactionHistory = () => {
                           style={{ display: "flex", flexDirection: "column" }}
                         >
                           <div style={{ padding: "20px 0 20px" }}>
-                          <span className="">Tokens Paid :</span>
+                          <span className="payment-id">Tokens Paid :</span>
                             <span className="transaction-item">
                               {item.paidTokensTransacted}
                             </span>
                           </div>
                           <div style={{ padding: "20px 0 20px" }}>
-                          <span className="">Bonus Tokens Paid :</span>
+                          <span className="payment-id">Bonus Tokens Paid :</span>
                             <span className="transaction-item">
                               {item.bonusTokensTransacted}
                             </span>
@@ -364,7 +364,7 @@ const TransactionHistory = () => {
                           className="col-lg-3 col-sm-12"
                           style={{ margin: "20px 0 20px" }}
                         >
-                          <span className="">Subscribed Date :</span>
+                          <span className="payment-id">Subscribed Date :</span>
                           <span className="transaction-item">
                             {getFormattedDate(item.transactionDate)}
                           </span>

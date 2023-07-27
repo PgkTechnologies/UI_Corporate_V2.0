@@ -366,7 +366,7 @@ const ShareRoundResults = (props) => {
                         paddingRight: "2px", }
                     }}
                     inputProps={{
-                        style: { fontFamily: "Poppins-Regular", display: "block" }
+                        style: { fontFamily: "Poppins-Regular", display: "block",paddingRight:'0px',fontSize: ".800rem",}
                     }}
                     variant="outlined"
                     margin="dense"

@@ -103,9 +103,9 @@ const CampusSubscription = (props) => {
       </div>
 
       {props?.item?.campusDriveStatus === "Accepted" ? (
-        <div className="col-lg-3 col-sm-12  choice-btns ">
-          <span style={{  fontWeight: "bold" }}>
-            Status {""}:
+        <div className="col-lg-3 col-sm-12 choice-btns">
+          <span style={{ paddingRight: "5px", fontWeight: "bold",paddingLeft:'10px' }}>
+            Status{""}:
           </span>
           <div
             style={{ border: 'none', boxShadow: 'none', cursor: 'default', color: '#12AD07' }}
@@ -113,16 +113,16 @@ const CampusSubscription = (props) => {
         </div>
       ) : props?.item?.campusDriveStatus === "Pending" ? (
         <div className="col-lg-3 col-sm-12 choice-btns">
-          <span style={{ paddingRight: "15px", fontWeight: "bold" }}>
-            Status {""}:
+          <span style={{ paddingRight: "5px", fontWeight: "bold",paddingLeft:'10px' }}>
+            Status{""}:
           </span>
           <div
-            style={{ border: 'none', boxShadow: 'none', cursor: 'default', color: "#FEBE10" }}
+            style={{ border: 'none', boxShadow: 'none', cursor: 'default', color: '#FEBE10' }}
           >Pending</div>
         </div>
       ) : (
         <div className="col-lg-3 col-sm-12 choice-btns">
-          <span style={{ paddingRight: "5px", fontWeight: "bold" }}>
+          <span style={{ paddingRight: "5px", fontWeight: "bold",paddingLeft:'10px' }}>
             Status{""}:
           </span>
           <div

@@ -335,7 +335,7 @@ const ValidateProfiles = (props) => {
             },
           }}
           inputProps={{
-            style: { fontFamily: "Poppins-Regular", display: "block" },
+            style: { fontFamily: "Poppins-Regular", display: "block",fontSize: ".800rem", },
           }}
           variant="outlined"
           margin="dense"
@@ -358,7 +358,7 @@ const ValidateProfiles = (props) => {
           }}
           inputProps={{
             // min: props.addProgram.startDate,
-            style: { fontFamily: "Poppins-Regular", display: "block" },
+            style: { fontFamily: "Poppins-Regular", display: "block",fontSize: ".800rem", },
           }}
           //disabled={props.addProgram.startDate.length > 0 ? false : true}
           variant="outlined"
@@ -402,7 +402,7 @@ const ValidateProfiles = (props) => {
       ></div>
       <br />
       <div
-        style={{ height: "250px", overflowY: "scroll", overflowX: "hidden" }}
+        style={{ height: "250px", overflowY: "scroll", overflowX: "auto" }}
       >
         <table class="table table-striped table-bordered">
           <thead style={{ backgroundColor: "#01253cf5", color: "white" }}>

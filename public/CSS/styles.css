@@ -347,12 +347,16 @@ p {
   min-height: 500px;
 }
 
+
+
+
+
 @media screen and (max-width: 768px) {
   .log-in-container .register-card-main {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0px 0px 0px 150px ;
+    padding: 0px 0px 0px 150px;
   }
 
   .search-bar .search-results {
@@ -360,12 +364,13 @@ p {
     width: 250px;
     top: 45px;
     left: 0px;
-        border-radius: 10px;
+    border-radius: 10px;
     padding: 5px;
     max-height: 300px;
     overflow: hidden;
     overflow-y: auto;
   }
+
   .payment-id {
     font-size: 14px;
     font-weight: 590;
@@ -377,6 +382,43 @@ p {
     border: 2px solid #0291ff;
     border-radius: 5px;
     margin: 20px 0px 0px 20px;
+  }
+
+  .search-bar .search-results {
+    position: absolute;
+    width: 280px;
+    top: 45px;
+    left: -70px;
+    border-radius: 10px;
+    padding: 5px;
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  .jobs-img {
+    width: 180%;
+    max-height: 850px;
+  }
+  
+  .jobs-main-img {
+    width: 180%;
+    margin-top: 130px;
+    margin-left: 10px;
+  }
+
+}
+
+@media screen and (min-width: 424px) {
+  .jobs-img {
+    width: 145%;
+    max-height: 980px;
+  }
+  
+  .jobs-main-img {
+    width: 145%;
+    margin-top: 110px;
+    margin-left: 0px;
   }
 }
 
@@ -392,6 +434,7 @@ p {
     overflow: hidden;
     overflow-y: auto;
   }
+
   .btn2 {
     color: #0291ff;
     padding: 10px 20px 10px;
@@ -399,11 +442,38 @@ p {
     border-radius: 5px;
     margin: 20px 0px 0px 85px;
   }
+
+  .search-bar .search-results {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    width: 90%;
+    top: 45px;
+    left: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  .jobs-img {
+    width: 95%;
+    max-height: 850px;
+  }
+  
+  .jobs-main-img {
+    width: 95%;
+    margin-top: 70px;
+    margin-left: 20px;
+  }
+
 }
 
-.modal-body{
+.modal-body {
   word-break: break-word;
 }
+
+
 
 .log-in-container .register-card-main {
   display: flex;
@@ -438,6 +508,7 @@ p {
   align-items: flex-start;
   justify-content: center;
 }
+
 .MuiOutlinedInput-root {
   margin-bottom: 15px;
 }
