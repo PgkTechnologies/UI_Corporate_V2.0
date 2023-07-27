@@ -48,11 +48,11 @@ const ForgotPasswordCmp = (props) => {
                         label={"Please enter your registered" + " " +props.otpType}
                         name="inpValue"
                         onChange={props.handleChange}
-                        className={`login-inp${props.inpError ? ' login-inp-error' : ''}`}
+                        className={`login-inp forgot-input${props.inpError ? ' login-inp-error' : ''}`}
                         value={props?.inpValue}
                         required
                         variant="filled"
-                        style={{ width: "60%", marginBottom: "15px" }}
+                        // style={{ width: "60%", marginBottom: "15px" }}
                     />
                     {props.inpError ? <p className="inp-errors">{props.inpError}</p> : null}
                 </div>
