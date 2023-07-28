@@ -625,7 +625,7 @@ const DefineJobsSection = (props) => {
                 ) : (
                     <>
                         {!section.firstSection && !section.secondSection ? (
-                            <div className="Jobs-Add-btn" style={{marginTop:'-70px'}} >
+                            <div className="Jobs-Add-btn" style={{}} >
                                 <button
                                     type="button"
                                     onClick={() => {

@@ -64,16 +64,20 @@
   cursor: pointer;
 }
 
-.student-info-main {
-  width: 100%;
-  display: "flex";
-  align-items: center;
-  justify-content: center;
-  background: white;
-  padding: 10px;
-  border-radius: 5px;
-  overflow-y: auto;
-  font-family: "Poppins", sans-serif;
+@media screen and (max-width: 424px) {
+  
+  .student-info-main {
+    width: 100%;
+    display: "flex";
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-y: auto;
+    font-family: "Poppins", sans-serif;
+  }
+  
 }
 
 .student-info-main .student-info-card {

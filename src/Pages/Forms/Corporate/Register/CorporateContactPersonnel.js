@@ -484,7 +484,7 @@ const CorporateContactPersonnel = () => {
                     <div className="main-container">
                         <div className='page'> */}
 
-        <div className="page container">
+        <div className="page container1">
           <div className="log-in-container">
             <div className=" col-12 register-card-main" style={{ padding: "0px" }}>
               <div className="registration-card">

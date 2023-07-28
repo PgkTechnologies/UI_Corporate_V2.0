@@ -516,7 +516,7 @@ const CorporateSecondary = () => {
         {/* <div className="main-container">
               <div className='page'> */}
 
-        <div className="page container">
+        <div className="page container1">
           <div className="log-in-container">
          <div className=" col-sm-12 register-card-main" >
               <div className="registration-card">

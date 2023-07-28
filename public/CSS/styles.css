@@ -108,6 +108,7 @@ p {
   border: 2px solid #6198f7;
   border-radius: 5px;
   padding: 10px;
+  margin-left: 7px;
 }
 
 .btn1 {
@@ -351,6 +352,8 @@ p {
 
 
 
+
+
 @media screen and (max-width: 768px) {
   .log-in-container .register-card-main {
     display: flex;
@@ -358,6 +361,23 @@ p {
     justify-content: center;
     padding: 0px 0px 0px 150px;
   }
+
+  .log-in-container .register-card-main .registration-card {
+    background: #e1f3fcdd;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    margin-inline: auto;
+    border: 2px solid white;
+  }
+
+  .container1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+  }
+
   .log-in-main-container {
     display: flex;
     width: 100%;
@@ -422,7 +442,7 @@ p {
 
 }
 
-@media screen and (min-width: 424px) {
+@media screen and (min-width: 425px) {
   .jobs-img {
     width: 145%;
     max-height: 980px;
@@ -446,6 +466,33 @@ p {
     max-height: 300px;
     overflow: hidden;
     overflow-y: auto;
+  }
+  .student-info-main {
+    width: 100%;
+    display: "flex";
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .log-in-container .register-card-main .registration-card {
+    background: #e1f3fcdd;
+    border-radius: 20px;
+    padding: 30px;
+    width: 80%;
+    margin-inline: auto;
+    border: 2px solid white;
+  }
+
+  .container1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 
   .forgot-input{
@@ -507,14 +554,7 @@ p {
   /* padding: 0 50px 0; */
 }
 
-.log-in-container .register-card-main .registration-card {
-  background: #e1f3fcdd;
-  border-radius: 20px;
-  padding: 30px;
-  width: 100%;
-  margin-inline: auto;
-  border: 2px solid white;
-}
+
 
 .log-in-as-text {
   color: rgb(18, 18, 18);

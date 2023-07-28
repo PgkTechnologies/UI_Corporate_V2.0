@@ -72,7 +72,7 @@ const OtherInformationHist = (props) => {
                   </div>
                 {/* </div> */}
               {/* </div> */}
-              <div className="col-3">
+              <div className="col-md-3">
                                     <div
                                         style={{
                                             border: "1px solid #cacaca",
