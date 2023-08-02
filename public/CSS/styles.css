@@ -362,6 +362,16 @@ p {
     padding: 0px 0px 0px 150px;
   }
 
+  .sideBarMain {
+    overflow-y: auto;
+    width: 0px;
+    min-height: 300px;
+    transform: translate(0, 90px);
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+  }
+
   .log-in-container .register-card-main .registration-card {
     background: #e1f3fcdd;
     border-radius: 20px;
@@ -466,6 +476,16 @@ p {
     max-height: 300px;
     overflow: hidden;
     overflow-y: auto;
+  }
+
+  .sideBarMain {
+    overflow-y: auto;
+    width: 140px;
+    min-height: 300px;
+    transform: translate(0, 90px);
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: row;
   }
   .student-info-main {
     width: 100%;
@@ -785,15 +805,6 @@ p {
   overflow: hidden;
 }
 
-.sideBarMain {
-  overflow-y: auto;
-  width: 140px;
-  min-height: 300px;
-  transform: translate(0, 90px);
-  padding-bottom: 100px;
-  display: flex;
-  flex-direction: row;
-}
 
 .body {
   display: flex;

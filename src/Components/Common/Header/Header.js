@@ -122,9 +122,6 @@ const Header = (props) => {
 
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
-  const toggleSidebar = () => {
-    setSidebarVisible(!sidebarVisible);
-  };
 
   const [isMobileSize, setIsMobileSize] = useState(false);
 
