@@ -24,7 +24,7 @@ import { actionUpdateGlobalLoaderSagaAction } from "../../Actions/SagaActions/Co
 const getDefineJobsListRequest = (campusDriveId) => {
   //console.log(campusDriveId, 'Call ID')
   const offCamp = campusDriveId.slice(0, 2);
-  let URL = `/cdj/job/all/${campusDriveId}`;
+  let URL = `/cdj/job/all/${campusDriveId}?page=1&size=50`;
   // if (offCamp === "CF") {
   //   URL = "/p/crp/createJob/all";
   // } else {
@@ -49,7 +49,7 @@ function* getDefineJobsListRequestSaga(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -80,7 +80,7 @@ function* getCampusDriveHiringCriteriaListRequestSaga(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -116,7 +116,7 @@ function* postOrPatchCampusDriveHiringCriteriaRequestSaga(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -152,7 +152,7 @@ function* postOrPatchOffCampusDriveHiringCriteriaRequestSaga(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -188,7 +188,7 @@ function* postOrPatchCampusDriveJobRequestSaga(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -223,7 +223,7 @@ function* postOrPatchOffCampusDriveJobRequestSaga(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -252,7 +252,7 @@ function* addJobdatatoOffCampusDriveSaga(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -282,7 +282,7 @@ function* deleteCampusDriveJobRequestSaga(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -313,7 +313,7 @@ function* publishCampusDriveJobsRequestSaga(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -344,7 +344,7 @@ function* publishCampusDriveJobsRequestSagaOld(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -400,7 +400,7 @@ function* getCampusDriveStudentsListByJobIdRequest(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -436,7 +436,7 @@ function* getCampusDriveAppWindowJobByIdRequest(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -488,7 +488,7 @@ function* postCampusDriveAppWindowJobRequest(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -517,7 +517,7 @@ function* getCampusDriveDatesFinalizationRequestSaga(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -553,7 +553,7 @@ function* saveOrEditCampusDriveDatesFinalizationRequestSaga(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);
@@ -584,7 +584,7 @@ function* putCampusDriveExceptionStudentListRequest(action) {
     if (err.response) {
       toast.error(
         err?.response?.data?.errors?.length &&
-          err?.response?.data?.errors[0]?.message
+        err?.response?.data?.errors[0]?.message
       );
     } else {
       //toast.error("Something Wrong!", err.message);

@@ -22,7 +22,7 @@ import CustomToastModal from "../../../../../../Components/CustomToastModal";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Checkbox from "@material-ui/core/Checkbox";
-import ApplicationWindowForm from "./ApplicationWindowForm";
+import ApplicationWindowForm from "../DefineJobsSubDivisions/JobCreation/ApplicationWindowForm";
 
 const DefineJobApplicationWindowSection = (props) => {
   const dispatch = useDispatch();
@@ -80,11 +80,11 @@ const DefineJobApplicationWindowSection = (props) => {
 
   const getJobsList = () => {
     if (jobsList.length) {
-      return jobsList.map((item) => {
+      return jobsList.map((item, index) => {
         return item.publishFlag &&
           !item.jobAppWindowDefined &&
           tabValue === 0 ? (
-          <div className="row align-items-center">
+          <div key={index} className="row align-items-center">
             <div
               className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
               style={{ maxWidth: "100%" }}
@@ -305,6 +305,18 @@ const DefineJobApplicationWindowSection = (props) => {
             setMode(_mode);
           }}
         />
+        // <ApplicationWindowForm
+        //             openClose={() => {
+        //                 setSelectedJob(false);
+        //             }}
+        //             job={selectedJob}
+        //             mode={mode}
+        //             campusDriveId={props?.campusDriveId}
+        //             submit={submitWindowForm}
+        //             updateMode={(_mode) => {
+        //                 setMode(_mode);
+        //             }}
+        //         />
       )}
       {toastModal && (
         <CustomToastModal
@@ -318,10 +330,10 @@ const DefineJobApplicationWindowSection = (props) => {
             showToastModal
               ? "Selected Jobs Have Been Published"
               : toastModal
-              ? props.mode === "ADD"
-                ? "Job Saved Successfully!"
-                : "Job Updated Successfully!"
-              : ""
+                ? props.mode === "ADD"
+                  ? "Job Saved Successfully!"
+                  : "Job Updated Successfully!"
+                : ""
           }
         />
       )}

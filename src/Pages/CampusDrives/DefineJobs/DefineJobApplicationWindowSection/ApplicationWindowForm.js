@@ -226,8 +226,10 @@ const ApplicationWindowForm = (props) => {
     return isValid;
   };
 
+  console.log(props, "wrong");
+
   const submitHandler = () => {
-    console.log(props.mode, "DEFINE");
+    console.log(props, "DEFINE123");
     if (["ADD", "EDIT"].includes(props?.mode)) {
       const _isValid = isFormValid();
       console.log(_isValid, "1");
@@ -313,8 +315,8 @@ const ApplicationWindowForm = (props) => {
           value={
             applicationForm?.jobApplWindowFromDate?.value
               ? moment(applicationForm?.jobApplWindowFromDate?.value).format(
-                  "YYYY-MM-DD"
-                )
+                "YYYY-MM-DD"
+              )
               : null
           }
           label={"From Date"}
@@ -323,8 +325,8 @@ const ApplicationWindowForm = (props) => {
             style: { fontSize: ".800rem" },
             min: applicationForm?.jobApplWindowFromDate?.value
               ? moment(applicationForm?.jobApplWindowFromDate?.value).format(
-                  "YYYY-MM-DD"
-                )
+                "YYYY-MM-DD"
+              )
               : moment().format("YYYY-MM-DD"),
           }}
           errorMessage={applicationForm?.jobApplWindowFromDate?.errorMessage}
@@ -344,8 +346,8 @@ const ApplicationWindowForm = (props) => {
           value={
             applicationForm?.jobApplWindowToDate?.value
               ? moment(applicationForm?.jobApplWindowToDate?.value).format(
-                  "YYYY-MM-DD"
-                )
+                "YYYY-MM-DD"
+              )
               : null
           }
           label={"To Date"}
@@ -354,8 +356,8 @@ const ApplicationWindowForm = (props) => {
             style: { fontSize: ".800rem" },
             min: applicationForm?.jobApplWindowFromDate?.value
               ? moment(applicationForm?.jobApplWindowFromDate?.value).format(
-                  "YYYY-MM-DD"
-                )
+                "YYYY-MM-DD"
+              )
               : moment().format("YYYY-MM-DD"),
           }}
           errorMessage={applicationForm?.jobApplWindowToDate?.errorMessage}
@@ -413,9 +415,9 @@ const ApplicationWindowForm = (props) => {
             labelStyles={{ fontSize: ".800rem" }}
             selectStyles={{ fontSize: ".800rem" }}
             menuStyles={{ fontSize: ".800rem" }}
-            // errorMessage={applicationForm?.emailTemplateId?.errorMessage}
-            // required={applicationForm?.emailTemplateId?.isRequired}
-            // disabled={applicationForm?.emailTemplateId?.isDisabled}
+          // errorMessage={applicationForm?.emailTemplateId?.errorMessage}
+          // required={applicationForm?.emailTemplateId?.isRequired}
+          // disabled={applicationForm?.emailTemplateId?.isDisabled}
           />
         </div>
       ) : (
@@ -448,8 +450,8 @@ const ApplicationWindowForm = (props) => {
           {props?.mode === "ADD"
             ? "Confirm"
             : props?.mode === "EDIT"
-            ? "Save"
-            : "Close"}
+              ? "Save"
+              : "Close"}
         </button>
       </div>
     </div>

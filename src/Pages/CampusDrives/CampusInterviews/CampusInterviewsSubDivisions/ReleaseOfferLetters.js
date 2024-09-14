@@ -205,7 +205,11 @@ const ReleaseOfferLetters = (props) => {
             }
             console.log('offerLetterInformation ', { ..._offerLetterInformation, studentEmailTemplateId: studentEmailTemplateId, univEmailTemplateId: univEmailTemplateId });
             dispatch(actionPostStudentOfferLetterSaga({
-                apiPayloadRequest: { ..._offerLetterInformation, studentEmailTemplateId: parseInt(studentEmailTemplateId), unvEmailTemplateID: parseInt(univEmailTemplateId) },
+                apiPayloadRequest: { 
+                    ..._offerLetterInformation, 
+                    studentEmailTemplateId: parseInt(studentEmailTemplateId), 
+                    unvEmailTemplateID: parseInt(univEmailTemplateId) 
+                },
                 callback: onSuccess
             }));
         }

@@ -8,7 +8,7 @@ import { isFirstDateSameOrBefore } from "../../../../../utils/utils";
 import { actionGetCampusDriveEmailTemplatesListRequestSaga } from "../../../../../Store/Actions/SagaActions/CampusDriveWorkflowActions/CommunicationSagaAction";
 import { Close } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
- 
+
 const applicationFormFields = [
   "publishID",
   "jobID",
@@ -20,12 +20,15 @@ const applicationFormFields = [
   "emailTemplateId",
 ];
 
+
 const ApplicationWindowForm = (props) => {
+
+  console.log(props?.job, "JOBSSSS");
   const initialApplicationWindowForm = {
     publishID: {
       value: undefined,
       errorMessage: undefined,
-      isRequired: true,
+      isRequired: false,
       isDisabled: false,
     },
     jobID: {
@@ -75,6 +78,8 @@ const ApplicationWindowForm = (props) => {
   const [applicationForm, setApplicationForm] = useState(
     initialApplicationWindowForm
   );
+
+  console.log(applicationForm, "applicationForm");
 
   const [emailTemplates, setEmailTemplates] = useState([]);
 
@@ -225,11 +230,13 @@ const ApplicationWindowForm = (props) => {
     return isValid;
   };
 
+  console.log(props, "Correct");
+
   const submitHandler = () => {
-    console.log(props.mode, "DEFINE");
+    console.log(props.mode, "DEFINE123");
     if (["ADD", "EDIT"].includes(props?.mode)) {
       const _isValid = isFormValid();
-      console.log(_isValid, "1");
+      console.log(_isValid, "113094324");
       if (_isValid) {
         const updatedWindowForm = {};
         console.log("VALID");
@@ -272,32 +279,35 @@ const ApplicationWindowForm = (props) => {
     >
       <div
         className="modal-header hiring-modal-header"
-        style={{ background: '#03355bdc', display: 'flex', alignItems:'center',width:'100%'}}
+        style={{ background: '#03355bdc', display: 'flex', alignItems: 'center', width: '100%' }}
       >
-        <div style={{width:'100%',textAlign: 'center'}}><h5
+        <div style={{ width: '100%', textAlign: 'center' }}><h5
           className="modal-title"
-          style={{ fontSize: "12px",color:'white', }}
+          style={{ fontSize: "12px", color: 'white', }}
         >
           Define Published Job Window
         </h5></div>
         <div>
-        <IconButton
-          style={{ color: "white" }}
-          size={"small"}
-          onClick={props?.openClose}
-          component="span"
-        >
-          <Close />
-        </IconButton>
+          <IconButton
+            style={{ color: "white" }}
+            size={"small"}
+            onClick={props?.openClose}
+            component="span"
+          >
+            <Close />
+          </IconButton>
         </div>
       </div>
-      <div className={"row"} style={{margin:'10px 0px 0px 15px',width:'97%'}}>
+      <div className={"row"} style={{ margin: '10px 0px 0px 15px', width: '97%' }}>
         <PgkTextField
-          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem",
-          background: "#fff",
-          paddingLeft: "2px",
-          paddingRight: "2px", 
-       } }}
+          inputLabelProps={{
+            shrink: true, style: {
+              fontSize: ".800rem",
+              background: "#fff",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            }
+          }}
           name="jobName"
           onChange={handleFormChange}
           value={applicationForm?.jobName?.value}
@@ -318,21 +328,25 @@ const ApplicationWindowForm = (props) => {
           value={
             applicationForm?.jobApplWindowFromDate?.value
               ? moment(applicationForm?.jobApplWindowFromDate?.value).format(
-                  "YYYY-MM-DD"
-                )
+                "YYYY-MM-DD"
+              )
               : null
           }
           label={"From Date"}
-          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem" ,
-          background: "#fff",
-          paddingLeft: "2px",
-          paddingRight: "2px", } }}
+          inputLabelProps={{
+            shrink: true, style: {
+              fontSize: ".800rem",
+              background: "#fff",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            }
+          }}
           inputProps={{
             style: { fontSize: ".800rem" },
             min: applicationForm?.jobApplWindowFromDate?.value
               ? moment(applicationForm?.jobApplWindowFromDate?.value).format(
-                  "YYYY-MM-DD"
-                )
+                "YYYY-MM-DD"
+              )
               : moment().format("YYYY-MM-DD"),
           }}
           errorMessage={applicationForm?.jobApplWindowFromDate?.errorMessage}
@@ -344,7 +358,7 @@ const ApplicationWindowForm = (props) => {
               return checkFromToDate("jobApplWindowFromDate", value);
             },
           ]}
-          styles={{ marginRight: "6px", width: "100%" , marginTop:'15px'}}
+          styles={{ marginRight: "6px", width: "100%", marginTop: '15px' }}
         />
         <PgkTextField
           name="jobApplWindowToDate"
@@ -352,21 +366,25 @@ const ApplicationWindowForm = (props) => {
           value={
             applicationForm?.jobApplWindowToDate?.value
               ? moment(applicationForm?.jobApplWindowToDate?.value).format(
-                  "YYYY-MM-DD"
-                )
+                "YYYY-MM-DD"
+              )
               : null
           }
           label={"To Date"}
-          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem" ,
-          background: "#fff",
-          paddingLeft: "2px",
-          paddingRight: "2px",  } }}
+          inputLabelProps={{
+            shrink: true, style: {
+              fontSize: ".800rem",
+              background: "#fff",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            }
+          }}
           inputProps={{
             style: { fontSize: ".800rem" },
             min: applicationForm?.jobApplWindowFromDate?.value
               ? moment(applicationForm?.jobApplWindowFromDate?.value).format(
-                  "YYYY-MM-DD"
-                )
+                "YYYY-MM-DD"
+              )
               : moment().format("YYYY-MM-DD"),
           }}
           errorMessage={applicationForm?.jobApplWindowToDate?.errorMessage}
@@ -378,7 +396,7 @@ const ApplicationWindowForm = (props) => {
               return checkFromToDate("jobApplWindowToDate", value);
             },
           ]}
-          styles={{ marginLeft: "6px", marginTop:'15px', width: "100%" }}
+          styles={{ marginLeft: "6px", marginTop: '15px', width: "100%" }}
         />
       </div>
       <div
@@ -390,37 +408,44 @@ const ApplicationWindowForm = (props) => {
           onChange={handleFormChange}
           value={applicationForm?.jobApplWindowFromTime?.value}
           label={"From Time"}
-          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem",
-          background: "#fff",
-          paddingLeft: "2px",
-          paddingRight: "2px",  } }}
+          inputLabelProps={{
+            shrink: true, style: {
+              fontSize: ".800rem",
+              background: "#fff",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            }
+          }}
           inputProps={{ style: { fontSize: ".800rem" } }}
           errorMessage={applicationForm?.jobApplWindowFromTime?.errorMessage}
           required={applicationForm?.jobApplWindowFromTime?.isRequired}
           disabled={applicationForm?.jobApplWindowFromTime?.isDisabled}
           type={"time"}
-          styles={{ marginRight: "6px", marginTop:'7px',width: "100%" }}
+          styles={{ marginRight: "6px", marginTop: '7px', width: "100%" }}
         />
         <PgkTextField
           name="jobApplWindowToTime"
           onChange={handleFormChange}
           value={applicationForm?.jobApplWindowToTime?.value}
           label={"To Time"}
-          inputLabelProps={{ shrink: true, style: { fontSize: ".800rem",
-           background: "#fff",
-          paddingLeft: "2px",
-          paddingRight: "2px", 
-         } }}
+          inputLabelProps={{
+            shrink: true, style: {
+              fontSize: ".800rem",
+              background: "#fff",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            }
+          }}
           inputProps={{ style: { fontSize: ".800rem" } }}
           errorMessage={applicationForm?.jobApplWindowToTime?.errorMessage}
           required={applicationForm?.jobApplWindowToTime?.isRequired}
           disabled={applicationForm?.jobApplWindowToTime?.isDisabled}
           type={"time"}
-          styles={{ marginLeft: "6px",marginTop:'7px', width: "100%" }}
+          styles={{ marginLeft: "6px", marginTop: '7px', width: "100%" }}
         />
       </div>
       {!applicationForm?.emailTemplateId?.isDisabled ? (
-        <div className={"d-flex align-items-center justify-content-center"} style={{marginTop:'10px'}}>
+        <div className={"d-flex align-items-center justify-content-center"} style={{ marginTop: '10px' }}>
           <PgkSelectField
             name="emailTemplateId"
             value={applicationForm?.emailTemplateId?.value}
@@ -428,14 +453,16 @@ const ApplicationWindowForm = (props) => {
             label={`Email Template`}
             options={emailTemplates}
             styles={{ width: "75%" }}
-            labelStyles={{ fontSize: ".800rem" , background: "#fff",
-            paddingLeft: "2px",
-            paddingRight: "2px",  }}
+            labelStyles={{
+              fontSize: ".800rem", background: "#fff",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            }}
             selectStyles={{ fontSize: ".800rem" }}
             menuStyles={{ fontSize: ".800rem" }}
-            // errorMessage={applicationForm?.emailTemplateId?.errorMessage}
-            // required={applicationForm?.emailTemplateId?.isRequired}
-            // disabled={applicationForm?.emailTemplateId?.isDisabled}
+          // errorMessage={applicationForm?.emailTemplateId?.errorMessage}
+          // required={applicationForm?.emailTemplateId?.isRequired}
+          // disabled={applicationForm?.emailTemplateId?.isDisabled}
           />
         </div>
       ) : (
@@ -468,8 +495,8 @@ const ApplicationWindowForm = (props) => {
           {props?.mode === "ADD"
             ? "Confirm"
             : props?.mode === "EDIT"
-            ? "Save"
-            : "Close"}
+              ? "Save"
+              : "Close"}
         </button>
       </div>
     </div>

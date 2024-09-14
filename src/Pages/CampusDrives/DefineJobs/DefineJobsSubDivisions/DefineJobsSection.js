@@ -14,6 +14,7 @@ import JobFormSection from "../Components/JobFormSection";
 import { Modal, ModalBody } from "reactstrap";
 import { CancelOutlined } from "@mui/icons-material";
 import { Work } from "@material-ui/icons";
+import { actionPostPublishCorporateJobsRequest } from "../../../../Store/Actions/SagaActions/JobsSagaAction";
 
 const DefineJobsSection = (props) => {
 
@@ -234,7 +235,7 @@ const DefineJobsSection = (props) => {
                             hiringCriteriaName: jobId + "PGK",
                         },
                         callback: (data) => {
-                            assignOffcampuseDrive(data);
+                            jobHcPublish({ ...data, jobName: updatedJobData?.jobName });
                         },
                     })
                 );
@@ -246,13 +247,26 @@ const DefineJobsSection = (props) => {
             });
         }
     };
-    const assignOffcampuseDrive = (data) => {
-        console.log(data, "JOBID");
-        if (data) {
+
+    const jobHcPublish = (data) => {
+        dispatch(actionPostPublishCorporateJobsRequest({
+            apiPayloadRequest: {
+                cdID: props?.campusDriveId,
+                jobIds: [data?.jcID]
+            },
+            callback: () => {
+                assignOffcampuseDrive(data?.jcID)
+            }
+        }))
+    }
+
+    const assignOffcampuseDrive = (jcID) => {
+        console.log(jcID, "JOBID");
+        if (jcID) {
             dispatch(
                 actionAssignJobRequesttoOffCampusDrivesAction({
                     apiPayloadRequest: {
-                        jobIds: [data.jcID],
+                        jobIds: [jcID],
                         cdID: props?.campusDriveId,
                     },
                     callback: () => {
@@ -321,31 +335,33 @@ const DefineJobsSection = (props) => {
         if (jobsList.length) {
             return jobsList.map((item) => {
                 return (
-                    <div className="jobs-cdx" style={{ padding:'15px',overflowX:'clip' }}>
+                    <div className="jobs-cdx" style={{ padding: '15px', overflowX: 'clip' }}>
                         <div className="row align-items-center">
                             <div
                                 className="d-flex justify-content-between align-items-center w-full cd-job-list-item"
-                                style={{ maxWidth: "100%",overflowX:'auto' }}
+                                style={{ maxWidth: "100%", overflowX: 'auto' }}
                             >
-                               {/* <div className="col-sm-6"> */}
-                                    {/* <div className="row align-items-center"> */}
-                                    <div
-                                            className="col-2 job-icon job-blue-icon d-flex justify-content-center align-items-center"
-                                            style={{ borderRadius: "5px", width: "60px",marginBottom:'5px' }}
-                                        >
-                                            <Work />
-                                        </div>
-                                        <div>
-                                        <p
-                                            className="col-sm-3 job-label text-ellipsis"
-                                            style={{ maxWidth: "220px", 
+                                {/* <div className="col-sm-6"> */}
+                                {/* <div className="row align-items-center"> */}
+                                <div
+                                    className="col-2 job-icon job-blue-icon d-flex justify-content-center align-items-center"
+                                    style={{ borderRadius: "5px", width: "60px", marginBottom: '5px' }}
+                                >
+                                    <Work />
+                                </div>
+                                <div>
+                                    <p
+                                        className="col-sm-3 job-label text-ellipsis"
+                                        style={{
+                                            maxWidth: "220px",
                                             textTransform: "capitalize",
-                                            marginTop:'19px' }}
-                                        >
-                                            {item.jobName}
-                                        </p>
-                                        </div>
-                                    {/* </div> */}
+                                            marginTop: '19px'
+                                        }}
+                                    >
+                                        {item.jobName}
+                                    </p>
+                                </div>
+                                {/* </div> */}
                                 {/* </div> */}
                                 <div className="col-4">
                                     <div
@@ -354,7 +370,7 @@ const DefineJobsSection = (props) => {
                                             borderRadius: "4px",
                                             maxWidth: "100px",
                                             marginLeft: "10%",
-                                            textAlign : 'center',
+                                            textAlign: 'center',
                                         }}
                                     >
                                         <p
@@ -362,7 +378,7 @@ const DefineJobsSection = (props) => {
                                                 marginLeft: "5px",
                                                 textTransform: "capitalize",
                                                 fontSize: ".800rem",
-                                                paddingRight:'5px',
+                                                paddingRight: '5px',
                                                 paddingTop: '15px'
                                             }}
                                         >
@@ -383,14 +399,14 @@ const DefineJobsSection = (props) => {
                                             fontWeight: "bolder",
                                             marginLeft: "40%",
                                             // paddingTop:'20px',
-                                                                                        
+
                                         }}
                                         onClick={() => {
                                             if (!item.publishFlag) {
                                                 setMode("EDIT");
                                             }
                                             showDetails(item.jobID, item.cdID);
-                                            
+
                                         }}
                                     >
                                         Details
@@ -471,7 +487,7 @@ const DefineJobsSection = (props) => {
                             style={{
                                 overflowY: "scroll",
                                 overflowX: "hidden",
-                                height:'330px'
+                                height: '330px'
                             }}
                         >
                             {jobsList.length === 0 &&
@@ -483,9 +499,9 @@ const DefineJobsSection = (props) => {
                             ) : undefined}
                             {section.firstSection || section.secondSection ? (
                                 <div className="define-job-modal">
-                                    <div style={{ background: '#03355bdc', display: 'flex', alignItems:'center',width:'100%' }}>
+                                    <div style={{ background: '#03355bdc', display: 'flex', alignItems: 'center', width: '100%' }}>
 
-                                        <div style={{width:'100%',textAlign: 'center'}}><p style={{color:'white',marginTop:'15px' }} >{jobType} Job </p></div>
+                                        <div style={{ width: '100%', textAlign: 'center' }}><p style={{ color: 'white', marginTop: '15px' }} >{jobType} Job </p></div>
 
                                         <div style={{}}><IconButton
                                             style={{ color: "white" }}
