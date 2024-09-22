@@ -28,7 +28,9 @@ const Requests = (props) => {
   const [notificationContent, setNotificationContent] = useState();
   const [initiatorName, setInitiatorName] = useState("");
   const [campusDriveID, setCampusDriveID] = useState("");
-  const [reasonForRejection, setReasonForRejection] = useState();
+  const [reasonForRejection, setReasonForRejection] = useState(
+    "Not interested at the moment"
+  );
   const [notificationID, setNotificationID] = useState();
 
   const getCampusDriveInvites = () => {
@@ -65,7 +67,34 @@ const Requests = (props) => {
           campusDriveID: campusDriveID,
           accepted: acceptOrReject,
           nftID: notificationID,
-          reasonToReject: reasonForRejection?.reason,
+          // ...reason,
+        },
+        callback: (response) => {
+          getCampusDriveInvites();
+          setShowModal(false);
+          setNotificationStatus();
+          setNotification();
+          setNotificationContent();
+        },
+      })
+    );
+  };
+
+  const rejectCampusDrive = (campusDriveID, acceptOrReject, notificationID) => {
+    console.log(campusDriveID, "clickedddd");
+    let reason = {};
+    if (acceptOrReject) {
+      // reason = reasonForRejection?.reason;
+      toast.success("Rejected");
+    }
+
+    dispatch(
+      actionPostRespondToCampusDriveRequest({
+        apiPayloadRequest: {
+          campusDriveID: campusDriveID,
+          accepted: acceptOrReject,
+          nftID: notificationID,
+          reasonToReject: reasonForRejection,
           // ...reason,
         },
         callback: (response) => {
@@ -119,8 +148,11 @@ const Requests = (props) => {
   };
 
   return (
-    <div className="container-body" style={{marginTop:'120px', paddingLeft:'15px'}}>
-      <h3 style={{ fontWeight: 'bold' }} >Requests</h3>
+    <div
+      className="container-body"
+      style={{ marginTop: "120px", paddingLeft: "15px" }}
+    >
+      <h3 style={{ fontWeight: "bold" }}>Requests</h3>
       <div className="row">
         <Tabs
           value={tabValue}
@@ -128,7 +160,7 @@ const Requests = (props) => {
           indicatorColor="secondary"
           textColor="primary"
           variant="scrollable"
-          style={{background:'#39bdf60b'}}
+          style={{ background: "#39bdf60b" }}
         >
           <Tab
             // icon={
@@ -139,10 +171,10 @@ const Requests = (props) => {
             label={"Request Received"}
             wrapped
             style={{
-              fontWeight:'bold',
+              fontWeight: "bold",
               outline: "none",
               minWidth: "13%",
-              background:'#39bdf60b'
+              background: "#39bdf60b",
             }}
           />
           <Tab
@@ -154,10 +186,10 @@ const Requests = (props) => {
             label={"Request Sent"}
             wrapped
             style={{
-              fontWeight:'bold',
+              fontWeight: "bold",
               outline: "none",
               minWidth: "13%",
-              background:'#39bdf60b'
+              background: "#39bdf60b",
             }}
           />
         </Tabs>
@@ -165,13 +197,17 @@ const Requests = (props) => {
       <div className="student-content">
         {tabValue === 0 && (
           <div>
-            {requests.length === 0  && (
+            {requests.length === 0 && (
               <p className="text-center">No new requests received!</p>
             )}
             {requests.map((item) => {
               // if (item?.campusDriveStatus?.toLowerCase() === "pending") {
               return (
-                <div className="cards-border" key={item?.index} style={{overflowX:'auto' }}>
+                <div
+                  className="cards-border"
+                  key={item?.index}
+                  style={{ overflowX: "auto" }}
+                >
                   <div className="col-lg-9 col-sm-12 card-content">
                     <div className="icon" style={{ marginRight: "20px" }}>
                       <AccountBalance />
@@ -213,13 +249,17 @@ const Requests = (props) => {
                       <div
                         className="btn reject"
                         onClick={() => {
-                          // acceptCampusDrive(item?.campusDriveID, false, item?.nftID)
-                          getNotificationById(
-                            item?.nftID,
-                            "PRE-REJECT",
-                            item?.initiatorName,
-                            item?.campusDriveID
+                          rejectCampusDrive(
+                            item?.campusDriveID,
+                            false,
+                            item?.nftID
                           );
+                          // getNotificationById(
+                          //   item?.nftID,
+                          //   "PRE-REJECT",
+                          //   item?.initiatorName,
+                          //   item?.campusDriveID
+                          // );
                         }}
                       >
                         Reject
@@ -243,11 +283,11 @@ const Requests = (props) => {
       </div>
       {tabValue === 1 && (
         <div>
-          {sentRequests.length === 0  && (
-              <p className="text-center">No requests sent yet!</p>
-            )}
+          {sentRequests.length === 0 && (
+            <p className="text-center">No requests sent yet!</p>
+          )}
           {sentRequests.map((item) => (
-            <div className="cards-border" style={{ overflowX:"auto" }}>
+            <div className="cards-border" style={{ overflowX: "auto" }}>
               <div className="col-lg-9 col-sm-12 card-content">
                 <div className="icon" style={{ marginRight: "20px" }}>
                   <AccountBalance />
